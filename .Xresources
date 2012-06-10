@@ -1,0 +1,24 @@
+!--[term name]--!
+URxvt*termName: rxvt-256color
+
+!--[trans and fg/bg]--!
+URxvt.transparent: true
+URxvt.shading: 10
+URxvt.depth:32
+URxvt.background: #000000
+URxvt.foreground: #e0e0e0
+URxvt.tint: #ff0000
+URxvt.borderless: 1
+URxvt.perl-ext-common: default,tabbed
+URxvt.tabbed.tabbar-fg: 3
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg:    0
+URxvt.tabbed.tab-bg:    3
+
+!--[font]--!
+URxvt.font:xft:Bitstream Vera Sans Mono:pixelsize=13
+
+!--[scrolling]--!
+URxvt*scrollBar: false
+URxvt*saveLines: 10000
+URxvt.geometry: 81x26
