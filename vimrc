@@ -7,3 +7,7 @@ set expandtab
 set autoindent
 set guioptions=i
 set hlsearch
+set showcmd
+set hidden
+set guifont=Monospace\ 14
+autocmd BufNewFile,BufRead *.md set filetype=markdown

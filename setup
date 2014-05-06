@@ -1,5 +1,34 @@
 #!/bin/sh
-SCRIPT_HOME=$(dirname $(readlink -f $0))
-ln -sf "$SCRIPT_HOME/vimrc" "$HOME/.vimrc"
-ln -sf "$SCRIPT_HOME/Xresources" "$HOME/.Xresources"
-ln -sf "$SCRIPT_HOME/gnomerc" "$HOME/.gnomerc"
+delete=no
+while :
+do
+    case $1 in
+        -h | --help)
+            echo Usage: setup [-d] [-h]
+            exit 1
+            ;;
+        -d)
+            delete=yes
+            shift
+            ;;
+        -*)
+            echo Unknown option: $1 >&2
+            shift
+            ;;
+        *)
+            break
+            ;;
+    esac
+done
+            
+for f in setup tmux.conf vimrc Xresources
+do
+    if [ $delete = no ]
+    then
+        echo "Linking $HOME/.$f"
+        ln -s "$PWD/$f" "$HOME/.$f"
+    else
+        echo "Deleting $HOME/.$f"
+        rm "$HOME/.$f"
+    fi
+done
