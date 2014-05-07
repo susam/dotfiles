@@ -6,6 +6,7 @@ set shiftwidth=4
 set expandtab
 set autoindent
 set guioptions=i
+set number
 set hlsearch
 set showcmd
 set hidden
@@ -17,8 +18,8 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 if has("gui_running")
     if has("gui_gtk2")
-        set guifont=Monospace\ \ 14
+        set guifont=Inconsolata\ 16,DejaVu\ Sans\ Mono\ 14
     elseif has("gui_win32")
-        set guifont=Consolas:h16:cANSI
+        set guifont=Inconsolata:h18:cANSI,Consolas:h16:cANSI
     endif
 endif
