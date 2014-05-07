@@ -2,4 +2,4 @@ URxvt.background: #000000
 URxvt.foreground: #e0e0e0
 URxvt.scrollBar: false
 URxvt.borderless: true
-URxvt.font:xft:Bitstream Vera Sans Mono:pixelsize=16
+URxvt.font:xft:Monospace:pixelsize=16
