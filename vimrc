@@ -10,6 +10,7 @@ set number
 set hlsearch
 set showcmd
 set hidden
+set ruler
 
 " $VIMRUNTIME/filetype.vim recognizes only README.md as markdown file.
 " All other *.md files are recognized as modula2 files. Recognize *.md
@@ -20,6 +21,6 @@ if has("gui_running")
     if has("gui_gtk2")
         set guifont=Inconsolata\ 16,DejaVu\ Sans\ Mono\ 14
     elseif has("gui_win32")
-        set guifont=Inconsolata:h18:cANSI,Consolas:h16:cANSI
+        set guifont=Inconsolata:h16:cANSI,Consolas:h14:cANSI
     endif
 endif
