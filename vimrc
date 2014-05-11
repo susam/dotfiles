@@ -19,7 +19,7 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 if has("gui_running")
     if has("gui_gtk2")
-        set guifont=Inconsolata\ 16,DejaVu\ Sans\ Mono\ 14
+        set guifont=Inconsolata\ 14
     elseif has("gui_win32")
         set guifont=Inconsolata:h16:cANSI,Consolas:h14:cANSI
     endif
