@@ -17,6 +17,7 @@ set ruler
 " files as markdown files instead.
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 
+" Set font according to the computer I am working on
 if has("gui_running")
     if has("gui_gtk2")
         set guifont=Inconsolata\ 14
@@ -24,3 +25,12 @@ if has("gui_running")
         set guifont=Inconsolata:h16:cANSI,Consolas:h14:cANSI
     endif
 endif
+
+" While coding vertical split windows in terminals, sometimes a single
+" line of code wraps into multiple lines in vertical split window. If the
+" code is written to not exceed 72, 80 or 120 characters per line, then
+" one of the following commands would resize the vertical split window
+" to sufficient number of columns to read such code.
+command Wide vertical resize 78
+command Wider vertical resize 86
+command Widest vertical resize 126
