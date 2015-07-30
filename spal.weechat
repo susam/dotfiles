@@ -1,0 +1,9 @@
+/server add fn chat.freenode.net
+/set irc.server.fn.nicks spal,spal_
+/set irc.server.fn.username susam
+/set irc.server.fn.realname "Susam Pal"
+/set irc.server.fn.sasl_username spal
+/set irc.server.fn.sasl_password xxxx
+/set irc.server.fn.autojoin #python
+/save irc
+/print Added server fn = chat.freenode.net
