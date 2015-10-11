@@ -1,34 +1,206 @@
 #!/bin/sh
-delete=no
-while :
-do
-    case $1 in
-        -h | --help)
-            echo Usage: setup [-d] [-h]
-            exit 1
-            ;;
-        -d)
-            delete=yes
-            shift
-            ;;
-        -*)
-            echo Unknown option: $1 >&2
-            shift
-            ;;
-        *)
-            break
-            ;;
-    esac
-done
-            
-for f in setup tmux.conf vimrc Xresources
-do
-    if [ $delete = no ]
+
+# Copyright (c) 2015 Susam Pal
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+#
+#   1. Redistributions of source code must retain the above copyright
+#      notice, this list of conditions and the following disclaimer.
+#   2. Redistributions in binary form must reproduce the above copyright
+#      notice, this list of conditions and the following disclaimer in
+#      the documentation and/or other materials provided with the
+#      distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+# LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+# A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+# HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+# LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+# THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+# Files for which symbolic links need to be set up.
+#
+# Each line contains a filename that must be present in the current
+# directory. A dot (.) is added to each filename and a symbolic link
+# with this name is set up in the home directory.
+DOT_FILES="
+vimrc
+tmux.conf
+Xresources
+"
+
+
+# Script version.
+VERSION=0.1.0
+
+# Script version details.
+CHANGELOG="
+0.1.0 (2015-10-11)
+-----------------
+  - NEW: Create symbolic links as dot-files.
+"
+
+# Copyright notice.
+COPYRIGHT="Copyright (c) 2015 Susam Pal
+
+This is free software. You are permitted to redistribute and use it in
+source and binary forms, with or without modification, under the terms
+of the Simplified BSD License. See <http://susam.in/licenses/bsd/> for
+the complete license."
+
+
+# Starting point of this script.
+#
+# Arguments:
+#   "$@" -- All command line arguments specified while invoking this
+#           script must be passed to this function.
+main()
+{
+    parse_arguments "$@"
+
+    if [ $delete = yes ]
     then
-        echo "Linking $HOME/.$f"
-        ln -s "$PWD/$f" "$HOME/.$f"
+        delete_dot_files
     else
-        echo "Deleting $HOME/.$f"
-        rm "$HOME/.$f"
+        setup_dot_files
     fi
-done
+}
+
+
+# Create symbolic links for dot-files.
+setup_dot_files()
+{
+    printf "%s" "$DOT_FILES" | grep [[:graph:]] | while read filename
+    do
+        target="$PWD/$filename"
+        link=~/."$filename"
+
+        if [ ! -f "$target" ]
+        then
+            printf "File %s does not exist\n" "$target" >&2
+        elif ln -s "$target" "$link"
+        then
+            printf "Created %s -> %s\n" "$link" "$target"
+        fi
+    done
+}
+
+
+# Delete all files created by the setup function.
+delete_dot_files()
+{
+    printf "%s" "$DOT_FILES" | grep [[:graph:]] | while read filename
+    do
+        link=~/."$filename"
+        if rm "$link"
+        then
+            printf "Deleted %s\n" "$link"
+        fi
+    done
+}
+
+
+# Terminate the script with an error message.
+#
+# Arguments:
+#   string... -- String to print to standard error stream.
+#
+# Errors:
+#   Unconditionally causs the script to terminate with an error message
+#   and exit code 1.
+quit()
+{
+    printf "%s: %s\n" "$0" "$*" >&2
+    exit 1
+}
+
+
+# Parse command line arguments passed to this script.
+#
+# Arguments:
+#   "$@" -- All command line arguments specified while invoking this
+#           script must be passed to this function.
+#
+# Errors:
+#   If invalid arguments are specified, this function causes the script
+#   to exit with an error.
+parse_arguments()
+{
+    # Default options.
+    delete=no
+
+    # Parse command line options.
+    while [ "$#" -gt 0 ]
+    do
+        case $1 in
+            -d | --delete)
+                delete=yes
+                shift
+                ;;
+            -c | --changelog)
+                show_changelog
+                exit
+                ;;
+            -h | --help)
+                show_help
+                exit
+                ;;
+            -v | --version)
+                show_version
+                exit
+                ;;
+            -?*)
+                quit Unknown option \""$1"\".
+                ;;
+            *)
+                quit Surplus argument \""$1"\".
+                ;;
+        esac
+    done
+}
+
+
+# Show help.
+show_help()
+{
+    printf "%s\n" "Usage: $0 [-d] [-h]
+
+Set up dot-files in home directory.
+
+Options:
+  -d, --delete     Delete symbolic links to dot-files.
+  -c, --changelog  Show changelog and exit.
+  -h, --help       Show this help and exit.
+  -v, --version    Show version and exit.
+
+Report bugs to <https://github.com/susam/dotfiles/issues>."
+}
+
+
+# Show version and copyright.
+show_version()
+{
+    printf "%s %s\n%s\n" "${0##*/}" "$VERSION" "$COPYRIGHT"
+}
+
+
+# Show changelog.
+show_changelog()
+{
+    echo Changelog
+    echo =========
+    printf %s "$CHANGELOG"
+}
+
+
+# Start.
+main "$@"
