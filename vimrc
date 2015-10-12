@@ -21,8 +21,10 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 if has("gui_running")
     if has("gui_gtk2")
         set guifont=Inconsolata\ 14
+    elseif has("gui_macvim")
+        set guifont=Menlo:h13
     elseif has("gui_win32")
-        set guifont=Inconsolata:h16:cANSI,Consolas:h14:cANSI
+        set guifont=Inconsolata:h16,Consolas:h14
     endif
 endif
 
