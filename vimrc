@@ -20,7 +20,7 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 " Set font according to the computer I am working on
 if has("gui_running")
     if has("gui_gtk2")
-        set guifont=Inconsolata\ 14
+        set guifont=Inconsolata\ 12
     elseif has("gui_macvim")
         set guifont=Menlo:h13
     elseif has("gui_win32")
