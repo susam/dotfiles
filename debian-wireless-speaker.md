@@ -95,7 +95,8 @@ is running fine.
 <!-- -->
 
     $ pavucontrol
-    ![pavucontrol](img/pavucontrol.png)
+
+![pavucontrol](img/pavucontrol.png)
 
 <!-- -->
 
@@ -127,4 +128,5 @@ is running fine.
 <!-- -->
 
     $ pavucontrol
-    ![pavucontrol-playback](img/pavucontrol-playback.png)
+
+![pavucontrol-playback](img/pavucontrol-playback.png)
