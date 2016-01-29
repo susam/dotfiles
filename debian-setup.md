@@ -50,7 +50,13 @@ I found that Hinting = Medium and Hinting = Full behaved identically.
 
 Setup editor
 ------------
-update-alternatives --config editor
+Ensure that Vim is set as the editor.
+
+  1. Execute the following command.
+
+        update-alternatives --config editor
+
+  2. Select `/usr/bin/vim.gtk` as the editor.
 
 
 Use Google Public DNS
@@ -62,6 +68,6 @@ Public DNS.
 
         supersede domain-name-servers 8.8.8.8;
 
-   2. Then restart network-manager.
+  2. Then restart network-manager.
     
         service network-manager restart
