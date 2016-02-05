@@ -295,7 +295,8 @@ present the necessary items.
   8. Uncheck *Connect To*.
   9. Set *Control Panel* to *Display as a menu*.
   10. Uncheck *Default Programs*.
-  11. Set *Documents* to *Displ*.
+  11. Set *Documents* to *Don't display this item*.
+  12. Set *Downloads* to *Display as a link*.
   12. Uncheck *Help*.
   13. Set *Music* to *Don't display this item".
   14. Set *Personal folder* to *Display as menu".
