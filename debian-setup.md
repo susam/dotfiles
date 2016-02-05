@@ -69,7 +69,7 @@ Public DNS.
         supersede domain-name-servers 8.8.8.8;
 
   2. Then restart network-manager.
-    
+
         service network-manager restart
 
 

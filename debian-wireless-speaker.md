@@ -10,7 +10,7 @@ Speaker NP1540W via Bluetooth.
   1. Install packages necessary to establish Bluetooth connectivity to
      wireless speaker. This command needs to be run as the root user.
 
-        apt-get install bluez pulseaudio pulseaudio-module-bluetooth pavucontrol 
+        apt-get install bluez pulseaudio pulseaudio-module-bluetooth pavucontrol
 
      The remaining steps below should be performed as non-root user.
 
@@ -49,7 +49,7 @@ Speaker NP1540W via Bluetooth.
         scan on
         pair <dev>
         connect <dev>
-        
+
      In the commands above, `<dev>` must be replaced with the actual
      device address (6 pairs of hexadecimal digits separated by colons)
      that appears in the output of `scan on`.
@@ -100,7 +100,7 @@ is running fine.
 
 <!-- -->
 
-    $ bluetoothctl 
+    $ bluetoothctl
     [NEW] Controller 00:1F:E1:F8:86:D4 nifty [default]
     [bluetooth]# power on
     [CHG] Controller 00:1F:E1:F8:86:D4 Class: 0x0c010c
@@ -111,7 +111,7 @@ is running fine.
     [CHG] Controller 00:1F:E1:F8:86:D4 Discovering: yes
     [NEW] Device F0:13:C3:36:2A:7C LG BT Box( 2A:7C )
     [CHG] Device F0:13:C3:36:2A:7C RSSI: -53
-    [bluetooth]# pair F0:13:C3:36:2A:7C 
+    [bluetooth]# pair F0:13:C3:36:2A:7C
     Attempting to pair with F0:13:C3:36:2A:7C
     [CHG] Device F0:13:C3:36:2A:7C Connected: yes
     [CHG] Device F0:13:C3:36:2A:7C UUIDs:
@@ -120,7 +120,7 @@ is running fine.
             0000110e-0000-1000-8000-00805f9b34fb
     [CHG] Device F0:13:C3:36:2A:7C Paired: yes
     Pairing successful
-    [bluetooth]# connect F0:13:C3:36:2A:7C 
+    [bluetooth]# connect F0:13:C3:36:2A:7C
     Attempting to connect to F0:13:C3:36:2A:7C
     Connection successful
     [bluetooth]#
