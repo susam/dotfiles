@@ -96,6 +96,15 @@ Setup dotfiles, so that the Vim configuration is setup.
 At this point, GVim is ready to be used.
 
 
+Setup timebox
+-------------
+Setup timebox that helps me to work in well defined timeboxes.
+
+  1. Download *timebox.cmd* from <https://github.com/susam/timeboxing>.
+  2. Move the file to *X:\opt\bin*.
+  3. Right click on the file, select *Properties* > *Unblock*, and click *OK*.
+
+
 Setup Symbolic Links to Home Directory
 --------------------------------------
 Create a directory called *susam* directly under the root directory of
