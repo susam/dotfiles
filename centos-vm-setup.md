@@ -12,8 +12,8 @@ On Windows, perform the following steps.
 
 On Debian, run the following command.
 
-  apt-get update
-  apt-get install virtualbox
+    apt-get update
+    apt-get install virtualbox
 
 
 Configure VirtualBox
@@ -55,6 +55,25 @@ require non-default inputs.
   4. Time zone: Asia/Kolkata.
   5. Select *Use All Space* and check *Review and modify partitioning
      layout*.
+
+
+Map Caps Lock to Escape
+-----------------------
+Mapping Caps Lock key to Escape key on the CentOS VM is necessary only
+if the GNOME desktop is going to be accessed directly using VirtualBox
+window. If the desktop is going to be accessed via VNC, and Caps Lock is
+already mapped to Escape on the host system, then this is not required.
+
+  1. Go to *System* > *Preferences* > *Startup Applications* >
+     *Startup Programs*.
+  2. Click *Add* button.
+  3. Enter the following fields.
+    - Name: Uncap
+    - Command: `setxkbmap -option caps:escape`
+    - Comment: Map Caps Lock key to Escape key
+  4. Click *Add* button.
+  5. Log out of the GNOME desktop on the CentOS VM and log in again for
+     the key mapping to take effect.
 
 
 Activate Networking
@@ -214,6 +233,30 @@ Configure Nautilus
   4. Click *Close*.
 
 
+Setup Packages
+---------------
+Open a shell as root and enter the following commands.
+
+    yum install git vim-X11
+
+
+Setup home directory
+--------------------
+  1. On the CentOS VM, enter the following commands.
+
+        mkdir -p ~/git
+        cd ~/git
+
+        git clone https://github.com/susam/dotfiles
+        cd dotfiles
+        ./setup
+
+  2. Add desired aliases to *~/.bashrc*. Here is an example.
+
+        alias vi=gvim
+        echo Shell environment is set. >&2
+
+
 Configure Remote Connections
 ----------------------------
 ### Setup Host-Only Adapter ###
@@ -237,27 +280,3 @@ Enable remote desktop connectivity.
   5. Select *Require the user to enter this password*.
   6. Set a password.
   7. Click *Close*.
-
-
-Setup Packages
----------------
-Open a shell as root and enter the following commands.
-
-    yum install git vim-X11
-
-
-Setup home directory
---------------------
-  1. On the CentOS VM, enter the following commands.
-
-        mkdir -p ~/git
-        cd ~/git
-
-        git clone https://github.com/susam/dotfiles
-        cd dotfiles
-        ./setup
-
-  2. Add desired aliases to *~/.bashrc*. Here is an example.
-
-        alias vi=gvim
-        echo Shell environment is set. >&2
