@@ -96,6 +96,23 @@ Setup dotfiles, so that the Vim configuration is setup.
 At this point, GVim is ready to be used.
 
 
+Setup 'my' Directory
+--------------------
+Clone 'my' and make my personal scripts in it available as commands.
+
+  1. Execute this command.
+
+        git clone https://susam@bitbucket.org/susam/my.git
+
+  2. Make frequently used directories available under home directory.
+
+        mklink /j %homedrive%%homepath%\my X:\my
+        mklink /j %homedrive%%homepath%\git X:\git
+
+  3. Append *X:\my\bin* and *X:\my\work\bin* to the system variable
+     named *mypath*.
+
+
 Setup timebox
 -------------
 Setup timebox that helps me to work in well defined timeboxes.
