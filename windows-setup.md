@@ -395,3 +395,20 @@ Enable buttons to jump forward and back in a document.
      *Previous View*.
   2. Right click on Toolbar, go to Page Navigation Tools and check
      *Next View*.
+
+
+Configure Power Options
+-----------------------
+  1. Go to *Start* > *Control Panel* > *Power Options*.
+  2. Click *Choose what closing the lid does*.
+  3. Set the following options for both *On Battery* and *Plugged in*.
+    - When I press the power button: Sleep
+    - When I press the sleep button: Sleep
+    - When I close the lid: Do nothing
+  4. Click *Save changes*.
+
+
+Next Steps
+----------
+Perform any applicable setups mentioned in
+[common-setup.md](common-setup.md).
