@@ -376,3 +376,22 @@ Configure Internet Explorer
   1. Go to *Settings* > *Internet Options* > *General* > *Home page*.
   2. Click *Use new tab*.
   3. Press *OK*.
+
+
+Configure Adobe Acrobat Reader DC
+---------------------------------
+Hide the Tools Pane in Adobe Acrobat Reader DC in order to provide more
+screen real estate to the document being viewed.
+
+  1. Go to *Edit* > *Preferences* > *Documents*.
+  2. Uncheck *Open tools pane for each document*.
+  3. After opening a PDF document, if the Tools Pane is visible, go to
+     *View* > *Show/Hide* and uncheck *Tools Pane*. The Tools Pane won't
+     be visible the next time the document is opened.
+
+Enable buttons to jump forward and back in a document.
+
+  1. Right click on Toolbar, go to Page Navigation Tools and check
+     *Previous View*.
+  2. Right click on Toolbar, go to Page Navigation Tools and check
+     *Next View*.
