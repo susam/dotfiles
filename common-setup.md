@@ -1,16 +1,3 @@
-Setup my directory
-------------------
-Clone my work repository and make my personal scripts in it available as
-commands.
-
-  1. Execute this command.
-
-        git clone https://susam@bitbucket.org/susam/my.git
-
-  2. Append *X:\my\bin* and *X:\my\work\bin* to the system variable
-     named *mypath*.
-
-
 Configure Firefox
 -----------------
 Configure Firefox to automatically save files without asking where to
