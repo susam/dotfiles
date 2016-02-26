@@ -169,7 +169,7 @@ Install Cygwin to get a Unix like environment for command prompt.
 
 Setup Console
 -------------
-Setup and configure Console to open Command Prompt in multiple tabs.
+Setup and configure Console.
 
 ### Install Console ###
 
@@ -241,18 +241,38 @@ system variable.
 Setup PuTTY
 -----------
 ### Install PuTTY ###
-  1. Download *putty.exe* from
+  1. Download *putty.exe* and *puttygen.exe* from
      <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>.
-  2. Move the file to *X:\opt\bin*.
-  3. Right click on the file, select *Properties* > *Unblock*, and click *OK*.
+  2. Move the files to *X:\opt\bin*.
+  3. Right click on each file, select *Properties* > *Unblock*, and click *OK*.
+
+### Generate Private Key ###
+  1. Run puttygen.exe.
+  2. Click *Generate*.
+  3. Move the mouse randomly within the *Putty Key Generator* window.
+  4. Once the key is generated, click *Save private key*, click *Yes*
+     and save the private key at *X:\opt* as *rsa.ppk*.
+  5. Go to *Session*. Select *Default Settings* under *Saved Sessions*.
+     Click *Save*.
 
 ### Configure PuTTY ###
   1. Run putty.exe.
-  2. Go to *Windows* > *Appearance* > *Font settings*. Click *Change*.
-     Set *Font* to *Consolas*.  Set *Size* to *12*.
-  3. Go to *Connection* > *Data*. Set *Terminal-type string* to
-     `xterm-256color`.
-  4. Go to *Session* > *Saved Sessions*. Select *Default Settings*.
+  2. Go to *Session*.
+    - Set *Close window on exit* to *Always*.
+  2. Go to *Windows* > *Appearance*.
+    - Click *Change* under *Font settings*.
+    - Set *Font* to *Consolas*.
+    - Set *Size* to *12*.
+  3. Go to *Windows* > *Behaviour*.
+    - Select *System menu appears on ALT alone*.
+    - Select *Full screen on Alt-Enter*.
+  3. Go to *Connection* > *Data*.
+    - Set *Auto-login username* to the username that is most frequently
+      used while connecting to remote systems.
+    - Set *Terminal-type string* to `xterm-256color`.
+  4. Go to *Connection* > *SSH* > *Auth*.
+    - Set *Private key file for authentication* to *X:\opt\rsa.ppk*.
+  5. Go to *Session*. Select *Default Settings* under *Saved Sessions*.
      Click *Save*.
 
 
