@@ -159,6 +159,12 @@ Install Cygwin to get a Unix like environment for command prompt.
      Click *Finish*.
   10. Move *setup-x86_64.exe* to *X:\opt\cygwin64-packages*.
   11. Append *X:\opt\cygwin64\bin* to the system variable named *mypath*.
+  12. Edit *X:\opt\cygwin64\etc\nsswitch.conf* and add the following.
+
+        db_home: windows
+
+      This step ensures that Cygwin commands would use the Windows home
+      directory for $HOME environment and tilde expansion.
 
 
 Setup Console
