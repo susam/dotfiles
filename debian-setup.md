@@ -5,9 +5,9 @@ The following steps map Caps Lock key to Escape key.
   1. Go to Applications Menu > Settings > Session and Startup > Application Autostart.
   2. Click 'Add' button.
   3. Enter the following fields.
-     - Name: Uncap
-     - Description: Map Caps Lock key to Escape key
-     - Command: `setxkbmap -option caps:escape`
+    - Name: Uncap
+    - Description: Map Caps Lock key to Escape key
+    - Command: `setxkbmap -option caps:escape`
   4. Press 'OK' button.
 
 Reference: https://github.com/susam/uncap#linux-setxkbmap
@@ -92,3 +92,9 @@ data. Follow the steps below to disable these extra checks.
   3. Save the file.
 
 See `man pam_unix` for more details.
+
+
+Next Steps
+----------
+Perform any applicable setups mentioned in
+[common-setup.md](common-setup.md).
