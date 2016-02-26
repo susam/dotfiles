@@ -122,15 +122,15 @@ Setup timebox that helps me to work in well defined timeboxes.
   3. Right click on the file, select *Properties* > *Unblock*, and click *OK*.
 
 
-Setup Symbolic Links to Home Directory
---------------------------------------
+Setup Junctions to Home Directory
+---------------------------------
 Create a directory called *susam* directly under the root directory of
 every drive to make it convenient to reach the home directory from any
 location.
 
   1. For every drive *X* in the system, execute the following command.
 
-        mklink /d X:\susam %homedrive%%homepath%
+        mklink /j X:\susam %homedrive%%homepath%
 
 
 Setup Cygwin
