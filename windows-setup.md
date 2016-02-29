@@ -155,7 +155,7 @@ Install Cygwin to get a Unix like environment for command prompt.
     - nc
 
      Click *Next*. Click *Next*.
-  9. Uncheck *Create icon on Desktop* and *Add icon to Start Menu*.
+  9. Deselect *Create icon on Desktop* and *Add icon to Start Menu*.
      Click *Finish*.
   10. Move *setup-x86_64.exe* to *X:\opt\cygwin64-packages*.
   11. Append *X:\opt\cygwin64\bin* to the system variable named *mypath*.
@@ -189,15 +189,15 @@ Perform the following steps in the *Console Settings* window. Press
   1. Set *Console* > *Buffer size* > *Rows* to *9999*.
   2. Set *Appearance* > *Font* > *Name* to *Consolas*.
   3. Set *Appearance* > *Font* > *Size* to *12*.
-  4. Uncheck *Appearance* > *More* > *Show menu*.
-  5. Uncheck *Appearance* > *More* > *Show toolbar*.
-  6. Uncheck *Appearance* > *More* > *Show status bar*.
-  7. Uncheck *Appearance* > *More* > *Show scrollbars*.
+  4. Deselect *Appearance* > *More* > *Show menu*.
+  5. Deselect *Appearance* > *More* > *Show toolbar*.
+  6. Deselect *Appearance* > *More* > *Show status bar*.
+  7. Deselect *Appearance* > *More* > *Show scrollbars*.
   8. Set *Appearance* > *More* > *Window transparency* > *Alpha* >
      *Active Window* to *30*.
   9. Set *Appearance* > *More* > *Window transparency* > *Alpha* >
      *Inactive Window* to *60*.
-  10. Check *Behaviour* > *Copy & Paste* > *Copy on select*.
+  10. Select *Behaviour* > *Copy & Paste* > *Copy on select*.
   11. Set *Hotkeys* > *New Tab 1* to *Alt+D*.
   12. Set *Hotkeys* > *New Tab 2* to *Alt+H*.
   13. Set *Hotkeys* > *Next tab* to *Ctrl+N*.
@@ -222,10 +222,10 @@ runs the Python scripts that make my life easier.
   1. Download Windows x86-64 executable installer of the most recent
      version of Python from <https://www.python.org/downloads/>.
   2. Run the installer.
-  3. Uncheck *Install launcher for all users*.
+  3. Deselect *Install launcher for all users*.
   4. Click *Customize installation*.
-  5. Uncheck *Documentation*. Uncheck *py launcher*. Click *Next*.
-  6. Uncheck all *Advanced Options*.
+  5. Deselect *Documentation*. Deselect *py launcher*. Click *Next*.
+  6. Deselect all *Advanced Options*.
   7. Set *Customize install location* to *X:\opt\PythonXY* where *XY*
      stands are the digits from the version number. Click *Install*.
   8. Append *X:\opt\PythonXY* to the system variable named *mypath*.
@@ -344,16 +344,17 @@ present the necessary items.
   4. Set *Taskbar buttons* to *Never combine*.
   5. Go to *Start Menu* > *Customize*.
   6. Set *Computer* to *Display as a menu*.
-  8. Uncheck *Connect To*.
+  8. Deselect *Connect To*.
   9. Set *Control Panel* to *Display as a menu*.
-  10. Uncheck *Default Programs*.
+  10. Deselect *Default Programs*.
   11. Set *Documents* to *Don't display this item*.
   12. Set *Downloads* to *Display as a link*.
-  12. Uncheck *Help*.
-  13. Set *Music* to *Don't display this item".
+  12. Deselect *Help*.
+  13. Set *Music* to *Don't display this item*.
+  14. Select *Network*.
   14. Set *Personal folder* to *Display as menu".
   15. Set *Pictures* to *Don't display this item".
-  16. Check *Run*.
+  16. Select *Run*.
   17. Set *System administrative tools* to *Display on the All Programs
       menu and the Start Menu*.
   18. Press *OK*.
@@ -384,7 +385,7 @@ Hide the Tools Pane in Adobe Acrobat Reader DC in order to provide more
 screen real estate to the document being viewed.
 
   1. Go to *Edit* > *Preferences* > *Documents*.
-  2. Uncheck *Open tools pane for each document*.
+  2. Deselect *Open tools pane for each document*.
   3. After opening a PDF document, if the Tools Pane is visible, go to
      *View* > *Show/Hide* and uncheck *Tools Pane*. The Tools Pane won't
      be visible the next time the document is opened.
