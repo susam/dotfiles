@@ -259,6 +259,28 @@ Setup home directory
 
 Configure Remote Connections
 ----------------------------
+### Setup Internal Network Adapter ###
+Enable connectivity among VMs.
+
+  1. Shut down the CentOS operating system in the virtual machine.
+  2. In Oracle VM VirtualBox Manager, go to *Machine* > *Settings* >
+     *Network* > *Adapter 2*.
+    - Select *Enable Network Adapter*.
+    - Set *Attached to* to *Internal Network*.
+    - Click *OK*.
+  3. Start the CentOS virtual machine.
+  4. In the CentOS VM, edit /etc/sysconfig/network-scripts/ifcfg-eth1.
+
+        DEVICE=eth1
+        TYPE=Ethernet
+        ONBOOT=yes
+        BOOTPROTO=none
+        NM_CONTROLLED=no
+        IPADDR=192.168.0.2
+        NETMASK=255.255.255.0
+
+     Use a unique IP address for the IPADDR parameter.
+
 ### Setup Host-Only Adapter ###
 Enable connectivity from the host system to the CentOS VM.
 
@@ -269,6 +291,8 @@ Enable connectivity from the host system to the CentOS VM.
     - Set *Attached to* to *Host-only Adapter*.
     - Click *OK*.
   3. Start the CentOS virtual machine.
+
+The Host-Only Adapter has never worked for me within VPN.
 
 ### Setup Remote Desktop ###
 Enable remote desktop connectivity.
