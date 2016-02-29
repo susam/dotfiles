@@ -280,3 +280,13 @@ Enable remote desktop connectivity.
   5. Select *Require the user to enter this password*.
   6. Set a password.
   7. Click *Close*.
+
+
+Increase Screen Lock Timeout
+----------------------------
+GNOME Desktop locks the desktop after it is idle for 5 minutes. The
+idle duration before which the desktoip is locked can be increased.
+
+  1. Go to *System* > *Preferences* > *Screensaver*.
+  2. Set *Regard the computer as idle after* to a desired time by
+     dragging the slider.
