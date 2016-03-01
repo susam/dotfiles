@@ -166,6 +166,20 @@ Install Cygwin to get a Unix like environment for command prompt.
       This step ensures that Cygwin commands would use the Windows home
       directory for $HOME environment and tilde expansion.
 
+      Note: I have found that the above configuration slows down
+      sh/bash. I tested this with the following command.
+
+        powershell -Command "Measure-Command {sh -c 'echo hi'}"
+
+      While without the `db_home` configuration, it took about 0.2 to
+      0.3 seconds for `sh` to start, with this configuration, it took
+      about 2 to 4 seconds to start. As a result, I hard-coded the
+      `db_home` path as follows.
+
+        db_home: /cygdrive/c/Users/suspal.ORADEV
+
+      This improved the start time of `sh` to about 0.2 seconds again.
+
 
 Setup Console
 -------------
