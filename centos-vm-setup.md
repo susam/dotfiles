@@ -266,7 +266,7 @@ Enable connectivity among VMs.
   2. In Oracle VM VirtualBox Manager, go to *Machine* > *Settings* >
      *Network* > *Adapter 2*.
     - Select *Enable Network Adapter*.
-    - Set *Attached to* to *Internal Network*.
+    - Set *Attached to*: *Internal Network*.
     - Click *OK*.
   3. Start the CentOS virtual machine.
   4. In the CentOS VM, edit /etc/sysconfig/network-scripts/ifcfg-eth1.
@@ -288,7 +288,7 @@ Enable connectivity from the host system to the CentOS VM.
   2. In Oracle VM VirtualBox Manager, go to *Machine* > *Settings* >
      *Network* > *Adapter 2*.
     - Select *Enable Network Adapter*.
-    - Set *Attached to* to *Host-only Adapter*.
+    - Set *Attached to*: *Host-only Adapter*.
     - Click *OK*.
   3. Start the CentOS virtual machine.
 
@@ -314,3 +314,19 @@ idle duration before which the desktoip is locked can be increased.
   1. Go to *System* > *Preferences* > *Screensaver*.
   2. Set *Regard the computer as idle after* to a desired time by
      dragging the slider.
+
+
+Install Adobe Flash Player for Firefox
+---------------------------------------
+Enter the following commands to install Adobe Flash Player for Firefox.
+
+    mkdir -p ~/pkg
+    cd ~/pkg
+    wget https://fpdownload.adobe.com/get/flashplayer/pdc/11.2.202.569/install_flash_player_11_linux.x86_64.tar.gz
+    mkdir flash
+    tar -xvzf install_flash_player_11_linux.x86_64.tar.gz -C flash
+    mv flash/libflashplayer.so ~/.mozilla/plugins
+
+After the installation is complete, restart Firefox and go to
+<https://www.adobe.com/software/flash/about/> to check if Flash Player
+detects version information successfully.
