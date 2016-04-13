@@ -40,3 +40,19 @@ following steps resolve this issue.
   6. Once it is enabled, the original screen resolution appears.
 
 Now, the brightness function keys works again.
+
+
+Change Logon Background
+-----------------------
+The following steps work on Windows 7 Professional.
+
+  1. Run gpedit.msc
+  2. Go to *Computer Configuration* > *Administrative Templates* >
+     *System* > *Logon*.
+  3. Set *Always use custom logon background* to *Enabled*.
+  4. Copy the desired background image to
+     *C:\windows\System32\oobe\info\backgrounds* and rename it to
+     backgroundDefault.jpg. Ensure that the image is less than 256 KB in
+     size.
+
+Reference: http://www.howtogeek.com/112110/how-to-set-a-custom-logon-screen-background-on-windows-7/
