@@ -311,6 +311,25 @@ has kept a file open.
   3. Move *procexp.exe* to *X:\opt\bin*.
 
 
+Setup Glass2k
+-------------
+Setup Glass2k to make PuTTY, GVim, etc. windows transparent.
+
+  1. Download Glass2k from <http://chime.tv/products/glass2k.shtml>.
+  2. Move the file to *X:\opt\bin*.
+  3. Right click on the file, select *Properties* > *Unblock*, and click *OK*.
+  4. Run it.
+  5. Select *Auto-Remember every window's Transparency Settings*.
+  6. Set *Transparency Popup: Right Click* to `+ Ctrl + Shift`.
+  7. Set *Taskbar Transparency* to about 80%.
+
+Now launch GVim or PuTTY, and press *Ctrl + Shift + 8* to make the
+window transparent. In fact, any digit key may be pressed along with
+*Ctrl + Shift* to alter the amount of transparency. *Ctrl + Shift + 1*
+makes the window the most transparent and *Ctrl + Shift + 9* makes it
+the least transparent.  *Ctrl + Shift + 0* makes the window solid.
+
+
 Setup VNC Viewer
 ----------------
   1. Download VNC Viewer for Windows EXE 64-bit from
