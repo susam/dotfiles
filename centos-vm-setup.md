@@ -150,8 +150,8 @@ Minimalize VM Window
 
 Configure Terminal
 ------------------
-  1. Go to *Applications* > *System Tools* > *Terminal*. Click and drag
-     it to the top panel to create an application launcher.
+  1. Go to *Applications* > *System Tools*. Click *Terminal* and drag it
+     to the top panel to create an application launcher.
 
   2. Click on the *Terminal* application launcher in the top panel.
 
