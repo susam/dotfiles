@@ -178,7 +178,7 @@ Install Packages
   2. Install packages that may be used.
 
         apt-get update
-        apt-get install vim-gtk git tree gcc-doc
+        apt-get install tmux vim-gtk git tree gcc-doc
 
   3. Configure packages.
 
