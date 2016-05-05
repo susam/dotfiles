@@ -198,6 +198,31 @@ The following steps enable font hinting in XFCE 4.10 on Debian 8.0.
 I found that Hinting = Medium and Hinting = Full behaved identically.
 
 
+Setup Vimer
+-----------
+  1. On the Debian VM, enter the following commands.
+
+        mkdir -p ~/git ~/bin
+        cd ~/git
+        git clone https://github.com/susam/vimer
+        ln -sf ~/git/vimer/vimer ~/bin/vi
+
+  2. Run *Thunar*, i.e. *Applications Menu* > *File Manager*. From the menu,
+     go to *Edit* > *Configure custom actions*.
+
+  3. Click the plus icon to add a new custom action..
+
+  4. Enter the following details.
+     - Name: Edit with GVim
+     - Command: `gvim --remote-silent %F`
+     - Icon: vim 
+
+  5. Go to *Apperance Conditions* tab and select *Directories*, *Text
+     Files* and *Other Files*.
+
+  6. Click *OK*. Click *Close*.
+
+
 Setup home directory
 --------------------
   1. On the Debian VM, enter the following commands.
@@ -211,8 +236,8 @@ Setup home directory
 
   2. Edit *~/.bashrc* and add the following code to it.
 
+        export PATH=~/bin:$PATH
         export TERM=xterm-256color
-        alias vi=gvim
         echo Shell environment is set. >&2
 
 
