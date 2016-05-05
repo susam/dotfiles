@@ -185,6 +185,7 @@ Install Packages
         git config --global user.name "Susam Pal"
         git config --global user.email susam@susam.in
         git config --global push.default simple
+        git config --global credential.helper 'cache --timeout=86400'
 
 
 Enable Hinting
