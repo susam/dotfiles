@@ -176,7 +176,7 @@ Install Cygwin to get a Unix like environment for command prompt.
       about 2 to 4 seconds to start. As a result, I hard-coded the
       `db_home` path as follows.
 
-        db_home: /cygdrive/c/Users/suspal.ORADEV
+        db_home: /cygdrive/c/Users/susam
 
       This improved the start time of `sh` to about 0.2 seconds again.
 
