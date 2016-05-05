@@ -139,7 +139,8 @@ Setup Guest Additions
   4. Select *Auto-mount*. Select *Make Permanent*. Click *OK*.
 
 ### Reboot ###
-Reboot the Debian VM, so that the system
+Reboot the Debian VM, so that the system to ensure that all Guest Additions
+features setup in the previous section are enabled.
 
 
 Minimalize VM Window
