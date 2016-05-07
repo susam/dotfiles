@@ -166,7 +166,7 @@ Configure Terminal
     - Set *Scrollback* to *10000*.
 
   5. Go to *Appearance* tab.
-    - Set *Font* to *Monospace 14*.
+    - Set *Font* to *Monospace 12*.
     - Set *Background* to *Transparent background*.
     - Set *Transparency* to *0.70*.
     - Deselect *Display menubar in new windows*.
