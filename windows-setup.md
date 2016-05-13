@@ -42,21 +42,21 @@ Setup and configure GVim.
   7. Right click *gvim.exe*, select *Pin to Taskbar*.
 
 
-Setup Vimer
------------
-Setup and configure Vimer to edit files in the same instance
-of GVim.
+Setup Scripts
+-------------
+  1. Enter the following commands to setup the scripts.
 
-  1. Download *vimer.cmd* from <https://github.com/susam/vimer>.
-  2. Move the file to *X:\opt\bin*.
-  3. Right click on the file, select *Properties* > *Unblock*, and click *OK*.
-  4. Rename it to *vi.cmd*.
-  5. Create a user variable named *vim_cmd* with
-     *X:\opt\vim\vim##\gvim.exe* as its value.
-  6. Run the following two commands.
+        cd X:\opt\bin
+        curl https://raw.githubusercontent.com/susam/timeboxing/master/timebox.cmd > timebox.cmd
+        curl https://raw.githubusercontent.com/susam/todo/master/todo > todo
+        curl https://raw.githubusercontent.com/susam/todo/master/todo.cmd > todo.cmd
 
+        curl https://raw.githubusercontent.com/susam/vimer/master/vimer.cmd > vi.cmd
         vi --enable
         vi -t --enable
+
+  2. Create a user variable named *vim_cmd* with
+     *X:\opt\vim\vim##\gvim.exe* as its value.
 
 
 Setup Git
@@ -111,15 +111,6 @@ Clone 'my' and make my personal scripts in it available as commands.
 
   3. Append *X:\my\bin* and *X:\my\work\bin* to the system variable
      named *mypath*.
-
-
-Setup timebox
--------------
-Setup timebox that helps me to work in well defined timeboxes.
-
-  1. Download *timebox.cmd* from <https://github.com/susam/timeboxing>.
-  2. Move the file to *X:\opt\bin*.
-  3. Right click on the file, select *Properties* > *Unblock*, and click *OK*.
 
 
 Setup Junctions to Home Directory
