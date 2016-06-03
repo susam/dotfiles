@@ -46,6 +46,14 @@ order.
   9. Remove all files from the local directory path and start
      Thunderbird.
 
+Perform the following steps to minimize Thunderbird to notification
+area.
+
+  1. Go to *Tools* > *Get Extensions*.
+  2. Enter `MinimizeToTray` in the search box.
+  3. Find *MinimizeToTray revived* and click "Install" next to it.
+  4. Click *Restart Now*.
+
 
 Configure Pidgin
 ----------------
