@@ -332,7 +332,7 @@ Enter the following commands to install Adobe Flash Player for Firefox.
 
     mkdir -p ~/pkg
     cd ~/pkg
-    wget https://fpdownload.adobe.com/get/flashplayer/pdc/11.2.202.569/install_flash_player_11_linux.x86_64.tar.gz
+    wget https://fpdownload.adobe.com/get/flashplayer/pdc/11.2.202.632/install_flash_player_11_linux.x86_64.tar.gz
     mkdir flash
     tar -xvzf install_flash_player_11_linux.x86_64.tar.gz -C flash
     mv flash/libflashplayer.so ~/.mozilla/plugins
