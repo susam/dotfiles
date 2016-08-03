@@ -256,6 +256,13 @@ Setup home directory
         alias vi=gvim
         echo Shell environment is set. >&2
 
+  3. Configure Git.
+
+        git config --global user.name "Susam Pal"
+        git config --global user.email susam@susam.in
+        git config --global push.default simple
+        git config --global credential.helper 'cache --timeout=86400'
+
 
 Configure Remote Connections
 ----------------------------
