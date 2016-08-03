@@ -94,15 +94,17 @@ Setup Guest Additions
   2. Install packages required to build VirtualBox Guest Additions
      kernel modules.
 
-        yum install kernel-devel-$(uname -r) gcc
+        yum install kernel kernel-devel gcc
 
-  3. In the virtual machine window, go to *Devices* > *Insert Guest
+  3. If the above command leads to a kernel update, then reboot the
+     CentOS system to boot with the new kernel.
+  4. In the virtual machine window, go to *Devices* > *Insert Guest
      Additions CD Image*.
-  4. In the CentOS desktop, click *OK* to *Open Autorun Prompt*.
+  5. In the CentOS desktop, click *OK* to *Open Autorun Prompt*.
      Click *Run*. Enter *Password for root* and click *Authenticate*.
-  5. After the installation is complete, on the CentOS desktop, right
+  6. After the installation is complete, on the CentOS desktop, right
      click on the VBOXADDITIONS CD, and select *Eject*.
-  6. The installation creates a group named *vboxsf* that becomes the
+  7. The installation creates a group named *vboxsf* that becomes the
      group owner of any shared folder. Add the desktop user to the
      *vboxsf* group.
 
@@ -139,8 +141,8 @@ Setup Guest Additions
    system.
 
 
-Minimalize VM Window
---------------------
+Simplify VM Window
+------------------
   1. Go to *View* > *Status Bar*. Deselect *Show Status Bar*.
   2. Go to *View* > *Menu Bar*. Deselect *Show Menu Bar*.
   3. Reboot the CentOS system to enable the Guest Additions features
@@ -168,19 +170,20 @@ Configure Terminal
 
             env TERM=xterm-256color /bin/bash
 
-  6. Go to *Edit* > *Profile Preferences* > *Colors*.
+  6. Go to *Colors* tab.
     - Deselect *Use colors from system theme*.
-    - Set *Foreground, Background, Bold and Underline* > *Built-in
-      schemes* to *White on black*.
+    - Set *Built-in schemes* to *White on black*.
     - Set *Palette* > *Built-in schemes* to *XTerm*.
 
-  7. Go to *Edit* > *Profile Preferences* > *Background*.
+  7. Go to *Background* tab.
     - Select *Transparent background*.
     - Drag the slider to the middle.
 
-  8. Go to *Edit* > *Profile Preferences* > *Scrolling*.
+  8. Go to *Scrolling* tab.
     - Set *Scrollbar is* to *disabled*.
     - Set *Scrollback* to *Unlimited*.
+
+  9. Click *Close*.
 
 
 Setup tmux
