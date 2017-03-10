@@ -48,8 +48,6 @@ Setup Scripts
 
         cd X:\opt\bin
         curl https://raw.githubusercontent.com/susam/timeboxing/master/timebox.cmd > timebox.cmd
-        curl https://raw.githubusercontent.com/susam/todo/master/todo > todo
-        curl https://raw.githubusercontent.com/susam/todo/master/todo.cmd > todo.cmd
 
         curl https://raw.githubusercontent.com/susam/vimer/master/vimer.cmd > vi.cmd
         vi --enable
@@ -109,8 +107,8 @@ Clone 'my' and make my personal scripts in it available as commands.
         mklink /j %homedrive%%homepath%\my X:\my
         mklink /j %homedrive%%homepath%\git X:\git
 
-  3. Append *X:\my\bin* and *X:\my\work\bin* to the system variable
-     named *mypath*.
+  3. Append *X:\my\bin* and *X:\my\ws\bin* to the system variable named
+     *mypath*.
 
 
 Setup Junctions to Home Directory
