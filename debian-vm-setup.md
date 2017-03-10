@@ -139,8 +139,8 @@ Setup Guest Additions
   4. Select *Auto-mount*. Select *Make Permanent*. Click *OK*.
 
 ### Reboot ###
-Reboot the Debian VM, so that the system to ensure that all Guest Additions
-features setup in the previous section are enabled.
+Reboot the Debian VM, so that the system to ensure that all Guest
+Additions features setup in the previous section are enabled.
 
 
 Minimalize VM Window
@@ -175,10 +175,11 @@ Configure Terminal
 Install Packages
 ----------------
   1. Open *Terminal* and log in as root with `su` command.
+
   2. Install packages that may be used.
 
         apt-get update
-        apt-get install tmux vim-gtk git tree gcc-doc
+        apt-get install tmux vim-gtk git tree gcc-doc sudo
 
   3. Configure packages.
 
@@ -187,14 +188,23 @@ Install Packages
         git config --global push.default simple
         git config --global credential.helper 'cache --timeout=86400'
 
+  4. Add desktop user to the sudo group.
+
+        adduser susam sudo
+
+  5. Log out, log in again and enter the following command to confirm
+     that the desktop user belongs to the sudo group.
+
+        groups
+
 
 Enable Hinting
 --------------
 The following steps enable font hinting in XFCE 4.10 on Debian 8.0.
 
   1. Go to Settings > Appearance > Fonts.
-  2. Set 'Hinting' to 'Slight'.
-  3. Set 'Sub-pixel order' to 'RGB'.
+  2. Set *Hinting* to *Slight*.
+  3. Set *Sub-pixel order* to *RGB*.
 
 I found that Hinting = Medium and Hinting = Full behaved identically.
 
@@ -208,8 +218,8 @@ Setup Vimer
         git clone https://github.com/susam/vimer
         ln -sf ~/git/vimer/vimer ~/bin/vi
 
-  2. Run *Thunar*, i.e. *Applications Menu* > *File Manager*. From the menu,
-     go to *Edit* > *Configure custom actions*.
+  2. Run *Thunar*, i.e. *Applications Menu* > *File Manager*. From the
+     menu, go to *Edit* > *Configure custom actions*.
 
   3. Click the plus icon to add a new custom action..
 
