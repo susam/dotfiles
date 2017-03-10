@@ -16,7 +16,7 @@ inconvenient. The following steps resolve the issue.
 
 Fix Window Maximization
 -----------------------
-On my Dell Latitude E7440 laptop, sometimes the windows on the desktop
+On the Dell Latitude E7440 laptop, sometimes the windows on the desktop
 won't occupy the entire available desktop on clicking the maximize
 button. The following steps resolve the issue.
 
@@ -28,9 +28,9 @@ available desktop. Now Pidgin can be started again.
 
 Fix Brightness Adjustment
 -------------------------
-On my Dell Latitude E7440 laptop, sometimes the brightness function keys
-won't work, i.e. when I press `Fn` + `Up`/`Down`, nothing happens. The
-following steps resolve this issue.
+On the Dell Latitude E7440 laptop, sometimes the brightness function
+keys won't work, i.e. when I press `Fn` + `Up`/`Down`, nothing happens.
+The following steps resolve this issue.
 
   1. Run `devicemgmt.msc`.
   2. Go to *Display adapters*.
