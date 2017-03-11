@@ -213,6 +213,7 @@ Install Packages
         git config --global user.email susam@susam.in
         git config --global push.default simple
         git config --global credential.helper 'cache --timeout=86400'
+        git config --global alias.xlog "log --all --graph --decorate"
 
   4. Add desktop user to the sudo group.
 
