@@ -244,6 +244,7 @@ Setup Scripts
         cd ~/git
         git clone https://github.com/susam/vimer
         ln -sf ~/git/vimer/vimer ~/bin/vi
+        ln -sf ~/git/vimer/vimer ~/bin/vi.sh
         git clone https://github.com/susam/timebox
         ln -sf ~/git/timebox/timebox ~/bin/timebox
 
