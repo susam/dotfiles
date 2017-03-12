@@ -205,7 +205,7 @@ Install Packages
   2. Install packages that may be used.
 
         apt-get update
-        apt-get install tmux vim-gtk git tree gcc-doc sudo
+        apt-get install tmux vim-gtk git tree gcc-doc sudo python3
 
   3. Configure packages.
 
