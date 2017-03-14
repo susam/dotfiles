@@ -12,6 +12,8 @@ set showcmd
 set hidden
 set ruler
 
+set modeline
+
 " $VIMRUNTIME/filetype.vim recognizes only README.md as markdown file.
 " All other *.md files are recognized as modula2 files. Recognize *.md
 " files as markdown files instead.
