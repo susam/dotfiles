@@ -1,1 +1,0 @@
-xmodmap -e "keysym Escape = Caps_Lock" -e "add Lock = Caps_Lock"
