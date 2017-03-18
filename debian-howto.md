@@ -90,3 +90,17 @@ data. Follow the steps below to disable these extra checks.
   3. Save the file.
 
 See `man pam_unix` for more details.
+
+
+Mount Phone via MTP
+-------------------
+The following steps work fine with my Moto X Play with Android 6.0.1 on
+Debian 8.7 (Jessie) with Xfce 4.10.
+
+    sudo apt-get install jmtpfs
+    mkdir ~/phone
+    jmtpfs ~/phone
+
+To unmount the phone, enter the following.
+
+    fusermount -u ~/phone
