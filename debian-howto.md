@@ -104,3 +104,49 @@ Debian 8.7 (Jessie) with Xfce 4.10.
 To unmount the phone, enter the following.
 
     fusermount -u ~/phone
+
+
+Install Rclone
+--------------
+Enter the following commands to install Rclone.
+
+    sudo apt-get install unzip
+
+    mkdir -p ~/pkg
+    cd ~/pkg
+
+    url=http://downloads.rclone.org/rclone-v1.36-linux-amd64.zip
+    zip="${url##*/}"
+    dir="${zip%.*}"
+
+    wget "$url"
+    unzip "$zip"
+
+    mkdir -p ~/opt/bin ~/opt/man/man1
+    mv "$dir/rclone" ~/opt/bin
+    mv "$dir/rclone.1" ~/opt/man/man1
+
+After Rclone is installed, enter the following command to configure it.
+
+    rclone config
+
+During the configuration, enter the following when prompted. A brief
+description about each item to be entered is provided below.
+
+  1. `n` - Create new remote
+  2. `gdrive` - Name of new remote
+  3. `drive` - Type of storage: Google Drive
+  4. `<Enter>` - Google Application Client ID is left blank
+  5. `<Enter>` - Google Application Client Secret is left blank
+  6. `y` - Use auto config
+  7. `y` - Confirm token
+  8. `q` - Quit config
+
+Copy data from Google Drive to local filesystem.
+
+    mkdir -p ~/cld
+    cd ~/cld
+    for dir in docs meta pubs tmp
+    do
+        rclone -v copy gdrive:"$dir" "$dir"
+    done

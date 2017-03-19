@@ -280,7 +280,7 @@ Setup home directory
 
   2. Edit *~/.bashrc* and add the following code to it.
 
-        export PATH=~/bin:~/my/bin:~/my/ws/bin:$PATH
+        export PATH=~/bin:~/opt/bin:~/my/bin:~/my/ws/bin:$PATH
         export TERM=xterm-256color
         echo Shell environment is set. >&2
 
