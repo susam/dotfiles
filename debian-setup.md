@@ -148,8 +148,8 @@ Configure sudo
         groups
 
 
-Setup Guest Additions
----------------------
+Set Up Guest Additions
+----------------------
 ### Install Guest Additions ###
   1. Open *Terminal* and log in as root with `su` command.
   2. Install packages required to build VirtualBox Guest Additions
@@ -187,7 +187,7 @@ Setup Guest Additions
 
 ### Reboot ###
 Reboot the Debian VM, so that the system to ensure that all Guest
-Additions features setup in the previous section are enabled.
+Additions features set up in the previous section are enabled.
 
 
 Minimalize VM Window
@@ -258,17 +258,9 @@ The following steps enable font hinting in XFCE 4.10 on Debian 8.0.
 I found that Hinting = Medium and Hinting = Full behaved identically.
 
 
-Setup Scripts
------------
+Set Up Scripts
+--------------
   1. On the Debian VM, enter the following commands.
-
-        mkdir -p ~/git ~/bin
-        cd ~/git
-        git clone https://github.com/susam/vimer
-        ln -sf ~/git/vimer/vimer ~/bin/vi
-        ln -sf ~/git/vimer/vimer ~/bin/vi.sh
-        git clone https://github.com/susam/timebox
-        ln -sf ~/git/timebox/timebox ~/bin/timebox
 
 
 Configure File Manager
@@ -289,29 +281,46 @@ Configure File Manager
   5. Click *OK*. Click *Close*.
 
 
-Setup home directory
---------------------
+Set Up home directory
+---------------------
   1. On the Debian VM, enter the following commands.
 
         mkdir -p ~/git
         cd ~/git
 
-        git clone https://github.com/susam/dotfiles
+        git clone https://github.com/susam/dotfiles.git
         cd dotfiles
         ./setup
 
-  2. Edit *~/.bashrc* and add the following code to it.
+  2. Set up useful scripts.
+
+        mkdir -p ~/git ~/bin
+        cd ~/git
+
+        git clone https://github.com/susam/vimer.git
+        ln -sf ~/git/vimer/vimer ~/bin/vi
+        ln -sf ~/git/vimer/vimer ~/bin/vi.sh
+
+        git clone https://github.com/susam/timebox.git
+        ln -sf ~/git/timebox/timebox ~/bin/timebox
+
+  3. Set up my directory.
+
+        cd
+        git clone https://susam@bitbucket.org/susam/my.git
+
+  4. Edit *~/.bashrc* and add the following code to it.
 
         export PATH=~/bin:~/opt/bin:~/my/bin:~/my/ws/bin:$PATH
         export TERM=xterm-256color
         echo Shell environment is set. >&2
 
-  3. Log out and log into the desktop again to ensure that ~/bin is
-     added to the PATH environment variable.
+  5. Log out and log into the desktop again to ensure that ~/bin and
+     ~/my/bin are added to the PATH environment variable.
 
 
-Setup Internal Network Adapter
-------------------------------
+Set Up Internal Network Adapter
+-------------------------------
   1. In the Debian VM, go to *Applications Menu* > *Log Out* > *Shut
      Down* to shutdown the VM.
   2. In Oracle VM VirtualBox Manager, go to *Machine* > *Settings* >
