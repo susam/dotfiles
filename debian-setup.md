@@ -12,8 +12,8 @@ On Windows, perform the following steps.
 
 On Debian, run the following command.
 
-    apt-get update
-    apt-get install virtualbox
+    sudo apt-get update
+    sudo apt-get install virtualbox
 
 
 Configure VirtualBox
@@ -129,6 +129,25 @@ References:
   - http://httpredir.debian.org/
 
 
+Configure sudo
+--------------
+  1. Open *Terminal* and log in as root with `su` command.
+
+  2. Install sudo
+
+        apt-get update
+        apt-get -y install sudo
+
+  3. Add desktop user to the sudo group.
+
+        adduser susam sudo
+
+  4. Log out, log in again and enter the following command to confirm
+     that the desktop user belongs to the sudo group.
+
+        groups
+
+
 Setup Guest Additions
 ---------------------
 ### Install Guest Additions ###
@@ -136,8 +155,8 @@ Setup Guest Additions
   2. Install packages required to build VirtualBox Guest Additions
      kernel modules.
 
-        apt-get update
-        apt-get install make gcc linux-headers-$(uname -r)
+        sudo apt-get update
+        sudo apt-get install make gcc linux-headers-$(uname -r)
 
   3. In the virtual machine window, go to *Devices* > *Insert Guest
      Additions CD Image*.
@@ -200,14 +219,12 @@ Configure Terminal
 
 Install Packages
 ----------------
-  1. Open *Terminal* and log in as root with `su` command.
-
-  2. Install packages that may be used.
+  1. Install essential packages.
 
         apt-get update
-        apt-get install tmux vim-gtk git tree gcc-doc sudo python3
+        apt-get -y install tmux vim-gtk git
 
-  3. Configure packages.
+  2. Configure git.
 
         git config --global user.name "Susam Pal"
         git config --global user.email susam@susam.in
@@ -215,14 +232,19 @@ Install Packages
         git config --global credential.helper 'cache --timeout=86400'
         git config --global alias.xlog "log --all --graph --decorate"
 
-  4. Add desktop user to the sudo group.
+  3. Install development packages.
 
-        adduser susam sudo
+        sudo apt-get -y install make gcc gcc-doc doxygen
+        sudo apt-get -y g++
+        sudo apt-get -y install python3 python3-pip python3-venv
 
-  5. Log out, log in again and enter the following command to confirm
-     that the desktop user belongs to the sudo group.
+  4. Install useful packages.
 
-        groups
+        sudo apt-get install tree unrar unzip texlive
+
+  5. Install useful tools.
+
+        sudo apt-get install rtorrent gimp libav-tools
 
 
 Enable Hinting
