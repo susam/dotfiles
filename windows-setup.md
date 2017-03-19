@@ -27,9 +27,9 @@ editor.
   7. Click *Next*. Click *Finish*.
 
 
-Setup GVim
-----------
-Setup and configure GVim.
+Set up GVim
+-----------
+Set up and configure GVim.
 
   1. Download *vim##rt.zip* and *gvim##.zip* from
      <http://www.vim.org/download.php#pc>.
@@ -42,9 +42,9 @@ Setup and configure GVim.
   7. Right click *gvim.exe*, select *Pin to Taskbar*.
 
 
-Setup Scripts
--------------
-  1. Enter the following commands to setup the scripts.
+Set up Scripts
+--------------
+  1. Enter the following commands to set up the scripts.
 
         cd X:\opt\bin
         curl https://raw.githubusercontent.com/susam/timeboxing/master/timebox.cmd > timebox.cmd
@@ -57,9 +57,9 @@ Setup Scripts
      *X:\opt\vim\vim##\gvim.exe* as its value.
 
 
-Setup Git
----------
-Setup Git to work with my repositories.
+Set up Git
+----------
+Set up Git to work with my repositories.
 
   1. Download *64-bit Git for Windows Portable* from
      <https://git-scm.com/download/win>.
@@ -76,9 +76,9 @@ Setup Git to work with my repositories.
         git config --global alias.xlog "log --all --graph --decorate"
 
 
-Setup dotfiles
---------------
-Setup dotfiles, so that the Vim configuration is setup.
+Set up dotfiles
+---------------
+Set up Vim configuration.
 
   1. Open Command Prompt and change current directory to X:\.
 
@@ -95,8 +95,8 @@ Setup dotfiles, so that the Vim configuration is setup.
 At this point, GVim is ready to be used.
 
 
-Setup 'my' Directory
---------------------
+Set up 'my' Directory
+---------------------
 Clone 'my' and make my personal scripts in it available as commands.
 
   1. Execute this command.
@@ -112,8 +112,8 @@ Clone 'my' and make my personal scripts in it available as commands.
      *mypath*.
 
 
-Setup Junctions to Home Directory
----------------------------------
+Set up Junctions to Home Directory
+----------------------------------
 Create a directory called *susam* directly under the root directory of
 every drive to make it convenient to reach the home directory from any
 location.
@@ -123,8 +123,8 @@ location.
         mklink /j X:\susam %homedrive%%homepath%
 
 
-Setup Cygwin
-------------
+Set up Cygwin
+-------------
 Install Cygwin to get a Unix like environment for command prompt.
 
   1. Download *setup-x86_64.exe* from <https://www.cygwin.com/>.
@@ -171,9 +171,9 @@ Install Cygwin to get a Unix like environment for command prompt.
       This improved the start time of `sh` to about 0.2 seconds again.
 
 
-Setup Console
--------------
-Setup and configure Console.
+Set up Console
+--------------
+Set up and configure Console.
 
 ### Install Console ###
 
@@ -218,9 +218,9 @@ Perform the following steps in the *Console Settings* window. Press
   23. Set *Tabs* > second console > *Startup dir* to *X:\susam*.
 
 
-Setup Python
-------------
-Setup Python 3 because it serves as a nifty calculator, web server, and
+Set up Python
+-------------
+Set up Python 3 because it serves as a nifty calculator, web server, and
 runs the Python scripts that make my life easier.
 
   1. Download Windows x86-64 executable installer of the most recent
@@ -242,8 +242,8 @@ pyw.exe at
 system variable.
 
 
-Setup PuTTY
------------
+Set up PuTTY
+------------
 ### Install PuTTY ###
   1. Download *putty.exe* and *puttygen.exe* from
      <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>.
@@ -280,9 +280,9 @@ Setup PuTTY
      Click *Save*.
 
 
-Setup Ncat
-----------
-Setup NCat to experiment with network connections.
+Set up Ncat
+-----------
+Set up NCat to experiment with network connections.
 
   1. Download zip file for statically compiled portable Ncat from
      <https://nmap.org/ncat/>.
@@ -290,9 +290,9 @@ Setup NCat to experiment with network connections.
   3. Move *ncat.exe* to *X:\opt\bin*.
 
 
-Setup Process Explorer
-----------------------
-Setup Process Explorer because it can be useful to find the process that
+Set up Process Explorer
+-----------------------
+Set up Process Explorer because it can be useful to find the process that
 has kept a file open.
 
   1. Download Process Explorer zip file from
@@ -301,9 +301,9 @@ has kept a file open.
   3. Move *procexp.exe* to *X:\opt\bin*.
 
 
-Setup Glass2k
--------------
-Setup Glass2k to make PuTTY, GVim, etc. windows transparent.
+Set up Glass2k
+--------------
+Set up Glass2k to make PuTTY, GVim, etc. windows transparent.
 
   1. Download Glass2k from <http://chime.tv/products/glass2k.shtml>.
   2. Move the file to *X:\opt\bin*.
@@ -320,15 +320,15 @@ makes the window the most transparent and *Ctrl + Shift + 9* makes it
 the least transparent.  *Ctrl + Shift + 0* makes the window solid.
 
 
-Setup VNC Viewer
-----------------
+Set up VNC Viewer
+-----------------
   1. Download VNC Viewer for Windows EXE 64-bit from
      <https://www.realvnc.com/download/viewer/>.
   2. Rename it to *vnc.exe* and move it to *X:\opt\bin*.
 
 
-Setup VLC
----------
+Set up VLC
+----------
   1. Download Zip package for VLC from
      <http://www.videolan.org/vlc/download-windows.html>.
   2. Unzip the file.
@@ -336,8 +336,8 @@ Setup VLC
   4. Append *X:\opt\vlc-2.#.#* to the system variable named *mypath*.
 
 
-Setup GIMP
-----------
+Set up GIMP
+-----------
   1. Download GIMP installer from <https://www.gimp.org/downloads/>.
   2. Run the installer.
   3. Click *OK*. Click *Customize*. Click *Next*.
@@ -346,8 +346,8 @@ Setup GIMP
   6. Click *Next*. Click *Next*. Click *Install*.
 
 
-Setup FFmpeg
-------------
+Set up FFmpeg
+-------------
   1. Download FFmpeg 64-bit static build from
      <https://www.ffmpeg.org/download.html>. Look for *Windows Packages*
      > *Windows Builds* to get the link to binaries.

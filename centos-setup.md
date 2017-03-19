@@ -87,7 +87,7 @@ Configure the system to automatically activate networking.
 The network should be active as soon as the file is saved.
 
 
-Setup Guest Additions
+Set up Guest Additions
 ----------------------
 ### Install Guest Additions ###
   1. Open *Terminal* and log in as root with `su` command.
@@ -146,7 +146,7 @@ Simplify VM Window
   1. Go to *View* > *Status Bar*. Deselect *Show Status Bar*.
   2. Go to *View* > *Menu Bar*. Deselect *Show Menu Bar*.
   3. Reboot the CentOS system to enable the Guest Additions features
-     setup in the previous section and to confirm that the VM window
+     set up in the previous section and to confirm that the VM window
      remains minimal after a reboot.
 
 
@@ -186,8 +186,8 @@ Configure Terminal
   9. Click *Close*.
 
 
-Setup tmux
-----------
+Set up tmux
+-----------
 Open a shell as root and enter the following commands.
 
     mkdir -p ~/pkg
@@ -211,8 +211,8 @@ Open a shell as root and enter the following commands.
     make install
 
 
-Setup rlwrap
-------------
+Set up rlwrap
+-------------
 Open a shell as root and enter the following commands.
 
     yum -y install readline-devel
@@ -236,15 +236,15 @@ Configure Nautilus
   4. Click *Close*.
 
 
-Setup Packages
+Set up Packages
 ---------------
 Open a shell as root and enter the following commands.
 
     yum install git vim-X11
 
 
-Setup home directory
---------------------
+Set up home directory
+---------------------
   1. On the CentOS VM, enter the following commands.
 
         mkdir -p ~/git
@@ -270,7 +270,7 @@ Setup home directory
 
 Configure Remote Connections
 ----------------------------
-### Setup Internal Network Adapter ###
+### Set up Internal Network Adapter ###
 Enable connectivity among VMs.
 
   1. Shut down the CentOS operating system in the virtual machine.
@@ -292,7 +292,7 @@ Enable connectivity among VMs.
 
      Use a unique IP address for the IPADDR parameter.
 
-### Setup Host-Only Adapter ###
+### Set up Host-Only Adapter ###
 Enable connectivity from the host system to the CentOS VM.
 
   1. Shut down the CentOS operating system in the virtual machine.
@@ -305,7 +305,7 @@ Enable connectivity from the host system to the CentOS VM.
 
 The Host-Only Adapter has never worked for me within VPN.
 
-### Setup Remote Desktop ###
+### Set up Remote Desktop ###
 Enable remote desktop connectivity.
 
   1. Log into the CentOS desktop.

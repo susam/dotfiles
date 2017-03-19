@@ -148,7 +148,7 @@ Configure sudo
         groups
 
 
-Set Up Guest Additions
+Set up Guest Additions
 ----------------------
 ### Install Guest Additions ###
   1. Open *Terminal* and log in as root with `su` command.
@@ -258,7 +258,7 @@ The following steps enable font hinting in XFCE 4.10 on Debian 8.0.
 I found that Hinting = Medium and Hinting = Full behaved identically.
 
 
-Set Up Scripts
+Set up Scripts
 --------------
   1. On the Debian VM, enter the following commands.
 
@@ -281,7 +281,7 @@ Configure File Manager
   5. Click *OK*. Click *Close*.
 
 
-Set Up home directory
+Set up home directory
 ---------------------
   1. On the Debian VM, enter the following commands.
 
@@ -319,7 +319,7 @@ Set Up home directory
      ~/my/bin are added to the PATH environment variable.
 
 
-Set Up Internal Network Adapter
+Set up Internal Network Adapter
 -------------------------------
   1. In the Debian VM, go to *Applications Menu* > *Log Out* > *Shut
      Down* to shutdown the VM.
