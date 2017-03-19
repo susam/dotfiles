@@ -178,3 +178,19 @@ After it is installed, the filesystem gets mounted as a FUSE filesystem.
 
     $ mount | tail -n 1
     /dev/sdd1 on /media/susam/Purple32GB type fuseblk (rw,nosuid,nodev,relatime,user_id=0,group_id=0,default_permissions,allow_other,blksize=4096,uhelper=udisks2)
+
+
+Configure Screensaver and Power Settings
+----------------------------------------
+Disable screensaver.
+
+  1. Go to *Applications Menu* > *Settings* > *Screensaver*.
+  2. Set *Mode* to *Disable Screen Saver*.
+
+Configure power settings.
+
+  1. Go to *Applications Menu* > *Settings* > *Power Manager* > *System*.
+  2. Set *System sleep mode* to *Suspend* for *On battery* and *Plugged in*.
+  3. Set *Put system to sleep when inactive for* - *15 minutes* - *On battery*.
+  4. Set *Put system to sleep when inactive for* - *30 minutes* - *Plugged in*.
+  6. Click *Close*.
