@@ -11,7 +11,7 @@ set hlsearch
 set showcmd
 set hidden
 set ruler
-
+set autochdir
 set modeline
 
 " $VIMRUNTIME/filetype.vim recognizes only README.md as markdown file.
