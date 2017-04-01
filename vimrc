@@ -44,3 +44,13 @@ autocmd BufWinEnter * syntax keyword Todo TODO
 
 " Highlight trailing whitespace as error.
 autocmd BufWinEnter * syntax match Error /\s\+$/
+
+" Open URLs using desktop browser.
+if has("gui_gtk2")
+    if has("gui_running")
+        " Workaround for https://bugzilla.xfce.org/show_bug.cgi?id=12251
+        let g:netrw_browsex_viewer="setsid xdg-open"
+    else
+        let g:netrw_browsex_viewer="xdg-open"
+    endif
+endif
