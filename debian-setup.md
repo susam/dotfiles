@@ -240,7 +240,7 @@ Install Packages
 
   4. Install useful packages.
 
-        sudo apt-get install tree unrar unzip texlive
+        sudo apt-get install tree unrar unzip texlive texlive-latex-extra
 
   5. Install useful tools.
 
