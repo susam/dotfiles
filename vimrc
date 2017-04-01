@@ -38,3 +38,9 @@ endif
 command Wide vertical resize 78
 command Wider vertical resize 86
 command Widest vertical resize 126
+
+" Highlight TODO in any file.
+autocmd BufWinEnter * syntax keyword Todo TODO
+
+" Highlight trailing whitespace as error.
+autocmd BufWinEnter * syntax match Error /\s\+$/
