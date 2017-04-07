@@ -10,17 +10,21 @@ On Windows, perform the following steps.
   5. Deselect all options to create shortcut or register file
      associations. Click *Next*. Click *Yes*. Click *Install*.
 
-On Debian, run the following command.
+On Debian, enter the following command.
 
     sudo apt-get update
     sudo apt-get install virtualbox
+
+On Mac, enter the following command
+
+    brew cask install virtualbox
 
 
 Configure VirtualBox
 --------------------
   1. Run Oracle VM VirtualBox Manager.
   2. Go to *File* > *Preferences* > *General*.
-  3. Set *Default Machine Folder* to *\vbox* or *~/vbox*. Click *OK*.
+  3. Set *Default Machine Folder* to `\vbox` or `~/vbox`. Click *OK*.
 
 
 Create Debian VM
@@ -221,8 +225,8 @@ Install Packages
 ----------------
   1. Install essential packages.
 
-        apt-get update
-        apt-get -y install tmux vim-gtk git
+        sudo apt-get update
+        sudo apt-get -y install tmux vim-gtk git
 
   2. Configure git.
 
@@ -235,16 +239,13 @@ Install Packages
   3. Install development packages.
 
         sudo apt-get -y install make gcc gcc-doc doxygen
-        sudo apt-get -y g++
+        sudo apt-get -y install g++
         sudo apt-get -y install python3 python3-pip python3-venv
 
   4. Install useful packages.
 
-        sudo apt-get install tree unrar unzip texlive texlive-latex-extra
-
-  5. Install useful tools.
-
-        sudo apt-get install rtorrent gimp libav-tools
+        sudo apt-get -y install tree unrar unzip texlive texlive-latex-extra
+        sudo apt-get -y install rtorrent gimp libav-tools
 
 
 Enable Hinting
@@ -256,11 +257,6 @@ The following steps enable font hinting in XFCE 4.10 on Debian 8.0.
   3. Set *Sub-pixel order* to *RGB*.
 
 I found that Hinting = Medium and Hinting = Full behaved identically.
-
-
-Set up Scripts
---------------
-  1. On the Debian VM, enter the following commands.
 
 
 Configure File Manager
