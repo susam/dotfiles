@@ -193,4 +193,4 @@ Configure power settings.
   2. Set *System sleep mode* to *Suspend* for *On battery* and *Plugged in*.
   3. Set *Put system to sleep when inactive for* - *15 minutes* - *On battery*.
   4. Set *Put system to sleep when inactive for* - *30 minutes* - *Plugged in*.
-  6. Click *Close*.
+  5. Click *Close*.
