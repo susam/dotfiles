@@ -1,64 +1,60 @@
 Connect Debian to Wireless Speaker
 ==================================
-
-
-Steps
------
 I use the following steps to connect my Debian 8 system to LG Wireless
 Speaker NP1540W via Bluetooth.
 
-  1. Install packages necessary to establish Bluetooth connectivity to
-     wireless speaker. This command needs to be run as the root user.
+ 1. Install packages necessary to establish Bluetooth connectivity to
+    wireless speaker. This command needs to be run as the root user.
 
         apt-get install bluez pulseaudio pulseaudio-module-bluetooth pavucontrol
 
-     The remaining steps below should be performed as non-root user.
+    The remaining steps below should be performed as non-root user.
 
-  2. Ensure that Bluetooth daemon is running.
+ 2. Ensure that Bluetooth daemon is running.
 
         /etc/init.d/bluetooth status
         ps -ef | grep bluetoothd
 
-  3. Ensure that PulseAudio sound system is running.
+ 3. Ensure that PulseAudio sound system is running.
 
         ps -ef | grep pulseaudio
 
-     I have found that pulseaudio does not start automatically after it
-     is installed. Running one of the commands in the next step starts
-     pulseaudio automatically. Also, it starts automatically after the
-     system is rebooted.
+    I have found that pulseaudio does not start automatically after it
+    is installed. Running one of the commands in the next step starts
+    pulseaudio automatically. Also, it starts automatically after the
+    system is rebooted.
 
-  4. Ensure that PulseAudio sound server has loaded the Bluetooth
-     modules.
+ 4. Ensure that PulseAudio sound server has loaded the Bluetooth
+    modules.
 
         pactl list short modules | grep bluetooth
 
-  5. Ensure that PulseAudio volume controller is able to connect to
-     PulseAudio sound server.
+ 5. Ensure that PulseAudio volume controller is able to connect to
+    PulseAudio sound server.
 
         pavucontrol
 
-  6. Use Bluetooth control tool to connect to wireless speaker.
+ 6. Use Bluetooth control tool to connect to wireless speaker.
 
         bluetoothctl
 
-  7. In the bluetoothctl prompt, enter the following commands one by one
-     in order to connect to wireless speaker.
+ 7. In the bluetoothctl prompt, enter the following commands one by one
+    in order to connect to wireless speaker.
 
         power on
         scan on
         pair <dev>
         connect <dev>
 
-     In the commands above, `<dev>` must be replaced with the actual
-     device address (6 pairs of hexadecimal digits separated by colons)
-     that appears in the output of `scan on`.
+    In the commands above, `<dev>` must be replaced with the actual
+    device address (6 pairs of hexadecimal digits separated by colons)
+    that appears in the output of `scan on`.
 
-  8. Finally, launch PulseAudio volume controller (`pavucontrol`) again,
-     go to 'Playback' tab, find the required application with audio
-     stream and set the wireless speaker as its output device using the
-     drop-down menu next to it. For LG Wireless Speaker NP1540W, the
-     output device name was displayed as "LG BT Box( 2A:7C )"
+ 8. Finally, launch PulseAudio volume controller (`pavucontrol`) again,
+    go to 'Playback' tab, find the required application with audio
+    stream and set the wireless speaker as its output device using the
+    drop-down menu next to it. For LG Wireless Speaker NP1540W, the
+    output device name was displayed as "LG BT Box( 2A:7C )"
 
 
 Reference Outputs

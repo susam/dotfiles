@@ -50,11 +50,11 @@ Enable Touchpad Tap in Xfce
 ---------------------------
 The following steps enable touchpad tap in Xfce 4.10 on Debian 8.0.
 
-  1. Go to *Settings* > *Mouse and Touchpad* > *Devices*.
-  2. From the *Device* menu, select the touchpad.
-  2. In the *Touchpad* tab, select *Tap touchpad to click*.
-  3. Ensure *Edge scrolling* is selected (this is the default).
-  4. Select *Enable horizontal scrolling*.
+ 1. Go to *Settings* > *Mouse and Touchpad* > *Devices*.
+ 2. From the *Device* menu, select the touchpad.
+ 2. In the *Touchpad* tab, select *Tap touchpad to click*.
+ 3. Ensure *Edge scrolling* is selected (this is the default).
+ 4. Select *Enable horizontal scrolling*.
 
 
 Use Google Public DNS
@@ -62,11 +62,11 @@ Use Google Public DNS
 The following steps configures DHCP client on Debian 8.0 to use Google
 Public DNS.
 
-  1. Append the following line to /etc/dhcp/dhclient.conf.
+ 1. Append the following line to /etc/dhcp/dhclient.conf.
 
         supersede domain-name-servers 8.8.8.8;
 
-  2. Then restart network-manager.
+ 2. Then restart network-manager.
 
         service network-manager restart
 
@@ -77,17 +77,17 @@ The extra checks on password strength offered by `pam_unix` is
 cumbersome for private systems that do not contain critical or sensitive
 data. Follow the steps below to disable these extra checks.
 
-  1. Edit /etc/pam.d/common-password.
+ 1. Edit /etc/pam.d/common-password.
 
-  2. Remove the `obsecure` option for `pam_unix.so` module, i.e. modify
+ 2. Remove the `obsecure` option for `pam_unix.so` module, i.e. modify
 
         password    [success=1 default=ignore]  pam_unix.so obscure sha512
 
-     to
+    to
 
         password    [success=1 default=ignore]  pam_unix.so sha512
 
-  3. Save the file.
+ 3. Save the file.
 
 See `man pam_unix` for more details.
 
@@ -133,14 +133,14 @@ After Rclone is installed, enter the following command to configure it.
 During the configuration, enter the following when prompted. A brief
 description about each item to be entered is provided below.
 
-  1. `n` - Create new remote
-  2. `gdrive` - Name of new remote
-  3. `drive` - Type of storage: Google Drive
-  4. `<Enter>` - Google Application Client ID is left blank
-  5. `<Enter>` - Google Application Client Secret is left blank
-  6. `y` - Use auto config
-  7. `y` - Confirm token
-  8. `q` - Quit config
+ 1. `n` - Create new remote
+ 2. `gdrive` - Name of new remote
+ 3. `drive` - Type of storage: Google Drive
+ 4. `<Enter>` - Google Application Client ID is left blank
+ 5. `<Enter>` - Google Application Client Secret is left blank
+ 6. `y` - Use auto config
+ 7. `y` - Confirm token
+ 8. `q` - Quit config
 
 Copy data from Google Drive to local filesystem.
 
@@ -184,13 +184,13 @@ Configure Screensaver and Power Settings
 ----------------------------------------
 Disable screensaver.
 
-  1. Go to *Applications Menu* > *Settings* > *Screensaver*.
-  2. Set *Mode* to *Disable Screen Saver*.
+ 1. Go to *Applications Menu* > *Settings* > *Screensaver*.
+ 2. Set *Mode* to *Disable Screen Saver*.
 
 Configure power settings.
 
-  1. Go to *Applications Menu* > *Settings* > *Power Manager* > *System*.
-  2. Set *System sleep mode* to *Suspend* for *On battery* and *Plugged in*.
-  3. Set *Put system to sleep when inactive for* - *15 minutes* - *On battery*.
-  4. Set *Put system to sleep when inactive for* - *30 minutes* - *Plugged in*.
-  5. Click *Close*.
+ 1. Go to *Applications Menu* > *Settings* > *Power Manager* > *System*.
+ 2. Set *System sleep mode* to *Suspend* for *On battery* and *Plugged in*.
+ 3. Set *Put system to sleep when inactive for* - *15 minutes* - *On battery*.
+ 4. Set *Put system to sleep when inactive for* - *30 minutes* - *Plugged in*.
+ 5. Click *Close*.
