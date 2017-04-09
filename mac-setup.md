@@ -41,6 +41,10 @@ Configure Terminal
  9. In the *Text* section, click *Text* colour and select *Magnesium* pencil.
 10. Go to *Shell* tab.
 11. Set *When the shell exits* to *Close if the shell exited cleanly*.
+12. Go to *Keyboard* tab and select *Use Option as Meta key*.
+13. Close *Profiles* dialog box.
+14. From the menu, click *View* > *Hide Tab Bar*.
+15. From the menu, click *View* > *Hide Marks*.
 
 
 Install Packages
@@ -102,8 +106,8 @@ Set Up Home Directory
 
  4. Edit *~/.bashrc* and add the following code to it.
 
-        export PS1-"\w$ "
-        export PATH-~/bin:~/opt/bin:~/my/bin:~/my/ws/bin:$PATH
+        export PS1="\w$ "
+        export PATH=~/bin:~/opt/bin:~/my/bin:~/my/ws/bin:$PATH
         echo Login environment is set. >&2
 
  5. Open a new terminal and ensure ~/my/bin is added to the PATH
