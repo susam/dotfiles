@@ -73,6 +73,7 @@ Install Packages
 
  4. Install useful packages.
 
+        brew install tree
         brew cask install flash-npapi
 
 
