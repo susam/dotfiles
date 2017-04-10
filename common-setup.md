@@ -35,6 +35,16 @@ Configure the extensions.
     executable.
 
 
+Configure Chrome
+----------------
+Install *TheOne* extension to ensure that popups open in new tabs
+instead of new windows.
+
+ 1. Go to <https://chrome.google.com/webstore/category/extensions>.
+ 2. Search `TheOne`.
+ 3. Click *ADD TO CHROME*.
+
+
 Configure Thunderbird
 ---------------------
 Perform the following steps to sort emails in reverse chronological
