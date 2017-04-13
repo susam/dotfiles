@@ -34,17 +34,22 @@ Configure Terminal
  5. Name the new profile `Pro++`.
  6. Select the new profile.
  7. Click *Default*.
- 8. Go to *Text* tab, then in *Font* section, click *Change*.
+ 8. Go to *Text* tab.
+ 9. In *Background* > *Color & Effects* section, click on the color
+    selection box.
+      - Set *Opacity* to `90%`.
+      - Select *Inactive Window*. Set *Opacity* under it to `70%`.
+10. In *Font* section, click *Change*.
       - Set *Family* to *SF Mono*.
       - Set *Size* to *12*.
       - Set *Character Spacing* to *1.004*.
- 9. In the *Text* section, click *Text* colour and select *Magnesium* pencil.
-10. Go to *Shell* tab.
-11. Set *When the shell exits* to *Close if the shell exited cleanly*.
-12. Go to *Keyboard* tab and select *Use Option as Meta key*.
-13. Close *Profiles* dialog box.
-14. From the menu, click *View* > *Hide Tab Bar*.
-15. From the menu, click *View* > *Hide Marks*.
+11. In the *Text* section, click *Text* colour and select *Magnesium* pencil.
+12. Go to *Shell* tab.
+13. Set *When the shell exits* to *Close if the shell exited cleanly*.
+14. Go to *Keyboard* tab and select *Use Option as Meta key*.
+15. Close *Profiles* dialog box.
+16. From the menu, click *View* > *Hide Tab Bar*.
+17. From the menu, click *View* > *Hide Marks*.
 
 
 Install Packages
