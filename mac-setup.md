@@ -25,9 +25,22 @@ Configure Desktop
  2. Select *Show Percentage*.
 
 
+Configure Finder
+----------------
+ 1. Launch *Finder*.
+ 2. Go to *Finder* > *Preferences*.
+ 3. Under *Favorites*, select only the following items.
+      - All My Files
+      - Applications
+      - Desktop
+      - Home directory
+ 4. Under *Shared* and *Devices*, select all items.
+ 5. Under *Tags*, deselect *Recent Tags*.
+
+
 Configure Terminal
 ------------------
- 1. Start *Terminal*.
+ 1. Launch *Terminal*.
  2. Go to *Terminal* > *Preferences*.
  3. Go to *Profiles* tab.
  4. Select *Pro*, click the Action pop-menu, then select *Duplicate Profile*.
@@ -50,6 +63,18 @@ Configure Terminal
 15. Close *Profiles* dialog box.
 16. From the menu, click *View* > *Hide Tab Bar*.
 17. From the menu, click *View* > *Hide Marks*.
+
+
+Configure Dock
+--------------
+ 1. Go to the Apple menu > *System Preferences* > *Dock*.
+ 2. Select *Minimize windows into application icon*.
+ 3. Remove unnecessary applications from the dock and add necessary ones,
+    e.g. Firefox, Chrome, Outlook, Jabber, Slack, Terminal, MacVim,
+    STS, etc.
+ 4. Launch Finder, and drag and drop home directory to Dock.
+ 5. In the Dock, double tap home directory, select *Folder*.
+ 6. In the Dock, double tap home directory, select *Fan*.
 
 
 Install Packages
