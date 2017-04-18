@@ -69,9 +69,10 @@ Configure Dock
 --------------
  1. Go to the Apple menu > *System Preferences* > *Dock*.
  2. Select *Minimize windows into application icon*.
- 3. Remove unnecessary applications from the dock and add necessary ones,
-    e.g. Firefox, Chrome, Outlook, Jabber, Slack, Terminal, MacVim,
-    STS, etc.
+ 3. Keep only necessary applications in *Dock* and remove others:
+    Finder, Launchpad, System Preferences, AnyConnect, Siri, Safari,
+    Firefox, Chrome, Outlook, Jabber, Slack, Stickies, Terminal, MacVim,
+    STS, and VirtualBox.
  4. Launch Finder, and drag and drop home directory to Dock.
  5. In the Dock, double tap home directory, select *Folder*.
  6. In the Dock, double tap home directory, select *Fan*.
