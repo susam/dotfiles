@@ -83,9 +83,10 @@ Install Packages
  1. Go to https://brew.sh/ and follow the instructions there to install
     Homebrew.
 
- 2. Install essential packages.
+ 2. Install useful packages.
 
-        brew install macvim git python3 tmux
+        brew install macvim git python3 tmux tree rclone
+        brew cask install flash-npapi
 
  3. Configure git.
 
@@ -101,11 +102,6 @@ Install Packages
     forks and runs in GUI while an exit status 0 is returned
     immediately which causes `git commit` to fail with
     `Aborting commit due to empty commit message.`
-
- 4. Install useful packages.
-
-        brew install tree
-        brew cask install flash-npapi
 
 
 Set Up Home Directory
