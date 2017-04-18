@@ -75,3 +75,31 @@ Configure Pidgin
  1. Go to *Tools* > *Preferences* > *Logging*.
  2. Set *Log format* to *HTML*.
  3. Check all logging options.
+
+
+Configure rclone
+----------------
+Enter the following command to configure rclone.
+
+    rclone config
+
+During the configuration, enter the following when prompted. A brief
+description about each item to be entered is provided below.
+
+ 1. `n` - Create new remote
+ 2. `gdrive` - Name of new remote
+ 3. `drive` - Type of storage: Google Drive
+ 4. `<Enter>` - Google Application Client ID is left blank
+ 5. `<Enter>` - Google Application Client Secret is left blank
+ 6. `y` - Use auto config
+ 7. `y` - Confirm token
+ 8. `q` - Quit config
+
+Copy data from Google Drive to local filesystem.
+
+    mkdir -p ~/cld
+    cd ~/cld
+    for dir in docs meta pubs tmp
+    do
+        rclone -v copy gdrive:"$dir" "$dir"
+    done
