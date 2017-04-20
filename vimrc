@@ -13,6 +13,7 @@ set hidden
 set ruler
 set autochdir
 set modeline
+set tags=./tags;
 
 " $VIMRUNTIME/filetype.vim recognizes only README.md as markdown file.
 " All other *.md files are recognized as modula2 files. Recognize *.md
