@@ -176,7 +176,7 @@ Set up Guest Additions
     group owner of any shared folder. Open *Terminal* and log in as
     root with `su` command to add the desktop user to this group.
 
-        adduser susam vboxsf
+        sudo adduser susam vboxsf
 
 ### Enable Bidirectional Clipboard and Drag-n-Drop ###
  1. Go to *Machine* > *Settings* > *General* > *Advanced*.
@@ -313,6 +313,22 @@ Set up home directory
 
  5. Log out and log into the desktop again to ensure that ~/bin and
     ~/my/bin are added to the PATH environment variable.
+
+
+Configure Screensaver and Power Settings
+----------------------------------------
+Disable screensaver.
+
+ 1. Go to *Applications Menu* > *Settings* > *Screensaver*.
+ 2. Set *Mode* to *Disable Screen Saver*.
+
+Configure power settings.
+
+ 1. Go to *Applications Menu* > *Settings* > *Power Manager* > *System*.
+ 2. Set *System sleep mode* to *Suspend* for *On battery* and *Plugged in*.
+ 3. Set *Put system to sleep when inactive for* - *15 minutes* - *On battery*.
+ 4. Set *Put system to sleep when inactive for* - *30 minutes* - *Plugged in*.
+ 5. Click *Close*.
 
 
 Set up Internal Network Adapter
