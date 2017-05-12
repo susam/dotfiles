@@ -19,8 +19,7 @@ set tags=./tags;
 " All other *.md files are recognized as modula2 files. Recognize *.md
 " files as markdown files instead.
 autocmd BufNewFile,BufRead *.md set filetype=markdown
-autocmd BufNewFile,BufRead *.go set tabstop=8 noexpandtab
-autocmd BufNewFile,BufRead Makefile set noexpandtab
+autocmd BufNewFile,BufRead *.go,Makefile setlocal tabstop=8 noexpandtab
 
 " Set font according to the computer I am working on
 if has("gui_running")
