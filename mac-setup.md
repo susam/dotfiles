@@ -36,6 +36,7 @@ Configure Finder
       - Home directory
  4. Under *Shared* and *Devices*, select all items.
  5. Under *Tags*, deselect *Recent Tags*.
+ 6. Go to *View* and select *Show Status Bar*.
 
 
 Configure Terminal
