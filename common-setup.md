@@ -11,6 +11,11 @@ Configure Firefox to always start with a blank page.
  1. Go to *Options (about:preferences)* > *General*.
  2. Set *When Firefox starts* to *Show a blank page*.
 
+Configure Firefox to never save logins.
+
+ 1. Go to *Options (about:preferences)* > *Security*.
+ 2. Deselect *Remember logins for sites*.
+
 Add the following useful extensions to Firefox.
 
  1. Add Vimperator from
