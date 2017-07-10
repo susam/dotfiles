@@ -73,7 +73,9 @@ Set up Git to work with my repositories.
         git config --global push.default simple
         git config --global credential.helper wincred
         git config --global core.autocrlf false
-        git config --global alias.xlog "log --all --graph --decorate"
+        git config --global alias.alog "log --all --decorate"
+        git config --global alias.glog "log --graph --decorate"
+        git config --global alias.xlog "log --all --decorate --graph"
 
 
 Set up dotfiles
