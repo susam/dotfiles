@@ -133,7 +133,7 @@ following lines.
 References:
 
   - https://wiki.debian.org/DebianGeoMirror
-  - http://httpredir.debian.org/
+  - https://deb.debian.org/
 
 
 Configure sudo
