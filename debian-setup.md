@@ -126,9 +126,9 @@ Configure APT
 Edit /etc/apt/sources.list, remove all lines from it and add the
 following lines.
 
-    deb http://httpredir.debian.org/debian jessie main contrib non-free
-    deb http://httpredir.debian.org/debian jessie-updates main contrib non-free
-    deb http://security.debian.org/ jessie/updates main contrib non-free
+    deb http://deb.debian.org/debian stable main contrib non-free
+    deb http://deb.debian.org/debian stable-updates main contrib non-free
+    deb http://security.debian.org/ stable/updates main contrib non-free
 
 References:
 
