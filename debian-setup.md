@@ -103,6 +103,9 @@ Make the Caps Lock key behave as Escape key. This makes using Vi editor
 more convenient because one does not have to reach the corner of the
 keyboard while returning to normal mode.
 
+Note: This section is not applicable if Debian is running in a virtual
+machine and Caps Lock is mapped to Escape already in the host system.
+
  1. Go to *Applications Menu* > *Settings* > *Session and Startup* >
     *Application Autostart*.
  2. Click *Add*.
