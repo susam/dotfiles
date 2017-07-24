@@ -338,6 +338,11 @@ Configure power settings.
 
 Set up Internal Network Adapter
 -------------------------------
+This section is applicable only if networking between VMs
+within VirtualBox is required. If the VM is going to function in
+isolation without the need to communicate with other VMs on the same
+VirtualBox, then this section is not applicable.
+
  1. In the Debian VM, go to *Applications Menu* > *Log Out* > *Shut Down*
     to shutdown the VM.
 
