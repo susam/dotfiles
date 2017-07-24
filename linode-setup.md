@@ -12,7 +12,7 @@ Create User
 -----------
 Create user account for services.
 
-    NAME=bar
+    NAME=susam
     adduser "$NAME" --gecos ""
     adduser "$NAME" sudo
 
@@ -32,8 +32,25 @@ Install certbot.
     sudo apt-get install certbot -t jessie-backports
 
 
+Configure Git
+-------------
+Configure Git for current user only if necessary.
+
+    git config --global user.name "Susam Pal"
+    git config --global user.email susam@susam.in
+    git config --global push.default simple
+    git config --global credential.helper 'cache --timeout=900'
+    git config --global alias.alog "log --all --decorate"
+    git config --global alias.glog "log --graph --decorate"
+    git config --global alias.xlog "log --all --decorate --graph"
+
+
 Configure Vim
 -------------
+Set Vim as the default editor. Enter the following command and select `/usr/bin/vim.basic`.
+
+    sudo update-alternatives --config editor
+
 Configure Vim for all users.
 
 ```
