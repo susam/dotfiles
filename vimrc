@@ -17,7 +17,7 @@ set modeline
 " $VIMRUNTIME/filetype.vim recognizes only README.md as markdown file.
 " All other *.md files are recognized as modula2 files. Recognize *.md
 " files as markdown files instead.
-autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufRead *.md,*.txt set filetype=markdown
 autocmd BufNewFile,BufRead *.go,Makefile setlocal tabstop=8 noexpandtab
 
 " Set font according to the computer I am working on
