@@ -13,7 +13,6 @@ set hidden
 set ruler
 set autochdir
 set modeline
-set tags=./tags;
 
 " $VIMRUNTIME/filetype.vim recognizes only README.md as markdown file.
 " All other *.md files are recognized as modula2 files. Recognize *.md
@@ -56,3 +55,14 @@ if has("gui_gtk2")
         let g:netrw_browsex_viewer="xdg-open"
     endif
 endif
+
+" Development settings
+set tags=./tags;
+set cscoperelative
+autocmd BufWinEnter * call LoadCscope()
+function LoadCscope()
+    let db = findfile("cscope.out", ".;") 
+    if !empty(db)
+        execute "cscope add " . db
+    endif
+endfunction
