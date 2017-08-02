@@ -18,25 +18,17 @@ Configure Firefox to never save logins.
 
 Add the following useful extensions to Firefox.
 
- 1. Add Vimperator from
-    <https://addons.mozilla.org/en-US/firefox/addon/vimperator/>.
- 2. Add YouTube Video and Audio Downloader from
-    <https://addons.mozilla.org/En-us/firefox/addon/youtube-video-and-audio-dow/>
-    with Firefox.
+ 1. VimFx: https://addons.mozilla.org/en-US/firefox/addon/vimfx/
+ 2. YouTube Video and Audio Downloader:
+    https://addons.mozilla.org/En-us/firefox/addon/youtube-video-and-audio-dow/
+ 3. uBlock Origin: https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
 
-Configure the extensions.
+Configure YouTube Video and Audio Downloader.
 
- 1. Create a file called *.vimperatorrc* at the home directory with the
-    following content.
-
-        set gui=nonavigation
-
- 2. Go to *Add-ons (about:addons)* > *YouTube Video and Audio Downloader* >
+ 1. Go to *Add-ons (about:addons)* > *YouTube Video and Audio Downloader* >
     *Options*.
-
- 3. Set *Select download folder* to *Downloads*.
-
- 4. Set *FFmpeg(.exe) location* to the location of FFmpeg binary
+ 2. Set *Select download folder* to *Downloads*.
+ 3. Set *FFmpeg(.exe) location* to the location of FFmpeg binary
     executable.
 
 
@@ -45,9 +37,12 @@ Configure Chrome
 Install *TheOne* extension to ensure that popups open in new tabs
 instead of new windows.
 
- 1. Go to <https://chrome.google.com/webstore/category/extensions>.
- 2. Search `TheOne`.
- 3. Click *ADD TO CHROME*.
+Go to <https://chrome.google.com/webstore/category/extensions>, search
+for the following extensions and add them one by one.
+
+ 1. TheOne
+ 2. Vimium
+ 3. uBlock Origin
 
 
 Configure Thunderbird
