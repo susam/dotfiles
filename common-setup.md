@@ -11,6 +11,12 @@ Configure Firefox to always start with a blank page.
  1. Go to *Options (about:preferences)* > *General*.
  2. Set *When Firefox starts* to *Show a blank page*.
 
+Configure Firefox to always open a blank page in new tabs.
+
+ 1. Create a new tab by clicking the plus sign in the tab bar.
+ 2. Click the gear icon in the top-right corner of the new tab.
+ 3. Select *Show blank page*.
+
 Configure Firefox to never save logins.
 
  1. Go to *Options (about:preferences)* > *Security*.
@@ -43,6 +49,7 @@ for the following extensions and add them one by one.
  1. TheOne
  2. Vimium
  3. uBlock Origin
+ 4. Blank New Tab Page
 
 
 Configure Thunderbird
