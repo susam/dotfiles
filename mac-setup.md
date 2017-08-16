@@ -89,7 +89,13 @@ Install Packages
         brew install macvim git python3 tmux tree rclone
         brew cask install flash-npapi
 
- 3. Configure git.
+ 3. Install LaTeX.
+
+        brew cask install basictex
+        sudo tlmgr update --self
+        sudo tlmgr install titlesec marvosym helvetic
+
+ 4. Configure git.
 
         git config --global user.name "Susam Pal"
         git config --global user.email susam@susam.in
@@ -105,6 +111,16 @@ Install Packages
     forks and runs in GUI while an exit status 0 is returned
     immediately which causes `git commit` to fail with
     `Aborting commit due to empty commit message.`
+
+Note: If the `helvetic` package for LaTeX is missing, errors about
+missing `phvr7t.tfm` appear when a TeX file contains the following code.
+
+    \renewcommand{\familydefault}{\sfdefault}
+
+The fact that the `helvetic` package provided this font is determined
+using this command.
+
+    tlmgr search --file phvr7t.tfm --global
 
 
 Set Up Home Directory

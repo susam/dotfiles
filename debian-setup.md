@@ -249,8 +249,14 @@ Install Packages
 
  4. Install useful packages.
 
-        sudo apt-get -y install tree unrar unzip texlive texlive-latex-extra
+        sudo apt-get -y install tree unrar unzip
+        sudo apt-get -y install texlive texlive-latex-extra
         sudo apt-get -y install rtorrent gimp libav-tools
+
+Note: Installation of `texlive-latex-extra` is required to install the
+`titlesec` package for LaTeX that I often rely on. I also rely on the
+`marvosym` package but that is already available via
+`texlive-fonts-recommended` which `texlive` depends on.
 
 
 Enable Hinting
