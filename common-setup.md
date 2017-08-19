@@ -17,6 +17,13 @@ Configure Firefox to always open a blank page in new tabs.
  2. Click the gear icon in the top-right corner of the new tab.
  3. Select *Show blank page*.
 
+Remove unnecessary items from Firefox Toolbar. Right click on each of
+the icons mentioned below and select *Remove from Toolbar*.
+
+ 1. Search
+ 2. Home (Mozilla Firefox Start Page)
+ 3. Pocket (Save to Pocket)
+
 Configure Firefox to never save logins.
 
  1. Go to *Options (about:preferences)* > *Security*.
