@@ -165,3 +165,9 @@ Enable Sound Icon
 -----------------
  1. Go to the Apple menu > *System Preferences* > *Sound*.
  2. Select *Show volume in menu bar*.
+
+
+Disable Scroll Bar When Not Scrolling
+-------------------------------------
+ 1. Go to the Apple menu > *System Preferences* > *General*.
+ 2. Set *Show scroll bars* to *When scrolling*.
