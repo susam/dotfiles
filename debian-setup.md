@@ -99,12 +99,12 @@ desktop and configure it.
 
 Map Caps Lock to Escape
 -----------------------
+Note: This section is not applicable if Debian is running in a virtual
+machine and Caps Lock is mapped to Escape already in the host system.
+
 Make the Caps Lock key behave as Escape key. This makes using Vi editor
 more convenient because one does not have to reach the corner of the
 keyboard while returning to normal mode.
-
-Note: This section is not applicable if Debian is running in a virtual
-machine and Caps Lock is mapped to Escape already in the host system.
 
  1. Go to *Applications Menu* > *Settings* > *Session and Startup* >
     *Application Autostart*.
@@ -387,3 +387,71 @@ VirtualBox, then this section is not applicable.
     To double-check that the interface is functioning correctly, ping
     another VM that also has an internal network adapter setup from
     this VM, and vice versa.
+
+
+Configure Keyboard for VirtualBox on Mac
+----------------------------------------
+If the VM is running on Mac, then it can become annoying to having to
+switch between *command*, *control* and *option* keys between the Mac
+host and the VM for similar activities.
+
+Perform the following steps to make the VM key bindings for various
+activities same as that of the Mac host key bindings.
+
+### Configure Host Key
+Set *right command* key as the host key.
+
+ 1. On Mac, from the menu, select *VirtualBox* > *Preferences*.
+ 2. Go to *General* > *Input* > *Virtual Machine*.
+ 3. Select *Host Key Combination* and set it to `Right ⌘` by
+    pressing the *right command* key.
+
+This ensures that pressing *left command + c* inside the virtual
+machine does not switch the virtual machine view to scaled mode.
+
+With this configuration, here are a few ways to conveniently return to
+the Mac desktop from the VM running in full-screen mode.
+
+  - Press *right command* followed by *left command + tab* to select an
+    application running on the Mac host.
+  - Press *right command + f* to exit full-screen mode.
+  - Swipe up with three fingers on the trackpad to return to *Mission
+    Control* and select an application running on the Mac host.
+
+### Map Command to Control
+Set the *command* key to behave like *control* key inside the VM. This
+ensures that *command + c* and *command + v* can be used to copy and
+paste, respectively, on both the Mac host and the VM.
+
+ 1. Inside the VM, go to *Applications Menu* > *Settings* >
+    *Session and Startup* > *Application Autostart*.
+ 2. Click *Add*.
+ 3. Enter the following fields.
+      - Name: Command to Control
+      - Description: Map Command to Control 
+      - Command: `setxkbmap -option altwin:ctrl_win`
+ 4. Click *OK*. Click *Close*.
+ 5. Log out and log into the desktop again and test that the mapping is
+    succssful. To test, launch Firefox and press *control + t* followed
+    by *command + t*. Two new tabs should be created.
+
+### Configure Command + Tab to Cycle Windows
+Configure the Debian VM so that *Command + Tab* can be used to cycle
+through windows just like it is used on the Mac host.
+
+ 1. Inside the VM, go to *Applications Menu* > *Settings* >
+    *Window Manager*.
+ 2. Go to *Keyboard* tab.
+ 3. Set the following keyboard shortcuts. To set each shortcut,
+    double-click on it and press the following keyboard shortcut.
+
+      - Cycle windows: Command + Tab
+      - Cycle windows (reverse): Command + Shift + Tab
+
+    Note that the second entry would appear as *Shift + Control + ISO
+    Left Tab* in the *Window Manager*.
+
+ 4. To test the new keyboard shortcuts, launch at least three
+    applications and press *Command + Tab* twice to ensure that the
+    selection moves from left to right. Similarly, press *Command +
+    Shift + Tab* to ensure that the selection moves from right to left.
