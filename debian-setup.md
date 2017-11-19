@@ -80,7 +80,7 @@ desktop and configure it.
       - Select *DateTime* and click *Add*.
       - Click *Close*.
       - Select *Audio Mixer* and place it right under the *Workspace
-        Switche* by moving it using the arrow buttons. Repeat this for
+        Switcher* by moving it using the arrow buttons. Repeat this for
         *Battery Monitor* and *DateTime*.
       - Select *Workspace Switcher* and click the edit button.
         Set *Number of rows* to `2`. Click *Close*.
