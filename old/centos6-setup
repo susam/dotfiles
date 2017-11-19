@@ -15,10 +15,6 @@ On Debian, run the following command.
     apt-get update
     apt-get install virtualbox
 
-On Mac, enter the following command
-
-    brew cask install virtualbox
-
 
 Configure VirtualBox
 --------------------
@@ -29,8 +25,8 @@ Configure VirtualBox
 
 Create CentOS VM
 ----------------
- 1. Download CentOS 7 DVD1 ISO from
-    <https://www.centos.org/download/> and save it to *\pkg* or *~/pkg*.
+ 1. Download CentOS 6 DVD1 ISO from
+    <https://wiki.centos.org/Download> and save it to *\pkg* or *~/pkg*.
  2. Run Oracle VM VirtualBox. Click *New*.
  3. Set *Name and operating system* to CentOS.
       - Name: CentOS
@@ -41,10 +37,11 @@ Create CentOS VM
     Click *Next*.
  5. Select *Fixed size*. Click *Next*.
  6. Set the size of the virtual hard disk if required. Click *Create*.
- 7. Click *Start*.
- 8. A dialog box appears to select a disk to start the new virtual
-    machine. Click the browse icon (a tiny yellow folder with green
-    arrow icon) and select the ISO file downloaded in step 1.
+ 7. After the machine is created, go to *Machine* > *Settings* >
+    *Storage* > *Controller: IDE* > *Empty* > *Optical Drive* >
+    Disc icon > *Choose Virtual Optical Disk File* and select the ISO file.
+    Click *OK*.
+ 8. Click *Start*.
 
 
 Installation Notes
@@ -52,49 +49,39 @@ Installation Notes
 The following notes describe only those dialog boxes or entries that
 require non-default inputs.
 
- 1. CentOS 7: Install CentOS 7
- 2. Select *Date and Time*. Select *India*. Click *Done*.
- 3. Select *Installation Destination*. Click *Done*.
- 4. Select *Kdump*. Deselect *Enable kdump*. Click *Done*.
- 5. Select *Network & Hostname*. Set *Host name* to `centos`. Click *Apply*.
- 6. Then toggle the *Off* button to *On*. Click *Done*.
- 7. Click *Begin Installation*.
- 8. Click *Root Password*. Enter root password. Click *Done*. If there
-    is a warning about password complexity, click *Done* again.
- 9. Click *User Creation*. Enter new user details.
-10. Select *Make this user administrator. Then click *Done*. If
-    there is a warning about password complexity, click *Done* again.
-11. After the installation is complete, click *Reboot*.
+ 1. Disc Found: Click *Skip* to skip the media test.
+ 2. Storage Device Warning: Click *Yes, discard any data*.
+ 3. Hostname: Set a short hostname, e.g. `centos`.
+ 4. Time zone: Asia/Kolkata.
+ 5. Select *Use All Space* and check *Review and modify partitioning layout*.
 
 
-Configure User 
---------------
-This is an optional section. This steps in this section may be performed
-in case the non-root user was not made an administrator during
-installation.
+Map Caps Lock to Escape
+-----------------------
+Mapping Caps Lock key to Escape key on the CentOS VM is necessary only
+if the GNOME desktop is going to be accessed directly using VirtualBox
+window. If the desktop is going to be accessed via VNC, and Caps Lock is
+already mapped to Escape on the host system, then this is not required.
 
-  1. Log into CentOS as root and enter the following command.
-
-        usermod -aG wheel susam
-
-  2. Now exit the shell, and log in again as the non-root user and enter
-     the following command to ensure that user belongs to the `wheel`
-     group.
-
-        groups
+ 1. Go to *System* > *Preferences* > *Startup Applications* >
+    *Startup Programs*.
+ 2. Click *Add* button.
+ 3. Enter the following fields.
+      - Name: Uncap
+      - Command: `setxkbmap -option caps:escape`
+      - Comment: Map Caps Lock key to Escape key
+ 4. Click *Add* button.
+ 5. Log out of the GNOME desktop on the CentOS VM and log in again for
+    the key mapping to take effect.
 
 
 Activate Networking
 -------------------
-This is an optional section. The steps in this section may be performed
-in case networking was not activated during installation.
+Configure the system to automatically activate networking.
 
- 1. Log into CentOS as a regular user and enter the following command.
-
-        sudo vi /etc/sysconfig/network-scripts/ifcfg-enp0s3.
-
- 2. Then set the `ONBOOT` parameter to `YES`.
- 3. Save the file and quit vi.
+ 1. In the CentOS VM, edit /etc/sysconfig/network-scripts/ifcfg-eth0.
+ 2. Set the `ONBOOT` parameter to `YES`.
+ 3. Save the file.
 
 The network should be active as soon as the file is saved.
 
