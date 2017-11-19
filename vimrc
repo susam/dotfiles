@@ -62,8 +62,11 @@ set tags=./tags;
 set cscoperelative
 autocmd BufWinEnter * call LoadCscope()
 function LoadCscope()
-    let db = findfile("cscope.out", ".;") 
+    let db = findfile("cscope.out", ".;")
     if !empty(db)
         execute "cscope add " . db
     endif
 endfunction
+
+" Quick commands
+command Rmts %s/\s\+$//
