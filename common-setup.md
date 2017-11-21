@@ -15,7 +15,7 @@ Configure Firefox to always open a blank page in new tabs.
 
  1. Create a new tab by clicking the plus sign in the tab bar.
  2. Click the gear icon in the top-right corner of the new tab.
- 3. Select *Show blank page*.
+ 3. Deselect all options.
 
 Remove unnecessary items from Firefox Toolbar. Right click on each of
 the icons mentioned below and select *Remove from Toolbar*.
