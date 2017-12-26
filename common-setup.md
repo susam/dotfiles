@@ -3,12 +3,12 @@ Configure Firefox
 Configure Firefox to automatically save files without asking where to
 save files.
 
- 1. Go to *Options (about:preferences)* > *General* > *Downloads*.
+ 1. Go to *Preferences* > *General* > *Downloads*.
  2. Ensure *Save files to* is selected.
 
 Configure Firefox to always start with a blank page.
 
- 1. Go to *Options (about:preferences)* > *General*.
+ 1. Go to *Preferences* > *General*.
  2. Set *When Firefox starts* to *Show a blank page*.
 
 Configure Firefox to always open a blank page in new tabs.
@@ -17,32 +17,17 @@ Configure Firefox to always open a blank page in new tabs.
  2. Click the gear icon in the top-right corner of the new tab.
  3. Deselect all options.
 
-Remove unnecessary items from Firefox Toolbar. Right click on each of
-the icons mentioned below and select *Remove from Toolbar*.
-
- 1. Search
- 2. Home (Mozilla Firefox Start Page)
- 3. Pocket (Save to Pocket)
-
 Configure Firefox to never save logins.
 
- 1. Go to *Options (about:preferences)* > *Security*.
- 2. Deselect *Remember logins for sites*.
+ 1. Go to *Preferences* > *Privacy & Security*.
+ 2. Deselect *Remember logins and passwords for websites*.
 
 Add the following useful extensions to Firefox.
 
- 1. VimFx: https://addons.mozilla.org/en-US/firefox/addon/vimfx/
- 2. YouTube Video and Audio Downloader:
-    https://addons.mozilla.org/En-us/firefox/addon/youtube-video-and-audio-dow/
+ 1. Vimium-FF: https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/
+ 2. YouTube Video and Audio Downloader (WebEx):
+    https://addons.mozilla.org/en-US/firefox/addon/youtube_downloader_webx/
  3. uBlock Origin: https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
-
-Configure YouTube Video and Audio Downloader.
-
- 1. Go to *Add-ons (about:addons)* > *YouTube Video and Audio Downloader* >
-    *Options*.
- 2. Set *Select download folder* to *Downloads*.
- 3. Set *FFmpeg(.exe) location* to the location of FFmpeg binary
-    executable.
 
 
 Configure Chrome
