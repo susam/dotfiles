@@ -27,10 +27,8 @@ Configure Desktop
 
 Configure Finder
 ----------------
- 1. Launch *Finder*.
- 2. Go to *Finder* > *Preferences*.
- 3. In the *Sidebar* tab, under *Favorites*, select only the following
-    items.
+ 1. Go to *Finder* > *Preferences* > *Sidebar*.
+ 2. Under *Favorites*, select only the following items:
       - All My Files
       - Applications
       - Desktop
@@ -38,9 +36,14 @@ Configure Finder
       - Downloads
       - Pictures
       - Home directory
- 4. Under *Shared* and *Devices*, select all items.
- 5. Under *Tags*, deselect *Recent Tags*.
- 6. Go to *View* and select *Show Status Bar*.
+ 3. Under *Shared* and *Devices*, select all items.
+ 4. Under *Tags*, deselect *Recent Tags*.
+ 5. Go to *Finder* > *Preferences* > *Advanced*.
+ 6. Select *Show all filename extensions".
+ 7. From the menu, select *View* > *Show Path Bar*.
+ 8. From the menu, select *View* > *Show Status Bar*.
+ 9. From the menu, select *View* > *Customize Toolbar* and drag the
+    *Path* item into the toolbar next to the *Back/Forward* buttons.
 
 
 Configure Terminal
