@@ -29,10 +29,14 @@ Configure Finder
 ----------------
  1. Launch *Finder*.
  2. Go to *Finder* > *Preferences*.
- 3. Under *Favorites*, select only the following items.
+ 3. In the *Sidebar* tab, under *Favorites*, select only the following
+    items.
       - All My Files
       - Applications
       - Desktop
+      - Documents
+      - Downloads
+      - Pictures
       - Home directory
  4. Under *Shared* and *Devices*, select all items.
  5. Under *Tags*, deselect *Recent Tags*.
