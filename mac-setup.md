@@ -73,14 +73,16 @@ Configure Terminal
 Configure Dock
 --------------
  1. Go to the Apple menu > *System Preferences* > *Dock*.
- 2. Select *Minimize windows into application icon*.
- 3. Keep only necessary applications in *Dock* and remove others:
+ 2. Drag *Size* slider closer to *Small* such that its distance from
+    *Small* is about 1/4th the distance between *Small* and *Large*.
+ 3. Select *Minimize windows into application icon*.
+ 4. Keep only necessary applications in *Dock* and remove others:
     Finder, Launchpad, System Preferences, AnyConnect, Siri, Safari,
     Firefox, Chrome, Outlook, Jabber, Slack, Stickies, Terminal, MacVim,
     STS, and VirtualBox.
- 4. Launch Finder, and drag and drop home directory to Dock.
- 5. In the Dock, double tap home directory, select *Folder*.
- 6. In the Dock, double tap home directory, select *Fan*.
+ 5. Launch Finder, and drag and drop home directory to Dock.
+ 6. In the Dock, double tap home directory, select *Folder*.
+ 7. In the Dock, double tap home directory, select *Fan*.
 
 
 Install Packages
