@@ -83,6 +83,29 @@ Configure Dock
  7. In the Dock, double tap home directory, select *Fan*.
 
 
+Enable Sound Icon
+-----------------
+ 1. Go to the Apple menu > *System Preferences* > *Sound*.
+ 2. Select *Show volume in menu bar*.
+
+
+Disable Scroll Bar When Not Scrolling
+-------------------------------------
+ 1. Go to the Apple menu > *System Preferences* > *General*.
+ 2. Set *Show scroll bars* to *When scrolling*.
+
+### Notes
+By default, the *Show scroll bars* option is set to *Automatically based
+on mouse or trackpad*. This causes a scroll bar to appear in windows
+whenever the mouse is connected. For example, if *Terminal* is resized
+to the full width of the desktop and then the mouse is connected, the
+scroll bar appearing on the right side causes the width of the
+*Terminal* window to reduce a little. Now if the mouse is disconnected,
+the *Terminal* window no longer spans the whole width of the desktop.
+These problems are avoided by changing this setting such that scroll
+bars appear only when scrolling.
+
+
 Configure Computer Name
 -----------------------
  1. Go to the Apple menu > *System Preferences* > *Sharing*.
@@ -203,15 +226,3 @@ Set Up Home Directory
 
  5. Open a new terminal and ensure ~/my/bin is added to the PATH
     environment variable.
-
-
-Enable Sound Icon
------------------
- 1. Go to the Apple menu > *System Preferences* > *Sound*.
- 2. Select *Show volume in menu bar*.
-
-
-Disable Scroll Bar When Not Scrolling
--------------------------------------
- 1. Go to the Apple menu > *System Preferences* > *General*.
- 2. Set *Show scroll bars* to *When scrolling*.
