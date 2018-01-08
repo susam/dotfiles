@@ -29,8 +29,6 @@ Configure Finder
 ----------------
  1. Go to *Finder* > *Preferences* > *Sidebar*.
  2. Under *Favorites*, select only the following items:
-      - All My Files
-      - Applications
       - Desktop
       - Documents
       - Downloads
