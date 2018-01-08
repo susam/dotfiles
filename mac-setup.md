@@ -77,9 +77,7 @@ Configure Dock
     *Small* is about 1/4th the distance between *Small* and *Large*.
  3. Select *Minimize windows into application icon*.
  4. Keep only necessary applications in *Dock* and remove others:
-    Finder, Launchpad, System Preferences, AnyConnect, Siri, Safari,
-    Firefox, Chrome, Outlook, Jabber, Slack, Stickies, Terminal, MacVim,
-    STS, and VirtualBox.
+    Finder, Launchpad, System Preferences, and Terminal.
  5. Launch Finder, and drag and drop home directory to Dock.
  6. In the Dock, double tap home directory, select *Folder*.
  7. In the Dock, double tap home directory, select *Fan*.
