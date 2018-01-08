@@ -37,7 +37,7 @@ Configure Finder
  3. Under *Shared* and *Devices*, select all items.
  4. Under *Tags*, deselect *Recent Tags*.
  5. Go to *Finder* > *Preferences* > *Advanced*.
- 6. Select *Show all filename extensions".
+ 6. Select *Show all filename extensions*.
  7. From the menu, select *View* > *Show Path Bar*.
  8. From the menu, select *View* > *Show Status Bar*.
  9. From the menu, select *View* > *Customize Toolbar* and drag the
@@ -46,29 +46,28 @@ Configure Finder
 
 Configure Terminal
 ------------------
- 1. Launch *Terminal*.
- 2. Go to *Terminal* > *Preferences*.
- 3. Go to *Profiles* tab.
- 4. Select *Pro*, click the Action pop-menu, then select *Duplicate Profile*.
- 5. Name the new profile `Pro++`.
- 6. Select the new profile.
- 7. Click *Default*.
- 8. Go to *Text* tab.
- 9. In *Background* > *Color & Effects* section, click on the color
+ 1. Go to *Terminal* > *Preferences* > *Profiles*.
+ 2. Select *Pro*, click the Action drop-down menu (gear icon), then
+    select *Duplicate Profile*.
+ 3. Name the new profile `Pro++`.
+ 4. Select the new profile.
+ 5. Click *Default*.
+ 6. Go to *Text* tab.
+ 7. In *Background* > *Color & Effects* section, click on the color
     selection box.
       - Set *Opacity* to `90%`.
       - Select *Inactive Window*. Set *Opacity* under it to `70%`.
-10. In *Font* section, click *Change*.
+ 8. In *Font* section, click *Change*.
       - Set *Family* to *SF Mono*.
       - Set *Size* to *12*.
       - Set *Character Spacing* to *1.004*.
-11. In the *Text* section, click *Text* colour and select *Magnesium* pencil.
-12. Go to *Shell* tab.
-13. Set *When the shell exits* to *Close if the shell exited cleanly*.
-14. Go to *Keyboard* tab and select *Use Option as Meta key*.
-15. Close *Profiles* dialog box.
-16. From the menu, click *View* > *Hide Tab Bar*.
-17. From the menu, click *View* > *Hide Marks*.
+ 9. In the *Text* section, click *Text* colour and select *Magnesium* pencil.
+10. Go to *Shell* tab.
+11. Set *When the shell exits* to *Close if the shell exited cleanly*.
+12. Go to *Keyboard* tab and select *Use Option as Meta key*.
+13. Close *Profiles* dialog box.
+14. From the menu, click *View* > *Hide Tab Bar*.
+15. From the menu, click *View* > *Hide Marks*.
 
 
 Configure Dock
