@@ -83,6 +83,46 @@ Configure Dock
  7. In the Dock, double tap home directory, select *Fan*.
 
 
+Configure Computer Name
+-----------------------
+ 1. Go to the Apple menu > *System Preferences* > *Sharing*.
+ 2. Set *Computer Name* to a desired value, say, `mac`. The *Local
+    Hostname* is then automatically derived from the computer name by
+    adding *.local* and replacing spaces with hyphens.
+
+### Notes
+By default, the system names were set as follows:
+
+      - Computer Name: Susam’s MacBook Pro
+      - Local Hostname: Susams-MacBook-Pro.local
+
+These system settings could be confirmed with the following commands:
+
+    $ scutil --get ComputerName
+    Susam’s MacBook Pro
+    $ scutil --get LocalHostName
+    Susams-MacBook-Pro
+    $ scutil --get HostName
+    HostName: not set
+    $ hostname
+    Susams-MacBook-Pro.local
+
+On setting the computer name to `mac`, the local hostname was
+automatically set to `mac.local`. These system settings could be
+confirmed with the following commands:
+
+    $ scutil --get ComputerName
+    mac
+    $ scutil --get LocalHostName
+    mac
+    $ scutil --get HostName
+    HostName: not set
+    $ hostname
+    mac.local
+
+The Bash prompt displays the hostname upto the first dot by default.
+
+
 Install Packages
 ----------------
  1. Go to https://brew.sh/ and follow the instructions there to install
