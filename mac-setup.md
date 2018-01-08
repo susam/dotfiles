@@ -58,7 +58,7 @@ Configure Terminal
       - Set *Opacity* to `90%`.
       - Select *Inactive Window*. Set *Opacity* under it to `70%`.
  8. In *Font* section, click *Change*.
-      - Set *Family* to *SF Mono*.
+      - Set *Family* to *Menlo*.
       - Set *Size* to *12*.
       - Set *Character Spacing* to *1.004*.
  9. In the *Text* section, click *Text* colour and select *Magnesium* pencil.
