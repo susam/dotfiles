@@ -201,7 +201,11 @@ Set Up Home Directory
         cd dotfiles
         ./setup
 
- 2. Set up useful scripts.
+ 2. Edit *~/.bash_profile* and add the following line to it.
+
+        [ -f ~/git/dotfiles/bashrc ] && . ~/git/dotfiles/bashrc
+
+ 3. Set up useful scripts.
 
         mkdir -p ~/git ~/bin
         cd ~/git
@@ -213,16 +217,7 @@ Set Up Home Directory
         git clone https://github.com/susam/timebox.git
         ln -sf ~/git/timebox/timebox ~/bin/timebox
 
- 3. Set up my directory.
+ 4. Set up my directory.
 
         cd
         git clone https://susam@bitbucket.org/susam/my.git
-
- 4. Edit *~/.bashrc* and add the following code to it.
-
-        export PS1="\w$ "
-        export PATH=~/bin:~/opt/bin:~/my/bin:~/my/ws/bin:$PATH
-        echo Login environment is set. >&2
-
- 5. Open a new terminal and ensure ~/my/bin is added to the PATH
-    environment variable.
