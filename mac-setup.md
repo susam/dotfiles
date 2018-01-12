@@ -162,6 +162,10 @@ Install Packages
         sudo tlmgr update --self
         sudo tlmgr install titlesec marvosym helvetic
 
+ 4. Install web browsers.
+
+        brew cask install firefox google-chrome qutebrowser
+
  4. Configure git.
 
         git config --global user.name "Susam Pal"
