@@ -1,26 +1,26 @@
 Configure Firefox
 -----------------
+Configure Firefox to always start with a blank page.
+
+ 1. Go to *Preferences* > *General*.
+ 2. Set *When Firefox starts* to *Show a blank page*.
+
 Configure Firefox to automatically save files without asking where to
 save files.
 
  1. Go to *Preferences* > *General* > *Downloads*.
  2. Ensure *Save files to* is selected.
 
-Configure Firefox to always start with a blank page.
+Configure Firefox to never save logins.
 
- 1. Go to *Preferences* > *General*.
- 2. Set *When Firefox starts* to *Show a blank page*.
+ 1. Go to *Preferences* > *Privacy & Security*.
+ 2. Deselect *Remember logins and passwords for websites*.
 
 Configure Firefox to always open a blank page in new tabs.
 
  1. Create a new tab by clicking the plus sign in the tab bar.
  2. Click the gear icon in the top-right corner of the new tab.
  3. Deselect all options.
-
-Configure Firefox to never save logins.
-
- 1. Go to *Preferences* > *Privacy & Security*.
- 2. Deselect *Remember logins and passwords for websites*.
 
 Add the following useful extensions to Firefox.
 
@@ -38,10 +38,10 @@ instead of new windows.
 Go to <https://chrome.google.com/webstore/category/extensions>, search
 for the following extensions and add them one by one.
 
- 1. TheOne
- 2. Vimium
- 3. uBlock Origin
- 4. Blank New Tab Page
+ 1. One Window: https://chrome.google.com/webstore/detail/one-window/papnlnnbddhckngcblfljaelgceffobn
+ 2. Vimium: https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb
+ 3. uBlock Origin: https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm
+ 4. Blank New Tab Page: https://chrome.google.com/webstore/detail/blank-new-tab-page/jonikckfpolfcdcgdficelkfffkloemh
 
 
 Configure Thunderbird
