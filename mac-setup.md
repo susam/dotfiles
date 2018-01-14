@@ -1,7 +1,9 @@
-Enable Touchpad Tap
--------------------
+Customize Trackpad
+------------------
  1. Go to the Apple menu > *System Preferences* > *Trackpad*.
  2. Select *Tap to click*.
+ 3. Go to the Apple menu > *System Preferences* > *More Gestures*.
+ 4. Select *App Expose*.
 
 
 Map Caps Lock to Escape
