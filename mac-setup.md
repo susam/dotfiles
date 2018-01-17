@@ -71,6 +71,13 @@ Configure Terminal
 14. From the menu, click *View* > *Hide Tab Bar*.
 15. From the menu, click *View* > *Hide Marks*.
 
+Note: If we do not select *Use Option as Meta key*, then many Bash or
+tmux key-bindings using the meta-key do not work. For example, this
+setting is necessary to ensure that `M-f` and `M-b` move the cursor back
+to the previous word and end of the next word, respectively, in Bash.
+Similarly, this setting ensures that `C-b M-1` arranges tmux pane in
+even horizontal manner.
+
 
 Configure Dock
 --------------
