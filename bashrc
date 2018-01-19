@@ -57,8 +57,11 @@ active_prompt()
 PROMPT_MARK="$ "
 
 # Aliases to modify the ending characters of the primary prompt.
-alias beer='PROMPT_MARK=$(printf "\xf0\x9f\x8d\xba  ")'
 alias dollar='PROMPT_MARK="$ "'
+alias beer='PROMPT_MARK=$(printf "\xf0\x9f\x8d\xba  ")'
+
+# Set special mood on Friday.
+[ $(date +"%a") = Fri ] && beer
 
 # Set the primary prompt string.
 PS1='$(active_prompt)'
