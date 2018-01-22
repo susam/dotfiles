@@ -47,18 +47,28 @@ active_prompt()
         unset neat_path 
     fi
 
-    # Dollar prompt
+    # Dollar or beer sign
     tput_color 172 # orange
-    printf '%s' "$PROMPT_MARK"
+    if [ -n "$PROMPT_MARK" ]
+    then
+        printf '%s' "$PROMPT_MARK"
+    elif [ $(date +"%a") = Fri ]
+    then
+        printf '%s' "$beer "
+    elif [ $(date +"%a") = Sat ]
+    then
+        printf '%s' "$beer$beer "
+    else
+        printf '$ '
+    fi
     tput_reset
 }
 
-# By default, the primary prompt ends with dollar.
-PROMPT_MARK="$ "
-
 # Aliases to modify the ending characters of the primary prompt.
+beer=$(printf "\xf0\x9f\x8d\xba")
 alias dollar='PROMPT_MARK="$ "'
-alias beer='PROMPT_MARK=$(printf "\xf0\x9f\x8d\xba  ")'
+alias beer='PROMPT_MARK="$beer "'
+alias beer2='PROMPT_MARK="$beer$beer "'
 
 # Set special mood on Friday.
 [ $(date +"%a") = Fri ] && beer
