@@ -125,9 +125,9 @@ Configure APT
 Edit /etc/apt/sources.list, remove all lines from it and add the
 following lines.
 
-    deb http://deb.debian.org/debian stable main contrib non-free
-    deb http://deb.debian.org/debian stable-updates main contrib non-free
-    deb http://security.debian.org/ stable/updates main contrib non-free
+    deb http://deb.debian.org/debian stretch main contrib non-free
+    deb http://deb.debian.org/debian stretch-updates main contrib non-free
+    deb http://security.debian.org/ stretch/updates main contrib non-free
 
 References:
 
@@ -142,7 +142,7 @@ Configure sudo
  2. Install sudo
 
         apt-get update
-        apt-get -y install sudo
+        apt-get install sudo
 
  3. Add desktop user to the sudo group.
 
@@ -170,7 +170,7 @@ Set up Guest Additions
     to mount the CD image.
  5. Run the following command.
 
-        sh /media/cdrom/autorun.sh
+        sudo sh /media/cdrom/autorun.sh
 
  6. After the installation is complete, on the Debian desktoop, right
     click on VBOXADDITIONS CD, and select *Eject Volume*.
