@@ -75,13 +75,12 @@ desktop and configure it.
     menu. Then go to *Items* tab.
       - Select *Clock* and click the remove button.
       - Click the add button.
-      - Select *Audio Mixer* and click *Add*.
       - Select *Battery Monitor* and click *Add*.
       - Select *DateTime* and click *Add*.
       - Click *Close*.
-      - Select *Audio Mixer* and place it right under the *Workspace
-        Switcher* by moving it using the arrow buttons. Repeat this for
-        *Battery Monitor* and *DateTime*.
+      - Select *Battery Monitor* and place it right under the *Workspace
+        Switcher* by moving it using the arrow buttons.
+      - Repeat the above step for *DateTime*.
       - Select *Workspace Switcher* and click the edit button.
         Set *Number of rows* to `2`. Click *Close*.
       - Select *Datetime* and click the edit button.
