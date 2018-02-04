@@ -277,9 +277,9 @@ Set up home directory
         git config --global user.email susam@susam.in
         git config --global push.default simple
         git config --global credential.helper 'cache --timeout=86400'
-        git config --global alias.alog "log --all --decorate"
-        git config --global alias.glog "log --graph --decorate"
-        git config --global alias.xlog "log --all --decorate --graph"
+        git config --global alias.loga "log --all --decorate"
+        git config --global alias.logg "log --all --graph --decorate"
+        git config --global alias.diffc "diff --cached"
 
 
 Configure Remote Connections
