@@ -70,9 +70,6 @@ alias dollar='PROMPT_MARK="$ "'
 alias beer='PROMPT_MARK="$beer "'
 alias beer2='PROMPT_MARK="$beer$beer "'
 
-# Set special mood on Friday.
-[ $(date +"%a") = Fri ] && beer
-
 # Set the primary prompt string.
 PS1='$(active_prompt)'
 
