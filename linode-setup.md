@@ -32,19 +32,6 @@ Install certbot.
     sudo apt-get install certbot -t jessie-backports
 
 
-Configure Git
--------------
-Configure Git for current user only if necessary.
-
-    git config --global user.name "Susam Pal"
-    git config --global user.email susam@susam.in
-    git config --global push.default simple
-    git config --global credential.helper 'cache --timeout=900'
-    git config --global alias.loga "log --all --decorate"
-    git config --global alias.logg "log --all --graph --decorate"
-    git config --global alias.diffc "diff --cached"
-
-
 Configure Vim
 -------------
 Set Vim as the default editor. Enter the following command and select `/usr/bin/vim.basic`.
@@ -77,6 +64,7 @@ autocmd BufWinEnter * syntax match Error /\s\+$/
 eof
 ```
 
+
 Configure tmux
 --------------
 Configure tmux for all users.
@@ -90,3 +78,9 @@ set -g default-terminal screen-256color
 set -g mode-keys vi
 eof
 ```
+
+
+Next Steps
+----------
+Perform Git configuration steps mentioned at
+[common-setup.md](common-setup.md) for personal account only.

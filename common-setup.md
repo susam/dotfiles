@@ -1,3 +1,42 @@
+Configure Git
+-------------
+Enter the following commands to configure Git on any system.
+
+    git config --global user.name "Susam Pal"
+    git config --global user.email susam@susam.in
+    git config --global push.default simple
+    git config --global credential.helper cache
+
+    FORMAT="%C(auto)%h %C(magenta)%ad %C(cyan)%an%C(auto)%d %s"
+    PRETTY="--pretty=format:'$FORMAT' --date=short"
+    git config --global alias.lga "log --graph --all $PRETTY"
+    git config --global alias.lg "log --graph $PRETTY"
+    git config --global alias.la "log --all $PRETTY"
+    git config --global alias.ll "log $PRETTY"
+    git config --global alias.lf "log --pretty=fuller --stat"
+
+    git config --global alias.diffc "diff --cached"
+    git config --global alias.dc "diff --cached"
+
+    git config --global alias.br "branch -vv"
+    git config --global alias.brr "branch -vva"
+
+Enter the following commands on Windows only.
+
+    git config --global credential.helper wincred
+    git config --global core.autocrlf false
+
+Enter the following commands on Mac only.
+
+    git config --global core.editor "mvim -f"
+
+It is necessary to run MacVim with `-f` option to ensure that it runs in
+foreground which forces `git commit` to wait for it to exit before it
+reads the commit message. Without this option, MacVim forks and runs in
+GUI while an exit status 0 is returned immediately which causes `git
+commit` to fail with `Aborting commit due to empty commit message.`
+
+
 Configure Firefox
 -----------------
 Configure Firefox to always start with a blank page.

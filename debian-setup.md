@@ -230,23 +230,13 @@ Install Packages
         sudo apt-get update
         sudo apt-get -y install tmux vim-gtk git
 
- 2. Configure git.
-
-        git config --global user.name "Susam Pal"
-        git config --global user.email susam@susam.in
-        git config --global push.default simple
-        git config --global credential.helper 'cache --timeout=86400'
-        git config --global alias.loga "log --all --decorate"
-        git config --global alias.logg "log --all --graph --decorate"
-        git config --global alias.diffc "diff --cached"
-
- 3. Install development packages.
+ 2. Install development packages.
 
         sudo apt-get -y install make gcc gcc-doc doxygen
         sudo apt-get -y install g++
         sudo apt-get -y install python3 python3-pip python3-venv
 
- 4. Install useful packages.
+ 3. Install useful packages.
 
         sudo apt-get -y install tree unrar unzip
         sudo apt-get -y install texlive texlive-latex-extra
@@ -454,3 +444,9 @@ through windows just like it is used on the Mac host.
     applications and press *Command + Tab* twice to ensure that the
     selection moves from left to right. Similarly, press *Command +
     Shift + Tab* to ensure that the selection moves from right to left.
+
+
+Next Steps
+----------
+Perform any applicable setups mentioned in
+[common-setup.md](common-setup.md).

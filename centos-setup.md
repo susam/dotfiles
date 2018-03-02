@@ -271,16 +271,6 @@ Set up home directory
         alias vi=gvim
         echo Shell environment is set. >&2
 
- 3. Configure Git.
-
-        git config --global user.name "Susam Pal"
-        git config --global user.email susam@susam.in
-        git config --global push.default simple
-        git config --global credential.helper 'cache --timeout=86400'
-        git config --global alias.loga "log --all --decorate"
-        git config --global alias.logg "log --all --graph --decorate"
-        git config --global alias.diffc "diff --cached"
-
 
 Configure Remote Connections
 ----------------------------
@@ -358,3 +348,9 @@ Enter the following commands to install Adobe Flash Player for Firefox.
 After the installation is complete, restart Firefox and go to
 <https://www.adobe.com/software/flash/about/> to check if Flash Player
 detects version information successfully.
+
+
+Next Steps
+----------
+Perform any applicable setups mentioned in
+[common-setup.md](common-setup.md).

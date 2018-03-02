@@ -66,16 +66,6 @@ Set up Git to work with my repositories.
  2. Run it.
  3. Set *X:opt\git* as the location to install portable Git. Click *OK*.
  4. Append *X:\opt\git\bin* to the system variable named *mypath*.
- 5. Configure Git.
-
-        git config --global user.name "Susam Pal"
-        git config --global user.email susam@susam.in
-        git config --global push.default simple
-        git config --global credential.helper wincred
-        git config --global core.autocrlf false
-        git config --global alias.loga "log --all --decorate"
-        git config --global alias.logg "log --all --graph --decorate"
-        git config --global alias.diffc "diff --cached"
 
 
 Set up dotfiles

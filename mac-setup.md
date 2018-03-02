@@ -175,23 +175,6 @@ Install Packages
 
         brew cask install firefox google-chrome qutebrowser
 
- 4. Configure git.
-
-        git config --global user.name "Susam Pal"
-        git config --global user.email susam@susam.in
-        git config --global push.default simple
-        git config --global core.editor "mvim -f"
-        git config --global alias.logg "log --all --graph"
-        git config --global alias.loga "log --all"
-        git config --global alias.diffc "diff --cached"
-
-    It is necessary to run MacVim with `-f` option to ensure that it
-    runs in foreground which forces `git commit` to wait for it to exit
-    before it reads the commit message. Without this option, MacVim
-    forks and runs in GUI while an exit status 0 is returned
-    immediately which causes `git commit` to fail with
-    `Aborting commit due to empty commit message.`
-
 Note: If the `helvetic` package for LaTeX is missing, errors about
 missing `phvr7t.tfm` appear when a TeX file contains the following code.
 
@@ -234,3 +217,9 @@ Set Up Home Directory
 
         cd
         git clone https://susam@bitbucket.org/susam/my.git
+
+
+Next Steps
+----------
+Perform any applicable setups mentioned in
+[common-setup.md](common-setup.md).
