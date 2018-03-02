@@ -171,9 +171,11 @@ Install Packages
         sudo tlmgr update --self
         sudo tlmgr install titlesec marvosym helvetic
 
- 4. Install web browsers.
+ 4. Install web browsers, graphics software, virtualization software, etc.
 
         brew cask install firefox google-chrome qutebrowser
+        brew cask install xquartz inkscape darktable
+        brew cask install virtualbox docker
 
 Note: If the `helvetic` package for LaTeX is missing, errors about
 missing `phvr7t.tfm` appear when a TeX file contains the following code.
