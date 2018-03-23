@@ -21,6 +21,12 @@ Enter the following commands to configure Git on any system.
     git config --global alias.br "branch -vv"
     git config --global alias.brr "branch -vva"
 
+    git config --global alias.co "checkout"
+    git config --global alias.cob "checkout -b"
+
+    git config --global alias.ca "commit --amend"
+
+
 Enter the following commands on Windows only.
 
     git config --global credential.helper wincred
