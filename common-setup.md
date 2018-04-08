@@ -14,6 +14,7 @@ Enter the following commands to configure Git on any system.
     git config --global alias.la "log --all $PRETTY"
     git config --global alias.ll "log $PRETTY"
     git config --global alias.lf "log --pretty=fuller --stat"
+    git config --global alias.ls "log --graph --all $PRETTY --simplify-by-decoration"
 
     git config --global alias.diffc "diff --cached"
     git config --global alias.dc "diff --cached"
