@@ -51,6 +51,12 @@ autocmd BufWinEnter * syntax keyword Todo TODO
 " Highlight trailing whitespace as error.
 autocmd BufWinEnter * syntax match Error /\s\+$/
 
+" Use tree style display of files in netrw.
+let g:netrw_liststyle = 3
+
+" Remove netrw banner.
+let g:netrw_banner = 0
+
 " Open URLs using desktop browser.
 if has("gui_gtk2")
     if has("gui_running")
