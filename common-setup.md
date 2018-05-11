@@ -46,6 +46,7 @@ commit` to fail with `Aborting commit due to empty commit message.`
 
 Configure Vim Plugins
 ---------------------
+Enter the following commands to set up Vim plugins:
 
     mkdir -p ~/pkg
     cd ~/pkg
@@ -62,6 +63,11 @@ Configure Vim Plugins
     git clone --depth 1 https://github.com/kovisoft/slimv.git ~/.vim/bundle/slimv
 
     vim +"helptags ALL" +q
+
+On Mac, enter the following command to install `ctags` and `gotags` for
+the Tagbar plugin to work:
+
+    brew install ctags gotags
 
 It is necessary to specify the `q` command as a separate argument in
 order to avoid the following error from the `UseVimball` command:
