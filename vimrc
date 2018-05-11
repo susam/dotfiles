@@ -42,6 +42,9 @@ command Wide vertical resize 78
 command Wider vertical resize 86
 command Widest vertical resize 126
 
+" Remove trailing whitespace.
+command Rms %s/\s\+$//
+
 " Highlight TODO in any file.
 autocmd BufWinEnter * syntax keyword Todo TODO
 
