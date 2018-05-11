@@ -67,16 +67,29 @@ if has("gui_gtk2")
     endif
 endif
 
-" Development settings
+" Configure tags and cscope.
 set tags=./tags;
 set cscoperelative
 autocmd BufWinEnter * call LoadCscope()
 function LoadCscope()
     let db = findfile("cscope.out", ".;")
     if !empty(db)
+        " cscope_maps.vim sets cscopeverbose which causes the following
+        " error on every buffer change: E568: duplicate cscope database
+        " not added. Suppress such error by resetting this option.
+        set nocscopeverbose
         execute "cscope add " . db
+        " Set this option again after adding cscope database.
+        set cscopeverbose
     endif
 endfunction
 
-" Quick commands
-command Rmts %s/\s\+$//
+" Load and configure plugins.
+if !empty(findfile("~/git/dotfiles/plugins.vimrc"))
+    source ~/git/dotfiles/plugins.vimrc
+endif
+
+" Load private configuration.
+if !empty(findfile("~/my/bin/my.vimrc"))
+    source ~/my/bin/my.vimrc
+endif
