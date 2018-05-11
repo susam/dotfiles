@@ -44,6 +44,31 @@ GUI while an exit status 0 is returned immediately which causes `git
 commit` to fail with `Aborting commit due to empty commit message.`
 
 
+Configure Vim Plugins
+---------------------
+
+    mkdir -p ~/pkg
+    cd ~/pkg
+
+    wget http://cscope.sourceforge.net/cscope_maps.vim
+    mkdir -p ~/.vim/bundle/cscope_maps/plugin
+    mv cscope_maps.vim ~/.vim/bundle/cscope_maps/plugin
+
+    wget -O tagbar.vmb https://www.vim.org/scripts/download_script.php?src_id=24887
+    vim +"e tagbar.vmb | silent UseVimball ~/.vim/bundle/tagbar" +q
+
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    git clone --depth 1 https://github.com/junegunn/fzf.vim.git ~/.vim/bundle/fzf.vim
+    git clone --depth 1 https://github.com/kovisoft/slimv.git ~/.vim/bundle/slimv
+
+    vim +"helptags ALL" +q
+
+It is necessary to specify the `q` command as a separate argument in
+order to avoid the following error from the `UseVimball` command:
+
+    E172: Only one file name allowed
+
+
 Configure Firefox
 -----------------
 Configure Firefox to always start with a blank page.
