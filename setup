@@ -31,6 +31,7 @@
 # with this name is set up in the home directory.
 DOT_FILES="
 vimrc
+plugins.vimrc
 tmux.conf
 Xresources
 "

@@ -86,7 +86,7 @@ endfunction
 
 " Load and configure plugins.
 if !empty(findfile("~/git/dotfiles/plugins.vimrc"))
-    source ~/git/dotfiles/plugins.vimrc
+    source ~/.plugins.vimrc
 endif
 
 " Load private configuration.
