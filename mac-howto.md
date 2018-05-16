@@ -6,6 +6,8 @@ Change Password
 
 Fix Clipboard Usage in tmux
 ---------------------------
+Note: This issue has been resolved since tmux 2.6.
+
 In macOS Sierra Version 10.12.3, programs running within tmux are unable
 to use the clipboard. Here is the expected behaviour that is seen on
 bare Terminal (without tmux).
