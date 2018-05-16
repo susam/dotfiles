@@ -58,8 +58,6 @@ Enter the following commands to set up Vim plugins:
     wget -O tagbar.vmb https://www.vim.org/scripts/download_script.php?src_id=24887
     vim +"e tagbar.vmb | silent UseVimball ~/.vim/bundle/tagbar" +q
 
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    git clone --depth 1 https://github.com/junegunn/fzf.vim.git ~/.vim/bundle/fzf.vim
     git clone --depth 1 https://github.com/kovisoft/slimv.git ~/.vim/bundle/slimv
 
     vim +"helptags ALL" +q
