@@ -177,6 +177,11 @@ Install Packages
         brew cask install virtualbox docker
         brew cask install darktable android-file-transfer vlc
 
+ 5. Install development tools.
+
+        brew install sbcl clisp
+        brew cask install jxplorer postman wireshark
+
 Note: If the `helvetic` package for LaTeX is missing, errors about
 missing `phvr7t.tfm` appear when a TeX file contains the following code.
 
