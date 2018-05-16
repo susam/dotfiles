@@ -162,7 +162,7 @@ Install Packages
 
  2. Install useful packages.
 
-        brew install macvim git python3 tmux tree rclone ffmpeg
+        brew install macvim git python3 tmux tree rclone ffmpeg weechat
         brew cask install flash-npapi
 
  3. Install LaTeX.
