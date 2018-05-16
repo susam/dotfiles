@@ -174,8 +174,8 @@ Install Packages
  4. Install web browsers, graphics software, virtualization software, etc.
 
         brew cask install firefox google-chrome qutebrowser
-        brew cask install xquartz inkscape darktable
         brew cask install virtualbox docker
+        brew cask install darktable android-file-transfer vlc
 
 Note: If the `helvetic` package for LaTeX is missing, errors about
 missing `phvr7t.tfm` appear when a TeX file contains the following code.
