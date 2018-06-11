@@ -24,12 +24,12 @@ autocmd BufNewFile,BufRead *.md,*.txt set filetype=markdown
 autocmd BufNewFile,BufRead *.go,Makefile setlocal tabstop=8 noexpandtab
 
 " Set font according to the computer I am working on
-if has("gui_running")
-    if has("gui_gtk2")
+if has('gui_running')
+    if has('gui_gtk2')
         set guifont=Monospace\ 10
-    elseif has("gui_macvim")
+    elseif has('gui_macvim')
         set guifont=Menlo:h12
-    elseif has("gui_win32")
+    elseif has('gui_win32')
         set guifont=Consolas:h10
     endif
 endif
@@ -59,8 +59,8 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 
 " Open URLs using desktop browser.
-if has("gui_gtk2")
-    if has("gui_running")
+if has('gui_gtk2')
+    if has('gui_running')
         " Workaround for https://bugzilla.xfce.org/show_bug.cgi?id=12251
         let g:netrw_browsex_viewer="setsid xdg-open"
     else
@@ -72,8 +72,7 @@ endif
 set tags=./tags;
 set cscoperelative
 autocmd BufWinEnter * call LoadCscope()
-function LoadCscope()
-    let db = findfile("cscope.out", ".;")
+    let db = findfile('cscope.out', '.;')
     if !empty(db)
         " cscope_maps.vim sets cscopeverbose which causes the following
         " error on every buffer change: E568: duplicate cscope database
@@ -86,11 +85,11 @@ function LoadCscope()
 endfunction
 
 " Load and configure plugins.
-if !empty(findfile("~/git/dotfiles/plugins.vimrc"))
+if !empty(findfile('~/git/dotfiles/plugins.vimrc'))
     source ~/.plugins.vimrc
 endif
 
 " Load private configuration.
-if !empty(findfile("~/my/bin/my.vimrc"))
+if !empty(findfile('~/my/bin/my.vimrc'))
     source ~/my/bin/my.vimrc
 endif
