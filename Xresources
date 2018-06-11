@@ -1,6 +1,0 @@
-URxvt.background: #000000
-URxvt.foreground: #e0e0e0
-URxvt.scrollBar: false
-URxvt.borderless: true
-URxvt.font: xft:Inconsolata:pixelsize=16:antialias=true:hinting=true:hintstyle=hintslight,xft:Monospace:pixelsize=16:antialias=true:hinting=true:hintstyle=hintslight,xft
-URxvt.letterSpace: -1
