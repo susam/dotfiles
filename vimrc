@@ -8,6 +8,7 @@ set autoindent
 set guioptions=i
 set number
 set hlsearch
+set incsearch
 set showcmd
 set hidden
 set ruler
