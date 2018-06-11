@@ -39,12 +39,12 @@ endif
 " code is written to not exceed 72, 80 or 120 characters per line, then
 " one of the following commands would resize the vertical split window
 " to sufficient number of columns to read such code.
-command Wide vertical resize 78
-command Wider vertical resize 86
-command Widest vertical resize 126
+command! Wide vertical resize 78
+command! Wider vertical resize 86
+command! Widest vertical resize 126
 
 " Remove trailing whitespace.
-command Rms %s/\s\+$//
+command! Rms %s/\s\+$//
 
 " Highlight TODO in any file.
 autocmd BufWinEnter * syntax keyword Todo TODO
@@ -72,6 +72,7 @@ endif
 set tags=./tags;
 set cscoperelative
 autocmd BufWinEnter * call LoadCscope()
+function! LoadCscope()
     let db = findfile('cscope.out', '.;')
     if !empty(db)
         " cscope_maps.vim sets cscopeverbose which causes the following
