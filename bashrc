@@ -73,6 +73,9 @@ alias beer2='PROMPT_MARK="$beer$beer "'
 # Set the primary prompt string.
 PS1='$(active_prompt)'
 
+# Execute node modules.
+alias nx='PATH=$(npm bin):$PATH'
+
 # Set environment.
 PATH=~/bin:$PATH
 [ -f ~/my/bin/env ] && . ~/my/bin/env
