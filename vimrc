@@ -100,3 +100,15 @@ nnoremap ;b :ls<CR>:b<Space>
 nnoremap ;d :bp \| confirm bd #<CR>
 nnoremap ;x :bp \| bd! #<CR>
 nnoremap ;v :e ~/.vimrc<CR>
+
+" Note: In the commands below, bp is used instead of b# to preserve the
+" current window. b# fails with "E86: Buffer 2 does not exist" when
+" alternate-file does not exist, e.g., just after an unnamed buffer is
+" written to a file. This causes :Rm to fail with "E516: No buffers were
+" deleted: bd #".
+
+" :Rm -- Remove current file.
+command! Rm bd # | bd! # | call delete(expand('#'))
+
+" :Mv {file} -- Rename current file.
+command! -nargs=1 Mv saveas <args> | bd! # | call delete(expand('#'))
