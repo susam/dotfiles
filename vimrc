@@ -94,3 +94,9 @@ endif
 if !empty(findfile('~/my/bin/my.vimrc'))
     source ~/my/bin/my.vimrc
 endif
+
+" Key mappings for frequently used commands.
+nnoremap ;b :ls<CR>:b<Space>
+nnoremap ;d :bp \| confirm bd #<CR>
+nnoremap ;x :bp \| bd! #<CR>
+nnoremap ;v :e ~/.vimrc<CR>
