@@ -1,8 +1,6 @@
 " Load plugins.
 set runtimepath^=~/.vim/bundle/cscope_maps
 set runtimepath^=~/.vim/bundle/tagbar
-set runtimepath^=~/.fzf
-set runtimepath^=~/.vim/bundle/fzf.vim
 set runtimepath^=~/.vim/bundle/slimv
 
 " Tagbar configuration to support Go source code.

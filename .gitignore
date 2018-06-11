@@ -1,1 +1,8 @@
+# Ignore Vim Swap files.
 *.sw?
+
+# Ignore throwaway examples.
+foo.*
+bar.*
+baz.*
+qux.*
