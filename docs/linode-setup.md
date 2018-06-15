@@ -4,7 +4,7 @@ Change hostname of the Linode system.
 
     NAME=foo
     echo "$NAME" > /etc/hostname
-    echo 127.0.2.1 "$NAME" >> /etc/hosts
+    echo 127.0.0.1 "$NAME" >> /etc/hosts
     reboot
 
 
