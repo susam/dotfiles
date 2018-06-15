@@ -241,11 +241,23 @@ Install Packages
         sudo apt-get -y install tree unrar unzip
         sudo apt-get -y install texlive texlive-latex-extra
         sudo apt-get -y install rtorrent gimp libav-tools
+        sudo apt-get -y fonts-symbola
 
 Note: Installation of `texlive-latex-extra` is required to install the
 `titlesec` package for LaTeX that I often rely on. I also rely on the
 `marvosym` package but that is already available via
 `texlive-fonts-recommended` which `texlive` depends on.
+
+Note: Installation of `fonts-symbola` is necessary to display emoji
+characters in the terminal correctly. For example, without this package,
+the command
+
+    printf "\xf0\x9f\x8d\xba\n"
+
+outputs a square box with `01F37A` in it, the Unicode code point of BEER
+MUG (`:beer:`). With this package, the character is rendered in the
+terminal as a beer mug, although the quality and details of the font
+leave a lot to be desired.
 
 
 Enable Hinting
