@@ -10,11 +10,10 @@ Change hostname of the Linode system.
 
 Create User
 -----------
-Create user account for services.
+Create an operator account.
 
-    NAME=susam
-    adduser "$NAME" --gecos ""
-    adduser "$NAME" sudo
+    adduser master --gecos ""
+    adduser master sudo
 
 Log in with the new user.
 
