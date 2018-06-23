@@ -108,7 +108,7 @@ nnoremap ;v :e ~/.vimrc<CR>
 " deleted: bd #".
 
 " :Rm -- Remove current file.
-command! Rm bd # | bd! # | call delete(expand('#'))
+command! Rm bp | bd! # | call delete(expand('#'))
 
 " :Mv {file} -- Rename current file.
 command! -nargs=1 Mv saveas <args> | bd! # | call delete(expand('#'))
