@@ -86,7 +86,7 @@ function! LoadCscope()
 endfunction
 
 " Load and configure plugins.
-if !empty(findfile('~/git/dotfiles/plugins.vimrc'))
+if !empty(findfile('~/.plugins.vimrc'))
     source ~/.plugins.vimrc
 endif
 
