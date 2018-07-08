@@ -13,4 +13,7 @@ let g:tagbar_type_go = {'ctagstype': 'go', 'ctagsbin': 'gotags',
               \ 'm:methods', 'r:constructor', 'f:functions' ]}
 
 " Open Tagbar automatically for supported files.
-autocmd BufEnter * call tagbar#autoopen(0)
+" autocmd BufEnter * call tagbar#autoopen(0)
+
+" Open and jump to Tagbar window such that it closes on tag selection.
+nnoremap ,t :TagbarOpenAutoClose<CR>
