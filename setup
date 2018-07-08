@@ -66,8 +66,10 @@ main()
     if [ $undo = no ]
     then
         setup_dot_files
+        setup_git_config
     else
         undo_dot_files
+        undo_git_config
     fi
 }
 
@@ -148,6 +150,20 @@ undo_dot_files()
             printf "Deleted %s\n" "$link"
         fi
     done
+}
+
+
+# Set git configuration.
+setup_git_config()
+{
+    sh -x ./gitconfig.sh
+}
+
+
+# Undo git configuration.
+undo_git_config()
+{
+    awk '/git/ {print $1 " " $2 " " $3 " --unset " $4}' gitconfig.sh | sh -x
 }
 
 
