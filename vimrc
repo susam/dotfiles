@@ -18,6 +18,7 @@ set autochdir
 set nojoinspaces
 set modeline
 set wildmenu
+set listchars=eol:$,tab:>-,nbsp:~,trail:~
 
 " Set font according to the desktop environment.
 if has('gui_running')
@@ -90,6 +91,19 @@ nnoremap ;d :bp \| confirm bd #<CR>
 
 " Edit ~/.vimrc.
 nnoremap ;v :e ~/.vimrc<CR>
+
+" Show very long lines.
+nnoremap ;l :set colorcolumn=72,76,80 \| /^.\{81\}<CR>
+
+" Remove trailing spaces.
+nnoremap ;s :%s/\s\+$//c<CR>
+
+" Show/hide whitespace characters.
+nnoremap ;w :set list!<CR>
+
+" Clear visual artifacts due to other commands.
+nnoremap ;c :set colorcolumn& nohlsearch nolist<CR>
+
 
 " Note: In the commands below, bp is used instead of b# to preserve the
 " current window. b# fails with "E86: Buffer 2 does not exist" when
