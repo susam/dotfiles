@@ -66,9 +66,11 @@ main()
     if [ $undo = no ]
     then
         setup_dot_files
+        setup_bashrc
         setup_git_config
     else
         undo_dot_files
+        undo_bashrc
         undo_git_config
     fi
 }
@@ -130,7 +132,7 @@ setup_dot_files()
             err File "$target" does not exist
         elif ln -s "$target" "$link"
         then
-            printf "Created %s -> %s\n" "$link" "$target"
+            log Created "$link -> $target"
         fi
     done
 }
@@ -147,7 +149,7 @@ undo_dot_files()
             err Link "$link" does not exist
         elif rm "$link"
         then
-            printf "Deleted %s\n" "$link"
+            log Deleted "$link"
         fi
     done
 }
@@ -167,17 +169,72 @@ undo_git_config()
 }
 
 
+# Comment to mark lines inserted by this script.
+SETUP_MARK='# Added by setup script'
+
+
+# Update Bash initialization file to load bashrc.
+setup_bashrc()
+{
+    bashrc="$PWD/bashrc"
+    [ -f ~/.bashrc ] && file=~/.bashrc || file=~/.bash_profile
+
+    cmd="[ -f \"$bashrc\" ] && . \"$bashrc\" $SETUP_MARK"
+
+    if grep -q "$SETUP_MARK" "$file"
+    then
+        err File "$file" is already updated to load bashrc
+    elif echo "$cmd" >> "$file"
+    then
+        log Updated "$file" to load bashrc
+    fi
+    unset bashrc
+    unset file
+    unset cmd
+}
+
+
+# Update Bash initialization file to not load bashrc.
+undo_bashrc()
+{
+    for file in ~/.bashrc ~/.bash_profile
+    do
+        if [ -f "$file" ]
+        then
+            if grep -q "$SETUP_MARK" "$file"
+            then
+                sed "/$SETUP_MARK/d" "$file" > "$file.tmp" &&
+                mv "$file.tmp" "$file" &&
+                log Updated "$file" to not load bashrc
+            else
+                err File "$file" does not load bashrc
+            fi
+        else
+            err File "$file" does not exist
+        fi
+    done
+    unset bashrc
+    unset file
+}
+
+
 # Print error message.
 #
 # Arguments:
 #   string...: String to print to standard error stream.
-#
-# Errors:
-#   Unconditionally causs the script to terminate with an error message
-#   and exit code 1.
 err()
 {
-    printf "%s: %s\n" "$NAME" "$*" >&2
+    log "$NAME: $*"
+}
+
+
+# Print log message.
+#
+# Arguments:
+#   string...: String to print to standard error stream.
+log()
+{
+    printf "%s\n" "$*" >&2
 }
 
 
