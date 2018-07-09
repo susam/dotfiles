@@ -73,6 +73,14 @@ alias beer2='PROMPT_MARK="$beer$beer "'
 # Set the primary prompt string.
 PS1='$(active_prompt)'
 
+# Set my Git user details.
+mygit() {
+    git config user.name "Susam Pal"
+    git config user.email susam@susam.in
+    git config user.name
+    git config user.email
+}
+
 # Execute node modules.
 alias nx='PATH=$(npm bin):$PATH'
 
