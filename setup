@@ -63,15 +63,15 @@ main()
 {
     parse_arguments "$@"
 
-    if [ $undo = no ]
+    if [ $redo = yes ]
     then
-        setup_dot_files
-        setup_bashrc
-        setup_git_config
+        undo
+        setup
+    elif [ $undo = yes ]
+    then
+        undo
     else
-        undo_dot_files
-        undo_bashrc
-        undo_git_config
+        setup
     fi
 }
 
@@ -88,6 +88,7 @@ parse_arguments()
 {
     # Default options.
     undo=no
+    redo=no
 
     # Parse command line options.
     while [ "$#" -gt 0 ]
@@ -95,6 +96,10 @@ parse_arguments()
         case $1 in
             -u | --undo)
                 undo=yes
+                shift
+                ;;
+            -r | --redo)
+                redo=yes
                 shift
                 ;;
             -h | --help)
@@ -106,15 +111,46 @@ parse_arguments()
                 exit
                 ;;
             -?*)
-                quit Unknown option \""$1"\".
+                quit Unknown option \""$1"\"
                 ;;
             *)
-                quit Surplus argument \""$1"\".
+                quit Surplus argument \""$1"\"
                 ;;
         esac
     done
 
-    unset undo
+    [ $undo = yes ] && [ $redo = yes ] &&
+    quit Options "-u/--undo" and "-r/--redo" cannot be specified together
+}
+
+
+# Setup the home directory.
+setup()
+{
+    log Setting up ...
+    setup_dot_files
+    setup_bashrc
+    setup_git_config
+    log
+}
+
+
+# Undo the setup of home directory.
+undo()
+{
+    log Undoing setup ...
+    undo_dot_files
+    undo_bashrc
+    undo_git_config
+    log
+}
+
+
+# Redo the setup of home directory.
+redo()
+{
+    undo
+    setup
 }
 
 
