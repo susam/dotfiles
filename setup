@@ -61,71 +61,29 @@ NAME=${0##*/}
 #   arg...: All arguments this script was invoked with.
 main()
 {
-    parse_arguments "$@"
+    [ $# -gt 1 ] && quit Surplus argument \""$2"\"
+    [ $# -eq 0 ] && arg='<default>' || arg=$1
 
-    if [ $redo = yes ]
-    then
-        undo
-        setup
-    elif [ $undo = yes ]
-    then
-        undo
-    else
-        setup
-    fi
-}
-
-
-# Parse command line arguments passed to this script.
-#
-# Arguments:
-#   arg...: All arguments this script was invoked with.
-#
-# Errors:
-#   If invalid arguments are specified, this function causes the script
-#   to exit with an error.
-parse_arguments()
-{
-    # Default options.
-    undo=no
-    redo=no
-
-    # Parse command line options.
-    while [ "$#" -gt 0 ]
-    do
-        case $1 in
-            -u | --undo)
-                undo=yes
-                shift
-                ;;
-            -r | --redo)
-                redo=yes
-                shift
-                ;;
-            -h | --help)
-                show_help
-                exit
-                ;;
-            -v | --version)
-                show_version
-                exit
-                ;;
-            -?*)
-                quit Unknown option \""$1"\"
-                ;;
-            *)
-                quit Surplus argument \""$1"\"
-                ;;
-        esac
-    done
-
-    [ $undo = yes ] && [ $redo = yes ] &&
-    quit Options "-u/--undo" and "-r/--redo" cannot be specified together
+    case $arg in
+        '<default>')
+            undo_all
+            setup_all
+            ;;
+        rm)
+            undo_all
+            ;;
+        help | -h | --help)
+            show_help
+            ;;
+        *)
+            quit Unknown argument \""$1"\"
+            ;;
+    esac
 }
 
 
 # Setup the home directory.
-setup()
+setup_all()
 {
     log Setting up ...
     setup_dot_files
@@ -136,21 +94,13 @@ setup()
 
 
 # Undo the setup of home directory.
-undo()
+undo_all()
 {
     log Undoing setup ...
     undo_dot_files
     undo_bashrc
     undo_git_config
     log
-}
-
-
-# Redo the setup of home directory.
-redo()
-{
-    undo
-    setup
 }
 
 
@@ -299,14 +249,14 @@ quit()
 show_help()
 {
     printf "%s\n" \
-"Usage: $NAME [-u] [-h] [-v]
+"Usage: $NAME [rm | help]
 
 Set up dot-files in home directory.
 
-Options:
-  -u, --undo     Undo setup.
-  -h, --help     Show this help and exit.
-  -v, --version  Show version and exit.
+Actions:
+  <default>  Reinstall setup.
+  rm         Remove setup.
+  help       Show this help.
 
 Report bugs to <$SUPPORT_URL>."
 }
