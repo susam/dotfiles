@@ -113,6 +113,8 @@ parse_arguments()
                 ;;
         esac
     done
+
+    unset undo
 }
 
 
@@ -135,6 +137,9 @@ setup_dot_files()
             log Created "$link -> $target"
         fi
     done
+
+    unset target
+    unset link
 }
 
 
@@ -152,6 +157,8 @@ undo_dot_files()
             log Deleted "$link"
         fi
     done
+
+    unset link
 }
 
 
@@ -213,7 +220,6 @@ undo_bashrc()
             err File "$file" does not exist
         fi
     done
-    unset bashrc
     unset file
 }
 
