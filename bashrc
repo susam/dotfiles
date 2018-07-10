@@ -74,7 +74,7 @@ alias beer2='PROMPT_MARK="$beer$beer "'
 PS1='$(active_prompt)'
 
 # Set my Git user details.
-mygit() {
+gitme() {
     git config user.name "Susam Pal"
     git config user.email susam@susam.in
     git config user.name
