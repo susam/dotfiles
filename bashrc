@@ -81,6 +81,36 @@ gitme() {
     git config user.email
 }
 
+# Clone GitHub repository.
+ghclone() {
+    cd ~/git
+    pwd
+    if [ $# -eq 1 ]
+    then
+        git clone "https://github.com/susam/$1.git"
+        cd "$1"
+    else
+        git clone "https://github.com/$1/$2.git"
+        cd "$2"
+    fi
+    pwd
+}
+
+# Clone BitBucket repository.
+bbclone() {
+    cd ~/git
+    pwd
+    if [ $# -eq 1 ]
+    then
+        git clone "https://susam@bitbucket.org/susam/$1.git"
+        cd "$1"
+    else
+        git clone "https://susam@bitbucket.org/$1/$2.git"
+        cd "$2"
+    fi
+    pwd
+}
+
 # Execute node modules.
 alias nx='PATH=$(npm bin):$PATH'
 
