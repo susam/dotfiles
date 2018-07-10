@@ -89,9 +89,6 @@ nnoremap ;b :ls<CR>:b<Space>
 " Delete current buffer while preserving the window.
 nnoremap ;d :bp \| confirm bd #<CR>
 
-" Edit ~/.vimrc.
-nnoremap ;v :e ~/.vimrc<CR>
-
 " Show very long lines.
 nnoremap ;l :set colorcolumn=72,76,80 \| /^.\{81\}<CR>
 
@@ -103,6 +100,10 @@ nnoremap ;w :set list!<CR>
 
 " Clear visual artifacts due to other commands.
 nnoremap ;c :set colorcolumn& nohlsearch nolist<CR>
+
+" Edit common files.
+nnoremap ;ev :e ~/.vimrc<CR>
+nnoremap ;ep :e ~/.plugins.vimrc<CR>
 
 
 " Note: In the commands below, bp is used instead of b# to preserve the
