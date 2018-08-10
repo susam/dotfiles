@@ -20,6 +20,8 @@ git config --global alias.diffc "diff --cached"
 
 git config --global alias.br "branch -vv"
 git config --global alias.brr "branch -vva"
+git config --global alias.brd "branch -d"
+git config --global alias.brdf "branch -D"
 
 git config --global alias.co "checkout"
 git config --global alias.cob "checkout -b"
