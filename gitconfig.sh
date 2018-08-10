@@ -1,18 +1,16 @@
 git config --global core.editor vim
 git config --global user.useConfigOnly true
 
-FORMAT="%C(auto)%h %C(magenta)%ad %C(cyan)%an%C(auto)%d %s"
-PRETTY="--pretty=format:'$FORMAT' --date=short"
-git config --global alias.lga "log --graph --all $PRETTY"
-git config --global alias.lg "log --graph $PRETTY"
-git config --global alias.la "log --all $PRETTY"
-git config --global alias.ll "log $PRETTY"
-git config --global alias.lf "log --pretty=fuller --stat"
-git config --global alias.ls "log --graph --all $PRETTY --simplify-by-decoration"
+git config --global pretty.simple "%C(auto)%h %C(magenta)%ad %C(cyan)%an%C(auto)%d %s"
+git config --global pretty.detail "%C(auto)%h %C(magenta)%ad %C(cyan)%an <%ae> / %C(magenta)%cd %C(cyan)%cn <%ce>%C(auto)%d %s"
 
-FORMAT="%C(auto)%h %C(magenta)%ad/%cd %C(cyan)%an/%cn%C(auto)%d %s"
-PRETTY="--pretty=format:'$FORMAT' --date=short"
-git config --global alias.lc "log $PRETTY"
+git config --global alias.lga "log --pretty=simple --date=short --graph --all"
+git config --global alias.lg  "log --pretty=simple --date=short --graph"
+git config --global alias.la  "log --pretty=simple --date=short --all"
+git config --global alias.ll  "log --pretty=simple --date=short --pretty=simple"
+git config --global alias.ld  "log --pretty=detail --date=short"
+git config --global alias.ls  "log --pretty=simple --date=short --graph --all --simplify-by-decoration"
+git config --global alias.lf  "log --pretty=fuller --stat"
 
 git config --global alias.di "diff"
 git config --global alias.dc "diff --cached"
