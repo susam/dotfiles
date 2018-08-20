@@ -1,3 +1,48 @@
+# Set my Git user details.
+gitme() {
+    git config user.name "Susam Pal"
+    git config user.email susam@susam.in
+    git config user.name
+    git config user.email
+}
+
+# Clone GitHub repository.
+ghclone() {
+    cd ~/git
+    pwd
+    if [ $# -eq 1 ]
+    then
+        git clone "https://github.com/susam/$1.git"
+        cd "$1"
+    else
+        git clone "https://github.com/$1/$2.git"
+        cd "$2"
+    fi
+    pwd
+}
+
+# Clone BitBucket repository.
+bbclone() {
+    cd ~/git
+    pwd
+    if [ $# -eq 1 ]
+    then
+        git clone "https://susam@bitbucket.org/susam/$1.git"
+        cd "$1"
+    else
+        git clone "https://susam@bitbucket.org/$1/$2.git"
+        cd "$2"
+    fi
+    pwd
+}
+
+# Execute node modules.
+alias nx='PATH=$(npm bin):$PATH'
+
+# Set environment.
+PATH=~/bin:~/git/dotfiles/bin:$PATH
+[ -f ~/my/bin/env ] && . ~/my/bin/env
+
 # Set terminal color.
 tput_color()
 {
@@ -73,50 +118,6 @@ alias beer2='PROMPT_MARK="$beer$beer "'
 # Set the primary prompt string.
 PS1='$(active_prompt)'
 
-# Set my Git user details.
-gitme() {
-    git config user.name "Susam Pal"
-    git config user.email susam@susam.in
-    git config user.name
-    git config user.email
-}
-
-# Clone GitHub repository.
-ghclone() {
-    cd ~/git
-    pwd
-    if [ $# -eq 1 ]
-    then
-        git clone "https://github.com/susam/$1.git"
-        cd "$1"
-    else
-        git clone "https://github.com/$1/$2.git"
-        cd "$2"
-    fi
-    pwd
-}
-
-# Clone BitBucket repository.
-bbclone() {
-    cd ~/git
-    pwd
-    if [ $# -eq 1 ]
-    then
-        git clone "https://susam@bitbucket.org/susam/$1.git"
-        cd "$1"
-    else
-        git clone "https://susam@bitbucket.org/$1/$2.git"
-        cd "$2"
-    fi
-    pwd
-}
-
-# Execute node modules.
-alias nx='PATH=$(npm bin):$PATH'
-
-# Set environment.
-PATH=~/bin:$PATH
-[ -f ~/my/bin/env ] && . ~/my/bin/env
 echo Interactive environment is set. >&2
 
 # Commands in this if-block is executed for login shells only.
