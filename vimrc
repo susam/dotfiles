@@ -90,13 +90,13 @@ nnoremap ;b :ls<CR>:b<Space>
 nnoremap ;d :bp \| confirm bd #<CR>
 
 " Show very long lines.
-nnoremap ;l :set colorcolumn=72,76,80 \| /^.\{81\}<CR>
+nnoremap ;l :set list colorcolumn=72,76,80 \| /^.\{81\}<CR>
 
 " Remove trailing spaces.
 nnoremap ;s :%s/\s\+$//c<CR>
 
-" Show/hide whitespace characters.
-nnoremap ;w :set list!<CR>
+" Write buffer.
+nnoremap ;w :w<CR>
 
 " Clear visual artifacts due to other commands.
 nnoremap ;c :set colorcolumn& nohlsearch nolist<CR>
