@@ -44,7 +44,7 @@ PATH=~/bin:~/git/dotfiles/bin:$PATH
 [ -f ~/my/bin/env ] && . ~/my/bin/env
 
 # Set terminal color.
-tput_color()
+_tput_color()
 {
     printf '\x01'
     tput setaf "$1"
@@ -52,7 +52,7 @@ tput_color()
 }
 
 # Reset terminal color.
-tput_reset()
+_tput_reset()
 {
     printf '\001'
     tput sgr0
@@ -60,13 +60,13 @@ tput_reset()
 }
 
 # Create dynamic prompt string for PS1.
-active_prompt()
+_active_prompt()
 {
     # Git branch
     git_branch=$(git branch 2> /dev/null | sed -n "s/^\* *//p")
     if [ -n "$git_branch" ]
     then
-        tput_color 148 # yellow
+        _tput_color 148 # yellow
         printf '[%s] ' "$git_branch"
     fi
     unset git_branch
@@ -74,7 +74,7 @@ active_prompt()
     # Docker machine name
     if [ -n "$DOCKER_MACHINE_NAME" ]
     then
-        tput_color 80 # blue
+        _tput_color 80 # blue
         printf '[%s] ' "$DOCKER_MACHINE_NAME"
     fi
 
@@ -87,36 +87,36 @@ active_prompt()
         else
             neat_path=$PWD
         fi
-        tput_color 2 # green
+        _tput_color 2 # green
         printf '%s' "$neat_path"
         unset neat_path 
     fi
 
     # Dollar or beer sign
-    tput_color 172 # orange
-    if [ -n "$PROMPT_MARK" ]
+    _tput_color 172 # orange
+    if [ -n "$_PROMPT_MARK" ]
     then
-        printf '%s' "$PROMPT_MARK"
+        printf '%s' "$_PROMPT_MARK"
     elif [ $(date +"%a") = Fri ]
     then
-        printf '%s' "$beer "
+        printf '%s' "$_beer "
     elif [ $(date +"%a") = Sat ]
     then
-        printf '%s' "$beer$beer "
+        printf '%s' "$_beer$_beer "
     else
         printf '$ '
     fi
-    tput_reset
+    _tput_reset
 }
 
 # Aliases to modify the ending characters of the primary prompt.
-beer=$(printf "\xf0\x9f\x8d\xba")
-alias dollar='PROMPT_MARK="$ "'
-alias beer='PROMPT_MARK="$beer "'
-alias beer2='PROMPT_MARK="$beer$beer "'
+_beer=$(printf "\xf0\x9f\x8d\xba")
+alias dollar='_PROMPT_MARK="$ "'
+alias beer='_PROMPT_MARK="$_beer "'
+alias beer2='_PROMPT_MARK="$_beer$_beer "'
 
 # Set the primary prompt string.
-PS1='$(active_prompt)'
+PS1='$(_active_prompt)'
 
 echo Interactive environment is set. >&2
 
