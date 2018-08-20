@@ -68,7 +68,7 @@ endfunction
 " Autocommands
 " ============
 autocmd BufNewFile,BufRead *.md,*.txt set filetype=markdown
-autocmd BufNewFile,BufRead *.js,*.json set tabstop=2
+autocmd BufNewFile,BufRead *.html,*.css,*.js,*.json set tabstop=2
 autocmd BufNewFile,BufRead *.go,Makefile setlocal tabstop=8 noexpandtab
 
 
