@@ -151,14 +151,32 @@ undo_dot_files()
 # Set git configuration.
 setup_git_config()
 {
-    sh -x ./gitconfig.sh
+    case $(uname) in
+        Linux)
+            sh -x ./gitconfig.sh
+            sh -x ./gitcred.sh
+            ;;
+        *)
+            sh -x ./gitconfig.sh
+            ;;
+    esac
 }
 
 
 # Undo git configuration.
 undo_git_config()
 {
-    awk '/git/ {print $1 " " $2 " " $3 " --unset " $4}' gitconfig.sh | sh -x
+
+    case $(uname) in
+        Linux)
+            cat gitconfig.sh
+            cat gitcred.sh
+            ;;
+        *)
+            sh -x gitconfig.sh
+            ;;
+    esac |
+    awk '/git/ {print $1 " " $2 " " $3 " --unset " $4}' | sh -x
 }
 
 
