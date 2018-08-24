@@ -36,11 +36,39 @@ bbclone() {
     pwd
 }
 
+# Redshift
+red()
+{
+    case $1 in
+        off)
+            pkill redshift
+            ;;
+        [0-9]*)
+            pkill redshift
+            pkill redshift
+            redshift -v -l 0:0 -t $1:$1 > ~/redshift.log 2>&1 &
+            ;;
+        bed)
+            pkill redshift
+            pkill redshift
+            redshift -v -l 13:77 -t 3400:1900 > ~/redshift.log 2>&1 &
+            ;;
+        "")
+            pkill redshift
+            pkill redshift
+            redshift -v -l 13:77 -t 5000:3400 > ~/redshift.log 2>&1 &
+            ;;
+        *)
+            echo 'Usage: red [off | bed | <temperature>]' >&2
+            ;;
+    esac
+}
+
 # Execute node modules.
 alias nx='PATH=$(npm bin):$PATH'
 
 # Set environment.
-PATH=~/bin:~/git/dotfiles/bin:$PATH
+PATH=~/bin:$PATH
 [ -f ~/my/bin/env ] && . ~/my/bin/env
 
 # Set terminal color.
