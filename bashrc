@@ -64,6 +64,12 @@ red()
     esac
 }
 
+# Search texlive for file
+findtl()
+{
+    find /usr/local/texlive -name "*$1*"
+}
+
 # Execute node modules.
 alias nx='PATH=$(npm bin):$PATH'
 
