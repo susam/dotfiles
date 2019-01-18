@@ -26,5 +26,6 @@ git config --global alias.cob 'checkout -b'
 
 git config --global alias.ci 'commit'
 git config --global alias.ca 'commit --amend'
+git config --global alias.car 'commit --amend --reset-author'
 
 git config --global alias.st 'status'
