@@ -158,6 +158,7 @@ setup_git_config()
             ;;
         *)
             sh -x ./gitconfig.sh
+            sh -x ./gitcred.sh
             ;;
     esac
 }
@@ -173,7 +174,8 @@ undo_git_config()
             cat gitcred.sh
             ;;
         *)
-            sh -x gitconfig.sh
+            cat gitconfig.sh
+            cat gitcred.sh
             ;;
     esac |
     awk '/git/ {print $1 " " $2 " " $3 " --unset " $4}' | sh -x
