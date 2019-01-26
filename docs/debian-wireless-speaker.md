@@ -92,7 +92,7 @@ is running fine.
 
     $ pavucontrol
 
-![pavucontrol](https://susam.github.io/blob/img/dotfiles/pavucontrol.png)
+![pavucontrol](https://susam.github.io/blob/dotfiles/docs/pavucontrol.png)
 
 <!-- -->
 
@@ -125,4 +125,4 @@ is running fine.
 
     $ pavucontrol
 
-![pavucontrol-playback](https://susam.github.io/blob/img/dotfiles/pavucontrol-playback.png)
+![pavucontrol-playback](https://susam.github.io/blob/dotfiles/docs/pavucontrol-playback.png)
