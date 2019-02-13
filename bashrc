@@ -1,3 +1,5 @@
+echo Loading shell environment ... >&2
+
 # Set my Git user details.
 gitme() {
     git config user.name "Susam Pal"
@@ -162,3 +164,5 @@ fi
 
 # Attach to an existing tmux or a launch new tmux.
 [ -n "$TMUX" ] || tmux at || tmux
+
+echo Done >&2
