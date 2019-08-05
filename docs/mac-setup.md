@@ -165,11 +165,11 @@ Install Packages
         brew install macvim git python3 tmux tree rclone ffmpeg weechat wget
         brew cask install flash-npapi
 
- 3. Install LaTeX.
+ 3. Install LaTeX and BibLaTeX.
 
         brew cask install basictex
         sudo tlmgr update --self
-        sudo tlmgr install titlesec marvosym helvetic
+        sudo tlmgr install biber biblatex logreq
 
  4. Install web browsers, graphics software, virtualization software, etc.
 
@@ -182,15 +182,21 @@ Install Packages
         brew install sbcl clisp
         brew cask install jxplorer postman wireshark
 
-Note: If the `helvetic` package for LaTeX is missing, errors about
-missing `phvr7t.tfm` appear when a TeX file contains the following code.
+Note: We could have installed `biblatex` and `logreq` packages in a
+usertree as follows:
 
-    \renewcommand{\familydefault}{\sfdefault}
+    TEXMFHOME=texmf tlmgr init-usertree
+    TEXMFHOME=texmf tlmgr --usermode install biblatex logreq
 
-The fact that the `helvetic` package provided this font is determined
-using this command.
+But we cannot do so for the `biber` executable. Attempting to do so
+fails with this error:
 
-    tlmgr search --file phvr7t.tfm --global
+    $ TEXMFHOME=texmf tlmgr --usermode install biber
+    Package biber is not relocatable, cannot install it in user mode!
+
+Since it is necessary to install `biber` to the system level
+directories, we don't bother with installing `biblatex` and `logreq` to
+a usertree and install them to the system level directories as well.
 
 
 Set Up Home Directory
