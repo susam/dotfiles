@@ -7,10 +7,16 @@ set -e -x
 adduser susam --gecos "Susam Pal,,," --disabled-password
 echo "susam:$userpass" | chpasswd
 adduser susam sudo
+echo "susam ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/nopasswd
 
 # Install minimal set of tools.
 apt-get update
 apt-get -y install git make tmux tree
+
+# Set timezone.
+rm -f /etc/localtime
+echo Asia/Kolkata > /etc/timezone
+sudo dpkg-reconfigure -f noninteractive tzdata
 
 # Set hostname.
 echo "$hostname" > /etc/hostname
@@ -19,6 +25,9 @@ echo 127.0.0.1 "$hostname" >> /etc/hosts
 # Configure Git.
 git config --system user.name "Susam Pal"
 git config --system user.email "susam@susam.in"
+
+# Set default editor.
+update-alternatives --set editor /usr/bin/vim.basic
 
 # Configure Vim.
 cat > /etc/vim/vimrc.local <<eof
