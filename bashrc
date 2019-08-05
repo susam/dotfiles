@@ -154,12 +154,18 @@ alias beer2='_PROMPT_MARK="$_beer$_beer "'
 # Set the primary prompt string.
 PS1='$(_active_prompt)'
 
-echo Interactive environment is set. >&2
-
-# Commands in this if-block is executed for login shells only.
+# For login shell only.
 if shopt -q login_shell
 then
-    echo Login environment is set. >&2
+    echo Loading login environment ... >&2
+fi
+
+# For macOS only.
+if uname | grep -q Darwin
+then
+    echo Loading macOS environment ... >&2
+    [ -r "/usr/local/etc/profile.d/bash_completion.sh" ] &&
+       . "/usr/local/etc/profile.d/bash_completion.sh"
 fi
 
 # Attach to an existing tmux or a launch new tmux.
