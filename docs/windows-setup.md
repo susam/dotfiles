@@ -64,7 +64,7 @@ Set up Git to work with my repositories.
  1. Download *64-bit Git for Windows Portable* from
     <https://git-scm.com/download/win>.
  2. Run it.
- 3. Set *X:opt\git* as the location to install portable Git. Click *OK*.
+ 3. Set *X:\opt\git* as the location to install portable Git. Click *OK*.
  4. Append *X:\opt\git\bin* to the system variable named *mypath*.
 
 
