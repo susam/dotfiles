@@ -1,13 +1,16 @@
 Customize Trackpad
 ------------------
+
  1. Go to the Apple menu > *System Preferences* > *Trackpad*.
  2. Select *Tap to click*.
- 3. Go to the Apple menu > *System Preferences* > *More Gestures*.
+ 3. Go to the Apple menu > *System Preferences* > *Trackpad* > *More
+    Gestures*.
  4. Select *App Expose*.
 
 
 Map Caps Lock to Escape
 -----------------------
+
  1. Go to the Apple menu > *System Preferences* > *Keyboard*.
  2. Click *Modifier Keys*.
  3. Set *Caps Lock Key* to *Escape*.
@@ -16,6 +19,7 @@ Map Caps Lock to Escape
 
 Speed Up Key Repeat
 -------------------
+
  1. Go to the Apple menu > *System Preferences* > *Keyboard*.
  2. Drag *Key Repeat* slider to *Fast*.
  3. Drag *Delay Until Repeat* slider to one mark before *Short*.
@@ -23,12 +27,14 @@ Speed Up Key Repeat
 
 Configure Desktop
 -----------------
+
  1. In the status menu, click the battery icon.
  2. Select *Show Percentage*.
 
 
 Configure Finder
 ----------------
+
  1. Go to *Finder* > *Preferences* > *Sidebar*.
  2. Under *Favorites*, select only the following items:
       - Desktop
@@ -48,6 +54,7 @@ Configure Finder
 
 Configure Terminal
 ------------------
+
  1. Go to *Terminal* > *Preferences* > *Profiles*.
  2. Select *Pro*, click the Action drop-down menu (gear icon), then
     select *Duplicate Profile*.
@@ -81,6 +88,7 @@ even horizontal manner.
 
 Configure Dock
 --------------
+
  1. Go to the Apple menu > *System Preferences* > *Dock*.
  2. Drag *Size* slider closer to *Small* such that its distance from
     *Small* is about 1/4th the distance between *Small* and *Large*.
@@ -94,16 +102,19 @@ Configure Dock
 
 Enable Sound Icon
 -----------------
+
  1. Go to the Apple menu > *System Preferences* > *Sound*.
  2. Select *Show volume in menu bar*.
 
 
 Disable Scroll Bar When Not Scrolling
 -------------------------------------
+
  1. Go to the Apple menu > *System Preferences* > *General*.
  2. Set *Show scroll bars* to *When scrolling*.
 
 ### Notes
+
 By default, the *Show scroll bars* option is set to *Automatically based
 on mouse or trackpad*. This causes a scroll bar to appear in windows
 whenever the mouse is connected. For example, if *Terminal* is resized
@@ -117,6 +128,7 @@ bars appear only when scrolling.
 
 Configure Computer Name
 -----------------------
+
  1. Go to the Apple menu > *System Preferences* > *Sharing*.
  2. Set *Computer Name* to a desired value, say, `mac`. The *Local
     Hostname* is then automatically derived from the computer name by
@@ -157,6 +169,7 @@ The Bash prompt displays the hostname upto the first dot by default.
 
 Install Packages
 ----------------
+
  1. Go to https://brew.sh/ and follow the instructions there to install
     Homebrew.
 
@@ -201,6 +214,7 @@ a usertree and install them to the system level directories as well.
 
 Set Up Home Directory
 ---------------------
+
  1. Enter the following commands.
 
         mkdir -p ~/git
@@ -234,5 +248,6 @@ Set Up Home Directory
 
 Next Steps
 ----------
+
 Perform any applicable setups mentioned in
 [common-setup.md](common-setup.md).
