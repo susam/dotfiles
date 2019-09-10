@@ -246,6 +246,16 @@ Set Up Home Directory
         git clone https://susam@bitbucket.org/susam/my.git
 
 
+Configure Touch Bar
+-------------------
+
+ 1. Go to the Apple menu > *System Preferences* > *Keyboard*.
+ 2. Set *Touch Bar shows* to `Expanded Control Strip`.
+ 3. Click *Customize Touch Bar*. Select the Siri icon from Touch Bar,
+    drag it and drop it off near the other icons on the customization
+    pane.
+
+
 Next Steps
 ----------
 
