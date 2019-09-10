@@ -186,7 +186,7 @@ Install Packages
 
  4. Install web browsers, graphics software, virtualization software, etc.
 
-        brew cask install firefox google-chrome qutebrowser
+        brew cask install firefox google-chrome
         brew cask install virtualbox docker
         brew cask install darktable android-file-transfer vlc
 
