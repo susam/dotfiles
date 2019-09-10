@@ -31,8 +31,9 @@ Configure Firefox
 -----------------
 Configure Firefox to always start with a blank page.
 
- 1. Go to *Preferences* > *General*.
- 2. Set *When Firefox starts* to *Show a blank page*.
+ 1. Go to *Preferences* > *Home*.
+ 2. Set *Homepage and new windows* to `Blank Page`.
+ 3. Set *New tabs* to `Blank Page`.
 
 Configure Firefox to automatically save files without asking where to
 save files.
@@ -44,12 +45,6 @@ Configure Firefox to never save logins.
 
  1. Go to *Preferences* > *Privacy & Security*.
  2. Deselect *Remember logins and passwords for websites*.
-
-Configure Firefox to always open a blank page in new tabs.
-
- 1. Create a new tab by clicking the plus sign in the tab bar.
- 2. Click the gear icon in the top-right corner of the new tab.
- 3. Deselect all options.
 
 Add the following useful extensions to Firefox.
 
