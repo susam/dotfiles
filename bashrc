@@ -168,7 +168,10 @@ then
        . "/usr/local/etc/profile.d/bash_completion.sh"
 fi
 
+# Attach to an existing Screen session or launch a new one.
+# [ -n "$STY$TMUX" ] || screen -dRR
+
 # Attach to an existing tmux or a launch new tmux.
-[ -n "$TMUX" ] || tmux at || tmux
+[ -n "$STY$TMUX" ] || tmux at || tmux
 
 echo Done >&2

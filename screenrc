@@ -1,0 +1,6 @@
+escape ^jj
+startup_message off
+caption always '%?%F%{.gk}%:%{.Kw}%?%n%F %t%=%?%P-- COPY --%?'
+hardstatus lastline '%{.kG}%Lw%=%?%E-- CMD --%? %0c %d-%M-%y'
+term screen-256color
+msgwait 1

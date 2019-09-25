@@ -32,6 +32,7 @@
 DOT_FILES="
 vimrc
 plugins.vimrc
+screenrc
 tmux.conf
 "
 
