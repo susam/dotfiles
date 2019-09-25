@@ -1,5 +1,6 @@
 Install VirtualBox
 ------------------
+
 On Windows, perform the following steps.
 
  1. Download VirtualBox for Windows hosts amd64 from
@@ -22,6 +23,7 @@ On Mac, enter the following command
 
 Configure VirtualBox
 --------------------
+
  1. Run Oracle VM VirtualBox Manager.
  2. Go to *File* > *Preferences* > *General*.
  3. Set *Default Machine Folder* to `\vbox` or `~/vbox`. Click *OK*.
@@ -29,6 +31,7 @@ Configure VirtualBox
 
 Create Debian VM
 ----------------
+
  1. Download Debian amd64-xfce-CD-1 from
     <https://www.debian.org/CD/http-ftp/#stable>.
  2. Run Oracle VM VirtualBox. Click *New*.
@@ -50,6 +53,7 @@ Create Debian VM
 
 Installation Notes
 ------------------
+
 The following notes describe only those dialog boxes or entries that
 require non-default inputs.
 
@@ -62,6 +66,7 @@ require non-default inputs.
 
 Configure Desktop
 -----------------
+
 After the installation completes and Debian reboots, log into the
 desktop and configure it.
 
@@ -83,8 +88,8 @@ desktop and configure it.
       - Repeat the above step for *DateTime*.
       - Select *Workspace Switcher* and click the edit button.
         Set *Number of rows* to `2`. Click *Close*.
-      - Select *Datetime* and click the edit button.
-        Set *Format* to *Custom* with the format field as `%b %d`.
+      - Select *Datetime* and click the edit button. Under *Date*,
+        set *Format* to *Custom* with the format field as `%b %d`.
 
  4. Go to *Applications Menu* > *Terminal*. Click *Terminal* and drag
     it to the top panel and drop it right between the
@@ -98,6 +103,7 @@ desktop and configure it.
 
 Map Caps Lock to Escape
 -----------------------
+
 Note: This section is not applicable if Debian is running in a virtual
 machine and Caps Lock is mapped to Escape already in the host system.
 
@@ -122,12 +128,13 @@ Reference: https://github.com/susam/uncap#linux-setxkbmap
 
 Configure APT
 -------------
+
 Edit /etc/apt/sources.list, remove all lines from it and add the
 following lines.
 
-    deb http://deb.debian.org/debian stretch main contrib non-free
-    deb http://deb.debian.org/debian stretch-updates main contrib non-free
-    deb http://security.debian.org/ stretch/updates main contrib non-free
+    deb http://deb.debian.org/debian buster main contrib non-free
+    deb http://deb.debian.org/debian buster-updates main contrib non-free
+    deb http://security.debian.org/ buster/updates main contrib non-free
 
 References:
 
@@ -137,12 +144,17 @@ References:
 
 Configure sudo
 --------------
+
  1. Open *Terminal* and log in as root with `su` command.
 
  2. Install sudo
 
         apt-get update
         apt-get install sudo
+
+    Note: This step does not seem to be required since Debian 10
+    (buster). The `sudo` command is installed by default since this
+    version.
 
  3. Add desktop user to the sudo group.
 
@@ -156,7 +168,9 @@ Configure sudo
 
 Set up Guest Additions
 ----------------------
+
 ### Install Guest Additions ###
+
  1. Open *Terminal* and log in as root with `su` command.
  2. Install packages required to build VirtualBox Guest Additions
     kernel modules.
@@ -180,24 +194,31 @@ Set up Guest Additions
 
         sudo adduser susam vboxsf
 
+
 ### Enable Bidirectional Clipboard and Drag-n-Drop ###
+
  1. Go to *Machine* > *Settings* > *General* > *Advanced*.
  2. Set *Shared Clipboard* to *Bidirectional*.
  3. Set *Drag'n'Drop* to *Bidirectional*.
 
+
 ### Enable shared folders ###
+
  1. Go to *Machine* > *Settings* > *Shared Folders*.
  2. Click the plus icon.
  3. Set *Folder Path* to the path of the *pkg* directory.
  4. Select *Auto-mount*. Select *Make Permanent*. Click *OK*.
 
+
 ### Reboot ###
+
 Reboot the Debian VM, so that the system to ensure that all Guest
 Additions features set up in the previous section are enabled.
 
 
 Minimalize VM Window
 --------------------
+
  1. Go to *View* > *Status Bar*. Deselect *Show Status Bar*.
  2. Go to *View* > *Menu Bar*. Deselect *Show Menu Bar*.
  3. Press Right Ctrl + Home to access the VM menu when required.
@@ -205,6 +226,7 @@ Minimalize VM Window
 
 Configure Terminal
 ------------------
+
  1. Click on the *Terminal* launcher in the top panel.
 
  2. Go to *Edit* > *Preferences*.
@@ -225,6 +247,7 @@ Configure Terminal
 
 Install Packages
 ----------------
+
  1. Install essential packages.
 
         sudo apt-get update
@@ -234,34 +257,30 @@ Install Packages
 
         sudo apt-get -y install make gcc gcc-doc doxygen
         sudo apt-get -y install g++
-        sudo apt-get -y install python3 python3-pip python3-venv
+        sudo apt-get -y install python3-pip python3-venv
 
  3. Install useful packages.
 
         sudo apt-get -y install tree unrar unzip
         sudo apt-get -y install texlive texlive-latex-extra
         sudo apt-get -y install rtorrent gimp libav-tools
-        sudo apt-get -y fonts-symbola
-
-Note: Installation of `texlive-latex-extra` is required to install the
-`titlesec` package for LaTeX that I often rely on. I also rely on the
-`marvosym` package but that is already available via
-`texlive-fonts-recommended` which `texlive` depends on.
+        sudo apt-get -y install fonts-symbola
 
 Note: Installation of `fonts-symbola` is necessary to display emoji
 characters in the terminal correctly. For example, without this package,
 the command
 
-    printf "\xf0\x9f\x8d\xba\n"
+    printf '\xf0\x9f\x8d\xba\n'
 
-outputs a square box with `01F37A` in it, the Unicode code point of BEER
-MUG (`:beer:`). With this package, the character is rendered in the
-terminal as a beer mug, although the quality and details of the font
+outputs a square box with `01F37A` written in it, the Unicode code point
+of BEER MUG (`:beer:`). With this package, the character is rendered in
+the terminal as a beer mug, although the quality and details of the font
 leave a lot to be desired.
 
 
 Enable Hinting
 --------------
+
 The following steps enable font hinting in XFCE 4.10 on Debian 8.0.
 
  1. Go to Settings > Appearance > Fonts.
@@ -273,6 +292,7 @@ I found that Hinting = Medium and Hinting = Full behaved identically.
 
 Configure File Manager
 ----------------------
+
  1. Run *Thunar*, i.e. *Applications Menu* > *File Manager*. From the
     menu, go to *Edit* > *Configure custom actions*.
 
@@ -291,6 +311,7 @@ Configure File Manager
 
 Set up home directory
 ---------------------
+
  1. On the Debian VM, enter the following commands.
 
         mkdir -p ~/git
@@ -329,6 +350,7 @@ Set up home directory
 
 Configure Screensaver and Power Settings
 ----------------------------------------
+
 Disable screensaver.
 
  1. Go to *Applications Menu* > *Settings* > *Screensaver*.
@@ -345,6 +367,7 @@ Configure power settings.
 
 Set up Internal Network Adapter
 -------------------------------
+
 This section is applicable only if networking between VMs
 within VirtualBox is required. If the VM is going to function in
 isolation without the need to communicate with other VMs on the same
@@ -392,14 +415,18 @@ VirtualBox, then this section is not applicable.
 
 Configure Keyboard for VirtualBox on Mac
 ----------------------------------------
+
 If the VM is running on Mac, then it can become annoying to having to
-switch between *command*, *control* and *option* keys between the Mac
-host and the VM for similar activities.
+switch between <kbd>command</kbd>, <kbd>control</kbd> and
+<kbd>option</kbd> keys between the Mac host and the VM for similar
+activities.
 
 Perform the following steps to make the VM key bindings for various
 activities same as that of the Mac host key bindings.
 
+
 ### Configure Host Key
+
 Set *right command* key as the host key.
 
  1. On Mac, from the menu, select *VirtualBox* > *Preferences*.
@@ -419,7 +446,9 @@ the Mac desktop from the VM running in full-screen mode.
   - Swipe up with three fingers on the trackpad to return to *Mission
     Control* and select an application running on the Mac host.
 
+
 ### Map Command to Control
+
 Set the *command* key to behave like *control* key inside the VM. This
 ensures that *command + c* and *command + v* can be used to copy and
 paste, respectively, on both the Mac host and the VM.
@@ -436,7 +465,9 @@ paste, respectively, on both the Mac host and the VM.
     succssful. To test, launch Firefox and press *control + t* followed
     by *command + t*. Two new tabs should be created.
 
+
 ### Configure Command + Tab to Cycle Windows
+
 Configure the Debian VM so that *Command + Tab* can be used to cycle
 through windows just like it is used on the Mac host.
 
@@ -460,5 +491,6 @@ through windows just like it is used on the Mac host.
 
 Next Steps
 ----------
+
 Perform any applicable setups mentioned in
 [common-setup.md](common-setup.md).
