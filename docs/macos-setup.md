@@ -1,3 +1,6 @@
+macOS Setup
+===========
+
 Customize Trackpad
 ------------------
 
@@ -23,6 +26,17 @@ Speed Up Key Repeat
  1. Go to the Apple menu > *System Preferences* > *Keyboard*.
  2. Drag *Key Repeat* slider to *Fast*.
  3. Drag *Delay Until Repeat* slider to one mark before *Short*.
+
+
+Reduce Motion
+-------------
+
+Perform the following steps to reduce motion while switching between
+full screen applications:
+
+ 1. Go to the Apple menu > *System Preferences* > *Accessibility* >
+    *Display*.
+ 2. Select *Reduce motion*.
 
 
 Configure Desktop
