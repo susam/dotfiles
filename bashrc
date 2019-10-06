@@ -72,9 +72,6 @@ findtl()
     find /usr/local/texlive -name "*$1*"
 }
 
-# Execute node modules.
-alias nx='PATH=$(npm bin):$PATH'
-
 # Set environment.
 PATH=~/bin:$PATH
 [ -f ~/my/bin/env ] && . ~/my/bin/env
