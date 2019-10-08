@@ -148,6 +148,10 @@ alias dollar='_PROMPT_MARK="$ "'
 alias beer='_PROMPT_MARK="$_beer "'
 alias beer2='_PROMPT_MARK="$_beer$_beer "'
 
+# Aliases for Transmission CLI.
+alias txd='transmission-daemon -f'
+alias txr='transmission-remote'
+
 # Set the primary prompt string.
 PS1='$(_active_prompt)'
 
