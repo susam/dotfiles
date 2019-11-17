@@ -7,7 +7,7 @@ set -e -x
 adduser susam --gecos "Susam Pal,,," --disabled-password
 echo "susam:$userpass" | chpasswd
 adduser susam sudo
-echo "susam ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/nopasswd
+echo "susam ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers.d/nopasswd
 
 # Install minimal set of tools.
 apt-get update
