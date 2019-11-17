@@ -3,6 +3,9 @@ set runtimepath^=~/.vim/bundle/cscope_maps
 set runtimepath^=~/.vim/bundle/tagbar
 set runtimepath^=~/.vim/bundle/slimv
 
+" Prevent Slimv from executing: filetype plugin on
+let g:paredit_disable_ftindent=1
+
 " Tagbar configuration to support Go source code.
 let g:tagbar_type_go = {'ctagstype': 'go', 'ctagsbin': 'gotags',
     \ 'ctagsargs' : '-sort -silent', 'sro' : '.',
