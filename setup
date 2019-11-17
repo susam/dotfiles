@@ -89,6 +89,7 @@ setup_all()
     log Setting up ...
     setup_dot_files
     setup_bashrc
+    setup_bin_dir
     setup_git_config
     log
 }
@@ -100,6 +101,7 @@ undo_all()
     log Undoing setup ...
     undo_dot_files
     undo_bashrc
+    undo_bin_dir
     undo_git_config
     log
 }
@@ -180,6 +182,45 @@ undo_git_config()
             ;;
     esac |
     awk '/git/ {print $1 " " $2 " " $3 " --unset " $4}' | sh -x
+}
+
+
+# Setup bin directory.
+setup_bin_dir()
+{
+    mkdir -p ~/bin
+    for f in "$PWD"/bin/*
+    do
+        link=~/bin/${f##*/}
+        if [ -f "$link" ]
+        then
+            err Link "$link" already exists
+        elif ln -s "$f" "$link"
+        then
+            log Created "$link -> $f"
+        fi
+    done
+
+    unset link
+}
+
+
+# Undo bin directory.
+undo_bin_dir()
+{
+    for f in "$PWD"/bin/*
+    do
+        link=~/bin/${f##*/}
+        if [ ! -f "$link" ]
+        then
+            err Link "$link" does not exist
+        elif rm "$link"
+        then
+            log Deleted "$link"
+        fi
+    done
+
+    unset link
 }
 
 

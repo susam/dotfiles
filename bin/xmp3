@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# Extract audio stream as MP3 file.
+
+abr()
+{
+    ffprobe -i "$1" -v error -select_streams a \
+            -show_entries stream=bit_rate -of csv=p=0
+}
+
+main()
+{
+    for src in "$@"
+    do
+        dst=${src%.*}.mp3
+        ffmpeg -i "$src" -y -c:a libmp3lame -b:a $(abr "$src") "$dst"
+
+        echo; echo conversion done; echo
+        echo source bitrate: $(abr "$src")
+        echo output bitrate: $(abr "$dst")
+        echo
+        echo source: "$(ls -lh "$src")"
+        echo output: "$(ls -lh "$dst")"
+        echo; echo done
+    done
+}
+
+main "$@"
