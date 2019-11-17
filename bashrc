@@ -150,7 +150,9 @@ alias beer2='_PROMPT_MARK="$_beer$_beer "'
 
 # Aliases for Transmission CLI.
 alias txd='transmission-daemon -f'
+alias txa='transmission-remote -t all'
 alias txr='transmission-remote'
+alias tx='transmission-remote'
 
 # Set the primary prompt string.
 PS1='$(_active_prompt)'
