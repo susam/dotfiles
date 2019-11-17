@@ -1,5 +1,7 @@
-Use Transmission CLI
---------------------
+Transmission CLI
+----------------
+
+### Setup
 
  1. Install Transmission CLI with this command:
 
@@ -9,21 +11,44 @@ Use Transmission CLI
 
         transmission-daemon -d 2>&1 | grep dir
 
- 3. To add a magnet link, enter this command:
+ 3. Here are some useful aliases to set up in the shell:
 
-        transmission-remote -a '<Magnet URL>'
+        alias txd='transmission-daemon -f'
+        alias txr='transmission-remote'
+        alias txa='transmission-remote -t all'
 
- 4. To see the progress of all downloads, enter this command:
+
+### Use
+
+ 1. Start Transmission daemon:
+
+        transmission-daemon -f
+        txd
+
+ 2. To add a magnet link:
+
+        transmission-remote -a '<link>'
+        txr -a '<link>'
+
+ 3. To see the progress of all downloads:
 
         transmission-remote -l
+        txr -l
 
- 5. To remove a torrent, enter this command:
+ 4. Get file list for torrents:
 
-        transmission-remote -t <ID> -r
+        transmission-remote -t all -f
+        txa
 
- 6. To remove all torrents, enter this command:
+ 5. Remove a torrent:
+
+        transmission-remote -t <id> -r
+        txr -t <id> -r
+
+ 6. Remove all torrents:
 
         transmission-remote -t all -r
+        txa -r
 
 
 Change Password
