@@ -1,13 +1,34 @@
 set -e -x
 
+# Check prerequisites.
 [ -z "$hostname" ] && echo "error: hostname not set" >&2 && exit 1
+[ -z "$username" ] && echo "error: username not set" >&2 && exit 1
 [ -z "$userpass" ] && echo "error: userpass not set" >&2 && exit 1
+[ ! -r /tmp/keys.txt ] && echo "error: keys missing" >&2 && exit 1
 
 # Add user.
-adduser susam --gecos "Susam Pal,,," --disabled-password
-echo "susam:$userpass" | chpasswd
-adduser susam sudo
-echo "susam ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers.d/nopasswd
+adduser "$username" --gecos '' --disabled-password
+echo "$username:$userpass" | chpasswd
+adduser "$username" sudo
+
+# echo "$username ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers.d/nopasswd
+
+# Copy SSH keys.
+umask 077
+mkdir -p /home/$username/.ssh
+cat /tmp/keys.txt >> /home/$username/.ssh/authorized_keys
+chown -R $username:$username /home/$username/.ssh
+umask 022
+
+# Disable root login.
+passwd -d root
+passwd -l root
+
+# Disable SSH root login and SSH password login.
+sed -i 's/^PermitRootLogin/#PermitRootLogin/' /etc/ssh/sshd_config
+echo 'PermitRootLogin no' >> /etc/ssh/sshd_config
+echo 'PasswordAuthentication no' >> /etc/ssh/sshd_config
+systemctl restart ssh
 
 # Install minimal set of tools.
 apt-get update
