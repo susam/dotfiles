@@ -88,7 +88,7 @@ setup_all()
 {
     log Setting up ...
     setup_dot_files
-    setup_bashrc
+    setup_shrc
     setup_bin_dir
     setup_git_config
     log
@@ -100,7 +100,7 @@ undo_all()
 {
     log Undoing setup ...
     undo_dot_files
-    undo_bashrc
+    undo_shrc
     undo_bin_dir
     undo_git_config
     log
@@ -228,31 +228,34 @@ undo_bin_dir()
 SETUP_MARK='# Added by setup script'
 
 
-# Update Bash initialization file to load bashrc.
-setup_bashrc()
+# Update shell initialization file to load shrc.
+setup_shrc()
 {
-    bashrc="$PWD/bashrc"
-    [ -f ~/.bashrc ] && file=~/.bashrc || file=~/.bash_profile
-
-    cmd="[ -f \"$bashrc\" ] && . \"$bashrc\" $SETUP_MARK"
-
-    if grep -q "$SETUP_MARK" "$file"
-    then
-        err File "$file" is already updated to load bashrc
-    elif echo "$cmd" >> "$file"
-    then
-        log Updated "$file" to load bashrc
-    fi
-    unset bashrc
+    shrc="$PWD/shrc"
+    cmd="[ -f \"$shrc\" ] && . \"$shrc\" $SETUP_MARK"
+    for file in ~/.bashrc ~/.bash_profile ~/.zshrc
+    do
+        if [ -f "$file" ]
+        then
+            if grep -q "$SETUP_MARK" "$file"
+            then
+                err File "$file" is already updated to load shrc
+            elif echo "$cmd" >> "$file"
+            then
+                log Updated "$file" to load shrc
+            fi
+        fi
+    done
+    unset shrc
     unset file
     unset cmd
 }
 
 
-# Update Bash initialization file to not load bashrc.
-undo_bashrc()
+# Update shell initialization file to not load shrc.
+undo_shrc()
 {
-    for file in ~/.bashrc ~/.bash_profile
+    for file in ~/.bashrc ~/.bash_profile ~/.zshrc
     do
         if [ -f "$file" ]
         then
@@ -260,9 +263,9 @@ undo_bashrc()
             then
                 sed "/$SETUP_MARK/d" "$file" > "$file.tmp" &&
                 mv "$file.tmp" "$file" &&
-                log Updated "$file" to not load bashrc
+                log Updated "$file" to not load shrc
             else
-                err File "$file" does not load bashrc
+                err File "$file" does not load shrc
             fi
         else
             err File "$file" does not exist

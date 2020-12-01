@@ -76,20 +76,32 @@ findtl()
 PATH=~/bin:$PATH
 [ -f ~/my/bin/env ] && . ~/my/bin/env
 
+_begin_esc()
+{
+    [ -n "$BASH_VERSION" ] && printf '\x01' && return
+    [ -n "$ZSH_VERSION" ] && printf '%%{' && return
+}
+
+_end_esc()
+{
+    [ -n "$BASH_VERSION" ] && printf '\x02' && return
+    [ -n "$ZSH_VERSION" ] && printf '%%}' && return
+}
+
 # Set terminal color.
 _tput_color()
 {
-    printf '\x01'
+    _begin_esc
     tput setaf "$1"
-    printf '\x02'
+    _end_esc
 }
 
 # Reset terminal color.
 _tput_reset()
 {
-    printf '\001'
+    _begin_esc
     tput sgr0
-    printf '\002'
+    _end_esc
 }
 
 # Create dynamic prompt string for PS1.
@@ -169,6 +181,16 @@ then
     echo Loading macOS environment ... >&2
     [ -r "/usr/local/etc/profile.d/bash_completion.sh" ] &&
        . "/usr/local/etc/profile.d/bash_completion.sh"
+fi
+
+# For specific shells only.
+if [ -n "$BASH_VERSION" ]
+then
+    echo Loading Bash environment ... >&2
+elif [ -n "$ZSH_VERSION" ]
+then
+    echo Loading ZSH environment ... >&2
+    setopt prompt_subst
 fi
 
 # Attach to an existing Screen session or launch a new one.
