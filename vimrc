@@ -7,7 +7,7 @@ set tabstop=4
 set shiftwidth=0
 set expandtab
 set autoindent
-set guioptions=i
+set guioptions=ic
 set number
 set hlsearch
 set incsearch
