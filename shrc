@@ -169,12 +169,6 @@ alias tx='transmission-remote'
 # Set the primary prompt string.
 PS1='$(_active_prompt)'
 
-# For login shell only.
-if shopt -q login_shell
-then
-    echo Loading login environment ... >&2
-fi
-
 # For macOS only.
 if uname | grep -q Darwin
 then
