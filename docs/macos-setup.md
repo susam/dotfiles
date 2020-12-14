@@ -42,8 +42,10 @@ full screen applications:
 Configure Desktop
 -----------------
 
- 1. In the status menu, click the battery icon.
- 2. Select *Show Percentage*.
+ 1. In the status menu, click the battery icon. Select *Show
+    Percentage*.
+ 2. In the status menu, click date, select *Open Date & Time
+    Preferences*, select *Show Date*.
 
 
 Configure Finder
@@ -189,8 +191,7 @@ Install Packages
 
  2. Install useful packages.
 
-        brew install macvim git python tmux tree rclone ffmpeg weechat \
-                     wget bash-completion
+        brew install macvim tmux tree rclone ffmpeg weechat wget bash-completion
 
  3. Install LaTeX and BibLaTeX.
 
@@ -200,9 +201,8 @@ Install Packages
 
  4. Install web browsers, graphics software, virtualization software, etc.
 
-        brew cask install firefox google-chrome
+        brew cask install firefox google-chrome darktable android-file-transfer vlc
         brew cask install virtualbox docker
-        brew cask install darktable android-file-transfer vlc
 
  5. Install development tools.
 
