@@ -113,8 +113,8 @@ setup_dot_files()
 {
     printf "%s" "$DOT_FILES" | grep [[:graph:]] | while read filename
     do
-        target="$PWD/$filename"
-        link=~/."$filename"
+        target="$PWD/_$filename"
+        link=~/".$filename"
 
         if [ -f "$link" ]
         then
@@ -138,7 +138,7 @@ undo_dot_files()
 {
     printf "%s" "$DOT_FILES" | grep [[:graph:]] | while read filename
     do
-        link=~/."$filename"
+        link=~/".$filename"
         if [ ! -f "$link" ]
         then
             err Link "$link" does not exist
