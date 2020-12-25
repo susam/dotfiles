@@ -25,6 +25,8 @@ git config --global alias.brdo "!git branch -d \"\$1\" && git push -d origin"
 git config --global alias.co "checkout"
 git config --global alias.cob "checkout -b"
 
+git config --global alias.ap "add -p"
+
 git config --global alias.ci "commit"
 git config --global alias.ca "commit --amend"
 git config --global alias.car "commit --amend --reset-author"
