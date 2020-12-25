@@ -10,9 +10,9 @@
 (setq show-paren-delay 0)
 (show-paren-mode)
 
-;; Workaround for https://debbugs.gnu.org/34341 in GNU Emacs <= 26.2.
-(if (and (version< emacs-version "26.3") (>= libgnutls-version 30603))
-    (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3"))
+;; Workaround for https://debbugs.gnu.org/34341 in GNU Emacs <= 26.3.
+(when (and (version< emacs-version "26.3") (>= libgnutls-version 30603))
+  (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3"))
 
 ;; Enable installation of packages from MELPA.
 (package-initialize)
