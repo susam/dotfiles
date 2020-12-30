@@ -5,7 +5,14 @@
   (scroll-bar-mode 0))
 (setq inhibit-startup-screen t)
 (column-number-mode)
+
+;; Color scheme.
 (load-theme 'wombat)
+(set-face-background 'default "#111")
+(set-face-background 'cursor "#c96")
+(set-face-background 'isearch "#c60")
+(set-face-foreground 'isearch "#eee")
+(set-face-background 'lazy-highlight "#960")
 
 ;; Highlight matching pairs of parentheses.
 (setq show-paren-delay 0)
