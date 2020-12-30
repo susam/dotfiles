@@ -4,6 +4,7 @@
   (tool-bar-mode 0)
   (scroll-bar-mode 0))
 (setq inhibit-startup-screen t)
+(column-number-mode)
 (load-theme 'wombat)
 
 ;; Highlight matching pairs of parentheses.
