@@ -6,6 +6,7 @@
 (setq inhibit-startup-screen t)
 (column-number-mode 1)
 (ido-mode 1)
+(toggle-frame-fullscreen)
 
 ;; Color scheme.
 (load-theme 'wombat)
