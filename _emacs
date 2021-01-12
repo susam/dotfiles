@@ -5,6 +5,7 @@
   (scroll-bar-mode 0))
 (setq inhibit-startup-screen t)
 (column-number-mode 1)
+(ido-mode 1)
 
 ;; Color scheme.
 (load-theme 'wombat)
