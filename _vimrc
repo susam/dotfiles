@@ -35,6 +35,11 @@ if has('gui_running')
     endif
 endif
 
+" Set window to full screen on macOS.
+if has('gui_running') && has('gui_macvim')
+    set fullscreen
+endif
+
 " Open URLs using desktop browser.
 if has('gui_gtk2')
     if has('gui_running')
@@ -44,6 +49,9 @@ if has('gui_gtk2')
         let g:netrw_browsex_viewer="xdg-open"
     endif
 endif
+
+" Workaround for https://github.com/vim/vim/issues/4738
+nmap gx yiW:!open <cWORD><CR><CR>
 
 " Configure tags and cscope.
 set tags=./tags;
@@ -84,6 +92,3 @@ endif
 if !empty(findfile('~/my/bin/my.vimrc'))
     source ~/my/bin/my.vimrc
 endif
-
-" Fix for https://github.com/vim/vim/issues/4738
-nmap gx yiW:!open <cWORD><CR><CR>
