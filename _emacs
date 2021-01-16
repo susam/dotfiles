@@ -47,7 +47,8 @@
 (setq custom-file (concat user-emacs-directory "custom.el"))
 
 ;; Install packages.
-(dolist (package '(slime paredit rainbow-delimiters))
+(setq package-list '(slime paredit rainbow-delimiters markdown-mode))
+(dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
 
