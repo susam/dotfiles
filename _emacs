@@ -56,6 +56,9 @@
 (add-to-list 'exec-path "/usr/local/bin")
 (setq inferior-lisp-program "sbcl")
 
+;; Enable window header line and startup animation.
+(add-to-list 'slime-contribs 'slime-banner)
+
 ;; Enable Paredit.
 (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
 (add-hook 'eval-expression-minibuffer-setup-hook 'enable-paredit-mode)
