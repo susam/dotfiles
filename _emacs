@@ -16,6 +16,11 @@
 ; Break lines after period even if followed by a single space.
 (setq sentence-end-double-space nil)
 
+; Use spaces, not tabs, for indentation.
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq c-basic-offset 4)
+
 ;; Color scheme.
 (load-theme 'wombat)
 (set-face-background 'default "#111")
