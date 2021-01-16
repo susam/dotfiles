@@ -8,6 +8,14 @@
 (ido-mode 1)
 (toggle-frame-fullscreen)
 
+;; Break lines automatically, so that lines do not exceed 72 columns.
+(add-hook 'text-mode-hook 'auto-fill-mode)
+(add-hook 'prog-mode-hook 'auto-fill-mode)
+(setq-default fill-column 72)
+
+; Break lines after period even if followed by a single space.
+(setq sentence-end-double-space nil)
+
 ;; Color scheme.
 (load-theme 'wombat)
 (set-face-background 'default "#111")
