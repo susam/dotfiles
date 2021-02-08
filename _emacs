@@ -92,3 +92,8 @@
 
 ;; Custom key bindings.
 (global-set-key (kbd "C-c t") 'print-time)
+
+;; Start server.
+(require 'server)
+(unless (server-running-p)
+  (server-start))

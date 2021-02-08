@@ -166,6 +166,10 @@ alias txa='transmission-remote -t all'
 alias txr='transmission-remote'
 alias tx='transmission-remote'
 
+# Aliases for Emacs.
+alias ec='emacsclient'
+alias em='emacsclient -n'
+
 # Set the primary prompt string.
 PS1='$(_active_prompt)'
 
