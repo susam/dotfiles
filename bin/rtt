@@ -1,0 +1,22 @@
+#!/bin/sh
+
+rtt() {
+    ping -c 1 1.1.1.1 | sed -n 's/.*time=\(.*\)\..*/\1/p'
+}
+
+main() {
+    while true
+    do
+        rtt=$(rtt)
+        if [ "$rtt" -gt 100 ]
+        then
+            echo RTT "$rtt" is too high.
+            printf "\a\a"
+        else
+            echo RTT "$rtt"
+        fi
+        sleep 1
+    done
+}
+
+main
