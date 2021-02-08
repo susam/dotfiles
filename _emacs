@@ -4,9 +4,13 @@
   (tool-bar-mode 0)
   (scroll-bar-mode 0))
 (setq inhibit-startup-screen t)
-(column-number-mode 1)
-(ido-mode 1)
+(column-number-mode)
 (toggle-frame-fullscreen)
+
+;; Interactively do things.
+(ido-mode)
+(ido-everywhere)
+(setq ido-enable-flex-matching t)
 
 ;; Break lines automatically, so that lines do not exceed 72 columns.
 (add-hook 'text-mode-hook 'auto-fill-mode)
@@ -21,7 +25,7 @@
 (setq-default tab-width 4)
 (setq c-basic-offset 4)
 
-;; Color scheme.
+;; Theme.
 (load-theme 'wombat)
 (set-face-background 'default "#111")
 (set-face-background 'cursor "#c96")
@@ -47,7 +51,7 @@
 (setq custom-file (concat user-emacs-directory "custom.el"))
 
 ;; Install packages.
-(setq package-list '(slime paredit rainbow-delimiters markdown-mode))
+(setq package-list '(markdown-mode slime paredit rainbow-delimiters))
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
