@@ -81,3 +81,14 @@
 (add-hook 'lisp-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'lisp-interaction-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'slime-repl-mode-hook 'rainbow-delimiters-mode)
+
+;; Custom commands.
+(defun print-time ()
+  "Display current time for 2 seconds."
+  (interactive)
+  (message (current-time-string))
+  (sleep-for 2)
+  (message nil))
+
+;; Custom key bindings.
+(global-set-key (kbd "C-c t") 'print-time)
