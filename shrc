@@ -1,3 +1,5 @@
+#!/bin/sh
+
 echo Loading shell environment ... >&2
 
 # Set my Git user details.
@@ -167,28 +169,47 @@ alias txr='transmission-remote'
 alias tx='transmission-remote'
 
 # Aliases for Emacs.
-alias ec='emacsclient'
-alias em='emacsclient -n'
+args() {
+    for arg in "$@"
+    do
+        echo "arg: \"$arg\""
+    done
+}
+
+ec() {
+    emacsclient "$@"
+}
+
+em() {
+    if [ "$#" -eq 0 ]
+    then
+        echo "Starting new Emacs process ..." >&2
+        emacs & disown
+    elif emacsclient -n "$@" 2> /dev/null
+    then
+        echo "Opened $@ in Emacs server" >&2
+    else
+        echo "Opening $@ in a new Emacs process ..." >&2
+        emacs "$@" & disown
+    fi
+}
 
 # Set the primary prompt string.
 PS1='$(_active_prompt)'
-
-# For macOS only.
-if uname | grep -q Darwin
-then
-    echo Loading macOS environment ... >&2
-    [ -r "/usr/local/etc/profile.d/bash_completion.sh" ] &&
-       . "/usr/local/etc/profile.d/bash_completion.sh"
-fi
 
 # For specific shells only.
 if [ -n "$BASH_VERSION" ]
 then
     echo Loading Bash environment ... >&2
+
+    [ -r "/usr/local/etc/profile.d/bash_completion.sh" ] &&
+       . "/usr/local/etc/profile.d/bash_completion.sh"
 elif [ -n "$ZSH_VERSION" ]
 then
     echo Loading ZSH environment ... >&2
     setopt prompt_subst
+    autoload bashcompinit && bashcompinit
+    autoload compinit && compinit
 fi
 
 # Attach to an existing Screen session or launch a new one.
