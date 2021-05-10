@@ -27,6 +27,9 @@
 (setq js-indent-level 2)
 (setq css-indent-offset 2)
 
+;; Disable lock files.
+(setq create-lockfiles nil)
+
 ;; Theme.
 (load-theme 'wombat)
 (set-face-background 'default "#111")
