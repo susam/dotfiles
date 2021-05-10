@@ -46,6 +46,9 @@
 (setq show-paren-delay 0)
 (show-paren-mode)
 
+;; Treat all .tex files as LaTeX.
+(add-to-list 'auto-mode-alist '("\\.tex$" . latex-mode))
+
 ;; Workaround for https://debbugs.gnu.org/34341 in GNU Emacs <= 26.3.
 (when (and (version< emacs-version "26.3") (>= libgnutls-version 30603))
   (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3"))
