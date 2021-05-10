@@ -28,7 +28,9 @@
 (setq css-indent-offset 2)
 
 ;; Disable lock files. Write auto-saves and backups to separate directory.
+;; Note that auto-save expects its directory to be already present.
 (setq create-lockfiles nil)
+(make-directory "~/.emacs.d/backup" t)
 (setq auto-save-file-name-transforms `((".*" "~/.emacs.d/backup/" t)))
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup/")))
 
