@@ -7,6 +7,11 @@
 (column-number-mode)
 (toggle-frame-fullscreen)
 
+;; Do not display file icon or name on title bar.
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
+(setq ns-use-proxy-icon nil)
+(setq frame-title-format nil)
+
 ;; Interactively do things.
 (ido-mode)
 (ido-everywhere)
