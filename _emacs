@@ -27,8 +27,10 @@
 (setq js-indent-level 2)
 (setq css-indent-offset 2)
 
-;; Disable lock files.
+;; Disable lock files. Write auto-saves and backups to separate directory.
 (setq create-lockfiles nil)
+(setq auto-save-file-name-transforms `((".*" "~/.emacs.d/backup/" t)))
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup/")))
 
 ;; Theme.
 (load-theme 'wombat)
