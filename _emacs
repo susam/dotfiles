@@ -61,7 +61,7 @@
   (package-refresh-contents))
 
 ;; Write customizations to ~/.emacs.d/custom.el instead of this file.
-(setq custom-file (concat user-emacs-directory "custom.el"))
+(setq custom-file "~/.emacs.d/custom.el")
 
 ;; Install packages.
 (setq package-list '(markdown-mode slime paredit rainbow-delimiters))
