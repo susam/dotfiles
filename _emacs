@@ -13,7 +13,7 @@
 (setq frame-title-format nil)
 
 ;; Interactively do things.
-(ido-mode)
+(ido-mode 1)
 (ido-everywhere)
 (setq ido-enable-flex-matching t)
 
