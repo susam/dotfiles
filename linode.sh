@@ -25,7 +25,9 @@ passwd -d root
 passwd -l root
 
 # Disable SSH root login and SSH password login.
+cp /etc/ssh/sshd_config /etc/ssh/original_sshd_config
 sed -i 's/^PermitRootLogin/#PermitRootLogin/' /etc/ssh/sshd_config
+sed -i 's/^PasswordAuthentication/#PasswordAuthentication/' /etc/ssh/sshd_config
 echo 'PermitRootLogin no' >> /etc/ssh/sshd_config
 echo 'PasswordAuthentication no' >> /etc/ssh/sshd_config
 systemctl restart ssh
