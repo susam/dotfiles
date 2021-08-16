@@ -34,7 +34,7 @@ systemctl restart ssh
 
 # Install minimal set of tools.
 apt-get update
-apt-get -y install git make tmux tree
+apt-get -y install git make tmux tree emacs-nox
 
 # Set timezone.
 rm -f /etc/localtime
@@ -79,16 +79,42 @@ autocmd BufWinEnter * syntax keyword Todo TODO
 autocmd BufWinEnter * syntax match Error /\s\+$/
 eof
 
+# Configure Emacs.
+cat > /etc/emacs/site-start.d/90emacs.el <<EOF
+(menu-bar-mode 0)
+(column-number-mode)
+(ido-mode 1)
+(ido-everywhere)
+(setq ido-enable-flex-matching t)
+(setq sentence-end-double-space nil)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq c-basic-offset 4)
+(setq js-indent-level 2)
+(setq css-indent-offset 2)
+(setq create-lockfiles nil)
+(make-directory "~/.emacs.d/backup" t)
+(setq auto-save-file-name-transforms `((".*" "~/.emacs.d/backup/" t)))
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup/")))
+(setq apropos-sort-by-scores t)
+(load-theme 'wombat)
+(set-face-background 'default "#111")
+(set-face-background 'cursor "#c96")
+(set-face-background 'isearch "#c60")
+(set-face-foreground 'isearch "#eee")
+(set-face-background 'lazy-highlight "#960")
+(set-face-foreground 'font-lock-comment-face "#fc0")
+(setq show-paren-delay 0)
+(show-paren-mode)
+EOF
+
 # Configure tmux.
 cat > /etc/tmux.conf <<eof
-set -g prefix2 C-j
-bind-key C-j send-prefix -2
+set -g prefix C-j
 bind '"' split-window -c "#{pane_current_path}"
 bind % split-window -h -c "#{pane_current_path}"
 bind c new-window -c "#{pane_current_path}"
-set -g escape-time 0
 set -g default-terminal screen-256color
-set -g mode-keys vi
 eof
 
 # Reboot.
