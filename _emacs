@@ -34,6 +34,9 @@
 (setq auto-save-file-name-transforms `((".*" "~/.emacs.d/backup/" t)))
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup/")))
 
+;; Better help.
+(setq apropos-sort-by-scores t)
+
 ;; Theme.
 (load-theme 'wombat)
 (set-face-background 'default "#111")
