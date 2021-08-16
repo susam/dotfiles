@@ -94,7 +94,7 @@ cat > /etc/emacs/site-start.d/90emacs.el <<EOF
 (setq css-indent-offset 2)
 (setq create-lockfiles nil)
 (make-directory "~/.emacs.d/backup" t)
-(setq auto-save-file-name-transforms `((".*" "~/.emacs.d/backup/" t)))
+(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/backup/" t)))
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup/")))
 (setq apropos-sort-by-scores t)
 (load-theme 'wombat)
