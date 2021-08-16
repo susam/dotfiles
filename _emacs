@@ -117,8 +117,16 @@
   (sleep-for 2)
   (message nil))
 
+(defun ack-keycaster-key ()
+  "Acknowledge and ignore keycaster key sequence."
+  (interactive)
+  (message "Ignoring keycaster key ...")
+  (sleep-for 1)
+  (message nil))
+
 ;; Custom key bindings.
 (global-set-key (kbd "C-c t") 'print-time)
+(global-set-key (kbd "C-M-s-k") 'ack-keycaster-key)
 
 ;; Start server.
 (require 'server)
