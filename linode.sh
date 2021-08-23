@@ -111,6 +111,7 @@ EOF
 # Configure tmux.
 cat > /etc/tmux.conf <<eof
 set -g prefix C-j
+bind-key C-j send-prefix
 bind '"' split-window -c "#{pane_current_path}"
 bind % split-window -h -c "#{pane_current_path}"
 bind c new-window -c "#{pane_current_path}"
