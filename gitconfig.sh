@@ -1,4 +1,4 @@
-git config --global core.editor vim
+git config --global core.editor "emacs -nw"
 git config --global user.useConfigOnly true
 
 git config --global pretty.simple "%C(auto)%h %C(magenta)%ad %C(cyan)%an%C(auto)%d %s"
