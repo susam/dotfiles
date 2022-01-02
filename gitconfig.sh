@@ -1,3 +1,4 @@
+git config --global init.defaultBranch main
 git config --global core.editor "emacs -nw"
 git config --global user.useConfigOnly true
 
