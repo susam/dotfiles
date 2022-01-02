@@ -125,9 +125,9 @@
   (interactive)
   (message (current-time-string)))
 
-;; Custom key bindings.
-(global-set-key (kbd "C-c t") 'print-time)
-(global-set-key (kbd "C-M-s-k") 'ack-keycaster-key)
+;; Custom key sequences.
+(global-set-key (kbd "C-c t") 'show-current-time)
+(global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
 
 ;; Start server.
 (require 'server)
