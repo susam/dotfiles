@@ -176,6 +176,8 @@ args() {
     done
 }
 
+alias c++11="c++ -g -std=c++11 -Wall -Wextra -pedantic"
+
 # Set the primary prompt string.
 PS1='$(_active_prompt)'
 
