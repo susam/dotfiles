@@ -30,7 +30,12 @@
 (setq ido-enable-flex-matching t)
 (fido-mode)
 
-;; Break lines after period even if followed by a single space.
+;; Show stray whitespace.
+(setq-default show-trailing-whitespace t)
+(setq-default indicate-empty-lines t)
+(setq-default indicate-buffer-boundaries 'left)
+
+;; Consider a period followed by a single space to be end of sentence.
 (setq sentence-end-double-space nil)
 
 ;; Use spaces, not tabs, for indentation.
