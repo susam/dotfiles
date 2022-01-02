@@ -28,6 +28,7 @@
 (ido-mode 1)
 (ido-everywhere)
 (setq ido-enable-flex-matching t)
+(fido-mode)
 
 ;; Break lines after period even if followed by a single space.
 (setq sentence-end-double-space nil)
