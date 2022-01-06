@@ -47,7 +47,7 @@ echo 127.0.0.1 "$hostname" >> /etc/hosts
 
 # Configure Git.
 git config --system user.name "Susam Pal"
-git config --system user.email "susam@susam.in"
+git config --system user.email "susam@susam.net"
 
 # Set default editor.
 update-alternatives --set editor /usr/bin/vim.basic
@@ -81,31 +81,35 @@ eof
 
 # Configure Emacs.
 cat > /etc/emacs/site-start.d/90emacs.el <<EOF
+(setq inhibit-startup-screen t)
 (menu-bar-mode 0)
 (column-number-mode)
-(ido-mode 1)
-(ido-everywhere)
-(setq ido-enable-flex-matching t)
-(setq sentence-end-double-space nil)
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-(setq c-basic-offset 4)
-(setq js-indent-level 2)
-(setq css-indent-offset 2)
-(setq create-lockfiles nil)
-(make-directory "~/.emacs.d/backup" t)
-(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/backup/" t)))
-(setq backup-directory-alist '(("." . "~/.emacs.d/backup/")))
-(setq apropos-sort-by-scores t)
 (load-theme 'wombat)
 (set-face-background 'default "#111")
 (set-face-background 'cursor "#c96")
 (set-face-background 'isearch "#c60")
 (set-face-foreground 'isearch "#eee")
 (set-face-background 'lazy-highlight "#960")
+(set-face-foreground 'lazy-highlight "#ccc")
 (set-face-foreground 'font-lock-comment-face "#fc0")
+(ido-mode 1)
+(ido-everywhere)
+(setq ido-enable-flex-matching t)
+(fido-mode)
+(setq-default show-trailing-whitespace t)
+(setq sentence-end-double-space nil)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq c-basic-offset 4)
+(setq js-indent-level 2)
+(setq css-indent-offset 2)
 (setq show-paren-delay 0)
 (show-paren-mode)
+(make-directory "/tmp/emacs/auto-save/" t)
+(setq auto-save-file-name-transforms '((".*" "/tmp/emacs/auto-save/" t)))
+(setq backup-directory-alist '(("." . "/tmp/emacs/backup/")))
+(setq backup-by-copying t)
+(setq create-lockfiles nil)
 EOF
 
 # Configure tmux.
