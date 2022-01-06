@@ -5,7 +5,7 @@ echo Loading shell environment ... >&2
 # Set my Git user details.
 gitme() {
     git config user.name "Susam Pal"
-    git config user.email susam@susam.in
+    git config user.email susam@susam.net
     git config user.name
     git config user.email
 }

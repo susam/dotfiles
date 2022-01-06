@@ -41,7 +41,7 @@ VERSION=0.1.1
 AUTHOR="Susam Pal"
 COPYRIGHT="Copyright (c) 2015-2016 $AUTHOR"
 
-LICENSE_URL="http://susam.in/licenses/mit/"
+LICENSE_URL="http://susam.net/licenses/mit/"
 SUPPORT_URL="https://github.com/susam/dotfiles/issues"
 
 NOTICE="

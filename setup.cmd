@@ -44,7 +44,7 @@ rem Starting point of this script.
 
     set VERSION=0.1.0
     set COPYRIGHT=Copyright (c) 2015-2016 Susam Pal
-    set LICENSE_URL=http://susam.in/licenses/mit/
+    set LICENSE_URL=http://susam.net/licenses/mit/
     set SUPPORT_URL=https://github.com/susam/dotfiles/issues
     set NAME=%~n0
 
