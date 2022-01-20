@@ -178,6 +178,24 @@ args() {
 
 alias c++11="c++ -g -std=c++11 -Wall -Wextra -pedantic"
 
+ec() {
+    emacsclient "$@"
+}
+
+em() {
+    if [ "$#" -eq 0 ]
+    then
+        echo "Starting new Emacs process ..." >&2
+        emacs & disown
+    elif emacsclient -n "$@" 2> /dev/null
+    then
+        echo "Opened $@ in Emacs server" >&2
+    else
+        echo "Opening $@ in a new Emacs process ..." >&2
+        emacs "$@" & disown
+    fi
+}
+
 # Set the primary prompt string.
 PS1='$(_active_prompt)'
 
