@@ -204,25 +204,20 @@ Install Packages
  2. After installation, enter any commands suggested by the installer.
     Then close and start Terminal again.
 
- 2. Install useful packages.
+ 3. Install useful packages.
 
-        brew install macvim tmux tree rclone ffmpeg irssi wget bash-completion
+        brew install macvim tmux tree rclone ffmpeg irssi wget bash-completion ocrmypdf sbcl clisp
 
- 3. Install Emacs, LaTeX, and BibLaTeX.
+ 4. Install Emacs, LaTeX, and BibLaTeX.
 
         brew install --cask emacs basictex
         sudo tlmgr update --self
         sudo tlmgr install biber biblatex logreq
 
- 4. Install web browsers, graphics software, virtualization software, etc.
+ 5. Install web browsers, graphics software, virtualization software, etc.
 
         brew install --cask firefox google-chrome darktable android-file-transfer vlc
         brew install --cask virtualbox docker
-
- 5. Install development tools.
-
-        brew install sbcl clisp
-        brew install --cask jxplorer postman wireshark
 
 Note: We could have installed `biblatex` and `logreq` packages in a
 usertree as follows:
