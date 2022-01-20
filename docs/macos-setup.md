@@ -37,15 +37,7 @@ full screen applications:
  1. Go to the Apple menu > *System Preferences* > *Accessibility* >
     *Display*.
  2. Select *Reduce motion*.
-
-
-Configure Desktop
------------------
-
- 1. In the status menu, click the battery icon. Select *Show
-    Percentage*.
- 2. In the status menu, click date, select *Open Date & Time
-    Preferences*, select *Show Date*.
+ 3. Select *Show toolbar button shapes*.
 
 
 Configure Finder
@@ -58,21 +50,22 @@ Configure Finder
       - Downloads
       - Pictures
       - Home directory
- 3. Under *Shared* and *Devices*, select all items.
+ 3. Under *iCloud*, deselect everything.
+ 4. Under *Locations*, select everything.
  4. Under *Tags*, deselect *Recent Tags*.
  5. Go to *Finder* > *Preferences* > *Advanced*.
  6. Select *Show all filename extensions*.
  7. From the menu, select *View* > *Show Path Bar*.
  8. From the menu, select *View* > *Show Status Bar*.
  9. From the menu, select *View* > *Customize Toolbar* and drag the
-    *Path* item into the toolbar next to the *Back/Forward* buttons.
+    *Path* item into the toolbar at a free spot.
 
 
 Configure Terminal
 ------------------
 
  1. Go to *Terminal* > *Preferences* > *Profiles*.
- 2. Select *Pro*, click the Action drop-down menu (gear icon), then
+ 2. Select *Pro*, click the Action drop-down menu (circle icon), then
     select *Duplicate Profile*.
  3. Name the new profile `Pro++`.
  4. Select the new profile.
@@ -80,8 +73,8 @@ Configure Terminal
  6. Go to *Text* tab.
  7. In *Background* > *Color & Effects* section, click on the color
     selection box.
-      - Set *Opacity* to `90%`.
-      - Select *Inactive Window*. Set *Opacity* under it to `70%`.
+      - Set *Opacity* to `100%`.
+      - Select *Inactive Window*. Set *Opacity* under it to `90%`.
  8. In *Font* section, click *Change*.
       - Set *Family* to *Menlo*.
       - Set *Size* to *12*.
@@ -102,25 +95,43 @@ Similarly, this setting ensures that `C-b M-1` arranges tmux pane in
 even horizontal manner.
 
 
+Configure Display
+-----------------
+
+ 1. Go to Apple menu > *System Preferences* > *Displays*.
+ 2. Change Resolution to *Scaled*.
+ 3. Choose the option on the left side of *Default*. Check if it is
+    comfortable.
+ 4. Open *Terminal* in full screen mode, then run `tput lines` and
+    `tput cols` and ensure that the output is at least 50 x 160.
+    Expected output:
+    - MacBook Pro (Retina, 15-inch, Mid 2015): 59 x 204.
+    - On MacBook Pro (16-inch, 2021): 61 x 212.
+ 5. Click *Night Shift*.
+ 6. In *Night Shift*, set *Schedule* to *Custom* and time range to
+    7:00 AM to 6:59 AM.
+ 7. In *Night Shift*, select *Manual*.
+
 Configure Dock
 --------------
 
- 1. Go to the Apple menu > *System Preferences* > *Dock*.
+ 1. Go to the Apple menu > *System Preferences* > *Dock & Menu Bar*.
  2. Drag *Size* slider closer to *Small* such that its distance from
     *Small* is about 1/4th the distance between *Small* and *Large*.
  3. Select *Minimize windows into application icon*.
- 4. Keep only necessary applications in *Dock* and remove others:
+ 4. Deselect *Show recent applications in Dock*.
+ 5. Keep only necessary applications in *Dock* and remove others:
     Finder, Launchpad, System Preferences, and Terminal.
- 5. Launch Finder, and drag and drop home directory to Dock.
- 6. In the Dock, double tap home directory, select *Folder*.
- 7. In the Dock, double tap home directory, select *Fan*.
+ 6. Launch Finder, and drag and drop home directory to Dock.
+ 7. In the Dock, double tap home directory, select *Folder*.
+ 8. In the Dock, double tap home directory, select *Fan*.
 
 
 Enable Sound Icon
 -----------------
 
  1. Go to the Apple menu > *System Preferences* > *Sound*.
- 2. Select *Show volume in menu bar*.
+ 2. Select *Show volume in menu bar* and set it to *always*.
 
 
 Disable Scroll Bar When Not Scrolling
@@ -183,31 +194,35 @@ confirmed with the following commands:
 The Bash prompt displays the hostname upto the first dot by default.
 
 
+
 Install Packages
 ----------------
 
  1. Go to https://brew.sh/ and follow the instructions there to install
     Homebrew.
 
+ 2. After installation, enter any commands suggested by the installer.
+    Then close and start Terminal again.
+
  2. Install useful packages.
 
-        brew install macvim tmux tree rclone ffmpeg weechat wget bash-completion
+        brew install macvim tmux tree rclone ffmpeg irssi wget bash-completion
 
- 3. Install LaTeX and BibLaTeX.
+ 3. Install Emacs, LaTeX, and BibLaTeX.
 
-        brew cask install basictex
+        brew install --cask emacs basictex
         sudo tlmgr update --self
         sudo tlmgr install biber biblatex logreq
 
  4. Install web browsers, graphics software, virtualization software, etc.
 
-        brew cask install firefox google-chrome darktable android-file-transfer vlc
-        brew cask install virtualbox docker
+        brew install --cask firefox google-chrome darktable android-file-transfer vlc
+        brew install --cask virtualbox docker
 
  5. Install development tools.
 
         brew install sbcl clisp
-        brew cask install jxplorer postman wireshark
+        brew install --cask jxplorer postman wireshark
 
 Note: We could have installed `biblatex` and `logreq` packages in a
 usertree as follows:
@@ -236,13 +251,10 @@ Set Up Home Directory
 
         git clone https://github.com/susam/dotfiles.git
         cd dotfiles
+        touch ~/.zshrc
         ./setup
 
- 2. Edit *~/.bash_profile* and add the following line to it.
-
-        [ -f ~/git/dotfiles/bashrc ] && . ~/git/dotfiles/bashrc
-
- 3. Set up useful scripts.
+ 2. Set up useful scripts.
 
         mkdir -p ~/git ~/bin
         cd ~/git
@@ -254,7 +266,7 @@ Set Up Home Directory
         git clone https://github.com/susam/timebox.git
         ln -sf ~/git/timebox/timebox ~/bin/timebox
 
- 4. Set up my directory.
+ 3. Set up my directory.
 
         cd
         git clone https://susam@bitbucket.org/susam/my.git
