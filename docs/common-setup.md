@@ -1,5 +1,6 @@
 Configure Vim Plugins
 ---------------------
+
 Enter the following commands to set up Vim plugins:
 
     mkdir -p ~/pkg
@@ -29,6 +30,7 @@ order to avoid the following error from the `UseVimball` command:
 
 Configure Firefox
 -----------------
+
 Configure Firefox to always start with a blank page.
 
  1. Go to *Preferences* > *Home*.
@@ -40,6 +42,11 @@ save files.
 
  1. Go to *Preferences* > *General* > *Downloads*.
  2. Ensure *Save files to* is selected.
+
+Disable tracking.
+
+ 1. Go to *Preferences* > *Privacy & Security*.
+ 2. Set *Do Not Track* option to *Always*.
 
 Configure Firefox to never save logins.
 
