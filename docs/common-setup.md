@@ -121,7 +121,12 @@ description about each item to be entered is provided below.
  3. `drive` - Type of storage: Google Drive
  4. `<Enter>` - Google Application Client ID is left blank
  5. `<Enter>` - Google Application Client Secret is left blank
+ 6. `<Enter>` - Option scope is left blank
+ 7. `<Enter>` - Option root_folder_id
+ 8. `<Enter>` - service_account_file
+ 9. `n` - Edit advanced config?
  6. `y` - Use auto config
+ 7. `n` - Use this as a shared drive (team drive)?
  7. `y` - Confirm token
  8. `q` - Quit config
 
@@ -129,7 +134,7 @@ Copy data from Google Drive to local filesystem.
 
     mkdir -p ~/cld
     cd ~/cld
-    for dir in docs meta pubs tmp
-    do
-        rclone -v copy gdrive:"$dir" "$dir"
-    done
+    rclone -v copy gdrive:bin bin
+    chmod +x bin/*
+    mkdir docs dump pubs
+    bin/gsyncdown
