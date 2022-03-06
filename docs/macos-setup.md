@@ -162,6 +162,13 @@ These problems are avoided by changing this setting such that scroll
 bars appear only when scrolling.
 
 
+Save Screenshots Immediately
+----------------------------
+
+ 1. Start *Screenshot.app*.
+ 2. Go to *Options* and deselect "Show Floating Thumbnail*.
+
+
 Configure Computer Name
 -----------------------
 
@@ -201,7 +208,6 @@ confirmed with the following commands:
     mac.local
 
 The Bash prompt displays the hostname upto the first dot by default.
-
 
 
 Install Packages
