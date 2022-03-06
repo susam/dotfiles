@@ -25,19 +25,18 @@ ghclone() {
     pwd
 }
 
-# Clone BitBucket repository.
-bbclone() {
-    cd ~/git
-    pwd
-    if [ $# -eq 1 ]
-    then
-        git clone "https://susam@bitbucket.org/susam/$1.git"
-        cd "$1"
-    else
-        git clone "https://susam@bitbucket.org/$1/$2.git"
-        cd "$2"
-    fi
-    pwd
+# OCR PDFs.
+ocr()
+{
+    for f in "$@"
+    do
+        echo "OCRing $f ..."
+        ocrmypdf "$f" "${f%.pdf}-ocr.pdf"
+        mv "$f" "$f.bkp"
+        mv "${f%.pdf}-ocr.pdf" "$f"
+        ls -lh "$f.bkp"
+        ls -lh "$f"
+    done
 }
 
 # Redshift
