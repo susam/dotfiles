@@ -85,7 +85,8 @@
     (package-install package)))
 
 ;; Configure SBCL as the Lisp program for SLIME.
-(add-to-list 'exec-path "/usr/local/bin")
+(add-to-list 'exec-path "/usr/local/bin/")
+(add-to-list 'exec-path "/opt/homebrew/bin/")
 (setq inferior-lisp-program "sbcl")
 
 ;; Enable window header line and startup animation.
