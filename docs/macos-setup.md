@@ -95,6 +95,14 @@ Similarly, this setting ensures that `C-b M-1` arranges tmux pane in
 even horizontal manner.
 
 
+Configure Safari
+----------------
+
+ 1. Go to *Safari* > *Preferences* > *Advanced*.
+ 2. Select *Show full website address*.
+ 3. Select *Show Develop menu in menu bar*.
+
+
 Configure Display
 -----------------
 
@@ -111,6 +119,7 @@ Configure Display
  6. In *Night Shift*, set *Schedule* to *Custom* and time range to
     7:00 AM to 6:59 AM.
  7. In *Night Shift*, select *Manual*.
+
 
 Configure Dock
 --------------
@@ -134,8 +143,8 @@ Enable Sound Icon
  2. Select *Show volume in menu bar* and set it to *always*.
 
 
-Disable Scroll Bar When Not Scrolling
--------------------------------------
+Configure Scroll Bar
+--------------------
 
  1. Go to the Apple menu > *System Preferences* > *General*.
  2. Set *Show scroll bars* to *When scrolling*.

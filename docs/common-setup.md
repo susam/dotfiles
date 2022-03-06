@@ -63,6 +63,12 @@ Add the following useful extensions to Firefox.
 
 Configure Chrome
 ----------------
+
+ 1. Go to Chrome menu and deselect *Warn Before Quitting*.
+ 2. Go to new tab > *Customize Chrome* (bottom of page) > *Shortcuts*
+    and enable *Hide shortcuts*. Click *Done*.
+ 3. Right click on address bar and select *Always Show Full URLs*.
+
 Install *TheOne* extension to ensure that popups open in new tabs
 instead of new windows.
 
@@ -77,6 +83,7 @@ for the following extensions and add them one by one.
 
 Configure Thunderbird
 ---------------------
+
 Perform the following steps to sort emails in reverse chronological
 order.
 
@@ -102,6 +109,7 @@ area.
 
 Configure Pidgin
 ----------------
+
  1. Go to *Tools* > *Preferences* > *Logging*.
  2. Set *Log format* to *HTML*.
  3. Check all logging options.
@@ -109,6 +117,7 @@ Configure Pidgin
 
 Configure rclone
 ----------------
+
 Enter the following command to configure rclone.
 
     rclone config
