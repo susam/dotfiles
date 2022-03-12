@@ -167,6 +167,8 @@ alias txa='transmission-remote -t all'
 alias txr='transmission-remote'
 alias tx='transmission-remote'
 
+# Aliases for Common Lisp.
+alias cl='sbcl --noinform --quit --load'
 
 args() {
     for arg in "$@"
