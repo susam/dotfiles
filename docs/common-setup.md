@@ -51,7 +51,7 @@ Disable tracking.
 Configure Firefox to never save logins.
 
  1. Go to *Preferences* > *Privacy & Security*.
- 2. Deselect *Remember logins and passwords for websites*.
+ 2. Deselect *Ask to save logins and passwords for websites*.
 
 Add the following useful extensions to Firefox.
 

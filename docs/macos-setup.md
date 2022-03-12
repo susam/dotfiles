@@ -20,6 +20,13 @@ Map Caps Lock to Escape
  4. Click *OK*.
 
 
+Disable Globe Key
+-----------------
+
+ 1. Go to the Apple menu > *System Preferences* > *Keyboard*.
+ 2. Press Globe to: Do Nothing
+
+
 Speed Up Key Repeat
 -------------------
 
