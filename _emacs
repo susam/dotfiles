@@ -7,7 +7,6 @@
   (scroll-bar-mode 0))
 (setq inhibit-startup-screen t)
 (column-number-mode)
-(toggle-frame-fullscreen)
 
 ;; Do not display file icon or name on title bar.
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
@@ -132,6 +131,10 @@
 ;; Custom key sequences.
 (global-set-key (kbd "C-c t") 'show-current-time)
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
+
+;; Load workspace-local configuration.
+(load "~/my/bin/init.el" t)
+(load "~/ws/bin/init.el" t)
 
 ;; Start server.
 (require 'server)
