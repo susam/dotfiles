@@ -119,6 +119,39 @@ findtl()
     find /usr/local/texlive -name "*$1*"
 }
 
+# Remap keys in British Macbook keyboard to US keys.
+busk()
+{
+    # section/plus-minus -> backquote/tilde.
+    hidutil property --set '{"UserKeyMapping": [
+      {
+        "HIDKeyboardModifierMappingSrc": 0x700000064,
+        "HIDKeyboardModifierMappingDst": 0x700000035
+      }
+    ]}'
+}
+
+# Remap keys in Windows keyboard to Macbook US keys.
+wink()
+{
+    # swap left gui <-> left alt.
+    hidutil property --set '{"UserKeyMapping": [
+      {
+        "HIDKeyboardModifierMappingSrc": 0x7000000e3,
+        "HIDKeyboardModifierMappingDst": 0x7000000e2
+      },
+      {
+        "HIDKeyboardModifierMappingSrc": 0x7000000e2,
+        "HIDKeyboardModifierMappingDst": 0x7000000e3
+      }
+    ]}'
+}
+
+nok()
+{
+    hidutil property --set '{"UserKeyMapping": []}'
+}
+
 # Set environment.
 PATH=~/bin:$PATH
 [ -f ~/my/bin/env ] && . ~/my/bin/env
@@ -182,7 +215,7 @@ _active_prompt()
         fi
         _tput_color 2 # green
         printf '%s' "$neat_path"
-        unset neat_path 
+        unset neat_path
     fi
 
     # Dollar or beer sign
