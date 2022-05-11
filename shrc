@@ -174,11 +174,12 @@ alias dollar='_PROMPT_MARK="$ "'
 alias beer='_PROMPT_MARK="$_beer "'
 alias beer2='_PROMPT_MARK="$_beer$_beer "'
 
-# Aliases for Transmission CLI.
-alias txd='transmission-daemon -f'
-alias txa='transmission-remote -t all'
-alias txr='transmission-remote'
-alias tx='transmission-remote'
+# Aliases for Timeboxing.
+alias tm='timebox'
+alias tmt='grep "$(date +"%Y-%m-%d")" ~/timebox.log'
+alias tml='tmt; echo [ $(tmt | wc -l) ]'
+alias tmla='cat ~/timebox.log'
+alias tmr=': > ~/timebox.log'
 
 # Aliases for Common Lisp.
 alias cl='sbcl --noinform --quit --load'
