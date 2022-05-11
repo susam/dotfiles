@@ -45,6 +45,16 @@ ocr()
     done
 }
 
+# Show message box with a message.
+alert() {
+    if command -v osascript
+    then
+        osascript -e "tell app \"System Events\" to display alert \"$*\""
+    else
+        echo "$*" >&2
+    fi > /dev/null
+}
+
 # Redshift
 red()
 {
