@@ -99,6 +99,7 @@ findtl()
 # Set environment.
 PATH=~/bin:$PATH
 [ -f ~/my/bin/env ] && . ~/my/bin/env
+[ -f ~/ws/bin/env ] && . ~/ws/bin/env
 
 _begin_esc()
 {
