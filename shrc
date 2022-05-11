@@ -2,10 +2,16 @@
 
 echo Loading shell environment ... >&2
 
-# Set my Git user details.
+# Set my Git user details locally in the current repository.
 gitme() {
     git config user.name "Susam Pal"
     git config user.email susam@susam.net
+    git config user.name
+    git config user.email
+}
+
+# Show the current effective Git user.
+gitwho() {
     git config user.name
     git config user.email
 }
