@@ -154,8 +154,6 @@ nok()
 
 # Set environment.
 PATH=~/bin:$PATH
-[ -f ~/my/bin/env ] && . ~/my/bin/env
-[ -f ~/ws/bin/env ] && . ~/ws/bin/env
 
 _begin_esc()
 {
@@ -273,10 +271,14 @@ then
 elif [ -n "$ZSH_VERSION" ]
 then
     echo Loading ZSH environment ... >&2
+
     setopt prompt_subst
     autoload bashcompinit && bashcompinit
     autoload compinit && compinit
 fi
+
+[ -f ~/my/bin/shrc ] && . ~/my/bin/shrc
+[ -f ~/ws/bin/shrc ] && . ~/ws/bin/shrc
 
 # Attach to an existing Screen session or launch a new one.
 # [ -n "$STY$TMUX" ] || screen -dRR
