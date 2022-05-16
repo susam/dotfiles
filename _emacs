@@ -122,14 +122,20 @@
 (set-face-foreground 'rainbow-delimiters-depth-8-face "#999")  ; medium gray
 (set-face-foreground 'rainbow-delimiters-depth-9-face "#666")  ; dark gray
 
-;; Custom command.
+;; Custom commands.
 (defun show-current-time ()
   "Show current time."
   (interactive)
   (message (current-time-string)))
 
+(defun show-buffer-file-name ()
+  "Show current buffer's file name."
+  (interactive)
+  (message (buffer-file-name)))
+
 ;; Custom key sequences.
 (global-set-key (kbd "C-c t") 'show-current-time)
+(global-set-key (kbd "C-c b") 'show-buffer-file-name)
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
 
 ;; Load workspace-local configuration.
