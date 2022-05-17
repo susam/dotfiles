@@ -48,6 +48,9 @@
 (setq js-indent-level 2)
 (setq css-indent-offset 2)
 
+;; Add a newline automatically at the end of a file while saving.
+(setq-default require-final-newline t)
+
 ;; Highlight matching pairs of parentheses.
 (setq show-paren-delay 0)
 (show-paren-mode)
