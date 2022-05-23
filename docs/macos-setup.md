@@ -185,34 +185,39 @@ Configure Computer Name
     adding *.local* and replacing spaces with hyphens.
 
 ### Notes
+
 By default, the system names were set as follows:
 
-      - Computer Name: Susam’s MacBook Pro
-      - Local Hostname: Susams-MacBook-Pro.local
+  - Computer Name: Susam’s MacBook Pro
+  - Local Hostname: Susams-MacBook-Pro.local
 
 These system settings could be confirmed with the following commands:
 
-    $ scutil --get ComputerName
-    Susam’s MacBook Pro
-    $ scutil --get LocalHostName
-    Susams-MacBook-Pro
-    $ scutil --get HostName
-    HostName: not set
-    $ hostname
-    Susams-MacBook-Pro.local
+```
+$ scutil --get ComputerName
+Susam’s MacBook Pro
+$ scutil --get LocalHostName
+Susams-MacBook-Pro
+$ scutil --get HostName
+HostName: not set
+$ hostname
+Susams-MacBook-Pro.local
+```
 
 On setting the computer name to `mac`, the local hostname was
 automatically set to `mac.local`. These system settings could be
 confirmed with the following commands:
 
-    $ scutil --get ComputerName
-    mac
-    $ scutil --get LocalHostName
-    mac
-    $ scutil --get HostName
-    HostName: not set
-    $ hostname
-    mac.local
+```
+$ scutil --get ComputerName
+mac
+$ scutil --get LocalHostName
+mac
+$ scutil --get HostName
+HostName: not set
+$ hostname
+mac.local
+```
 
 The Bash prompt displays the hostname upto the first dot by default.
 
@@ -228,30 +233,40 @@ Install Packages
 
  3. Install useful packages.
 
-        brew install macvim tmux tree rclone ffmpeg irssi wget bash-completion ocrmypdf sbcl clisp
+    ```
+    brew install macvim tmux tree rclone ffmpeg irssi wget bash-completion ocrmypdf sbcl clisp
+    ```
 
  4. Install Emacs, LaTeX, and BibLaTeX.
 
-        brew install --cask emacs basictex
-        sudo tlmgr update --self
-        sudo tlmgr install biber biblatex logreq
+    ```
+    brew install --cask emacs basictex
+    sudo tlmgr update --self
+    sudo tlmgr install biber biblatex logreq
+    ```
 
  5. Install web browsers, graphics software, virtualization software, etc.
 
-        brew install --cask firefox google-chrome darktable android-file-transfer vlc
-        brew install --cask virtualbox docker
+    ```
+    brew install --cask firefox google-chrome darktable android-file-transfer vlc
+    brew install --cask virtualbox docker
+    ```
 
 Note: We could have installed `biblatex` and `logreq` packages in a
 usertree as follows:
 
-    TEXMFHOME=texmf tlmgr init-usertree
-    TEXMFHOME=texmf tlmgr --usermode install biblatex logreq
+```
+TEXMFHOME=texmf tlmgr init-usertree
+TEXMFHOME=texmf tlmgr --usermode install biblatex logreq
+```
 
 But we cannot do so for the `biber` executable. Attempting to do so
 fails with this error:
 
-    $ TEXMFHOME=texmf tlmgr --usermode install biber
-    Package biber is not relocatable, cannot install it in user mode!
+```
+$ TEXMFHOME=texmf tlmgr --usermode install biber
+Package biber is not relocatable, cannot install it in user mode!
+```
 
 Since it is necessary to install `biber` to the system level
 directories, we don't bother with installing `biblatex` and `logreq` to
@@ -263,30 +278,37 @@ Set Up Home Directory
 
  1. Enter the following commands.
 
-        mkdir -p ~/git
-        cd ~/git
+    ```
+    mkdir -p ~/git
+    cd ~/git
 
-        git clone https://github.com/susam/dotfiles.git
-        cd dotfiles
-        touch ~/.zshrc
-        ./setup
+    git clone https://github.com/susam/dotfiles.git
+    cd dotfiles
+    touch ~/.zshrc
+    ./setup
+    ```
 
  2. Set up useful scripts.
 
-        mkdir -p ~/git ~/bin
-        cd ~/git
+    ```
+    mkdir -p ~/git ~/bin
+    cd ~/git
 
-        git clone https://github.com/susam/vimer.git
-        ln -sf ~/git/vimer/vimer ~/bin/vi
-        ln -sf ~/git/vimer/vimer ~/bin/vi.sh
+    git clone https://github.com/susam/vimer.git
+    ln -sf ~/git/vimer/vimer ~/bin/vi
+    ln -sf ~/git/vimer/vimer ~/bin/vi.sh
 
-        git clone https://github.com/susam/timebox.git
-        ln -sf ~/git/timebox/timebox ~/bin/timebox
+    git clone https://github.com/susam/timebox.git
+    ln -sf ~/git/timebox/timebox ~/bin/timebox
+    ```
 
  3. Set up my directory.
 
-        cd
-        git clone https://susam@bitbucket.org/susam/my.git
+    ```
+    cd
+    git clone https://susam@bitbucket.org/susam/my.git
+    ```
+
 
 
 Configure Touch Bar
