@@ -119,6 +119,16 @@ findtl()
     find /usr/local/texlive -name "*$1*"
 }
 
+grepx()
+{
+    grep -r --exclude-dir=".[^/]*" --exclude-dir=.git "$1" .
+}
+
+findx()
+{
+    find . | grep -vE "/\.|__pycache__" | grep "$1"
+}
+
 # Remap keys in British Macbook keyboard to US keys.
 busk()
 {
