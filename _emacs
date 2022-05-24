@@ -138,6 +138,8 @@
 ;; Custom key sequences.
 (global-set-key (kbd "C-c C-b") 'show-buffer-file-name)
 (global-set-key (kbd "C-c C-d") 'delete-trailing-whitespace)
+(global-set-key (kbd "C-c C-f") 'toggle-frame-fullscreen)
+(global-set-key (kbd "C-c C-m") 'toggle-frame-maximized)
 (global-set-key (kbd "C-c C-t") 'show-current-time)
 
 ;; Load workspace-local configuration.
