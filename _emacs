@@ -72,7 +72,6 @@
 
 ;; Write customizations to a separate file instead of this file.
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file t)
 
 ;; Enable installation of packages from MELPA.
 (require 'package)
@@ -142,8 +141,8 @@
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
 
 ;; Load workspace-local configuration.
-(load "~/my/bin/init.el" t)
-(load "~/ws/bin/init.el" t)
+(load "~/extra.el" t)
+(load "~/local.el" t)
 
 ;; Start server.
 (require 'server)
