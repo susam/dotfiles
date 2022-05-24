@@ -244,7 +244,9 @@ alias tm='timebox'
 alias tmt='grep "$(date +"%Y-%m-%d")" ~/timebox.log'
 alias tml='tmt; echo [ $(tmt | wc -l) ]'
 alias tmla='cat ~/timebox.log'
+alias tmu='sed \$d ~/timebox.log > ~/t.new && mv ~/t.new ~/timebox.log && tml'
 alias tmr=': > ~/timebox.log'
+
 
 # Aliases for Common Lisp.
 alias cl='sbcl --noinform --quit --load'
