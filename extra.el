@@ -2,7 +2,9 @@
 
 ;; Additional packages to install.
 (defvar extra-package-list '(all-the-icons
-                             doom-modeline))
+                             doom-modeline
+                             dockerfile-mode
+                             docker-compose-mode))
 
 ;; Install packages.
 (dolist (package extra-package-list)
