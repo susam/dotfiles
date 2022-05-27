@@ -136,11 +136,11 @@
   (message (buffer-file-name)))
 
 ;; Custom key sequences.
-(global-set-key (kbd "C-c C-b") 'show-buffer-file-name)
-(global-set-key (kbd "C-c C-d") 'delete-trailing-whitespace)
-(global-set-key (kbd "C-c C-f") 'toggle-frame-fullscreen)
-(global-set-key (kbd "C-c C-m") 'toggle-frame-maximized)
-(global-set-key (kbd "C-c C-t") 'show-current-time)
+(global-set-key (kbd "C-c b") 'show-buffer-file-name)
+(global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
+(global-set-key (kbd "C-c f") 'toggle-frame-fullscreen)
+(global-set-key (kbd "C-c m") 'toggle-frame-maximized)
+(global-set-key (kbd "C-c t") 'show-current-time)
 
 ;; Load workspace-local configuration.
 (load "~/extra.el" t)
