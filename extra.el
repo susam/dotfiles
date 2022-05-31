@@ -1,5 +1,7 @@
 ;;; Extra Emacs Setup!
 
+(menu-bar-mode)
+
 ;; Additional packages to install.
 (defvar extra-package-list '(all-the-icons
                              doom-modeline
