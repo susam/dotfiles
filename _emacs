@@ -141,6 +141,7 @@
 (global-set-key (kbd "C-c f") 'toggle-frame-fullscreen)
 (global-set-key (kbd "C-c m") 'toggle-frame-maximized)
 (global-set-key (kbd "C-c t") 'show-current-time)
+(global-set-key (kbd "C-c w") 'whitespace-mode)
 
 ;; Load workspace-local configuration.
 (load "~/extra.el" t)
