@@ -20,3 +20,8 @@
 
 ;; Enable doom-modeline.
 (doom-modeline-mode)
+
+;; Enable line numbers in certain type of buffers.
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(add-hook 'conf-mode-hook 'display-line-numbers-mode)
+(add-hook 'text-mode-hook 'display-line-numbers-mode)
