@@ -1,12 +1,19 @@
 ;;; Extra Emacs Setup!
 
+;; Enable menu bar.
 (menu-bar-mode)
+
+;; Enable line numbers in certain type of buffers.
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(add-hook 'conf-mode-hook 'display-line-numbers-mode)
+(add-hook 'text-mode-hook 'display-line-numbers-mode)
 
 ;; Additional packages to install.
 (defvar extra-package-list '(all-the-icons
                              doom-modeline
                              dockerfile-mode
-                             docker-compose-mode))
+                             docker-compose-mode
+                             sqlup-mode))
 
 ;; Install packages.
 (dolist (package extra-package-list)
@@ -21,7 +28,11 @@
 ;; Enable doom-modeline.
 (doom-modeline-mode)
 
-;; Enable line numbers in certain type of buffers.
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
-(add-hook 'conf-mode-hook 'display-line-numbers-mode)
-(add-hook 'text-mode-hook 'display-line-numbers-mode)
+;; Configure sqlup-mode.
+(add-hook 'sql-mode-hook 'sqlup-mode)
+(add-hook 'sql-interactive-mode-hook 'sqlup-mode)
+(require 'sqlup-mode)
+(add-to-list 'sqlup-blacklist "name")
+
+;; Custom keys.
+(global-set-key (kbd "C-c u") 'sqlup-capitalize-keywords-in-region)
