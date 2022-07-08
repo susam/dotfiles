@@ -13,6 +13,7 @@
                              doom-modeline
                              dockerfile-mode
                              docker-compose-mode
+                             magit
                              sqlup-mode))
 
 ;; Install packages.
