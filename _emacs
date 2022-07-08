@@ -73,6 +73,9 @@
 ;; Write customizations to a separate file instead of this file.
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
+;; Always follow symbolic links to a file under version control.
+(setq vc-follow-symlinks t)
+
 ;; Enable installation of packages from MELPA.
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
