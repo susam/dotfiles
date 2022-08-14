@@ -32,6 +32,11 @@
 (setq ido-enable-flex-matching t)
 (fido-mode)
 
+;; Enable line numbers in certain types of buffers.
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(add-hook 'conf-mode-hook 'display-line-numbers-mode)
+(add-hook 'text-mode-hook 'display-line-numbers-mode)
+
 ;; Show stray whitespace.
 (setq-default show-trailing-whitespace t)
 (setq-default indicate-empty-lines t)
