@@ -12,19 +12,21 @@
 (setq ns-use-proxy-icon nil)
 (setq frame-title-format nil)
 
-;; Dark theme.
+;; Dark theme colours.
 (load-theme 'wombat)
-(set-face-background 'menu "#333")
+(set-face-background 'menu "#444")
 (set-face-foreground 'menu "#eee")
-(set-face-attribute 'menu nil :inverse-video nil)
 (set-face-background 'default "#111")
 (set-face-foreground 'default "#eee")
 (set-face-background 'cursor "#c96")
-(set-face-background 'isearch "#c60")
-(set-face-foreground 'isearch "#eee")
-(set-face-background 'lazy-highlight "#960")
-(set-face-foreground 'lazy-highlight "#ccc")
+(set-face-background 'isearch "#ff0")
+(set-face-foreground 'isearch "#000")
+(set-face-background 'lazy-highlight "#696")
+(set-face-foreground 'lazy-highlight "#000")
 (set-face-foreground 'font-lock-comment-face "#fc0")
+
+;; Dark theme attributes.
+(set-face-attribute 'menu nil :inverse-video nil)
 
 ;; Interactively do things.
 (ido-mode 1)
