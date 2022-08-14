@@ -148,14 +148,20 @@
   (interactive)
   (message (buffer-file-name)))
 
+(defun set-font-size (pt)
+  "Set default font size."
+  (interactive "nFont Size: ")
+  (set-face-attribute 'default nil :height (* 10 pt)))
+
 ;; Custom key sequences.
 (global-set-key (kbd "C-c b") 'show-buffer-file-name)
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
 (global-set-key (kbd "C-c f") 'toggle-frame-fullscreen)
 (global-set-key (kbd "C-c l") 'display-line-numbers-mode)
 (global-set-key (kbd "C-c m") 'toggle-frame-maximized)
-(global-set-key (kbd "C-c t") 'show-current-time)
 (global-set-key (kbd "C-c w") 'whitespace-mode)
+(global-set-key (kbd "C-c s f") 'set-font-size)
+(global-set-key (kbd "C-c s t") 'show-current-time)
 
 ;; Load workspace-local configuration.
 (load "~/extra.el" t)
