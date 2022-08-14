@@ -1,7 +1,6 @@
 ;;; My Emacs!
 
 ;; Customize user interface.
-(menu-bar-mode 0)
 (when (display-graphic-p)
   (tool-bar-mode 0)
   (scroll-bar-mode 0))
@@ -15,7 +14,11 @@
 
 ;; Dark theme.
 (load-theme 'wombat)
+(set-face-background 'menu "#333")
+(set-face-foreground 'menu "#eee")
+(set-face-attribute 'menu nil :inverse-video nil)
 (set-face-background 'default "#111")
+(set-face-foreground 'default "#eee")
 (set-face-background 'cursor "#c96")
 (set-face-background 'isearch "#c60")
 (set-face-foreground 'isearch "#eee")
