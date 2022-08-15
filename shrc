@@ -270,6 +270,8 @@ alias tmla='cat ~/timebox.log'
 alias tmu='sed \$d ~/timebox.log > ~/t.new && mv ~/t.new ~/timebox.log && tml'
 alias tmr=': > ~/timebox.log'
 
+# Reclaim C-s for forward incremental search.
+stty -ixon
 
 # Aliases for Common Lisp.
 alias cl='sbcl --noinform --quit --load'
