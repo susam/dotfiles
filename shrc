@@ -309,6 +309,6 @@ fi
 # [ -n "$STY$TMUX" ] || screen -dRR
 
 # Attach to an existing tmux or a launch new tmux.
-[ -n "$STY$TMUX" ] || tmux at || tmux
+[ -n "$STY$TMUX$INSIDE_EMACS" ] || tmux at || tmux
 
 echo Done >&2
