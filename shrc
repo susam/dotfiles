@@ -213,13 +213,6 @@ _active_prompt()
     fi
     unset git_branch
 
-    # Docker machine name
-    if [ -n "$DOCKER_MACHINE_NAME" ]
-    then
-        _tput_color 80 # blue
-        printf '[%s] ' "$DOCKER_MACHINE_NAME"
-    fi
-
     # Current directory
     if [ "$PWD" != "$HOME" ]
     then
