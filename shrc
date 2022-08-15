@@ -25,6 +25,14 @@ en() {
     emacs -nw "$@"
 }
 
+fgcol() {
+    for i in {0..255}; do tput setaf $i; printf "$i "; done; echo
+}
+
+bgcol() {
+    for i in {0..255}; do tput setab $i; printf "$i "; done; echo
+}
+
 # Set my Git user details locally in the current repository.
 gitme() {
     git config user.name "Susam Pal"
