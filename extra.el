@@ -1,20 +1,13 @@
 ;;; Extra Emacs Setup!
 
-;; Enable menu bar.
-(menu-bar-mode)
-
-;; Enable line numbers in certain type of buffers.
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
-(add-hook 'conf-mode-hook 'display-line-numbers-mode)
-(add-hook 'text-mode-hook 'display-line-numbers-mode)
-
 ;; Additional packages to install.
 (defvar extra-package-list '(all-the-icons
                              doom-modeline
                              dockerfile-mode
                              docker-compose-mode
                              magit
-                             sqlup-mode))
+                             sqlup-mode
+                             terraform-mode))
 
 ;; Install packages.
 (dolist (package extra-package-list)
