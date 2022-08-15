@@ -201,6 +201,18 @@ _tput_reset()
     _end_esc
 }
 
+# Color palette.
+if [ -n "$INSIDE_EMACS" ]
+then
+    YELLOW=226
+    GREEN=40
+    ORANGE=214
+else
+    YELLOW=11
+    GREEN=2
+    ORANGE=172
+fi
+
 # Create dynamic prompt string for PS1.
 _active_prompt()
 {
@@ -208,7 +220,7 @@ _active_prompt()
     git_branch=$(git branch 2> /dev/null | sed -n "s/^\* *//p")
     if [ -n "$git_branch" ]
     then
-        _tput_color 148 # yellow
+        _tput_color "$YELLOW"
         printf '[%s] ' "$git_branch"
     fi
     unset git_branch
@@ -222,13 +234,13 @@ _active_prompt()
         else
             neat_path=$PWD
         fi
-        _tput_color 2 # green
+        _tput_color "$GREEN"
         printf '%s' "$neat_path"
         unset neat_path
     fi
 
     # Dollar or beer sign
-    _tput_color 172 # orange
+    _tput_color "$ORANGE"
     if [ -n "$_PROMPT_MARK" ]
     then
         printf '%s' "$_PROMPT_MARK"
