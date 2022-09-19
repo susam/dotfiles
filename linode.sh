@@ -38,7 +38,7 @@ apt-get -y install git make tmux tree emacs-nox
 
 # Set timezone.
 rm -f /etc/localtime
-echo Asia/Kolkata > /etc/timezone
+echo UTC > /etc/timezone
 sudo dpkg-reconfigure -f noninteractive tzdata
 
 # Set hostname.
