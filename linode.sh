@@ -80,29 +80,37 @@ autocmd BufWinEnter * syntax match Error /\s\+$/
 eof
 
 # Configure Emacs.
+ln -sf /usr/bin/emacs /usr/local/bin/em
 cat > /etc/emacs/site-start.d/90emacs.el <<EOF
 (setq inhibit-startup-screen t)
 (menu-bar-mode 0)
 (column-number-mode)
 (load-theme 'wombat)
-(set-face-background 'default "#111")
+(set-face-attribute 'menu nil :background "#444" :foreground "#eee")
+(set-face-attribute 'default nil :background "#111" :foreground "#eee")
+(set-face-attribute 'region nil :background "#354" :foreground "#eee")
+(set-face-attribute 'isearch nil :background "#ff0" :foreground "#000")
+(set-face-attribute 'lazy-highlight nil :background "#990" :foreground "#000")
+(set-face-attribute 'mode-line nil :background "#444" :foreground "#ccc")
+(set-face-attribute 'mode-line-inactive nil :background "#222" :foreground "#999")
 (set-face-background 'cursor "#c96")
-(set-face-background 'isearch "#c60")
-(set-face-foreground 'isearch "#eee")
-(set-face-background 'lazy-highlight "#960")
-(set-face-foreground 'lazy-highlight "#ccc")
 (set-face-foreground 'font-lock-comment-face "#fc0")
 (ido-mode 1)
 (ido-everywhere)
 (setq ido-enable-flex-matching t)
 (fido-mode)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(add-hook 'conf-mode-hook 'display-line-numbers-mode)
+(add-hook 'text-mode-hook 'display-line-numbers-mode)
 (setq-default show-trailing-whitespace t)
+(setq-default indicate-empty-lines t)
 (setq sentence-end-double-space nil)
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq c-basic-offset 4)
 (setq js-indent-level 2)
 (setq css-indent-offset 2)
+(setq-default require-final-newline t)
 (setq show-paren-delay 0)
 (show-paren-mode)
 (make-directory "/tmp/emacs/auto-save/" t)
@@ -110,6 +118,7 @@ cat > /etc/emacs/site-start.d/90emacs.el <<EOF
 (setq backup-directory-alist '(("." . "/tmp/emacs/backup/")))
 (setq backup-by-copying t)
 (setq create-lockfiles nil)
+(setq vc-follow-symlinks t)
 EOF
 
 # Configure tmux.
