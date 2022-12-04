@@ -16,6 +16,7 @@
 (load-theme 'wombat)
 (set-face-attribute 'menu nil :background "#444" :foreground "#eee")
 (set-face-attribute 'default nil :background "#111" :foreground "#eee")
+(set-face-attribute 'region nil :background "#354" :foreground "#eee")
 (set-face-attribute 'isearch nil :background "#ff0" :foreground "#000")
 (set-face-attribute 'lazy-highlight nil :background "#990" :foreground "#000")
 (set-face-attribute 'mode-line nil :background "#444" :foreground "#ccc")
