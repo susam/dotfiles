@@ -35,6 +35,13 @@ Speed Up Key Repeat
  3. Drag *Delay Until Repeat* slider to one mark before *Short*.
 
 
+Disable Full Stop With Double Space
+-----------------------------------
+
+ 1. Go to the Apple menu > *System Preferences* > *Keyboard* > *Text*.
+ 2. Deseelct *Add full stop with double-space*.
+
+
 Reduce Motion
 -------------
 
