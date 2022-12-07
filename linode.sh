@@ -119,6 +119,16 @@ cat > /etc/emacs/site-start.d/90emacs.el <<EOF
 (setq backup-by-copying t)
 (setq create-lockfiles nil)
 (setq vc-follow-symlinks t)
+
+(defun show-buffer-file-name ()
+  "Show current buffer's file name."
+  (interactive)
+  (message (buffer-file-name)))
+
+(global-set-key (kbd "C-c b") 'show-buffer-file-name)
+(global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
+(global-set-key (kbd "C-c l") 'display-line-numbers-mode)
+(global-set-key (kbd "C-c w") 'whitespace-mode)
 EOF
 
 # Configure tmux.
