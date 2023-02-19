@@ -168,6 +168,7 @@
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 (global-set-key (kbd "C-c s f") 'set-font-size)
 (global-set-key (kbd "C-c s t") 'show-current-time)
+(global-set-key (kbd "C-c r s") 'slime-restart-inferior-lisp)
 
 ;; Load workspace-local configuration.
 (load "~/extra.el" t)
