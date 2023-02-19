@@ -146,6 +146,9 @@
 ;; Disable auto isearch to navigate using q/n/p/f/b/u after typing C-c C-j.
 (setq org-goto-auto-isearch nil)
 
+;; BibTeX.
+(setq bibtex-align-at-equal-sign t)
+
 ;; Custom commands.
 (defun show-current-time ()
   "Show current time."
