@@ -44,6 +44,7 @@
 (setq-default show-trailing-whitespace t)
 (setq-default indicate-empty-lines t)
 (setq-default indicate-buffer-boundaries 'left)
+(add-hook 'term-mode-hook (lambda () (setq-default show-trailing-whitespace nil)))
 
 ;; Consider a period followed by a single space to be end of sentence.
 (setq sentence-end-double-space nil)
