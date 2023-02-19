@@ -139,6 +139,10 @@
 (set-face-foreground 'rainbow-delimiters-depth-8-face "#999")  ; medium gray
 (set-face-foreground 'rainbow-delimiters-depth-9-face "#666")  ; dark gray
 
+;; Customize Org-mode.
+(require 'org-faces)
+(set-face-attribute 'org-table nil :inherit nil)
+
 ;; Custom commands.
 (defun show-current-time ()
   "Show current time."
