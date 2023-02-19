@@ -143,6 +143,9 @@
 (require 'org-faces)
 (set-face-attribute 'org-table nil :inherit nil)
 
+;; Disable auto isearch to navigate using q/n/p/f/b/u after typing C-c C-j.
+(setq org-goto-auto-isearch nil)
+
 ;; Custom commands.
 (defun show-current-time ()
   "Show current time."
