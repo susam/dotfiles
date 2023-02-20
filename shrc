@@ -147,30 +147,65 @@ findx()
     find . | grep -vE "/\.|__pycache__" | grep "$1"
 }
 
-# Remap keys in British Macbook keyboard to US keys.
-busk()
+
+# Apple documentation for keyboard usage IDs:
+# https://developer.apple.com/library/archive/technotes/tn2450/_index.html
+
+# Remap keys in Mac British keyboard to US layout keys.
+mbk()
 {
-    # section/plus-minus -> backquote/tilde.
+    # section/plus-minus (0x64) -> backquote/tilde (0x35)
+    # return (0x28) -> \| (0x31)
+    # \| (0x31) -> return (0x28)
+    # non-us ~# (0x32) (absent) -> return (0x28) (transition)
     hidutil property --set '{"UserKeyMapping": [
       {
         "HIDKeyboardModifierMappingSrc": 0x700000064,
         "HIDKeyboardModifierMappingDst": 0x700000035
+      },
+      {
+        "HIDKeyboardModifierMappingSrc": 0x700000028,
+        "HIDKeyboardModifierMappingDst": 0x700000031
+      },
+      {
+        "HIDKeyboardModifierMappingSrc": 0x700000031,
+        "HIDKeyboardModifierMappingDst": 0x700000028
+      },
+      {
+        "HIDKeyboardModifierMappingSrc": 0x700000032,
+        "HIDKeyboardModifierMappingDst": 0x700000028
       }
     ]}'
 }
 
-# Remap keys in Windows keyboard to Macbook US keys.
-wink()
+# Remap keys in external British keyboard to Macbook US layout keys.
+ebk()
 {
-    # swap left gui <-> left alt.
+    # return (0x28) -> non-us ~# (but types \|) (0x32)
+    # \| (0x31) (absent) -> return (0x28) (transition)
+    # non-us ~# (0x32) (but types \|) -> return (0x28)
+    # left alt (0xe2) -> left gui (0xe3)
+    # left gui (0xe3) -> left alt (0xe2)
     hidutil property --set '{"UserKeyMapping": [
       {
-        "HIDKeyboardModifierMappingSrc": 0x7000000e3,
-        "HIDKeyboardModifierMappingDst": 0x7000000e2
+        "HIDKeyboardModifierMappingSrc": 0x700000028,
+        "HIDKeyboardModifierMappingDst": 0x700000032
+      },
+      {
+        "HIDKeyboardModifierMappingSrc": 0x700000031,
+        "HIDKeyboardModifierMappingDst": 0x700000028
+      },
+      {
+        "HIDKeyboardModifierMappingSrc": 0x700000032,
+        "HIDKeyboardModifierMappingDst": 0x700000028
       },
       {
         "HIDKeyboardModifierMappingSrc": 0x7000000e2,
         "HIDKeyboardModifierMappingDst": 0x7000000e3
+      },
+      {
+        "HIDKeyboardModifierMappingSrc": 0x7000000e3,
+        "HIDKeyboardModifierMappingDst": 0x7000000e2
       }
     ]}'
 }
