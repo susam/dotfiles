@@ -139,7 +139,7 @@ findtl()
 
 grepx()
 {
-    grep -r --exclude-dir=".[^/]*" --exclude-dir=.git "$1" .
+    grep -r --exclude-dir=".[^/]*" --exclude-dir=venv --exclude-dir=node_modules "$@" .
 }
 
 findx()
