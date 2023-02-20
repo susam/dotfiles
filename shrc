@@ -62,6 +62,16 @@ ghclone() {
     pwd
 }
 
+# Go to the top-level directory of the current project.
+gcd() {
+    check_path=$PWD
+    while [ "$check_path" != / ]
+    do
+        [ -d "$check_path/.git" ] && cd "$check_path" && break
+        check_path=${check_path%/*}
+    done
+}
+
 # OCR PDFs.
 ocr()
 {
