@@ -96,7 +96,7 @@
   (package-refresh-contents))
 
 ;; Install packages.
-(dolist (package '(markdown-mode paredit rainbow-delimiters slime))
+(dolist (package '(markdown-mode paredit rainbow-delimiters slime helm))
   (unless (package-installed-p package)
     (package-install package)))
 
