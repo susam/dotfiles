@@ -9,6 +9,9 @@
                              sqlup-mode
                              terraform-mode))
 
+;; Let C-c C-v C-b, C-c C-c, etc. evaluate without confirmation.
+(setq org-confirm-babel-evaluate nil)
+
 ;; Install packages.
 (dolist (package extra-package-list)
   (unless (package-installed-p package)
