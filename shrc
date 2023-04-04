@@ -25,6 +25,10 @@ tem() {
     emacs -nw "$@"
 }
 
+emm() {
+    emacs --eval '(progn (toggle-frame-maximized) (split-window-below) (switch-to-buffer "*Messages*") (other-window 1))'
+}
+
 fgcol() {
     for i in {0..255}; do tput setaf $i; printf "$i "; done; echo
 }
