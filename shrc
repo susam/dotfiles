@@ -17,6 +17,8 @@ em() {
     fi
 }
 
+[ -e ~/.remote ] && alias em=emacs
+
 ec() {
     emacsclient "$@"
 }
@@ -277,7 +279,7 @@ _active_prompt()
     unset git_branch
 
     # Current session
-    if [ -f ~/.secondary ]
+    if [ -f ~/.remote ]
     then
         _tput_color "$CYAN"
         printf "$(id -un)@$(hostname) "
