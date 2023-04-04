@@ -301,7 +301,7 @@ Configure File Manager
  3. Enter the following details.
       - Name: Edit with GVim
       - Command: `gvim --remote-silent %F`
-      - Icon: vim 
+      - Icon: vim
 
  4. Go to *Apperance Conditions* tab and select *Directories*, *Text
     Files* and *Other Files*.
@@ -385,7 +385,7 @@ VirtualBox, then this section is not applicable.
  3. Start the Debian VM.
 
  4. In the Debian VM, edit /etc/network/interfaces and add the
-     following lines to it. 
+     following lines to it.
 
         auto eth1
         iface eth1 inet static
@@ -458,7 +458,7 @@ paste, respectively, on both the Mac host and the VM.
  2. Click *Add*.
  3. Enter the following fields.
       - Name: Command to Control
-      - Description: Map Command to Control 
+      - Description: Map Command to Control
       - Command: `setxkbmap -option altwin:ctrl_win`
  4. Click *OK*. Click *Close*.
  5. Log out and log into the desktop again and test that the mapping is

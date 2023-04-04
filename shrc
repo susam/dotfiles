@@ -254,12 +254,14 @@ _tput_reset()
 if [ -n "$INSIDE_EMACS" ]
 then
     YELLOW=226
+    CYAN=87
     GREEN=40
-    ORANGE=214
+    ORANGE=208
 else
     YELLOW=11
+    CYAN=14
     GREEN=2
-    ORANGE=172
+    ORANGE=208
 fi
 
 # Create dynamic prompt string for PS1.
@@ -273,6 +275,13 @@ _active_prompt()
         printf '[%s] ' "$git_branch"
     fi
     unset git_branch
+
+    # Current session
+    if [ -f ~/.secondary ]
+    then
+        _tput_color "$CYAN"
+        printf "$(id -un)@$(hostname) "
+    fi
 
     # Current directory
     if [ "$PWD" != "$HOME" ]
