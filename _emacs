@@ -46,6 +46,9 @@
 (setq-default indicate-buffer-boundaries 'left)
 (add-hook 'term-mode-hook (lambda () (setq-default show-trailing-whitespace nil)))
 
+;; 256 colors in terminal.
+(add-hook 'term-mode-hook #'eterm-256color-mode)
+
 ;; Consider a period followed by a single space to be end of sentence.
 (setq sentence-end-double-space nil)
 
@@ -96,7 +99,7 @@
   (package-refresh-contents))
 
 ;; Install packages.
-(dolist (package '(markdown-mode paredit rainbow-delimiters slime helm))
+(dolist (package '(markdown-mode paredit rainbow-delimiters slime helm eterm-256color))
   (unless (package-installed-p package)
     (package-install package)))
 
