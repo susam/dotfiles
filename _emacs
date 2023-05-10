@@ -99,7 +99,13 @@
   (package-refresh-contents))
 
 ;; Install packages.
-(dolist (package '(markdown-mode paredit rainbow-delimiters slime helm eterm-256color))
+(dolist (package '(markdown-mode
+                   paredit
+                   rainbow-delimiters
+                   slime
+                   helm
+                   eterm-256color
+                   devil))
   (unless (package-installed-p package)
     (package-install package)))
 
@@ -178,6 +184,9 @@
 (global-set-key (kbd "C-c s f") 'set-font-size)
 (global-set-key (kbd "C-c s t") 'show-current-time)
 (global-set-key (kbd "C-c r s") 'slime-restart-inferior-lisp)
+
+;; Devil mode!
+(global-devil-mode)
 
 ;; Load workspace-local configuration.
 (load "~/extra.el" t)
