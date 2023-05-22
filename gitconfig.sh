@@ -22,6 +22,7 @@ git config --global alias.brr "branch -vva"
 git config --global alias.brd "branch -d"
 git config --global alias.brdf "branch -D"
 git config --global alias.brdo "!git branch -d \"\$1\" && git push -d origin"
+git config --global alias.brdu "!git branch -d \"\$1\" && git push -d upstream"
 
 git config --global alias.co "checkout"
 git config --global alias.cob "checkout -b"
