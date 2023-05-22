@@ -58,6 +58,8 @@
 
 ;; Consider a period followed by a single space to be end of sentence.
 (setq sentence-end-double-space nil)
+(add-hook 'emacs-lisp-mode-hook (lambda () (setq sentence-end-double-space t)))
+(add-hook 'org-mode-hook (lambda () (setq sentence-end-double-space t)))
 
 ;; Use spaces, not tabs, for indentation.
 (setq-default indent-tabs-mode nil)
