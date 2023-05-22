@@ -29,6 +29,13 @@
 (set-face-attribute 'mode-line nil :box '(:style released-button))
 (set-face-attribute 'mode-line-inactive nil :box '(:style pressed-button))
 
+;; Diff colors.
+(require 'diff-mode)
+(set-face-attribute 'diff-context nil :foreground "#ccc")
+(set-face-attribute 'diff-added nil :background nil :foreground "#6c6")
+(set-face-attribute 'diff-removed nil :background nil :foreground "#c66")
+(set-face-attribute 'diff-header nil :background nil :foreground "#fc0")
+
 ;; Interactively do things.
 (ido-mode 1)
 (ido-everywhere)
