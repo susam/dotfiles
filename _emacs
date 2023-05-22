@@ -170,15 +170,10 @@
 (setq bibtex-align-at-equal-sign t)
 
 ;; Custom commands.
-(defun show-current-time ()
-  "Show current time."
-  (interactive)
-  (message (current-time-string)))
-
-(defun show-buffer-file-name ()
-  "Show current buffer's file name."
-  (interactive)
-  (message (buffer-file-name)))
+(defmacro command (&rest body)
+  `(lambda ()
+     (interactive)
+     ,@body))
 
 (defun set-font-size (pt)
   "Set default font size."
@@ -186,15 +181,16 @@
   (set-face-attribute 'default nil :height (* 10 pt)))
 
 ;; Custom key sequences.
-(global-set-key (kbd "C-c b") 'show-buffer-file-name)
+(global-set-key (kbd "C-c b") (command (message (buffer-file-name))))
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
 (global-set-key (kbd "C-c f") 'toggle-frame-fullscreen)
 (global-set-key (kbd "C-c l") 'display-line-numbers-mode)
 (global-set-key (kbd "C-c m") 'toggle-frame-maximized)
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 (global-set-key (kbd "C-c s f") 'set-font-size)
-(global-set-key (kbd "C-c s t") 'show-current-time)
+(global-set-key (kbd "C-c s t") (command (message (current-time-string))))
 (global-set-key (kbd "C-c r s") 'slime-restart-inferior-lisp)
+
 
 ;; Flycheck.
 (global-flycheck-mode)
