@@ -19,18 +19,24 @@ em() {
 
 [ -e ~/.remote ] && alias em=emacs
 
-ec() {
+emc() {
     emacsclient "$@"
 }
 
-tem() {
+emt() {
     emacs -nw "$@"
 }
 
 emm() {
-    emacs --eval '(progn (toggle-frame-maximized) (split-window-below) (switch-to-buffer "*Messages*") (other-window 1))'
+    emacs --debug-init --eval '(progn (toggle-frame-maximized) (split-window-below) (switch-to-buffer "*Messages*") (other-window 1))'
 }
 
+emf() {
+    printf 'foo\nbar\nbaz\nqux\quux\ncorge\n' > /tmp/foo.txt
+    emacs --debug-init --eval '(progn (toggle-frame-maximized) (switch-to-buffer "*Messages*") (split-window-below) (other-window 1) (find-file "/tmp/foo.txt"))'
+}
+
+# Test colors.
 fgcol() {
     for i in {0..255}; do tput setaf $i; printf "$i "; done; echo
 }
