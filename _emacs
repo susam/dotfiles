@@ -112,7 +112,9 @@
                    slime
                    helm
                    eterm-256color
-                   devil))
+                   devil
+                   flycheck
+                   flycheck-package))
   (unless (package-installed-p package)
     (package-install package)))
 
@@ -192,8 +194,9 @@
 (global-set-key (kbd "C-c s t") 'show-current-time)
 (global-set-key (kbd "C-c r s") 'slime-restart-inferior-lisp)
 
-;; Devil mode!
-(global-devil-mode)
+;; Flycheck.
+(global-flycheck-mode)
+(eval-after-load 'flycheck '(flycheck-package-setup))
 
 ;; Load workspace-local configuration.
 (load "~/extra.el" t)
