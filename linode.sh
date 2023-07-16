@@ -11,8 +11,6 @@ adduser "$username" --gecos '' --disabled-password
 echo "$username:$userpass" | chpasswd
 adduser "$username" sudo
 
-# echo "$username ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers.d/nopasswd
-
 # Copy SSH keys.
 umask 077
 mkdir -p /home/$username/.ssh
