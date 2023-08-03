@@ -193,6 +193,8 @@
 (global-set-key (kbd "C-c r f") 'recover-this-file)
 (global-set-key (kbd "C-c r s") 'slime-restart-inferior-lisp)
 (global-set-key (kbd "C-c e t")  (cmd (find-file "~/my/time.org")))
+(global-set-key (kbd "C-c t s") 'transpose-sentences)
+(global-set-key (kbd "C-c t p") 'transpose-paragraphs)
 
 ;; Flycheck.
 (global-flycheck-mode)
