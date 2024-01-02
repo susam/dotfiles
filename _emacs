@@ -170,7 +170,7 @@
 (setq bibtex-align-at-equal-sign t)
 
 ;; Custom commands.
-(defmacro command (&rest body)
+(defmacro cmd (&rest body)
   `(lambda ()
      (interactive)
      ,@body))
@@ -181,16 +181,16 @@
   (set-face-attribute 'default nil :height (* 10 pt)))
 
 ;; Custom key sequences.
-(global-set-key (kbd "C-c b") (command (message (buffer-file-name))))
+(global-set-key (kbd "C-c b") (cmd (message (buffer-file-name))))
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
 (global-set-key (kbd "C-c f") 'toggle-frame-fullscreen)
 (global-set-key (kbd "C-c l") 'display-line-numbers-mode)
 (global-set-key (kbd "C-c m") 'toggle-frame-maximized)
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 (global-set-key (kbd "C-c s f") 'set-font-size)
-(global-set-key (kbd "C-c s t") (command (message (current-time-string))))
+(global-set-key (kbd "C-c s t") (cmd (message (current-time-string))))
 (global-set-key (kbd "C-c r s") 'slime-restart-inferior-lisp)
-
+(global-set-key (kbd "C-c e t")  (cmd (find-file "~/my/time.org")))
 
 ;; Flycheck.
 (global-flycheck-mode)
