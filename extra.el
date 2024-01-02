@@ -1,9 +1,7 @@
 ;;; Extra Emacs Setup!
 
 ;; Additional packages to install.
-(defvar extra-package-list '(all-the-icons
-                             doom-modeline
-                             dockerfile-mode
+(defvar extra-package-list '(dockerfile-mode
                              docker-compose-mode
                              magit
                              sqlup-mode
@@ -23,9 +21,6 @@
 (when (display-graphic-p)
   (unless (member "all-the-icons" (font-family-list))
     (all-the-icons-install-fonts t)))
-
-;; Enable doom-modeline.
-(doom-modeline-mode)
 
 ;; Configure sqlup-mode.
 (add-hook 'sql-mode-hook 'sqlup-mode)
