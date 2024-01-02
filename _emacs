@@ -162,6 +162,7 @@
 ;; Customize Org-mode.
 (require 'org-faces)
 (set-face-attribute 'org-table nil :inherit nil)
+(set-face-attribute 'org-block nil :inherit nil)
 
 ;; Disable auto isearch to navigate using q/n/p/f/b/u after typing C-c C-j.
 (setq org-goto-auto-isearch nil)
