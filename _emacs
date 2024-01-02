@@ -10,7 +10,7 @@
 ;; Do not display file icon or name on title bar.
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
 (setq ns-use-proxy-icon nil)
-(setq frame-title-format nil)
+(setq frame-title-format "Emacs")
 
 ;; Dark theme colours.
 (load-theme 'wombat)
