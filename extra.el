@@ -7,6 +7,8 @@
                              docker-compose-mode
                              magit
                              sqlup-mode
+                             rust-mode
+                             go-mode
                              terraform-mode))
 
 ;; Let C-c C-v C-b, C-c C-c, etc. evaluate without confirmation.
