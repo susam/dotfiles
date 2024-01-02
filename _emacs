@@ -190,6 +190,7 @@
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 (global-set-key (kbd "C-c s f") 'set-font-size)
 (global-set-key (kbd "C-c s t") (cmd (message (current-time-string))))
+(global-set-key (kbd "C-c r f") 'recover-this-file)
 (global-set-key (kbd "C-c r s") 'slime-restart-inferior-lisp)
 (global-set-key (kbd "C-c e t")  (cmd (find-file "~/my/time.org")))
 
