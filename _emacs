@@ -204,8 +204,6 @@
 (global-set-key (kbd "C-c t s") 'transpose-sentences)
 (global-set-key (kbd "C-c t p") 'transpose-paragraphs)
 (global-set-key (kbd "C-c o u") 'browse-url-of-file)
-(global-set-key (kbd "C-c e m e")
-                (cmd (find-file "~/git/susam.net/content/maze/tree/meet/mastering-emacs/")))
 
 ;; Flycheck.
 (global-flycheck-mode)
