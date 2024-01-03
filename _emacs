@@ -220,6 +220,11 @@
 (unless (server-running-p)
   (server-start))
 
+;; Set PATH for shell-command, compile, etc.
+(setenv "PATH" (concat (getenv "PATH")
+                       ":" (expand-file-name "~/bin/")
+                       ":" (expand-file-name "~/my/bin/")))
+
 (defun wrap-in-html-p ()
   "Wrap the current paragraph with <p> tags."
   (interactive)
