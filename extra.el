@@ -27,6 +27,4 @@
 (add-hook 'sql-interactive-mode-hook 'sqlup-mode)
 (require 'sqlup-mode)
 (add-to-list 'sqlup-blacklist "name")
-
-;; Custom keys.
 (global-set-key (kbd "C-c u") 'sqlup-capitalize-keywords-in-region)

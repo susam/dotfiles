@@ -7,6 +7,8 @@
 (setq inhibit-startup-screen t)
 (column-number-mode)
 
+(setq doc-view-resolution 300)
+
 ;; Do not display file icon or name on title bar.
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
 (setq ns-use-proxy-icon nil)
@@ -48,18 +50,18 @@
 (add-hook 'text-mode-hook 'display-line-numbers-mode)
 
 ;; Show stray whitespace.
-(setq-default show-trailing-whitespace t)
+(setq-default show-trailing-whitespace nil)
 (setq-default indicate-empty-lines t)
 (setq-default indicate-buffer-boundaries 'left)
 (add-hook 'term-mode-hook (lambda () (setq-default show-trailing-whitespace nil)))
 
+;; Consider a period followed by a single space to be end of sentence.
+;(setq sentence-end-double-space t)
+;(add-hook 'emacs-lisp-mode-hook (lambda () (setq-local sentence-end-double-space t)))
+;(add-hook 'org-mode-hook (lambda () (setq-local sentence-end-double-space t)))
+
 ;; 256 colors in terminal.
 (add-hook 'term-mode-hook #'eterm-256color-mode)
-
-;; Consider a period followed by a single space to be end of sentence.
-(setq sentence-end-double-space nil)
-(add-hook 'emacs-lisp-mode-hook (lambda () (setq sentence-end-double-space t)))
-(add-hook 'org-mode-hook (lambda () (setq sentence-end-double-space t)))
 
 ;; Use spaces, not tabs, for indentation.
 (setq-default indent-tabs-mode nil)
@@ -116,9 +118,14 @@
                    eterm-256color
                    devil
                    flycheck
-                   flycheck-package))
+                   flycheck-package
+                   zig-mode
+                   rust-mode
+                   dumb-jump))
   (unless (package-installed-p package)
     (package-install package)))
+
+(add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
 ;; Configure SBCL as the Lisp program for SLIME.
 (add-to-list 'exec-path "/usr/local/bin/")
@@ -183,6 +190,7 @@
 
 ;; Custom key sequences.
 (global-set-key (kbd "C-c b") (cmd (message (buffer-file-name))))
+(global-set-key (kbd "C-c c") 'compile)
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
 (global-set-key (kbd "C-c f") 'toggle-frame-fullscreen)
 (global-set-key (kbd "C-c l") 'display-line-numbers-mode)
@@ -195,6 +203,9 @@
 (global-set-key (kbd "C-c e t")  (cmd (find-file "~/my/time.org")))
 (global-set-key (kbd "C-c t s") 'transpose-sentences)
 (global-set-key (kbd "C-c t p") 'transpose-paragraphs)
+(global-set-key (kbd "C-c o u") 'browse-url-of-file)
+(global-set-key (kbd "C-c e m e")
+                (cmd (find-file "~/git/susam.net/content/maze/tree/meet/mastering-emacs/")))
 
 ;; Flycheck.
 (global-flycheck-mode)
@@ -208,3 +219,22 @@
 (require 'server)
 (unless (server-running-p)
   (server-start))
+
+(defun wrap-in-html-p ()
+  "Wrap the current paragraph with <p> tags."
+  (interactive)
+  (backward-paragraph)
+  (open-line 1)
+  (insert "<p>")
+  (indent-for-tab-command)
+  (forward-paragraph)
+  (open-line 1)
+  (insert "</p>")
+  (indent-for-tab-command)
+  (forward-line -1)
+  (mark-paragraph)
+  (indent-for-tab-command)
+  (fill-paragraph))
+
+(global-set-key (kbd "C-c h w p") 'wrap-in-html-p)
+(setq debug-on-error t)

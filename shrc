@@ -19,21 +19,26 @@ em() {
 
 [ -e ~/.remote ] && alias em=emacs
 
-emc() {
+cem() {
     emacsclient "$@"
 }
 
-emt() {
+tem() {
     emacs -nw "$@"
 }
 
-emm() {
+mem() {
     emacs --debug-init --eval '(progn (toggle-frame-maximized) (split-window-below) (switch-to-buffer "*Messages*") (other-window 1))'
 }
 
-emf() {
+fem() {
     printf 'foo\nbar\nbaz\nqux\quux\ncorge\n' > /tmp/foo.txt
     emacs --debug-init --eval '(progn (toggle-frame-maximized) (switch-to-buffer "*Messages*") (split-window-below) (other-window 1) (find-file "/tmp/foo.txt"))'
+}
+
+gem() {
+    printf 'foo\nbar\nbaz\nqux\quux\ncorge\n' > /tmp/foo.txt
+    emacs --debug-init --eval '(progn (toggle-frame-maximized) (switch-to-buffer "*Messages*") (split-window-below) (other-window 1) (find-file "/tmp/foo.txt") (split-window-right) (other-window 1) (find-file "~/git/god-mode/god-mode.el"))'
 }
 
 # Test colors.
@@ -230,6 +235,7 @@ nok()
 # Set environment.
 PATH=~/bin:$PATH
 
+
 _begin_esc()
 {
     [ -n "$BASH_VERSION" ] && printf '\x01' && return
@@ -373,6 +379,7 @@ fi
 
 [ -f ~/my/bin/shrc ] && . ~/my/bin/shrc
 [ -f ~/ws/bin/shrc ] && . ~/ws/bin/shrc
+[ -f ~/.cargo/env ] && . ~/.cargo/env
 
 # Attach to an existing Screen session or launch a new one.
 # [ -n "$STY$TMUX" ] || screen -dRR
