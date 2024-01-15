@@ -208,6 +208,7 @@
 (global-set-key (kbd "C-c e t")  (cmd (find-file "~/my/time.org")))
 (global-set-key (kbd "C-c t s") 'transpose-sentences)
 (global-set-key (kbd "C-c t p") 'transpose-paragraphs)
+(global-set-key (kbd "C-c t t") 'toggle-truncate-lines)
 (global-set-key (kbd "C-c o u") 'browse-url-of-file)
 
 ;; Flycheck.
