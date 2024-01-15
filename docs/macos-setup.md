@@ -176,6 +176,16 @@ These problems are avoided by changing this setting such that scroll
 bars appear only when scrolling.
 
 
+Configure Regional Settings
+---------------------------
+
+ 1. Go to the Apple menu > *System Settings* > *General*.
+ 2. Set *First day of week* to `Sunday`.
+
+This affects what day is used as the first column for the *Calendar*
+app.
+
+
 Save Screenshots Immediately
 ----------------------------
 
