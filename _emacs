@@ -38,6 +38,11 @@
 (set-face-attribute 'diff-removed nil :background nil :foreground "#c66")
 (set-face-attribute 'diff-header nil :background nil :foreground "#fc0")
 
+;; Do not use "Monospace" (which falls back on "courier" via
+;; face-font-family-alternatives) for org-table, org-block,
+;; org-meta-line, etc.  Use default font instead.
+(set-face-attribute 'fixed-pitch nil :family 'unspecified)
+
 ;; Interactively do things.
 (ido-mode 1)
 (ido-everywhere)
@@ -173,8 +178,6 @@
 
 ;; Customize Org-mode.
 (require 'org-faces)
-(set-face-attribute 'org-table nil :inherit nil)
-(set-face-attribute 'org-block nil :inherit nil)
 
 ;; Disable auto isearch to navigate using q/n/p/f/b/u after typing C-c C-j.
 (setq org-goto-auto-isearch nil)
@@ -246,4 +249,3 @@
   (fill-paragraph))
 
 (global-set-key (kbd "C-c h w p") 'wrap-in-html-p)
-(setq debug-on-error t)
