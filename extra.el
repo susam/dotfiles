@@ -7,7 +7,10 @@
                              sqlup-mode
                              rust-mode
                              go-mode
+                             groovy-mode
                              terraform-mode))
+
+;(setq groovy-indent-offset 4)
 
 ;; Let C-c C-v C-b, C-c C-c, etc. evaluate without confirmation.
 (setq org-confirm-babel-evaluate nil)
