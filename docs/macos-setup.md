@@ -4,33 +4,16 @@ macOS Setup
 Customize Trackpad
 ------------------
 
- 1. Go to the Apple menu > *System Preferences* > *Trackpad*.
+ 1. Go to *System Settings* > *Trackpad*.
  2. Select *Tap to click*.
- 3. Go to the Apple menu > *System Preferences* > *Trackpad* > *More
-    Gestures*.
- 4. Select *App Expose*.
-
-
-Map Caps Lock to Escape
------------------------
-
- 1. Go to the Apple menu > *System Preferences* > *Keyboard*.
- 2. Click *Modifier Keys*.
- 3. Set *Caps Lock Key* to *Escape*.
- 4. Click *OK*.
-
-
-Disable Globe Key
------------------
-
- 1. Go to the Apple menu > *System Preferences* > *Keyboard*.
- 2. Press Globe to: Do Nothing
+ 3. Go to *System Settings* > *Trackpad* > *More Gestures*.
+ 4. Set *App Expose* to *Swipe Down with Three Fingers*.
 
 
 Speed Up Key Repeat
 -------------------
 
- 1. Go to the Apple menu > *System Preferences* > *Keyboard*.
+ 1. Go to *System Settings* > *Keyboard*.
  2. Drag *Key Repeat* slider to *Fast*.
  3. Drag *Delay Until Repeat* slider to one mark before *Short*.
 
@@ -38,7 +21,7 @@ Speed Up Key Repeat
 Disable Full Stop With Double Space
 -----------------------------------
 
- 1. Go to the Apple menu > *System Preferences* > *Keyboard* > *Text*.
+ 1. Go to *System Settings* > *Keyboard* > *Text*.
  2. Deseelct *Add full stop with double-space*.
 
 
@@ -48,7 +31,7 @@ Reduce Motion
 Perform the following steps to reduce motion while switching between
 full screen applications:
 
- 1. Go to the Apple menu > *System Preferences* > *Accessibility* >
+ 1. Go to *System Settings* > *Accessibility* >
     *Display*.
  2. Select *Reduce motion*.
  3. Select *Show toolbar button shapes*.
@@ -57,7 +40,7 @@ full screen applications:
 Configure Finder
 ----------------
 
- 1. Go to *Finder* > *Preferences* > *Sidebar*.
+ 1. Go to *Finder* > *Settings* > *Sidebar*.
  2. Under *Favorites*, select only the following items:
       - Desktop
       - Documents
@@ -78,7 +61,7 @@ Configure Finder
 Configure Terminal
 ------------------
 
- 1. Go to *Terminal* > *Preferences* > *Profiles*.
+ 1. Go to *Terminal* > *Settings* > *Profiles*.
  2. Select *Pro*, click the Action drop-down menu (circle icon), then
     select *Duplicate Profile*.
  3. Name the new profile `Pro++`.
@@ -112,15 +95,15 @@ even horizontal manner.
 Configure Safari
 ----------------
 
- 1. Go to *Safari* > *Preferences* > *Advanced*.
+ 1. Go to *Safari* > *Settings* > *Advanced*.
  2. Select *Show full website address*.
- 3. Select *Show Develop menu in menu bar*.
+ 3. Select *Show features for web developers*.
 
 
 Configure Display
 -----------------
 
- 1. Go to Apple menu > *System Preferences* > *Displays*.
+ 1. Go to *System Settings* > *Displays*.
  2. Change Resolution to *Scaled*.
  3. Choose the option on the left side of *Default*. Check if it is
     comfortable.
@@ -129,7 +112,13 @@ Configure Display
     Expected output:
     - MacBook Pro (Retina, 15-inch, Mid 2015): 59 x 204.
     - On MacBook Pro (16-inch, 2021): 61 x 212.
- 5. Click *Night Shift*.
+
+
+Enable Night Shift
+------------------
+
+ 1. Go to *System Settings* > *Displays*.
+ 2. Click *Night Shift*.
  6. In *Night Shift*, set *Schedule* to *Custom* and time range to
     7:00 AM to 6:59 AM.
  7. In *Night Shift*, select *Manual*.
@@ -138,29 +127,29 @@ Configure Display
 Configure Dock
 --------------
 
- 1. Go to the Apple menu > *System Preferences* > *Dock & Menu Bar*.
+ 1. Go to *System Settings* > *Dock & Menu Bar*.
  2. Drag *Size* slider closer to *Small* such that its distance from
     *Small* is about 1/4th the distance between *Small* and *Large*.
  3. Select *Minimize windows into application icon*.
- 4. Deselect *Show recent applications in Dock*.
- 5. Keep only necessary applications in *Dock* and remove others:
-    Finder, Launchpad, System Preferences, and Terminal.
- 6. Launch Finder, and drag and drop home directory to Dock.
- 7. In the Dock, double tap home directory, select *Folder*.
- 8. In the Dock, double tap home directory, select *Fan*.
+ 4. Keep only the following items on the dock:
+      - Finder
+      - Chrome
+      - Firefox
+      - Terminal
+      - Emacs
 
 
 Enable Sound Icon
 -----------------
 
- 1. Go to the Apple menu > *System Preferences* > *Sound*.
+ 1. Go to *System Settings* > *Sound*.
  2. Select *Show volume in menu bar* and set it to *always*.
 
 
 Configure Scroll Bar
 --------------------
 
- 1. Go to the Apple menu > *System Preferences* > *General*.
+ 1. Go to *System Settings* > *Appearance*.
  2. Set *Show scroll bars* to *When scrolling*.
 
 ### Notes
@@ -179,7 +168,7 @@ bars appear only when scrolling.
 Configure Regional Settings
 ---------------------------
 
- 1. Go to the Apple menu > *System Settings* > *General*.
+ 1. Go to *System Settings* > *General* > *Language & Region*.
  2. Set *First day of week* to `Sunday`.
 
 This affects what day is used as the first column for the *Calendar*
@@ -196,7 +185,7 @@ Save Screenshots Immediately
 Configure Computer Name
 -----------------------
 
- 1. Go to the Apple menu > *System Preferences* > *Sharing*.
+ 1. Go to *System Settings* > *Sharing*.
  2. Set *Computer Name* to a desired value, say, `mac`. The *Local
     Hostname* is then automatically derived from the computer name by
     adding *.local* and replacing spaces with hyphens.
@@ -337,11 +326,43 @@ Set Up Home Directory
 Configure Touch Bar
 -------------------
 
- 1. Go to the Apple menu > *System Preferences* > *Keyboard*.
+ 1. Go to *System Settings* > *Keyboard*.
  2. Set *Touch Bar shows* to `Expanded Control Strip`.
  3. Click *Customize Touch Bar*. Select the Siri icon from Touch Bar,
     drag it and drop it off near the other icons on the customization
     pane.
+
+
+Configure User Picture
+----------------------
+
+ 1. Go to *System Settings* > *Users & Groups*.
+ 2. Click on the "i" icon.
+ 3. Click on the user picture.
+ 4. Go to *Suggestions*, select a new picture, and click *Save*.
+
+
+Configure Notification Centre
+-----------------------------
+
+ 1. Click on date at the top-right corner.
+ 2. Scroll down and click *Edit Widgets*.
+ 3. Then make the following arrangement of widgets:
+      - Clock > Clock1; Calendar > Month
+      - Clock > World Clock
+      - Weather > Forecast
+      - Stocks > Symbol; Stocks > Symbol
+      - Stocks > Symbol; Stocks > Symbol
+ 4. Now edit the Clock widget to configure the following cities:
+      - San Francisco
+      - New York
+      - Mumbai
+      - Tokyo
+ 5. Edit each stock and set the following tickers:
+      - GBPUSD
+      - GBPEUR
+      - GBPINR
+      - GBPJPY
 
 
 Next Steps

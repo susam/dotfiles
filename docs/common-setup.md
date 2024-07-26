@@ -31,54 +31,71 @@ order to avoid the following error from the `UseVimball` command:
 Configure Firefox
 -----------------
 
-Configure Firefox to always start with a blank page.
+ 1. Go to *Settings* > *General*. Click *Make Default*.
 
- 1. Go to *Preferences* > *Home*.
- 2. Set *Homepage and new windows* to `Blank Page`.
- 3. Set *New tabs* to `Blank Page`.
+ 2. Go to *Settings* > *General* > Tabs*.  Deselect *Confirm before
+    quitting*.
 
-Configure Firefox to automatically save files without asking where to
-save files.
+ 3. Goto *Settings* > *Home*.  Then
+      - Set *Homepage and new windows* to `Blank Page`.
+      - Set *New tabs* to `Blank Page`.
 
- 1. Go to *Preferences* > *General* > *Downloads*.
- 2. Ensure *Save files to* is selected.
+ 4. Go to *Settings* > *General* > *Downloads*.  Ensure *Save files
+    to* is selected.
 
-Disable tracking.
+ 5. Go to *Settings* > *Privacy & Security*.  Under *Web Site Privacy
+    Prefernces*, select both options:
+      - *Tell web sites not to sell or share my data*
+      - *Send websites a "Do Not Track" request*.
 
- 1. Go to *Preferences* > *Privacy & Security*.
- 2. Set *Do Not Track* option to *Always*.
+ 6. Go to *Preferences* > *Privacy & Security*.  Then
+      - Deselect *Ask to save passwords*.
+      - Deselect *Save and fill payment methods*.
 
-Configure Firefox to never save logins.
+ 7. Install add-ons:
+      - Multi-Account Containers
+      - Greasemonkey
+      - uBlock Origin
+      - Vimium
+      - YouTube Video and Audio Downloader (WebEx):
 
- 1. Go to *Preferences* > *Privacy & Security*.
- 2. Deselect *Ask to save logins and passwords for websites*.
+ 8. Go to Toolbar > Extensions > *Manage extensions.*  Decide which
+    extensions should be allowed to run in private mode and allow
+    them.
 
-Add the following useful extensions to Firefox.
+ 9. Go to Toolbar > Extensions > Multi-Account Containers > Settings
+    icon > *Pin to Toolbar*.
 
- 1. Vimium-FF: https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/
- 2. YouTube Video and Audio Downloader (WebEx):
-    https://addons.mozilla.org/en-US/firefox/addon/youtube_downloader_webx/
- 3. uBlock Origin: https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
+10. From the menu, select Bookmarks and then click on the button with
+    up/down arrow button.  Then select "Import Bookmarks from HTML"
+    and import any bookmarks that need to be imported.
+
+11. Go to *View* > *Toolbar* > *Bookmarks Toolbar*.  Select *Never
+    Show*.
+
+12. Go to <https://github.com/susam/userscripts> and install the
+    userscripts.
 
 
 Configure Chrome
 ----------------
 
  1. Go to Chrome menu and deselect *Warn Before Quitting*.
+
  2. Go to new tab > *Customize Chrome* (bottom of page) > *Shortcuts*
-    and enable *Hide shortcuts*. Click *Done*.
- 3. Right click on address bar and select *Always Show Full URLs*.
+    and deselect *Show shortcuts*.
 
-Install *TheOne* extension to ensure that popups open in new tabs
-instead of new windows.
+ 3. Go to *Settings* > *Autofill and passwords* > *Google Password
+    Manager* > *Settings*.  Disable *Offer to save passwords*.
 
-Go to <https://chrome.google.com/webstore/category/extensions>, search
-for the following extensions and add them one by one.
+ 4. Right click on address bar and select *Always Show Full URLs*.
 
- 1. One Window: https://chrome.google.com/webstore/detail/one-window/papnlnnbddhckngcblfljaelgceffobn
- 2. Vimium: https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb
- 3. uBlock Origin: https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm
- 4. Blank New Tab Page: https://chrome.google.com/webstore/detail/blank-new-tab-page/jonikckfpolfcdcgdficelkfffkloemh
+ 5. Install extensions:
+      - uBlock Origin
+      - Violentmonkey
+
+ 6. Go to <https://github.com/susam/userscripts> and install the
+    userscripts.
 
 
 Configure Thunderbird
