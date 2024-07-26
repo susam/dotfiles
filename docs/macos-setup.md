@@ -240,7 +240,7 @@ Install Packages
  3. Install useful packages.
 
     ```
-    brew install macvim tmux tree rclone ffmpeg irssi wget bash-completion ocrmypdf sbcl clisp
+    brew install macvim tmux tree rclone ffmpeg irssi wget bash-completion ocrmypdf sbcl clisp oath-toolkit
     ```
 
  4. Install Emacs, LaTeX, and BibLaTeX.
