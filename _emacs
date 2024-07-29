@@ -130,6 +130,10 @@
   (unless (package-installed-p package)
     (package-install package)))
 
+;; Enable Devil.
+(global-devil-mode)
+(global-set-key (kbd "C-,") 'global-devil-mode)
+
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
 ;; Configure SBCL as the Lisp program for SLIME.

@@ -20,11 +20,6 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-;; Install fonts for doom-modeline.
-(when (display-graphic-p)
-  (unless (member "all-the-icons" (font-family-list))
-    (all-the-icons-install-fonts t)))
-
 ;; Configure sqlup-mode.
 (add-hook 'sql-mode-hook 'sqlup-mode)
 (add-hook 'sql-interactive-mode-hook 'sqlup-mode)
