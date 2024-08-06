@@ -127,11 +127,12 @@ Enable Night Shift
 Configure Dock
 --------------
 
- 1. Go to *System Settings* > *Dock & Menu Bar*.
+ 1. Go to *System Settings* > *Desktop & Dock*.
  2. Drag *Size* slider closer to *Small* such that its distance from
     *Small* is about 1/4th the distance between *Small* and *Large*.
- 3. Select *Minimize windows into application icon*.
- 4. Keep only the following items on the dock:
+ 3. Enable *Minimize windows into application icon*.
+ 4. Disable *Show suggested and recent apps in Dock*.
+ 5. Keep only the following items on the dock:
       - Finder
       - Chrome
       - Firefox
@@ -240,7 +241,7 @@ Install Packages
  3. Install useful packages.
 
     ```
-    brew install macvim tmux tree rclone ffmpeg irssi wget bash-completion ocrmypdf sbcl clisp oath-toolkit
+    brew install macvim tmux tree rclone ffmpeg irssi wget bash-completion ocrmypdf sbcl clisp oath-toolkit ripgrep
     ```
 
  4. Install Emacs, LaTeX, and BibLaTeX.
