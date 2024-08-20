@@ -71,7 +71,7 @@ Configure Terminal
  7. In *Background* > *Color & Effects* section, click on the color
     selection box.
       - Set *Opacity* to `100%`.
-      - Select *Inactive Window*. Set *Opacity* under it to `90%`.
+      - Select *Inactive Window*.  Set *Opacity* under it to `90%`.
  8. In *Font* section, click *Change*.
       - Set *Family* to *Menlo*.
       - Set *Size* to *12*.
@@ -85,7 +85,7 @@ Configure Terminal
 15. From the menu, click *View* > *Hide Marks*.
 
 Note: If we do not select *Use Option as Meta key*, then many Bash or
-tmux key-bindings using the meta-key do not work. For example, this
+tmux key-bindings using the meta-key do not work.  For example, this
 setting is necessary to ensure that `M-f` and `M-b` move the cursor back
 to the previous word and end of the next word, respectively, in Bash.
 Similarly, this setting ensures that `C-b M-1` arranges tmux pane in
@@ -105,7 +105,7 @@ Configure Display
 
  1. Go to *System Settings* > *Displays*.
  2. Change Resolution to *Scaled*.
- 3. Choose the option on the left side of *Default*. Check if it is
+ 3. Choose the option on the left side of *Default*.  Check if it is
     comfortable.
  4. Open *Terminal* in full screen mode, then run `tput lines` and
     `tput cols` and ensure that the output is at least 50 x 160.
@@ -151,16 +151,16 @@ Configure Scroll Bar
 --------------------
 
  1. Go to *System Settings* > *Appearance*.
- 2. Set *Show scroll bars* to *When scrolling*.
+ 2. Set *Show scroll bars* to *Always*.
 
 ### Notes
 
 By default, the *Show scroll bars* option is set to *Automatically based
-on mouse or trackpad*. This causes a scroll bar to appear in windows
-whenever the mouse is connected. For example, if *Terminal* is resized
+on mouse or trackpad*.  This causes a scroll bar to appear in windows
+whenever the mouse is connected.  For example, if *Terminal* is resized
 to the full width of the desktop and then the mouse is connected, the
 scroll bar appearing on the right side causes the width of the
-*Terminal* window to reduce a little. Now if the mouse is disconnected,
+*Terminal* window to reduce a little.  Now if the mouse is disconnected,
 the *Terminal* window no longer spans the whole width of the desktop.
 These problems are avoided by changing this setting such that scroll
 bars appear only when scrolling.
@@ -187,7 +187,7 @@ Configure Computer Name
 -----------------------
 
  1. Go to *System Settings* > *Sharing*.
- 2. Set *Computer Name* to a desired value, say, `mac`. The *Local
+ 2. Set *Computer Name* to a desired value, say, `mac`.  The *Local
     Hostname* is then automatically derived from the computer name by
     adding *.local* and replacing spaces with hyphens.
 
@@ -212,7 +212,7 @@ Susams-MacBook-Pro.local
 ```
 
 On setting the computer name to `mac`, the local hostname was
-automatically set to `mac.local`. These system settings could be
+automatically set to `mac.local`.  These system settings could be
 confirmed with the following commands:
 
 ```
@@ -267,7 +267,7 @@ TEXMFHOME=texmf tlmgr init-usertree
 TEXMFHOME=texmf tlmgr --usermode install biblatex logreq
 ```
 
-But we cannot do so for the `biber` executable. Attempting to do so
+But we cannot do so for the `biber` executable.  Attempting to do so
 fails with this error:
 
 ```
@@ -329,7 +329,7 @@ Configure Touch Bar
 
  1. Go to *System Settings* > *Keyboard*.
  2. Set *Touch Bar shows* to `Expanded Control Strip`.
- 3. Click *Customize Touch Bar*. Select the Siri icon from Touch Bar,
+ 3. Click *Customize Touch Bar*.  Select the Siri icon from Touch Bar,
     drag it and drop it off near the other icons on the customization
     pane.
 
