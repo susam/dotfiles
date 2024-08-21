@@ -206,21 +206,22 @@
 (global-set-key (kbd "C-c b") (cmd (message (buffer-file-name))))
 (global-set-key (kbd "C-c c") #'org-capture)
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
-(global-set-key (kbd "C-c e c") (cmd (find-file "~/my/plan/cal.org")))
+(global-set-key (kbd "C-c e c") (cmd (find-file "~/my/notes/commands.md")))
 (global-set-key (kbd "C-c e d") (cmd (find-file "~/my/dd.org")))
 (global-set-key (kbd "C-c e e") (cmd (find-file "~/.emacs")))
-(global-set-key (kbd "C-c e i") (cmd (find-file "~/my/plan/in.org")))
-(global-set-key (kbd "C-c e n") (cmd (find-file "~/my/plan/next.org")))
-(global-set-key (kbd "C-c e p") (cmd (find-file "~/my/plan/project.org")))
-(global-set-key (kbd "C-c e s") (cmd (find-file "~/my/plan/someday.org")))
 (global-set-key (kbd "C-c e s") (cmd (find-file "~/scratch.md")))
 (global-set-key (kbd "C-c e t") (cmd (find-file "~/my/time.org")))
-(global-set-key (kbd "C-c e w") (cmd (find-file "~/my/plan/waiting.org")))
 (global-set-key (kbd "C-c f") 'toggle-frame-fullscreen)
 (global-set-key (kbd "C-c l") #'org-store-link)
 (global-set-key (kbd "C-c m") 'toggle-frame-maximized)
 (global-set-key (kbd "C-c n") 'display-line-numbers-mode)
-(global-set-key (kbd "C-c o u") 'browse-url-of-file)
+(global-set-key (kbd "C-c o a") (cmd (find-file "~/my/plan/all.org")))
+(global-set-key (kbd "C-c o c") (cmd (find-file "~/my/plan/cal.org")))
+(global-set-key (kbd "C-c o i") (cmd (find-file "~/my/plan/in.org")))
+(global-set-key (kbd "C-c o n") (cmd (find-file "~/my/plan/next.org")))
+(global-set-key (kbd "C-c o p") (cmd (find-file "~/my/plan/project.org")))
+(global-set-key (kbd "C-c o s") (cmd (find-file "~/my/plan/someday.org")))
+(global-set-key (kbd "C-c o w") (cmd (find-file "~/my/plan/waiting.org")))
 (global-set-key (kbd "C-c r f") 'recover-this-file)
 (global-set-key (kbd "C-c r s") 'slime-restart-inferior-lisp)
 (global-set-key (kbd "C-c s f") 'set-font-size)
@@ -232,13 +233,21 @@
 
 ;; Org
 (require 'org)
+
 (setq org-agenda-start-on-weekday 0)
-(add-to-list 'org-agenda-files "~/my/plan/in.org" t)
-(add-to-list 'org-agenda-files "~/my/plan/next.org" t)
-(add-to-list 'org-agenda-files "~/my/plan/cal.org" t)
-(add-to-list 'org-agenda-files "~/my/plan/project.org" t)
-(add-to-list 'org-agenda-files "~/my/plan/waiting.org" t)
-(add-to-list 'org-agenda-files "~/my/plan/someday.org" t)
+(setq org-log-repeat nil)
+(dolist (fname '("all" "in" "next" "cal" "project" "waiting" "someday"))
+  (setq fname (format "~/my/plan/%s.org" fname))
+  (unless (file-exists-p fname)
+    (write-region "" nil fname))
+  (add-to-list 'org-agenda-files fname t))
+
+(setq org-capture-templates
+      '(("t"
+         "Task"
+         entry
+         (file "~/my/plan/in.org")
+         "* %t %?")))
 
 ;; Flycheck.
 (global-flycheck-mode)
