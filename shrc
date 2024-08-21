@@ -316,12 +316,9 @@ _active_prompt()
     if [ -n "$_PROMPT_MARK" ]
     then
         printf '%s' "$_PROMPT_MARK"
-    elif [ $(date +"%a") = Fri ]
+    elif date +"%a" | grep -qE 'Fri|Sat|Sun'
     then
-        printf '%s' "$_beer "
-    elif [ $(date +"%a") = Sat ]
-    then
-        printf '%s' "$_beer$_beer "
+        printf '%s' "$_books "
     else
         printf '$ '
     fi
@@ -330,9 +327,10 @@ _active_prompt()
 
 # Aliases to modify the ending characters of the primary prompt.
 _beer=$(printf "\xf0\x9f\x8d\xba")
+_books=$(printf "\xf0\x9f\x93\x9a")
 alias dollar='_PROMPT_MARK="$ "'
 alias beer='_PROMPT_MARK="$_beer "'
-alias beer2='_PROMPT_MARK="$_beer$_beer "'
+alias books='_PROMPT_MARK="$_books "'
 
 # Aliases for Timeboxing.
 alias tm='timebox'
