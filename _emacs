@@ -47,7 +47,7 @@
 (ido-mode 1)
 (ido-everywhere)
 (setq ido-enable-flex-matching t)
-(fido-mode)
+(fido-vertical-mode)
 
 ;; Enable line numbers in certain types of buffers.
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
