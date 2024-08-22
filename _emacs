@@ -241,7 +241,7 @@
   (add-to-list 'org-agenda-files fname t))
 
 (setq org-capture-templates
-      '(("t" "Task" entry (file+headline "~/my/plan/in.org" "IN") "* %t %?")))
+      '(("t" "Task" entry (file+headline "~/my/plan/in.org" "IN") "* %u %?")))
 (setq org-refile-targets '((org-agenda-files . (:level . 1))))
 (setq org-refile-use-outline-path 'file)
 (setq org-outline-path-complete-in-steps nil)
