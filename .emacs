@@ -149,13 +149,12 @@
   ;; Disable auto isearch to navigate using q/n/p/f/b/u after typing C-c C-j.
   (setopt org-goto-auto-isearch nil)
   ;; Do not log changes when marking a recurring task to done with C-c C-t.
-  (setopt org-log-repeat nil))
+  (setopt org-log-repeat nil)
+  ;; Set the list of agenda files.
+  (setopt org-agenda-files '("~/my/plan/")))
 
 (with-eval-after-load 'org-agenda
   ;; Set the list of agenda files.
-  (defvar org-agenda-files)
-  (dolist (fname '("in" "next" "cal" "project" "waiting" "someday"))
-    (add-to-list 'org-agenda-files (format "~/my/plan/%s.org" fname) t))
   ;; Show only one day of data in agenda overview on typing C-c a a.
   (setopt org-agenda-span 'day)
   ;; Start agenda overview on Sunday on typing C-c a a w.
@@ -274,7 +273,7 @@
   (server-start))
 
 
-;;; Install External Packages ========================================
+;;; External Packages ================================================
 
 (defun setup ()
   "Install and set up packages for the first time."
