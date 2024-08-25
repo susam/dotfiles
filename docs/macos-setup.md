@@ -317,12 +317,6 @@ Set Up Home Directory
     ln -sf ~/my/bin/local.el ~/local.el
     ```
 
- 4. Set up optional Emacs configuration.
-
-    ```
-    ln -sf ~/git/dotfiles/extra.el ~/extra.el
-    ```
-
 
 Configure Touch Bar
 -------------------

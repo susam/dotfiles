@@ -30,11 +30,12 @@
 # directory. A dot (.) is added to each filename and a symbolic link
 # with this name is set up in the home directory.
 DOT_FILES="
-vimrc
-emacs
-plugins.vimrc
-screenrc
-tmux.conf
+.vimrc
+.emacs
+.opt.el
+.plugins.vimrc
+.screenrc
+.tmux.conf
 "
 
 VERSION=0.1.1
@@ -113,8 +114,8 @@ setup_dot_files()
 {
     printf "%s" "$DOT_FILES" | grep [[:graph:]] | while read filename
     do
-        target="$PWD/_$filename"
-        link=~/".$filename"
+        target="$PWD/$filename"
+        link=~/"$filename"
 
         if [ -f "$link" ]
         then
@@ -138,8 +139,8 @@ undo_dot_files()
 {
     printf "%s" "$DOT_FILES" | grep [[:graph:]] | while read filename
     do
-        link=~/".$filename"
-        if [ ! -f "$link" ]
+        link=~/"$filename"
+        if [ ! -L "$link" ]
         then
             err Link "$link" does not exist
         elif rm "$link"

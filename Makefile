@@ -1,0 +1,2 @@
+lsdots:
+	ls -ld .*
