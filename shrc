@@ -19,26 +19,12 @@ em() {
 
 [ -e ~/.remote ] && alias em=emacs
 
-cem() {
+emc() {
     emacsclient "$@"
 }
 
-tem() {
+emt() {
     emacs -nw "$@"
-}
-
-mem() {
-    emacs --debug-init --eval '(progn (toggle-frame-maximized) (split-window-below) (switch-to-buffer "*Messages*") (other-window 1))'
-}
-
-fem() {
-    printf 'foo\nbar\nbaz\nqux\quux\ncorge\n' > /tmp/foo.txt
-    emacs --debug-init --eval '(progn (toggle-frame-maximized) (switch-to-buffer "*Messages*") (split-window-below) (other-window 1) (find-file "/tmp/foo.txt"))'
-}
-
-gem() {
-    printf 'foo\nbar\nbaz\nqux\quux\ncorge\n' > /tmp/foo.txt
-    emacs --debug-init --eval '(progn (toggle-frame-maximized) (switch-to-buffer "*Messages*") (split-window-below) (other-window 1) (find-file "/tmp/foo.txt") (split-window-right) (other-window 1) (find-file "~/git/god-mode/god-mode.el"))'
 }
 
 # Test colors.
