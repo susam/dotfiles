@@ -1,72 +1,110 @@
-;;; My Emacs!
+;;; .emacs --- Susam's Emacs initialisation file!
 
-;; Customize user interface.
+;; Copyright (c) 2005-2024 Susam Pal
+
+;; Author: Susam Pal
+;; URL: https://github.com/susam/dotfiles
+
+;; This is free and open source software available under the terms of
+;; the MIT license <https://opensource.org/license/mit>.
+
+;;; Commentary:
+
+;; My Emacs initialisation file!
+
+;;; Code:
+
+
+;;; Benchmarking =====================================================
+
+(defvar .emacs-begin-time (current-time))
+(defvar .emacs-end-time nil)
+
+
+;;; Look and Feel ====================================================
+
+;; Customise user interface.
 (when (display-graphic-p)
   (tool-bar-mode 0)
   (scroll-bar-mode 0))
 (setq inhibit-startup-screen t)
 (column-number-mode)
 
-(setq doc-view-resolution 300)
+;; Disable startup message in echo area too.  One of the things that
+;; `display-startup-echo-area-message' checks is that the property
+;; `saved-value' exists in `inhibit-startup-echo-area-message' before
+;; honouring the latter and disabling the echo area startup message.
+(custom-set-variables '(inhibit-startup-echo-area-message (user-login-name)))
 
 ;; Do not display file icon or name on title bar.
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
 (setq ns-use-proxy-icon nil)
 (setq frame-title-format "Emacs")
 
-;; Dark theme colours.
+;; Dark theme.
 (load-theme 'wombat)
-(set-face-attribute 'menu nil :background "#444" :foreground "#eee")
-(set-face-attribute 'default nil :background "#111" :foreground "#eee")
-(set-face-attribute 'region nil :background "#354" :foreground "#eee")
-(set-face-attribute 'isearch nil :background "#ff0" :foreground "#000")
-(set-face-attribute 'lazy-highlight nil :background "#990" :foreground "#000")
-(set-face-attribute 'mode-line nil :background "#444" :foreground "#ccc")
-(set-face-attribute 'mode-line-inactive nil :background "#222" :foreground "#999")
-(set-face-background 'cursor "#c96")
-(set-face-foreground 'font-lock-comment-face "#fc0")
 
-;; Dark theme attributes.
-(set-face-attribute 'menu nil :inverse-video nil)
-(set-face-attribute 'mode-line nil :box '(:style released-button))
-(set-face-attribute 'mode-line-inactive nil :box '(:style pressed-button))
+;; Customise theme.
+(with-eval-after-load 'wombat-theme
+  ;; Better colours.
+  (set-face-attribute 'menu nil :background "#444" :foreground "#eee")
+  (set-face-attribute 'default nil :background "#111" :foreground "#eee")
+  (set-face-attribute 'region nil :background "#354" :foreground "#eee")
+  (set-face-attribute 'isearch nil :background "#ff0" :foreground "#000")
+  (set-face-attribute 'lazy-highlight nil :background "#990" :foreground "#000")
+  (set-face-attribute 'mode-line nil :background "#444" :foreground "#ccc")
+  (set-face-attribute 'mode-line-inactive nil :background "#222" :foreground "#999")
+  (set-face-background 'cursor "#c96")
+  (set-face-foreground 'font-lock-comment-face "#fc0")
+  ;; Customise attributes to suit dark theme.
+  (set-face-attribute 'menu nil :inverse-video nil)
+  (set-face-attribute 'mode-line nil :box '(:style released-button))
+  (set-face-attribute 'mode-line-inactive nil :box '(:style pressed-button)))
 
-;; Diff colors.
-(require 'diff-mode)
-(set-face-attribute 'diff-context nil :foreground "#ccc")
-(set-face-attribute 'diff-added nil :background nil :foreground "#6c6")
-(set-face-attribute 'diff-removed nil :background nil :foreground "#c66")
-(set-face-attribute 'diff-header nil :background nil :foreground "#fc0")
-
-;; Do not use "Monospace" (which falls back on "courier" via
-;; face-font-family-alternatives) for org-table, org-block,
-;; org-meta-line, etc.  Use default font instead.
-(set-face-attribute 'fixed-pitch nil :family 'unspecified)
-
-;; Interactively do things.
-(ido-mode 1)
-(ido-everywhere)
-(setq ido-enable-flex-matching t)
-(fido-vertical-mode)
+;; Remove background colours in diff mode.
+(with-eval-after-load 'diff-mode
+  (set-face-attribute 'diff-context nil :foreground "#ccc")
+  (set-face-attribute 'diff-added nil :background nil :foreground "#6c6")
+  (set-face-attribute 'diff-removed nil :background nil :foreground "#c66")
+  (set-face-attribute 'diff-header nil :background nil :foreground "#fc0"))
 
 ;; Enable line numbers in certain types of buffers.
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
-(add-hook 'conf-mode-hook 'display-line-numbers-mode)
-(add-hook 'text-mode-hook 'display-line-numbers-mode)
+(dolist (hook '(prog-mode-hook conf-mode-hook text-mode-hook))
+  (add-hook hook 'display-line-numbers-mode))
 
-;; Show stray whitespace.
-(setq-default show-trailing-whitespace nil)
-(setq-default indicate-empty-lines t)
-(setq-default indicate-buffer-boundaries 'left)
-(add-hook 'term-mode-hook (lambda () (setq-default show-trailing-whitespace nil)))
-
-;; Consider a period followed by a single space to be end of sentence.
-;(setq sentence-end-double-space t)
-;(add-hook 'emacs-lisp-mode-hook (lambda () (setq-local sentence-end-double-space t)))
-;(add-hook 'org-mode-hook (lambda () (setq-local sentence-end-double-space t)))
+;; Maximize the frame.
+(set-frame-parameter nil 'fullscreen 'maximized)
 
 ;; 256 colors in terminal.
 (add-hook 'term-mode-hook #'eterm-256color-mode)
+
+;; Highlight matching pairs of parentheses.
+(setq show-paren-delay 0)
+(show-paren-mode)
+
+;; View PDFs in high resolution.
+(with-eval-after-load 'doc-view
+  (setopt doc-view-resolution 300))
+
+
+;;; Completions ======================================================
+
+;; Interactively do things.
+(fido-vertical-mode)
+
+;; Suppress current/total prefix before minibuffer prompt.
+(setopt icomplete-matches-format nil)
+
+
+;;; Tabs and Whitespace  =============================================
+
+;; Show trailing whitespace in text buffers.
+(dolist (hook '(prog-mode-hook conf-mode-hook text-mode-hook))
+  (add-hook hook (lambda () (setq show-trailing-whitespace t))))
+
+;; Show stray lines.
+(setq-default indicate-empty-lines t)
+(setq-default indicate-buffer-boundaries 'left)
 
 ;; Use spaces, not tabs, for indentation.
 (setq-default indent-tabs-mode nil)
@@ -75,16 +113,15 @@
 (setq-default tab-width 4)
 
 ;; Indentation setting for various languages.
-(setq c-basic-offset 4)
-(setq js-indent-level 2)
-(setq css-indent-offset 2)
+(setopt c-basic-offset 4)
+(setopt js-indent-level 2)
+(setopt css-indent-offset 2)
 
 ;; Add a newline automatically at the end of a file while saving.
 (setq-default require-final-newline t)
 
-;; Highlight matching pairs of parentheses.
-(setq show-paren-delay 0)
-(show-paren-mode)
+
+;;; Clean Files and Directories ======================================
 
 ;; Write auto-saves and backups to separate directory.
 (make-directory "~/.tmp/emacs/auto-save/" t)
@@ -97,174 +134,81 @@
 ;; Disable lockfiles.
 (setq create-lockfiles nil)
 
-;; Workaround for https://debbugs.gnu.org/34341 in GNU Emacs <= 26.3.
-(when (and (version< emacs-version "26.3") (>= libgnutls-version 30603))
-  (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3"))
-
 ;; Write customizations to a separate file instead of this file.
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 ;; Always follow symbolic links to a file under version control.
 (setq vc-follow-symlinks t)
 
-;; Enable installation of packages from MELPA.
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
-(unless package-archive-contents
-  (package-refresh-contents))
+
+;;; Org ==============================================================
 
-;; Install packages.
-(dolist (package '(markdown-mode
-                   paredit
-                   rainbow-delimiters
-                   slime
-                   helm
-                   eterm-256color
-                   devil
-                   flycheck
-                   flycheck-package
-                   zig-mode
-                   rust-mode
-                   dumb-jump))
-  (unless (package-installed-p package)
-    (package-install package)))
+(with-eval-after-load 'org
+  ;; Let C-c C-v C-b, C-c C-c, etc. evaluate code blocks without confirmation.
+  (setopt org-confirm-babel-evaluate nil)
+  ;; Disable auto isearch to navigate using q/n/p/f/b/u after typing C-c C-j.
+  (setopt org-goto-auto-isearch nil)
+  ;; Do not log changes when marking a recurring task to done with C-c C-t.
+  (setopt org-log-repeat nil))
 
-;; Enable Devil.
-(global-devil-mode)
-(global-set-key (kbd "C-,") 'global-devil-mode)
+(with-eval-after-load 'org-agenda
+  ;; Set the list of agenda files.
+  (defvar org-agenda-files)
+  (dolist (fname '("in" "next" "cal" "project" "waiting" "someday"))
+    (add-to-list 'org-agenda-files (format "~/my/plan/%s.org" fname) t))
+  ;; Show only one day of data in agenda overview on typing C-c a a.
+  (setopt org-agenda-span 'day)
+  ;; Start agenda overview on Sunday on typing C-c a a w.
+  (setopt org-agenda-start-on-weekday 0))
 
-(add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
+(with-eval-after-load 'org-capture
+  (setopt org-capture-templates
+          '(("t" "Task" entry
+             (file+headline "~/my/plan/in.org" "Inbox")
+             "* %u %?"))))
 
-;; Configure SBCL as the Lisp program for SLIME.
-(add-to-list 'exec-path "/usr/local/bin/")
-(add-to-list 'exec-path "/opt/homebrew/bin/")
-(setq inferior-lisp-program "sbcl")
+(with-eval-after-load 'org-refile
+  (setopt org-refile-targets '((org-agenda-files :level . 1))))
 
-;; Enable window header line and startup animation.
-(add-to-list 'slime-contribs 'slime-banner)
-
-;; Enable Paredit.
-(add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
-(add-hook 'eval-expression-minibuffer-setup-hook 'enable-paredit-mode)
-(add-hook 'ielm-mode-hook 'enable-paredit-mode)
-(add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode)
-(add-hook 'lisp-mode-hook 'enable-paredit-mode)
-(add-hook 'slime-repl-mode-hook 'enable-paredit-mode)
-(defun override-slime-del-key ()
-  (define-key slime-repl-mode-map
-    (read-kbd-macro paredit-backward-delete-key) nil))
-(add-hook 'slime-repl-mode-hook 'override-slime-del-key)
-
-;; Do not bind RET to paredit-RET which prevents input from being
-;; evaluated on RET in M-:, ielm, etc.
-(require 'paredit)
-(define-key paredit-mode-map (kbd "RET") nil)
-
-;; Enable Rainbow Delimiters.
-(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'ielm-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'lisp-interaction-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'lisp-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'slime-repl-mode-hook 'rainbow-delimiters-mode)
-
-;; Customize Rainbow Delimiters.
-(require 'rainbow-delimiters)
-(set-face-foreground 'rainbow-delimiters-depth-1-face "#c66")  ; red
-(set-face-foreground 'rainbow-delimiters-depth-2-face "#6c6")  ; green
-(set-face-foreground 'rainbow-delimiters-depth-3-face "#69f")  ; blue
-(set-face-foreground 'rainbow-delimiters-depth-4-face "#cc6")  ; yellow
-(set-face-foreground 'rainbow-delimiters-depth-5-face "#6cc")  ; cyan
-(set-face-foreground 'rainbow-delimiters-depth-6-face "#c6c")  ; magenta
-(set-face-foreground 'rainbow-delimiters-depth-7-face "#ccc")  ; light gray
-(set-face-foreground 'rainbow-delimiters-depth-8-face "#999")  ; medium gray
-(set-face-foreground 'rainbow-delimiters-depth-9-face "#666")  ; dark gray
-
-;; Customize Org-mode.
-(require 'org-faces)
-
-;; Disable auto isearch to navigate using q/n/p/f/b/u after typing C-c C-j.
-(setq org-goto-auto-isearch nil)
+
+;;; TeX and LaTeX ====================================================
 
 ;; BibTeX.
-(setq bibtex-align-at-equal-sign t)
+(with-eval-after-load 'bibtex
+  (setopt bibtex-align-at-equal-sign t))
 
-;; Custom commands.
+
+;;; New Utilities  ===================================================
+
 (defmacro cmd (&rest body)
+  "Create an interactive command to execute BODY."
   `(lambda ()
      (interactive)
      ,@body))
 
+
+;;; New Commands ==================================================
+
 (defun set-font-size (pt)
-  "Set default font size."
+  "Set default font size to PT points."
   (interactive "nFont Size: ")
   (set-face-attribute 'default nil :height (* 10 pt)))
 
-;; Custom key sequences.
-(global-set-key (kbd "C-c a") 'org-agenda)
-(global-set-key (kbd "C-c b") (cmd (message (buffer-file-name))))
-(global-set-key (kbd "C-c c") (cmd (org-capture nil "t")))
-(global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
-(global-set-key (kbd "C-c e d") (cmd (find-file "~/my/dd.org")))
-(global-set-key (kbd "C-c e e") (cmd (find-file "~/.emacs")))
-(global-set-key (kbd "C-c e s") (cmd (find-file "~/scratch.md")))
-(global-set-key (kbd "C-c e t") (cmd (find-file "~/my/time.org")))
-(global-set-key (kbd "C-c f") 'toggle-frame-fullscreen)
-(global-set-key (kbd "C-c l") 'org-store-link)
-(global-set-key (kbd "C-c m") 'toggle-frame-maximized)
-(global-set-key (kbd "C-c o c") (cmd (find-file "~/my/plan/cal.org")))
-(global-set-key (kbd "C-c o i") (cmd (find-file "~/my/plan/in.org")))
-(global-set-key (kbd "C-c o n") (cmd (find-file "~/my/plan/next.org")))
-(global-set-key (kbd "C-c o p") (cmd (find-file "~/my/plan/project.org")))
-(global-set-key (kbd "C-c o s") (cmd (find-file "~/my/plan/someday.org")))
-(global-set-key (kbd "C-c o w") (cmd (find-file "~/my/plan/waiting.org")))
-(global-set-key (kbd "C-c n") 'display-line-numbers-mode)
-(global-set-key (kbd "C-c r f") 'recover-this-file)
-(global-set-key (kbd "C-c r s") 'slime-restart-inferior-lisp)
-(global-set-key (kbd "C-c s f") 'set-font-size)
-(global-set-key (kbd "C-c s t") (cmd (message (current-time-string))))
-(global-set-key (kbd "C-c t p") 'transpose-paragraphs)
-(global-set-key (kbd "C-c t s") 'transpose-sentences)
-(global-set-key (kbd "C-c t t") 'toggle-truncate-lines)
-(global-set-key (kbd "C-c w") 'whitespace-mode)
-
-;; Org
-(require 'org)
-
-(setq org-agenda-start-on-weekday 0)
-(setq org-agenda-span 'day)
-(setq org-log-repeat nil)
-(dolist (fname '("in" "next" "cal" "project" "waiting" "someday"))
-  (setq fname (format "~/my/plan/%s.org" fname))
-  (unless (file-exists-p fname)
-    (write-region "" nil fname))
-  (add-to-list 'org-agenda-files fname t))
-
-(setq org-capture-templates
-      '(("t" "Task" entry (file+headline "~/my/plan/in.org" "IN") "* %u %?")))
-(setq org-refile-targets '((org-agenda-files . (:level . 1))))
-(setq org-refile-use-outline-path 'file)
-(setq org-outline-path-complete-in-steps nil)
-
-;; Flycheck.
-(global-flycheck-mode)
-(eval-after-load 'flycheck '(flycheck-package-setup))
-
-;; Load workspace-local configuration.
-(load "~/extra.el" t)
-(load "~/local.el" t)
-
-;; Start server.
-(require 'server)
-(unless (server-running-p)
-  (server-start))
+(defun prepare-for-debugging ()
+  "Prepare current frame for debugging."
+  (interactive)
+  (set-frame-parameter nil 'fullscreen 'maximized)
+  (delete-other-windows)
+  (switch-to-buffer "*Messages*")
+  (split-window-right)
+  (find-file "~/.emacs"))
 
 ;; Set PATH for shell-command, compile, etc.
 (setenv "PATH" (concat (getenv "PATH")
                        ":" (expand-file-name "~/bin/")
                        ":" (expand-file-name "~/my/bin/")))
 
-(defun wrap-in-html-p ()
+(defun wrap-in-html-paragraph ()
   "Wrap the current paragraph with <p> tags."
   (interactive)
   (backward-paragraph)
@@ -280,4 +224,163 @@
   (indent-for-tab-command)
   (fill-paragraph))
 
-(global-set-key (kbd "C-c h w p") 'wrap-in-html-p)
+(defun show-init-time ()
+  "Show time spent in initialising Emacs."
+  (interactive)
+  (let ((init-time (float-time (time-subtract after-init-time before-init-time)))
+        (this-time (float-time (time-subtract .emacs-end-time .emacs-begin-time))))
+    (message "init-time: %.3f s; .emacs-time: %.3f s" init-time this-time)))
+
+
+;;; Key Bindings =====================================================
+
+;; Custom key sequences.
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c b") (cmd (message (buffer-file-name))))
+(global-set-key (kbd "C-c c") (cmd (org-capture nil "t")))
+(global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
+(global-set-key (kbd "C-c e d") (cmd (find-file "~/my/dd.org")))
+(global-set-key (kbd "C-c e e") (cmd (find-file "~/.emacs")))
+(global-set-key (kbd "C-c e s") (cmd (find-file "~/scratch.md")))
+(global-set-key (kbd "C-c e t") (cmd (find-file "~/my/time.org")))
+(global-set-key (kbd "C-c f") 'toggle-frame-fullscreen)
+(global-set-key (kbd "C-c h w p") 'wrap-in-html-paragraph)
+(global-set-key (kbd "C-c l") 'org-store-link)
+(global-set-key (kbd "C-c m") 'toggle-frame-maximized)
+(global-set-key (kbd "C-c o a") (cmd (find-file "~/my/plan/archive.org")))
+(global-set-key (kbd "C-c o c") (cmd (find-file "~/my/plan/cal.org")))
+(global-set-key (kbd "C-c o i") (cmd (find-file "~/my/plan/in.org")))
+(global-set-key (kbd "C-c o n") (cmd (find-file "~/my/plan/next.org")))
+(global-set-key (kbd "C-c o p") (cmd (find-file "~/my/plan/project.org")))
+(global-set-key (kbd "C-c o s") (cmd (find-file "~/my/plan/someday.org")))
+(global-set-key (kbd "C-c o w") (cmd (find-file "~/my/plan/waiting.org")))
+(global-set-key (kbd "C-c n") 'display-line-numbers-mode)
+(global-set-key (kbd "C-c p d") 'prepare-for-debugging)
+(global-set-key (kbd "C-c r f") 'recover-this-file)
+(global-set-key (kbd "C-c r s") 'slime-restart-inferior-lisp)
+(global-set-key (kbd "C-c s i") 'show-init-time)
+(global-set-key (kbd "C-c s f") 'set-font-size)
+(global-set-key (kbd "C-c s t") (cmd (message (current-time-string))))
+(global-set-key (kbd "C-c t p") 'transpose-paragraphs)
+(global-set-key (kbd "C-c t s") 'transpose-sentences)
+(global-set-key (kbd "C-c t t") 'toggle-truncate-lines)
+(global-set-key (kbd "C-c w") 'whitespace-mode)
+
+
+;;; Start Emacs Server ===============================================
+
+(require 'server)
+(unless (server-running-p)
+  (server-start))
+
+
+;;; Install External Packages ========================================
+
+(defun setup ()
+  "Install and set up packages for the first time."
+  (interactive)
+  (require 'package)
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+  (package-initialize)
+  (package-refresh-contents)
+  (dolist (package '(devil
+                     dumb-jump
+                     eterm-256color
+                     flycheck
+                     flycheck-package
+                     helm
+                     markdown-mode
+                     paredit
+                     rainbow-delimiters
+                     rust-mode
+                     slime
+                     zig-mode))
+    (unless (package-installed-p package)
+      (package-install package))))
+
+
+;;; Devil ============================================================
+
+(when (fboundp 'devil-mode)
+  (global-devil-mode))
+
+
+;;; Dumb Jump ========================================================
+
+(when (fboundp 'dumb-jump-mode)
+  (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
+
+
+;;; Flycheck  ========================================================
+
+(when (fboundp 'flycheck-mode)
+  (global-flycheck-mode))
+
+
+;;; Paredit ============================================================
+
+;; Enable Paredit on all Lisp modes.
+(when (fboundp 'paredit-mode)
+  (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
+  (add-hook 'eval-expression-minibuffer-setup-hook 'enable-paredit-mode)
+  (add-hook 'ielm-mode-hook 'enable-paredit-mode)
+  (add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode)
+  (add-hook 'lisp-mode-hook 'enable-paredit-mode)
+  (add-hook 'slime-repl-mode-hook 'enable-paredit-mode))
+
+;; Do not bind RET to paredit-RET which prevents input from being
+;; evaluated on RET in M-:, ielm, etc.
+(with-eval-after-load 'paredit
+  (defvar paredit-mode-map)
+  (define-key paredit-mode-map (kbd "RET") nil))
+
+
+;;; Rainbow Delimiters ===============================================
+
+(when (fboundp 'rainbow-delimiters-mode)
+  (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
+  (add-hook 'ielm-mode-hook 'rainbow-delimiters-mode)
+  (add-hook 'lisp-interaction-mode-hook 'rainbow-delimiters-mode)
+  (add-hook 'lisp-mode-hook 'rainbow-delimiters-mode)
+  (add-hook 'slime-repl-mode-hook 'rainbow-delimiters-mode))
+
+(with-eval-after-load 'rainbow-delimiters
+  (set-face-foreground 'rainbow-delimiters-depth-1-face "#c66")  ; red
+  (set-face-foreground 'rainbow-delimiters-depth-2-face "#6c6")  ; green
+  (set-face-foreground 'rainbow-delimiters-depth-3-face "#69f")  ; blue
+  (set-face-foreground 'rainbow-delimiters-depth-4-face "#cc6")  ; yellow
+  (set-face-foreground 'rainbow-delimiters-depth-5-face "#6cc")  ; cyan
+  (set-face-foreground 'rainbow-delimiters-depth-6-face "#c6c")  ; magenta
+  (set-face-foreground 'rainbow-delimiters-depth-7-face "#ccc")  ; light gray
+  (set-face-foreground 'rainbow-delimiters-depth-8-face "#999")  ; medium gray
+  (set-face-foreground 'rainbow-delimiters-depth-9-face "#666")) ; dark gray
+
+
+;;; SLIME ============================================================
+
+(with-eval-after-load 'slime
+  (setopt inferior-lisp-program "sbcl")
+  (add-to-list 'slime-contribs 'slime-banner)
+  (add-hook 'slime-repl-mode-hook 'override-slime-del-key))
+
+(defun override-slime-del-key ()
+  "Prevent SLIME from interfering with Paredit's DEL key."
+  (defvar slime-repl-mode-map)
+  (defvar paredit-backward-delete-key)
+  (define-key slime-repl-mode-map
+              (read-kbd-macro paredit-backward-delete-key) nil))
+
+
+;;; Optionals ========================================================
+
+(load "~/.opt.el" t)
+
+
+;;; Benchmark Results ================================================
+
+(setq .emacs-end-time (current-time))
+(show-init-time)
+
+(provide '.emacs)
+
+;;; .emacs ends here

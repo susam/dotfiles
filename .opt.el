@@ -1,28 +1,53 @@
-;;; Extra Emacs Setup!
+;;; .opt --- Susam's optional initialisation file!
 
-;; Additional packages to install.
-(defvar extra-package-list '(dockerfile-mode
-                             docker-compose-mode
-                             magit
-                             sqlup-mode
-                             rust-mode
-                             go-mode
-                             groovy-mode
-                             terraform-mode))
+;; Copyright (c) 2005-2024 Susam Pal
 
-;(setq groovy-indent-offset 4)
+;; Author: Susam Pal
+;; URL: https://github.com/susam/dotfiles
 
-;; Let C-c C-v C-b, C-c C-c, etc. evaluate without confirmation.
-(setq org-confirm-babel-evaluate nil)
+;; This is free and open source software available under the terms of
+;; the MIT license <https://opensource.org/license/mit>.
 
-;; Install packages.
-(dolist (package extra-package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
+;;; Commentary:
 
-;; Configure sqlup-mode.
-(add-hook 'sql-mode-hook 'sqlup-mode)
-(add-hook 'sql-interactive-mode-hook 'sqlup-mode)
-(require 'sqlup-mode)
-(add-to-list 'sqlup-blacklist "name")
-(global-set-key (kbd "C-c u") 'sqlup-capitalize-keywords-in-region)
+;; My optional initialisation file!
+
+;;; Code:
+
+
+;;; Optional Packages ================================================
+
+(defun opt-setup ()
+  "Install and set up packages for the first time."
+  (interactive)
+  (require 'package)
+  (defvar package-archives)
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+  (dolist (package '(dockerfile-mode
+                     docker-compose-mode
+                     magit
+                     sqlup-mode
+                     rust-mode
+                     go-mode
+                     groovy-mode
+                     terraform-mode))
+    (unless (package-installed-p package)
+      (package-install package))))
+
+
+;;; SQL UP ===========================================================
+
+(when (fboundp 'sqlup-mode)
+  (add-hook 'sql-mode-hook 'sqlup-mode)
+  (add-hook 'sql-interactive-mode-hook 'sqlup-mode))
+
+(with-eval-after-load 'sqlup-mode
+  (defvar sqlup-blacklist)
+  (add-to-list 'sqlup-blacklist "name"))
+
+
+;;; The End ==========================================================
+
+(provide '.opt)
+
+;;; .opt.el ends here
