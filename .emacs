@@ -86,6 +86,18 @@
 (with-eval-after-load 'doc-view
   (setopt doc-view-resolution 300))
 
+;; Do not use "Monospace" (which falls back on "courier" via
+;; face-font-family-alternatives) for markdown-code-face,
+;; markdown-inline-code-face, etc.  Use default font instead.
+;;
+;; To confirm the above details try:
+;;
+;;   - M-x load-library markdown-mode RET
+;;   - M-. markdown-code-face RET (observe "fixed-pitch")
+;;   - M-. fixed-pitch RET (observe "Monospace")
+;;   - C-h v face-font-family-alternatives RET (observe "courier")
+(set-face-attribute 'fixed-pitch nil :family 'unspecified)
+
 
 ;;; Completions ======================================================
 
