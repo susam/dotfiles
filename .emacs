@@ -110,13 +110,16 @@
 
 ;;; Tabs and Whitespace  =============================================
 
-;; Show trailing whitespace in text buffers.
-(dolist (hook '(prog-mode-hook conf-mode-hook text-mode-hook))
+;; Show trailing whitespace while writing config, code, or text.
+(dolist (hook '(conf-mode-hook prog-mode-hook text-mode-hook))
   (add-hook hook (lambda () (setq show-trailing-whitespace t))))
 
 ;; Show stray lines.
 (setq-default indicate-empty-lines t)
 (setq-default indicate-buffer-boundaries 'left)
+
+;; Add a newline automatically at the end of a file while saving.
+(setq-default require-final-newline t)
 
 ;; Use spaces, not tabs, for indentation.
 (setq-default indent-tabs-mode nil)
@@ -128,9 +131,6 @@
 (setopt c-basic-offset 4)
 (setopt js-indent-level 2)
 (setopt css-indent-offset 2)
-
-;; Add a newline automatically at the end of a file while saving.
-(setq-default require-final-newline t)
 
 
 ;;; Clean Files and Directories ======================================
@@ -183,6 +183,12 @@
   (advice-add 'org-refile :after 'org-save-all-org-buffers)
   (advice-add 'org-refile :after 'org-refile-goto-last-stored))
 
+(with-eval-after-load 'org-archive
+  (let ((path "~/my/plan/archive.org"))
+    (setopt org-archive-location (format  "%s::* Archived" path))
+    (advice-add 'org-archive-subtree :after 'org-save-all-org-buffers)
+    (advice-add 'org-archive-subtree :after `(lambda () (find-file ,path)))))
+
 
 ;;; TeX and LaTeX ====================================================
 
@@ -200,7 +206,7 @@
      ,@body))
 
 
-;;; New Commands ==================================================
+;;; New Commands =====================================================
 
 (defun set-font-size (pt)
   "Set default font size to PT points."
@@ -330,7 +336,7 @@
   (global-flycheck-mode))
 
 
-;;; Paredit ============================================================
+;;; Paredit ==========================================================
 
 ;; Enable Paredit on all Lisp modes.
 (when (fboundp 'paredit-mode)
