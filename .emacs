@@ -335,6 +335,10 @@
 (when (fboundp 'flycheck-mode)
   (global-flycheck-mode))
 
+(eval-after-load 'flycheck
+  '(flycheck-package-setup))
+
+
 
 ;;; Paredit ==========================================================
 
