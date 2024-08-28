@@ -295,8 +295,8 @@
 
 ;;; External Packages ================================================
 
-(defun setup ()
-  "Install and set up packages for the first time."
+(defun install-packages ()
+  "Install packages from Emacs Lisp Package Archives (ELPAs)."""
   (interactive)
   (require 'package)
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -396,7 +396,8 @@
 
 ;;; Optionals ========================================================
 
-(load "~/.opt.el" t)
+(load "~/.opt.el" t)                   ; Less important configuration
+(load "~/.sys.el" t)                   ; System-specific configuration
 
 
 ;;; Benchmark Results ================================================

@@ -240,21 +240,27 @@ Install Packages
 
  3. Install useful packages.
 
-    ```
+    ```sh
     brew install macvim tmux tree rclone ffmpeg irssi wget bash-completion ocrmypdf sbcl clisp oath-toolkit ripgrep
     ```
 
  4. Install Emacs, LaTeX, and BibLaTeX.
 
-    ```
+    ```sh
     brew install --cask emacs basictex
     sudo tlmgr update --self
     sudo tlmgr install biber biblatex logreq
     ```
 
+ 4. Install Emacs packages:
+
+    ```sh
+    emacs --eval '(progn (install-packages) (kill-emacs))'
+    ```
+
  5. Install web browsers, graphics software, virtualization software, etc.
 
-    ```
+    ```sh
     brew install --cask firefox google-chrome darktable android-file-transfer vlc
     brew install --cask virtualbox docker
     ```
@@ -262,7 +268,7 @@ Install Packages
 Note: We could have installed `biblatex` and `logreq` packages in a
 usertree as follows:
 
-```
+```sh
 TEXMFHOME=texmf tlmgr init-usertree
 TEXMFHOME=texmf tlmgr --usermode install biblatex logreq
 ```
@@ -285,7 +291,7 @@ Set Up Home Directory
 
  1. Enter the following commands.
 
-    ```
+    ```sh
     mkdir -p ~/git
     cd ~/git
 
@@ -297,7 +303,7 @@ Set Up Home Directory
 
  2. Set up useful scripts.
 
-    ```
+    ```sh
     mkdir -p ~/git ~/bin
     cd ~/git
 
@@ -311,7 +317,7 @@ Set Up Home Directory
 
  3. Set up my directory.
 
-    ```
+    ```sh
     cd
     git clone https://susam@bitbucket.org/susam/my.git
     ln -sf ~/my/bin/local.el ~/local.el

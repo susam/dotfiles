@@ -17,8 +17,8 @@
 
 ;;; Optional Packages ================================================
 
-(defun opt-setup ()
-  "Install and set up packages for the first time."
+(defun install-opt-packages ()
+  "Install optional packages."
   (interactive)
   (require 'package)
   (defvar package-archives)
