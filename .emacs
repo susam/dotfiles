@@ -335,9 +335,16 @@
 (when (fboundp 'flycheck-mode)
   (global-flycheck-mode))
 
-(eval-after-load 'flycheck
-  '(flycheck-package-setup))
+(with-eval-after-load 'flycheck
+  (flycheck-package-setup))
 
+;; Prevent Flycheck from using "C-c !" as the prefix key in Org mode
+;; so that "C-c !" can be used to run `org-time-stamp-inactive'.
+(with-eval-after-load 'flycheck
+  (with-eval-after-load 'org
+    (defvar flycheck-mode-map)
+    (defvar flycheck-keymap-prefix)
+    (define-key flycheck-mode-map flycheck-keymap-prefix nil)))
 
 
 ;;; Paredit ==========================================================
