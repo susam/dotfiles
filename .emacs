@@ -371,11 +371,13 @@
 ;;; Rainbow Delimiters ===============================================
 
 (when (fboundp 'rainbow-delimiters-mode)
-  (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
-  (add-hook 'ielm-mode-hook 'rainbow-delimiters-mode)
-  (add-hook 'lisp-interaction-mode-hook 'rainbow-delimiters-mode)
-  (add-hook 'lisp-mode-hook 'rainbow-delimiters-mode)
-  (add-hook 'slime-repl-mode-hook 'rainbow-delimiters-mode))
+  (dolist (hook '(emacs-lisp-mode-hook
+                  ielm-mode-hook
+                  lisp-interaction-mode-hook
+                  lisp-mode-hook
+                  slime-repl-mode-hook
+                  scheme-mode-hook))
+    (add-hook hook 'rainbow-delimiters-mode)))
 
 (with-eval-after-load 'rainbow-delimiters
   (set-face-foreground 'rainbow-delimiters-depth-1-face "#c66")  ; red
