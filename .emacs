@@ -177,7 +177,7 @@
   (setopt org-capture-templates
           '(("t" "Task" entry
              (file+headline "~/my/plan/in.org" "Inbox")
-             "* %u %?"))))
+             "* TODO %?"))))
 
 (with-eval-after-load 'org-refile
   (setopt org-refile-targets '((org-agenda-files :level . 1)))
