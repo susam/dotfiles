@@ -163,7 +163,8 @@
   ;; Disable auto isearch to navigate using q/n/p/f/b/u after typing C-c C-j.
   (setopt org-goto-auto-isearch nil)
   ;; Do not log changes when marking a recurring task to done with C-c C-t.
-  (setopt org-log-repeat nil))
+  (setopt org-log-repeat nil)
+  (setopt org-todo-keywords '((sequence "TODO" "WAIT" "DONE"))))
 
 (with-eval-after-load 'org-agenda
   ;; Set the list of agenda files.
