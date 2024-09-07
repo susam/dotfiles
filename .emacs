@@ -195,7 +195,7 @@
 
 (defun enable-planner-settings ()
   "Enable settings for agenda files."
-  (when (string-match-p "/plan/.*\\.org$" buffer-file-name)
+  (when (and buffer-file-name (string-match-p "/plan/.*\\.org$" buffer-file-name))
     (setopt org-adapt-indentation t)))
 
 (defun insert-line-above ()
