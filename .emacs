@@ -184,7 +184,8 @@
 (with-eval-after-load 'org-refile
   (setopt org-refile-targets '((org-agenda-files :level . 1)))
   (advice-add 'org-refile :after 'org-save-all-org-buffers)
-  (advice-add 'org-refile :after 'org-refile-goto-last-stored))
+  (advice-add 'org-refile :after 'org-refile-goto-last-stored)
+  (advice-add 'org-refile :after 'insert-line-above))
 
 (with-eval-after-load 'org-archive
   (let ((path "~/my/plan/archive.org"))
@@ -196,6 +197,13 @@
   "Enable settings for agenda files."
   (when (string-match-p "/plan/.*\\.org$" buffer-file-name)
     (setopt org-adapt-indentation t)))
+
+(defun insert-line-above ()
+  "Insert a newline above current line."
+  (interactive)
+  (beginning-of-line)
+  (open-line 1)
+  (forward-line))
 
 
 ;;; TeX and LaTeX ====================================================
