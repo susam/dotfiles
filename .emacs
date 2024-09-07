@@ -156,6 +156,8 @@
 ;;; Org ==============================================================
 
 (with-eval-after-load 'org
+  ;; Add hook to check if file is planner and enable corresponding settings.
+  (add-hook 'org-mode-hook 'enable-planner-settings)
   ;; Set the list of agenda files.
   (setopt org-agenda-files '("~/my/plan/"))
   ;; Let C-c C-v C-b, C-c C-c, etc. evaluate code blocks without confirmation.
@@ -189,6 +191,11 @@
     (setopt org-archive-location (format  "%s::* Archived" path))
     (advice-add 'org-archive-subtree :after 'org-save-all-org-buffers)
     (advice-add 'org-archive-subtree :after `(lambda () (find-file ,path)))))
+
+(defun enable-planner-settings ()
+  "Enable settings for agenda files."
+  (when (string-match-p "/plan/.*\\.org$" buffer-file-name)
+    (setopt org-adapt-indentation t)))
 
 
 ;;; TeX and LaTeX ====================================================
