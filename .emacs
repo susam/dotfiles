@@ -186,15 +186,17 @@
 
 (with-eval-after-load 'org-refile
   (setopt org-refile-targets '((org-agenda-files :level . 1)))
-  (advice-add 'org-refile :after 'org-save-all-org-buffers)
   (advice-add 'org-refile :after 'org-refile-goto-last-stored)
-  (advice-add 'org-refile :after 'insert-line-above))
+  (advice-add 'org-refile :after 'insert-line-above)
+  (advice-add 'org-refile :after 'delete-trailing-whitespace)
+  (advice-add 'org-refile :after 'org-save-all-org-buffers))
 
 (with-eval-after-load 'org-archive
   (let ((path "~/my/plan/archive.org"))
     (setopt org-archive-location (format  "%s::* Archived" path))
-    (advice-add 'org-archive-subtree :after 'org-save-all-org-buffers)
-    (advice-add 'org-archive-subtree :after `(lambda () (find-file ,path)))))
+    (advice-add 'org-archive-subtree :after `(lambda () (find-file ,path)))
+    (advice-add 'org-archive-subtree :after 'delete-trailing-whitespace)
+    (advice-add 'org-archive-subtree :after 'org-save-all-org-buffers)))
 
 (defun enable-planner-settings ()
   "Enable settings for agenda files."
