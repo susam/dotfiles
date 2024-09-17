@@ -168,7 +168,7 @@
   (setopt org-log-repeat nil)
   (setopt org-todo-keywords '((sequence "TODO(t)" "WAIT(w)" "DONE(d)")))
   (setopt org-todo-keyword-faces '(("TODO" . "#fcc")
-                                   ("WAIT" . "#ff6")
+                                   ("WAIT" . "#ff0")
                                    ("DONE" . "#9f9"))))
 
 (with-eval-after-load 'org-agenda
