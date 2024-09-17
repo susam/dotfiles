@@ -157,7 +157,7 @@
 
 (with-eval-after-load 'org
   ;; Add hook to check if file is planner and enable corresponding settings.
-  (add-hook 'org-mode-hook 'enable-planner-settings)
+  (add-hook 'org-mode-hook 'set-org-indentation)
   ;; Set the list of agenda files.
   (setopt org-agenda-files '("~/my/plan/"))
   ;; Let C-c C-v C-b, C-c C-c, etc. evaluate code blocks without confirmation.
@@ -198,10 +198,12 @@
     (advice-add 'org-archive-subtree :after 'delete-trailing-whitespace)
     (advice-add 'org-archive-subtree :after 'org-save-all-org-buffers)))
 
-(defun enable-planner-settings ()
+(defun set-org-indentation ()
   "Enable settings for agenda files."
-  (when (and buffer-file-name (string-match-p "/plan/.*\\.org$" buffer-file-name))
-    (setopt org-adapt-indentation t)))
+  (setopt org-adapt-indentation
+          (and buffer-file-name
+               (string-match-p "/plan/.*\\.org$" buffer-file-name)
+               t)))
 
 (defun insert-line-above ()
   "Insert a newline above current line."
