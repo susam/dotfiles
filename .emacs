@@ -166,7 +166,10 @@
   (setopt org-goto-auto-isearch nil)
   ;; Do not log changes when marking a recurring task to done with C-c C-t.
   (setopt org-log-repeat nil)
-  (setopt org-todo-keywords '((sequence "TODO" "WAIT" "DONE"))))
+  (setopt org-todo-keywords '((sequence "TODO(t)" "WAIT(w)" "DONE(d)")))
+  (setopt org-todo-keyword-faces '(("TODO" . "#fcc")
+                                   ("WAIT" . "#ff6")
+                                   ("DONE" . "#9f9"))))
 
 (with-eval-after-load 'org-agenda
   ;; Set the list of agenda files.
@@ -312,7 +315,7 @@
 ;;; External Packages ================================================
 
 (defun install-packages ()
-  "Install packages from Emacs Lisp Package Archives (ELPAs)."""
+  "Install packages from Emacs Lisp Package Archives (ELPAs)."
   (interactive)
   (require 'package)
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
