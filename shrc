@@ -220,7 +220,11 @@ nok()
 
 # Set environment.
 PATH=~/bin:$PATH
-
+PATH=$PATH:/usr/local/smlnj/bin
+if command -v opam > /dev/null
+then
+    eval $(opam env)
+fi
 
 _begin_esc()
 {
