@@ -333,6 +333,7 @@
                      paredit
                      rainbow-delimiters
                      rust-mode
+                     sml-mode
                      slime
                      zig-mode))
     (unless (package-installed-p package)
