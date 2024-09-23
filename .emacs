@@ -110,6 +110,9 @@
 ;; Track recent files.
 (recentf-mode)
 
+;; Replace "yes or no" with "y or n" prompts.
+(setopt use-short-answers t)
+
 
 ;;; Tabs and Whitespace  =============================================
 
