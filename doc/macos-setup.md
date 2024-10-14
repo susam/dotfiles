@@ -366,6 +366,77 @@ Configure Notification Centre
       - GBPJPY
 
 
+Keyboard Setup
+--------------
+
+If on a GB keyboard, perform the following steps:
+
+ 1. Go to *System Settings* > *Keyboard* > *Input Sources* > *Edit*.
+ 2. Click on the plus (+) button.
+ 3. Select *English* > *ABC*.
+ 4. Click *Add*.
+ 5. Select *Show Input menu in menu bar*.  Click *Done*.
+ 6. Deselect all options that offer automatic corrections.
+ 7. Press the globe key and ensure "ABC" gets selected.
+ 8. Then type "£" (shift+3) and confirm that "#" gets typed.
+ 9. Go to *System Settings* > *Keyboard* > *Keyboard Shortcuts* >
+    *Input Sources*.  Deselect both shortcuts because they interfere
+    with Emacs.
+
+
+Karabiner
+---------
+
+If on a GB keyboard, set up Karabiner as follows:
+
+ 1. Install Karabiner:
+
+    ```sh
+    brew install --cask karabiner-elements
+    ```
+
+ 2. Run *Karabiner-Elements*.  It should fail to start.  Go to *System
+    Settings* > *Privacy & Security* > *Input Monitoring* and allow
+    the following programs to perform input monitoring:
+
+      - /Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_grabber
+      - /Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_observer
+      - /Applications/Karabiner-EventViewer.app
+
+    Then launch *Karabiner-Elements* again and follow any steps presented.
+
+ 4. Go to *Karabiner-Elements* > *Virtual Keyboard* and ensure *ANSI*
+    is selected.  This setting is most faithful to the defaults of
+    Apple internal keyboard.  With this setting the following keys on
+    the left produce the following results on the right:
+
+    ```
+    §± -> §±
+    \| -> \|
+    `~ -> `~
+    ```
+
+    If we were to select *ISO*, we get the following results instead:
+
+    ```
+    §± -> `~
+    \| -> \|
+    `~ -> §±
+    ```
+
+    However, note that the above settings may produce different
+    results with an external keyboard.
+
+ 3. Configure Karabiner:
+
+    ```sh
+    cd ~/git/dotfiles/karabiner && make wk
+    ```
+
+ 8. Go to *Karabiner-Elements* > *Complex Modifications* > *Add
+    predefined rule* > *Wk Rules* > *Enable All*.
+
+
 Next Steps
 ----------
 
