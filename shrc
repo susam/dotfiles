@@ -81,7 +81,7 @@ ocr()
     for f in "$@"
     do
         echo "OCRing $f ..."
-        ocrmypdf "$f" "${f%.pdf}-ocr.pdf"
+        ocrmypdf --force-ocr "$f" "${f%.pdf}-ocr.pdf"
         mv "$f" "$f.bkp"
         mv "${f%.pdf}-ocr.pdf" "$f"
         ls -lh "$f.bkp"
