@@ -436,6 +436,13 @@
               (read-kbd-macro paredit-backward-delete-key) nil))
 
 
+;;; Rust =============================================================
+
+(with-eval-after-load 'rust-mode
+  ;; Note: Wombat sets font-lock-string-face to #95e454.
+  (set-face-attribute 'rust-string-interpolation nil :slant 'normal :foreground "#cc0"))
+
+
 ;;; Optionals ========================================================
 
 (load "~/.opt.el" t)                   ; Less important configuration
