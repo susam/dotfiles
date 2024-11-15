@@ -69,7 +69,7 @@
   (set-face-attribute 'diff-header nil :background nil :foreground "#fc0"))
 
 ;; Enable line numbers in certain types of buffers.
-(dolist (hook '(prog-mode-hook conf-mode-hook text-mode-hook))
+(dolist (hook '(prog-mode-hook conf-mode-hook text-mode-hook bibtex-mode-hook))
   (add-hook hook 'display-line-numbers-mode))
 
 ;; Maximize the frame.
