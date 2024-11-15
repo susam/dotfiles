@@ -281,6 +281,10 @@
         (this-time (float-time (time-subtract .emacs-end-time .emacs-begin-time))))
     (message "init-time: %.3f s; .emacs-time: %.3f s" init-time this-time)))
 
+(defun mean (&rest numbers)
+  "Calculate the mean of the given NUMBERS."
+  (/ (float (apply #'+ numbers)) (length numbers)))
+
 
 ;;; Key Bindings =====================================================
 
