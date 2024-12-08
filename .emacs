@@ -162,8 +162,6 @@
 ;;; Org ==============================================================
 
 (with-eval-after-load 'org
-  ;; Add hook to check if file is planner and enable corresponding settings.
-  (add-hook 'org-mode-hook 'set-org-indentation)
   ;; Set the list of agenda files.
   (setopt org-agenda-files '("~/my/plan/"))
   ;; Let C-c C-v C-b, C-c C-c, etc. evaluate code blocks without confirmation.
@@ -180,7 +178,6 @@
                                    ("DONE" . "#9f9"))))
 
 (with-eval-after-load 'org-agenda
-  ;; Set the list of agenda files.
   ;; Show only one day of data in agenda overview on typing C-c a a.
   (setopt org-agenda-span 'day)
   ;; Start agenda overview on Sunday on typing C-c a a w.
@@ -205,13 +202,6 @@
     (advice-add 'org-archive-subtree :after `(lambda () (find-file ,path)))
     (advice-add 'org-archive-subtree :after 'delete-trailing-whitespace)
     (advice-add 'org-archive-subtree :after 'org-save-all-org-buffers)))
-
-(defun set-org-indentation ()
-  "Enable settings for agenda files."
-  (setopt org-adapt-indentation
-          (and buffer-file-name
-               (string-match-p "/plan/.*\\.org$" buffer-file-name)
-               t)))
 
 (defun insert-line-above ()
   "Insert a newline above current line."
