@@ -5,19 +5,19 @@
       "description": "WkMac - Note: non_us_backslash is labelled '§±' and it types '§±'.  Map it to '`~'.",
       "manipulators": [
         {
-          "conditions": [{"type": "device_if", "identifiers": [{"vendor_id": 1452}]}],
+          "conditions": [{"type": "device_if", "identifiers": [{"vendor_id": 0}]}],
           "from": {"key_code": "backslash", "modifiers": {"optional": ["any"]}},
           "to": [{"key_code": "return_or_enter"}],
           "type": "basic"
         },
         {
-          "conditions": [{"type": "device_if", "identifiers": [{"vendor_id": 1452}]}],
+          "conditions": [{"type": "device_if", "identifiers": [{"vendor_id": 0}]}],
           "from": {"key_code": "non_us_backslash", "modifiers": {"optional": ["any"]}},
           "to": [{"key_code": "grave_accent_and_tilde"}],
           "type": "basic"
         },
         {
-          "conditions": [{"type": "device_if", "identifiers": [{"vendor_id": 1452}]}],
+          "conditions": [{"type": "device_if", "identifiers": [{"vendor_id": 0}]}],
           "from": {"key_code": "return_or_enter", "modifiers": {"optional": ["any"]}},
           "to": [{"key_code": "backslash"}],
           "type": "basic"
