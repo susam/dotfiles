@@ -1,0 +1,273 @@
+#!/bin/sh
+set -e
+set -o pipefail
+
+find_files()
+{
+    find . -type f \
+         -not -name '*.gif' \
+         -not -name '*.ico' \
+         -not -name '*.jpg' \
+         -not -name '*.midi' \
+         -not -name '*.mp3' \
+         -not -name '*.mp4' \
+         -not -name '*.ogg' \
+         -not -name '*.pdf' \
+         -not -name '*.png' \
+         -not -path './.git/*' \
+         -not -path './LICENSE.md' \
+         -not -path './js/katex/*' \
+         -not -path './node_modules/*'
+}
+
+join_lines()
+{
+    tr -s ' \n' ' '
+}
+
+result()
+{
+    cat /tmp/err >> /tmp/errs
+    [ -s /tmp/err ] && echo 'ERROR!' || echo 'pass'
+}
+
+final_result()
+{
+    [ -s /tmp/errs ] && echo 'ERROR' || echo 'PASS'
+    [ -s /tmp/errs ] && exit 1 || true
+}
+
+check_abbrev_spacing()
+{
+    name='check_abbrev_spacing'
+    > /tmp/err
+    find_files | while read -r file
+    do
+        cp "$file" /tmp/file
+        grep -En '\. {2,}[a-z]' /tmp/file | tee -a /tmp/err || true
+    done
+    echo "$name: $(result)"
+}
+
+check_bre_and_or()
+{
+    name='check_bre_and_or'
+    > /tmp/err
+    find_files | while read -r file
+    do
+        join_lines < "$file" | sed '
+          s/, and a great number of contorted trees/x/g;
+          s/, and consider what I wanted to do/x/g;
+          s/, and odd, outlandish, swampy trees/x/g;
+        ' > /tmp/file
+        grep -Ei ', (and|or)([^a-z]|$)' /tmp/file >> /tmp/err || true
+    done
+    grep -iEno '.{0,30}, (and|or)([^a-z]|$).{0,30}' /tmp/err || true
+    echo "$name: $(result)"
+}
+
+check_bre_respectively()
+{
+    name='check_bre_respectively'
+    > /tmp/err
+    find_files | while read -r file
+    do
+        join_lines < "$file" > /tmp/file
+        grep -Ei ', respectively' /tmp/file >> /tmp/err || true
+    done
+    grep -iEno '.{0,30}, respectively.{0,30}' /tmp/err || true
+    echo "$name: $(result)"
+}
+
+check_bre_spell_iz()
+{
+    name='check_bre_spell_iz'
+    > /tmp/err
+    find_files | while read -r file
+    do
+        sed '
+          s/[Qq]uiz/x/g;
+          s/[^A-Za-z]SIZE$/x/g;
+          s/[^A-Za-z]SIZE[^A-Za-z]/x/g;
+          s/[^A-Za-z][Rr]esize/x/g;
+          s/[^A-Za-z][Ss]eize[^A-Za-z]/x/g;
+          s/[^A-Za-z][Ss]ize[^A-Za-z]/x/g;
+          s/[^A-Za-z][Ss]ized[^A-Za-z]/x/g;
+          s/[^A-Za-z][Ss]izing[^A-Za-z]/x/g;
+          s/[^A-Za-z][Ww]izard[^A-Za-z]/x/g;
+          s/[^A-Za-z]horizon/x/g;
+          s/[a-z]Sizing[^A-Za-z]/x/g;
+          s/[a-z][Ss]ize$/x/g;
+          s/[a-z][Ss]ize[^A-Za-z]/x/g;
+          s/izz/x/g;
+        ' "$file" > /tmp/file
+        grep -Ein 'iz[a-z]' /tmp/file | tee -a /tmp/err || true
+    done
+    echo "$name: $(result)"
+}
+
+check_bre_spell_yze()
+{
+    name='check_bre_spell_yze'
+    > /tmp/err
+    find_files | while read -r file
+    do
+        sed '
+        ' "$file" > /tmp/file
+        grep -Ein 'yze' /tmp/file | tee -a /tmp/err || true
+    done
+    echo "$name: $(result)"
+}
+
+check_bre_spell_color()
+{
+    name='check_bre_spell_color'
+    > /tmp/err
+    find_files | while read -r file
+    do
+        sed '
+          s/color: #/x/g;
+          s/prefers-color-scheme/x/g;
+          s/style="[^"]*"/x/g;
+          s/style\.accentColor/x/g;
+          s/style\.color/x/g;
+          s/theme-color/x/g;
+        ' "$file" > /tmp/file
+        grep -Ein 'color' /tmp/file | tee -a /tmp/err || true
+    done
+    echo "$name: $(result)"
+}
+
+check_bre_spell_center()
+{
+    name='check_bre_spell_center'
+    > /tmp/err
+    find_files | while read -r file
+    do
+        sed '
+          s/align-items: center/x/g;
+          s/style\.[A-Za-z]* = .center./x/g;
+          s/text-align: center/x/g;
+        ' "$file" > /tmp/file
+        grep -Ein 'center' /tmp/file | tee -a /tmp/err || true
+    done
+    echo "$name: $(result)"
+}
+
+check_bre_spell_license()
+{
+    name='check_bre_spell_license'
+    > /tmp/err
+    find_files | while read -r file
+    do
+        sed '
+          s/  "license": "[^"]*",/x/g;
+          s/[^A-Za-z]LICENSE\.md/x/g;
+        ' "$file" > /tmp/file
+        grep -Ein 'license' /tmp/file | tee -a /tmp/err || true
+    done
+    echo "$name: $(result)"
+}
+
+check_bre_ie_eg()
+{
+    name='check_bre_ie_eg'
+    > /tmp/err
+    find_files | while read -r file
+    do
+        cp "$file" /tmp/file
+        grep -Ein '(i\.e\.|e\.g\.),' /tmp/file | tee -a /tmp/err || true
+    done
+    echo "$name: $(result)"
+}
+
+check_gen_ie_eg()
+{
+    name='check_gen_ie_eg'
+    > /tmp/err
+    find_files | while read -r file
+    do
+        join_lines < "$file" > /tmp/file
+        grep -Ei '[^,] (i\.e\.|e\.g\.)' /tmp/file >> /tmp/err || true
+    done
+    grep -iEno '.{0,30}[^,] (i\.e\.|e\.g\.).{0,30}' /tmp/err || true
+    echo "$name: $(result)"
+}
+
+check_quote()
+{
+    name='check_quote'
+    > /tmp/err
+    find_files | while read -r file
+    do
+        cp "$file" /tmp/file
+        grep -Ein '[‘’“”]' /tmp/file | tee -a /tmp/err || true
+    done
+    echo "$name: $(result)"
+}
+
+check_sentence_spacing()
+{
+    name='check_sentence_spacing'
+    > /tmp/err
+    find_files | while read -r file
+    do
+        # Note: Updates to character set following '?' should
+        # generally be made in the second -e block below.
+        sed -e "
+          s/  *'On Painting': '[^']*'/x/g
+          s/  *'The Code Book': '[^']*'/x/g
+          s/  *'Treasure Island': '[^']*'/x/g
+          s/  *Control: '[^']*'/x/g
+          s/  *Cosmos: '[^']*'/x/g
+          s/  *Cosmos: '[^']*'/x/g
+          s/  *Grip: '[^']*'/x/g
+          s/  *Relativity: '[^']*'/x/g
+          s/  *Sentences: '[^']*'/x/g
+          s/  *Test: '[^']*'/x/g
+          s/  *Words: '[^']*'/x/g
+          s/ ? '/x/g
+        " -e '
+          /Passages Used in the Tutor/,$d
+          s/  *Hyperspace: "[^"]*"/x/g;
+          s/  *Sentences: "[^"]*"/x/g;
+          s/  *Test: "[^"]*"/x/g;
+          s/ ! \[/x/g;
+          s/ *[0-9][0-9]*\./x/g;
+          s/ ? [0-9A-Za-z(-]/x/g;
+          s/ \. [0-9a-z"(]/x/g;
+          s/\( [A-Z]\.\)\{1,3\}/ x/g;
+          s/\.\.\./x/g;
+          s/etc\. [a-z]/x/g;
+          s/i\.e\./x/g;
+          s/test-case! (/x/g;
+        ' "$file" > /tmp/file
+        grep -Ein '[.?!] [^ ]' /tmp/file | tee -a /tmp/err || true
+    done
+    echo "$name: $(result)"
+}
+
+check_all()
+{
+    check_abbrev_spacing
+    check_bre_and_or
+    check_bre_respectively
+    check_bre_spell_iz
+    check_bre_spell_yze
+    check_bre_spell_color
+    check_bre_spell_center
+    check_bre_spell_license
+    check_bre_ie_eg
+    check_gen_ie_eg
+    check_quote
+    check_sentence_spacing
+}
+
+main()
+{
+    rm -f /tmp/errs
+    check_all
+    final_result
+}
+
+main
