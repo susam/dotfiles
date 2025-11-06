@@ -37,6 +37,13 @@ full screen applications:
  3. Select *Show toolbar button shapes*.
 
 
+Disable Screensaver
+-------------------
+
+ 1. Go to *System Settings* > *Lock Screen*.
+ 2. Set *Start Screen Saver when inactive* to *Never*.
+
+
 Configure Finder
 ----------------
 
