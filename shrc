@@ -236,6 +236,7 @@ nok()
 
 # Set environment.
 PATH=~/bin:$PATH
+PATH=$PATH:/opt/homebrew/opt/llvm/bin
 PATH=$PATH:/usr/local/smlnj/bin
 if command -v opam > /dev/null
 then
