@@ -285,6 +285,7 @@
 (global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
 (global-set-key (kbd "C-c e d") (cmd (find-file "~/my/dd.org")))
 (global-set-key (kbd "C-c e e") (cmd (find-file "~/.emacs")))
+(global-set-key (kbd "C-c e r") (cmd (find-file "~/my/ref.org")))
 (global-set-key (kbd "C-c e s") (cmd (find-file "~/scratch.md")))
 (global-set-key (kbd "C-c e t") (cmd (find-file "~/my/time.org")))
 (global-set-key (kbd "C-c f") 'toggle-frame-fullscreen)
