@@ -296,6 +296,7 @@
 (global-set-key (kbd "C-c o c") (cmd (find-file "~/my/plan/cal.org")))
 (global-set-key (kbd "C-c o i") (cmd (find-file "~/my/plan/in.org")))
 (global-set-key (kbd "C-c o n") (cmd (find-file "~/my/plan/next.org")))
+(global-set-key (kbd "C-c o p") (cmd (find-file "~/my/plan/proj.org")))
 (global-set-key (kbd "C-c o s") (cmd (find-file "~/my/plan/someday.org")))
 (global-set-key (kbd "C-c n") 'display-line-numbers-mode)
 (global-set-key (kbd "C-c p d") 'prepare-for-debugging)
