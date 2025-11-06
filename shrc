@@ -353,6 +353,7 @@ stty -ixon
 
 # Aliases for Common Lisp.
 alias cl='sbcl --noinform --quit --load'
+alias cll='rlwrap sbcl --noinform'
 
 args() {
     for arg in "$@"
