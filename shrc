@@ -362,6 +362,15 @@ args() {
     done
 }
 
+ib() {
+    for _ in $(seq 1 5)
+    do
+        curl -sSI https://indieblog.page/random |
+            grep location |
+            sed 's/location: \(.*\).utm_source=.*/\1/'
+    done
+}
+
 alias c++11="c++ -g -std=c++11 -Wall -Wextra -pedantic"
 
 # Set the primary prompt string.
