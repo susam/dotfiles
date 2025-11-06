@@ -151,6 +151,22 @@ findx()
 }
 
 
+randk()
+{
+    for i in 1 2 3 4 5
+    do
+        LC_CTYPE=C tr -dc '[:lower:]' < /dev/urandom | head -c 5; echo
+    done
+}
+
+rands()
+{
+    for i in 1 2 3 4 5
+    do
+        LC_CTYPE=C tr -dc '[:alnum:]' < /dev/urandom | head -c 20; echo
+    done
+}
+
 # Apple documentation for keyboard usage IDs:
 # https://developer.apple.com/library/archive/technotes/tn2450/_index.html
 
