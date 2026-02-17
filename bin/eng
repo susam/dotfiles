@@ -148,6 +148,7 @@ check_bre_spell_center()
           s/align-items: center/x/g;
           s/style\.[A-Za-z]* = .center./x/g;
           s/text-align: center/x/g;
+          s/Center for Digital Genomic Medicine/x/g;
         ' "$file" > /tmp/file
         grep -Ein 'center' /tmp/file | tee -a /tmp/err || true
     done
