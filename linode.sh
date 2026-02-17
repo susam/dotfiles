@@ -70,6 +70,7 @@ set nojoinspaces
 set modeline
 set wildmenu
 set listchars=eol:$,tab:>-,nbsp:~,trail:~
+set mouse=
 autocmd BufNewFile,BufRead *.md,*.txt set filetype=markdown
 autocmd BufNewFile,BufRead *.html,*.css,*.js,*.json,*.yml,*.yaml set tabstop=2
 autocmd BufNewFile,BufRead *.go,Makefile setlocal tabstop=8 noexpandtab
