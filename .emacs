@@ -352,6 +352,13 @@
   (global-devil-mode))
 
 
+;;; TeX ==============================================================
+(add-hook 'tex-mode-hook
+          (lambda ()
+            (setq-local tex-font-script-display '(0.0 0.0))
+            (setq-local tex-suscript-height-ratio 1.0)))
+
+
 ;;; Dumb Jump ========================================================
 
 (when (fboundp 'dumb-jump-mode)
