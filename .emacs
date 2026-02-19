@@ -275,6 +275,12 @@
   "Calculate the mean of the given NUMBERS."
   (/ (float (apply #'+ numbers)) (length numbers)))
 
+(defun scratchpad ()
+  "Create a random scratchpad file."
+  (interactive)
+  (make-directory "~/.tmp/scratch/" t)
+  (find-file (format-time-string "~/.tmp/scratch/scratch-%Y%m%d-%H%M%S.md")))
+
 
 ;;; Key Bindings =====================================================
 
@@ -286,7 +292,7 @@
 (global-set-key (kbd "C-c e d") (cmd (find-file "~/my/dd.org")))
 (global-set-key (kbd "C-c e e") (cmd (find-file "~/.emacs")))
 (global-set-key (kbd "C-c e r") (cmd (find-file "~/my/ref.org")))
-(global-set-key (kbd "C-c e s") (cmd (find-file "~/scratch.md")))
+(global-set-key (kbd "C-c e s") 'scratchpad)
 (global-set-key (kbd "C-c e t") (cmd (find-file "~/my/time.org")))
 (global-set-key (kbd "C-c f s") 'toggle-frame-fullscreen)
 (global-set-key (kbd "C-c f f") 'find-file-at-point)
