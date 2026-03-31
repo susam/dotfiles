@@ -140,16 +140,20 @@ findtl()
     find /usr/local/texlive -name "*$1*"
 }
 
-grepx()
+gx()
 {
     grep -r -I --exclude-dir=".[^/]*" --exclude-dir=venv --exclude-dir=node_modules "$@"
 }
 
-findx()
+fx()
 {
     find . | grep -vE "/\.|__pycache__" | grep "$1"
 }
 
+emx()
+{
+    em "$(fx "$1" | head -n 1)"
+}
 
 randk()
 {
