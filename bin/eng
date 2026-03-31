@@ -15,7 +15,7 @@ find_files()
          -not -name '*.pdf' \
          -not -name '*.png' \
          -not -path './.git/*' \
-         -not -path './LICENSE.md' \
+         -not -path './LICENCE.md' \
          -not -path './js/katex/*' \
          -not -path './node_modules/*'
 }
