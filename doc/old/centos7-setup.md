@@ -259,8 +259,8 @@ Set up home directory
 ---------------------
  1. On the CentOS VM, enter the following commands.
 
-        mkdir -p ~/git
-        cd ~/git
+        mkdir -p ~/src
+        cd ~/src
 
         git clone https://github.com/susam/dotfiles
         cd dotfiles

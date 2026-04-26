@@ -314,8 +314,8 @@ Set up home directory
 
  1. On the Debian VM, enter the following commands.
 
-        mkdir -p ~/git
-        cd ~/git
+        mkdir -p ~/src
+        cd ~/src
 
         git clone https://github.com/susam/dotfiles.git
         cd dotfiles
@@ -323,15 +323,15 @@ Set up home directory
 
  2. Set up useful scripts.
 
-        mkdir -p ~/git ~/bin
-        cd ~/git
+        mkdir -p ~/src ~/bin
+        cd ~/src
 
         git clone https://github.com/susam/vimer.git
-        ln -sf ~/git/vimer/vimer ~/bin/vi
-        ln -sf ~/git/vimer/vimer ~/bin/vi.sh
+        ln -sf ~/src/vimer/vimer ~/bin/vi
+        ln -sf ~/src/vimer/vimer ~/bin/vi.sh
 
         git clone https://github.com/susam/timebox.git
-        ln -sf ~/git/timebox/timebox ~/bin/timebox
+        ln -sf ~/src/timebox/timebox ~/bin/timebox
 
  3. Set up my directory.
 

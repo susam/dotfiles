@@ -299,8 +299,8 @@ Set Up Home Directory
  1. Enter the following commands.
 
     ```sh
-    mkdir -p ~/git
-    cd ~/git
+    mkdir -p ~/src
+    cd ~/src
 
     git clone https://github.com/susam/dotfiles.git
     cd dotfiles
@@ -311,15 +311,15 @@ Set Up Home Directory
  2. Set up useful scripts.
 
     ```sh
-    mkdir -p ~/git ~/bin
-    cd ~/git
+    mkdir -p ~/src ~/bin
+    cd ~/src
 
     git clone https://github.com/susam/vimer.git
-    ln -sf ~/git/vimer/vimer ~/bin/vi
-    ln -sf ~/git/vimer/vimer ~/bin/vi.sh
+    ln -sf ~/src/vimer/vimer ~/bin/vi
+    ln -sf ~/src/vimer/vimer ~/bin/vi.sh
 
     git clone https://github.com/susam/timebox.git
-    ln -sf ~/git/timebox/timebox ~/bin/timebox
+    ln -sf ~/src/timebox/timebox ~/bin/timebox
     ```
 
  3. Set up my directory.
@@ -437,7 +437,7 @@ If on a GB keyboard, set up Karabiner as follows:
  3. Configure Karabiner:
 
     ```sh
-    cd ~/git/dotfiles/karabiner && make wk
+    cd ~/src/dotfiles/karabiner && make wk
     ```
 
  8. Go to *Karabiner-Elements* > *Complex Modifications* > *Add
