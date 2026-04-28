@@ -360,6 +360,26 @@ ib() {
     done
 }
 
+rems() {
+    url=$(git remote get-url origin) || return 1
+    repo=$(printf '%s' "$url" | sed -E 's!.*://[^/]*/|.*:!!g') || return 1
+    git remote set-url origin "git@codeberg.org:$repo"
+    git remote set-url origin --add "git@github.com:$repo"
+    git remote -v
+}
+
+css() {
+    # Since Firefox is my main web browser, use Chrome to take
+    # screenshots of my open source projects.
+    set -x
+    osascript -e 'tell app "Chrome" to set bounds of front window to {0, 0, 1200, 730}'
+    osascript -e 'tell app "Chrome" to activate'
+	screencapture -w ~/Desktop/ss.png &&
+    /Applications/ImageOptim.app/Contents/MacOS/ImageOptim ~/Desktop/ss.png &&
+    open ~/Desktop/ss.png
+    set +x
+}
+
 alias c++11="c++ -g -std=c++11 -Wall -Wextra -pedantic"
 
 # Set the primary prompt string.
