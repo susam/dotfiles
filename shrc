@@ -156,6 +156,11 @@ rands()
     done
 }
 
+uuid()
+{
+    python3 -c 'import uuid; print(uuid.uuid4())' | tee /dev/stderr | tr -d '\n' | pbcopy
+}
+
 # Apple documentation for keyboard usage IDs:
 # https://developer.apple.com/library/archive/technotes/tn2450/_index.html
 
@@ -336,6 +341,7 @@ alias tmla='cat ~/timebox.log'
 alias tmc='cut -d" " -f1 ~/timebox.log | uniq -c'
 alias tmu='sed \$d ~/timebox.log > ~/t.new && mv ~/t.new ~/timebox.log && tml'
 alias tmr=': > ~/timebox.log'
+alias dosbox=/Applications/dosbox.app/Contents/MacOS/DOSBox
 
 # Reclaim C-s for forward incremental search.
 stty -ixon
@@ -372,12 +378,20 @@ css() {
     # Since Firefox is my main web browser, use Chrome to take
     # screenshots of my open source projects.
     set -x
-    osascript -e 'tell app "Chrome" to set bounds of front window to {0, 0, 1200, 730}'
+    osascript -e 'tell app "Chrome" to set bounds of front window to {0, 0, 1280, 720}'
     osascript -e 'tell app "Chrome" to activate'
 	screencapture -w ~/Desktop/ss.png &&
+    echo 'Proceed to optimising screenshot? (ctrl+c to cancel)' &&
+    read &&
     /Applications/ImageOptim.app/Contents/MacOS/ImageOptim ~/Desktop/ss.png &&
     open ~/Desktop/ss.png
     set +x
+}
+
+imo() {
+    cp "$1" "$1.bkp"
+    /Applications/ImageOptim.app/Contents/MacOS/ImageOptim "$1"
+    ls -lh "$1"*
 }
 
 alias c++11="c++ -g -std=c++11 -Wall -Wextra -pedantic"
