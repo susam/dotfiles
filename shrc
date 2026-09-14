@@ -127,7 +127,7 @@ findtl()
 
 gx()
 {
-    grep -r -I --exclude-dir=".[^/]*" --exclude-dir=venv --exclude-dir=node_modules "$@"
+    grep -rS -I --exclude-dir=".[^/]*" --exclude-dir=venv --exclude-dir=node_modules "$@"
 }
 
 fx()
